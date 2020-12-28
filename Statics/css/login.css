@@ -1,0 +1,38 @@
+#content{
+    position: absolute;
+    top:28%;
+    left:30%;
+    width:25%;
+    height:30%;
+    /* border: 1px solid green; */
+}
+
+#left{
+    display:inline;
+    position: relative;
+    top:5%;
+    width:50%;
+    height:90%;
+    float:left;
+    border-radius: 25px;
+    /* border: 1px solid green; */
+}
+
+#right{
+    display:inline;
+    position: relative;
+    width:50%;
+    height:100%;
+    float:right;
+    border-radius: 25px;
+    /* border: 1px solid green; */
+}
+
+#right-login{
+    margin: 20px 5px 5px 5px;
+    /* border: 1px solid green; */
+}
+
+.row_margin{
+    margin: 5px;
+}

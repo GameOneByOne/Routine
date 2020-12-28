@@ -1,0 +1,1088 @@
+[2020-10-1510:53:23 AM-selector_events.py-DEBUG:Using selector: SelectSelector]
+[2020-10-1510:53:24 AM-selector_events.py-DEBUG:Using selector: SelectSelector]
+[2020-10-1510:53:25 AM-autoreload.py-INFO:Watching for file changes with StatReloader]
+[2020-10-1510:53:33 AM-views.py-INFO:We Get A New Custom, He Login's Name Is asdfasdf]
+[2020-10-1510:53:33 AM-views.py-INFO:Ooooch Some One Login Failed, Maybe He Input Error id_care Or id_password : asdfasdf, None]
+[2020-10-1510:55:01 AM-autoreload.py-INFO:C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\settings.py changed, reloading.]
+[2020-10-15 10:55:02 AM-selector_events.py-DEBUG:Using selector: SelectSelector]
+[2020-10-15 10:55:03 AM-autoreload.py-INFO:Watching for file changes with StatReloader]
+[2020-10-15 10:55:47 AM-autoreload.py-INFO:C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\settings.py changed, reloading.]
+[2020-10-15 10:55:47 AM] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-15 10:55:48 AM] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-15 10:55:59 AM] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\settings.py changed, reloading.
+[2020-10-15 10:56:00] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-15 10:56:01] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-15 10:56:11] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\settings.py changed, reloading.
+[2020-10-15 10:56:11] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-15 10:56:12] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-15 10:56:18] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-15 10:56:19] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-15 10:56:19] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-15 10:56:32] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 10:56:33] views.py [INFO] :Ooooch Some One Login Failed, Maybe He Input Error id_care Or id_password : zhangyan, None
+[2020-10-15 10:57:30] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-15 10:57:31] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-15 10:57:31] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-15 10:57:32] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 10:57:32] views.py [INFO] :Ooooch Some One Login Failed, Maybe He Input Error id_care Or id_password : zhangyan, None
+[2020-10-15 10:57:32] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 10:57:36] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 10:57:36] views.py [INFO] :Ooooch Some One Login Failed, Maybe He Input Error id_care Or id_password : zhangyan, 123456
+[2020-10-15 10:58:55] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 10:58:55] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 10:58:58] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-15 10:58:59] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-15 10:59:00] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-15 11:29:36] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-15 11:29:37] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-15 11:29:37] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-15 11:29:47] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-15 11:29:47] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-15 11:29:48] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-15 11:33:58] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:33:58] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:34:02] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:34:03] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:34:03] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:35:56] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:35:57] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:35:57] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:36:30] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:36:30] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:36:31] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:37:03] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:37:03] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:37:03] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:37:29] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:37:29] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:37:30] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:37:37] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:37:37] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:37:38] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:38:01] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:38:01] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:38:02] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:39:13] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:39:13] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:39:13] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:39:22] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:39:22] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:39:23] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:39:23] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:39:23] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:39:24] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:43:10] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:43:10] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:43:12] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:43:12] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:43:12] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:43:58] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:43:58] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:43:58] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:44:09] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:44:09] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:44:10] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:44:43] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:44:44] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:44:44] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:45:16] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:45:16] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:45:17] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:45:33] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:45:33] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:45:34] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:45:45] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:45:45] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:45:45] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:46:03] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:46:03] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:46:03] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:46:16] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:46:16] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:46:16] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:46:26] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:46:26] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:46:26] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:46:42] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:46:42] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:46:42] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:46:43] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:46:43] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:46:43] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:46:50] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:46:50] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:46:51] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:46:51] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:46:51] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:46:52] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:46:57] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:46:57] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:46:57] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:47:02] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:47:02] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:47:02] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:47:10] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 11:47:11] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 11:47:11] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-15 11:47:52] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-15 11:47:53] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-15 11:47:54] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-15 01:06:26] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-15 01:06:27] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-15 01:06:27] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-15 01:06:56] views.py [INFO] :We Get A New Custom, He Login's Name Is asdfaszx
+[2020-10-15 01:06:56] views.py [INFO] :Ooooch Some One Login Failed, Maybe He Input Error id_care Or id_password : asdfaszx, dsfads
+[2020-10-15 01:06:59] views.py [INFO] :We Get A New Custom, He Login's Name Is zcxvadsf
+[2020-10-15 01:06:59] views.py [INFO] :Ooooch Some One Login Failed, Maybe He Input Error id_care Or id_password : zcxvadsf, asdfasdf
+[2020-10-15 01:07:03] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 01:07:03] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 01:07:14] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-15 01:07:14] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-15 01:07:15] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-15 01:08:51] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-15 01:08:51] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-15 01:08:52] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:18:27] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 01:18:42] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 01:18:43] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 01:18:44] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 01:19:04] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:19:09] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:19:09] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:19:09] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 469, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 27, in MainViews
+    return render(request, 'main_page.html', {"errorLogin": "0"})
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 471, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 533, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 7: 'static'. Did you forget to register or load this tag?
+[2020-10-16 01:20:26] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:20:26] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:20:26] log.py [WARNING] :Not Found: /script.js
+[2020-10-16 01:20:27] log.py [WARNING] :Not Found: /script.js
+[2020-10-16 01:20:29] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:22:46] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:22:46] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:22:46] log.py [WARNING] :Not Found: /script.js
+[2020-10-16 01:22:46] log.py [WARNING] :Not Found: /script.js
+[2020-10-16 01:22:47] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:22:56] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:22:56] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:22:56] log.py [WARNING] :Not Found: /script.js
+[2020-10-16 01:22:57] log.py [WARNING] :Not Found: /script.js
+[2020-10-16 01:22:57] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:23:24] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:23:24] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:23:24] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:23:40] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:23:40] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:23:40] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:23:51] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:23:51] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:24:41] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:24:41] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:24:42] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:26:32] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:26:33] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:26:35] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:30:04] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:30:04] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:30:08] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:31:36] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:31:37] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:31:45] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:32:18] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:32:18] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:32:25] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:32:27] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:32:27] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:32:34] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:38:27] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:38:27] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:38:35] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:42:02] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:42:02] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:42:09] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:42:35] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:42:35] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:42:42] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:43:42] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:43:42] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:43:53] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:44:24] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:44:24] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:44:35] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:44:48] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:44:48] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:45:04] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:45:34] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:45:34] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:45:44] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:47:12] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:47:12] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:47:22] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:47:35] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:47:35] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:47:50] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:48:03] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:48:03] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:48:11] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:49:20] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:49:20] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:49:26] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:50:13] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:50:13] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:50:19] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:51:46] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:51:46] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:51:46] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 27, in MainViews
+    return render(request, 'main_page.html', {"errorLogin": "0"})
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 448, in parse
+    raise self.error(token, e)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 446, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 562, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 662, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% username %' from '% username %'
+[2020-10-16 01:51:46] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:52:34] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Users\models.py changed, reloading.
+[2020-10-16 01:52:35] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 01:52:36] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 01:52:37] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Users\models.py changed, reloading.
+[2020-10-16 01:52:38] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 01:52:39] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 01:52:55] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 01:53:05] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 01:55:22] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 01:55:25] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 01:55:26] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 01:55:27] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 01:55:37] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:55:37] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:55:37] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 27, in MainViews
+    ret_json = serializers.serialize("json", user_info)
+NameError: name 'serializers' is not defined
+[2020-10-16 01:55:37] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:55:56] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 01:55:57] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 01:55:58] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 01:56:02] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:56:02] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:56:02] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 29, in MainViews
+    ret_json["errorLogin"] = "0";
+TypeError: 'UsersSerializer' object does not support item assignment
+[2020-10-16 01:56:02] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:56:19] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 01:56:20] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 01:56:21] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 01:56:42] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:56:42] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:56:42] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 30, in MainViews
+    return render(request, 'main_page.html', ret_json)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 448, in parse
+    raise self.error(token, e)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 446, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 562, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 662, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% username %' from '% username %'
+[2020-10-16 01:56:42] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:57:20] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 01:57:20] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 01:57:22] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 01:57:23] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:57:23] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:57:23] views.py [INFO] :-----------------------------------------
+[2020-10-16 01:57:24] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 31, in MainViews
+    return render(request, 'main_page.html', ret_json)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 448, in parse
+    raise self.error(token, e)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 446, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 562, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 662, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% username %' from '% username %'
+[2020-10-16 01:57:24] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:57:48] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 01:57:48] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 01:57:49] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 01:58:01] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:58:01] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:58:01] views.py [INFO] :-----------------------------------------
+[2020-10-16 01:58:01] views.py [INFO] :<class 'HelloWorld.Users.serializers.UsersSerializer'>
+[2020-10-16 01:58:01] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 31, in MainViews
+    return render(request, 'main_page.html', ret_json)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 448, in parse
+    raise self.error(token, e)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 446, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 562, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 662, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% username %' from '% username %'
+[2020-10-16 01:58:02] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:58:57] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Users\serializers.py changed, reloading.
+[2020-10-16 01:58:58] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 01:58:58] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 01:59:01] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:59:01] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:59:01] views.py [INFO] :-----------------------------------------
+[2020-10-16 01:59:01] views.py [INFO] :<class 'HelloWorld.Users.serializers.UsersSerializer'>
+[2020-10-16 01:59:01] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 31, in MainViews
+    return render(request, 'main_page.html', ret_json)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 448, in parse
+    raise self.error(token, e)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 446, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 562, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 662, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% username %' from '% username %'
+[2020-10-16 01:59:02] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 01:59:40] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 01:59:42] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 01:59:43] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 01:59:45] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 01:59:45] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 01:59:45] views.py [INFO] :-----------------------------------------
+[2020-10-16 01:59:45] views.py [INFO] :<class 'HelloWorld.Users.serializers.UsersSerializer'>
+[2020-10-16 01:59:45] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 30, in MainViews
+    for i in ret_json:
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\serializers.py", line 531, in __iter__
+    yield self[field.field_name]
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\serializers.py", line 535, in __getitem__
+    value = self.data.get(key)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\serializers.py", line 242, in data
+    raise AssertionError(msg)
+AssertionError: When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
+You should either call `.is_valid()` first, or access `.initial_data` instead.
+[2020-10-16 01:59:46] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 03:06:56] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:06:58] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:06:59] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:07:04] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 03:07:08] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 03:07:08] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 03:07:08] views.py [INFO] :-----------------------------------------
+[2020-10-16 03:07:08] views.py [INFO] :<class 'HelloWorld.Users.serializers.UsersSerializer'>
+[2020-10-16 03:07:09] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 30, in MainViews
+    for i in ret_json:
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\serializers.py", line 531, in __iter__
+    yield self[field.field_name]
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\serializers.py", line 535, in __getitem__
+    value = self.data.get(key)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\serializers.py", line 548, in data
+    ret = super().data
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\serializers.py", line 242, in data
+    raise AssertionError(msg)
+AssertionError: When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
+You should either call `.is_valid()` first, or access `.initial_data` instead.
+[2020-10-16 03:07:41] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:07:42] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:07:42] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:34:12] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 03:34:12] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 03:34:12] views.py [INFO] :-----------------------------------------
+[2020-10-16 03:34:12] views.py [INFO] :<class 'HelloWorld.Users.serializers.UsersSerializer'>
+[2020-10-16 03:34:12] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 34, in MainViews
+    return render(request, 'main_page.html', ret_json)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 448, in parse
+    raise self.error(token, e)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 446, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 562, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 662, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% username %' from '% username %'
+[2020-10-16 03:34:13] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 03:34:57] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:34:59] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:35:02] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:35:22] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:35:23] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:35:24] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:35:28] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 03:35:28] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 03:35:28] views.py [INFO] :-----------------------------------------
+[2020-10-16 03:35:28] views.py [INFO] :<class 'HelloWorld.Users.serializers.UsersSerializer'>
+[2020-10-16 03:35:28] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 34, in MainViews
+    return render(request, 'main_page.html', ret_json)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 448, in parse
+    raise self.error(token, e)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 446, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 562, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 662, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% username %' from '% username %'
+[2020-10-16 03:35:28] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 03:35:39] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:35:40] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:35:40] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:36:51] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:36:53] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:36:54] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:36:57] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 03:36:57] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 03:36:57] views.py [INFO] :-----------------------------------------
+[2020-10-16 03:36:57] views.py [INFO] :<class 'HelloWorld.Users.serializers.UsersSerializer'>
+[2020-10-16 03:36:57] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 34, in MainViews
+    return render(request, 'main_page.html', ret_json)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 448, in parse
+    raise self.error(token, e)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 446, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 562, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 662, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% username %' from '% username %'
+[2020-10-16 03:36:59] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 03:37:19] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:37:20] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:37:21] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:37:44] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:37:45] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:37:46] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:39:55] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Users\models.py changed, reloading.
+[2020-10-16 03:39:56] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:39:57] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:40:00] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Users\models.py changed, reloading.
+[2020-10-16 03:40:01] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:40:02] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:40:18] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Users\models.py changed, reloading.
+[2020-10-16 03:40:18] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:40:19] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:40:36] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Users\models.py changed, reloading.
+[2020-10-16 03:40:37] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:40:38] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:40:40] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Users\models.py changed, reloading.
+[2020-10-16 03:40:41] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:40:42] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:40:54] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:40:55] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:40:56] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:40:58] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:41:00] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:41:01] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:41:09] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 03:41:09] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 03:41:09] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 27, in MainViews
+    print(user_info.to_dict())
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Users\models.py", line 29, in to_dict
+    if isinstance(f, ManyToManyField):
+NameError: name 'ManyToManyField' is not defined
+[2020-10-16 03:41:30] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Users\models.py changed, reloading.
+[2020-10-16 03:41:31] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:41:32] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:41:34] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 03:41:35] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 03:41:35] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 29, in MainViews
+    return render(request, 'main_page.html', {})
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 448, in parse
+    raise self.error(token, e)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 446, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 562, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 662, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% username %' from '% username %'
+[2020-10-16 03:41:35] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 03:41:56] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:41:56] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:41:57] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:42:06] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:42:07] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:42:07] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:42:19] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:42:20] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:42:21] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:42:25] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:42:26] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:42:26] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:42:29] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 03:42:29] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 03:42:29] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 27, in MainViews
+    return render(request, 'main_page.html', user_info.to_dict())
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 448, in parse
+    raise self.error(token, e)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 446, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 562, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 662, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% username %' from '% username %'
+[2020-10-16 03:42:29] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 03:42:45] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:42:47] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:42:48] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:42:51] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 03:42:52] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 03:42:52] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 28, in MainViews
+    return render(request, 'main_page.html', user_info.to_dict())
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 448, in parse
+    raise self.error(token, e)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 446, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 562, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 662, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% username %' from '% username %'
+[2020-10-16 03:42:53] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 03:43:25] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:43:26] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:43:26] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:43:29] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:43:29] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:43:30] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:43:33] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 03:43:33] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 03:43:33] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 28, in MainViews
+    return render(request, 'main_page.html', {"content": user_info.to_dict()})
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 448, in parse
+    raise self.error(token, e)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 446, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 562, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 662, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% username %' from '% username %'
+[2020-10-16 03:43:35] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 03:44:10] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 03:44:10] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 03:44:10] log.py [ERROR] :Internal Server Error: /main
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py", line 28, in MainViews
+    return render(request, 'main_page.html', {"content": user_info.to_dict()})
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 448, in parse
+    raise self.error(token, e)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 446, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 562, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\template\base.py", line 662, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '% username %' from '% username %'
+[2020-10-16 03:44:11] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 03:45:00] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:45:02] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:45:05] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 03:45:09] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-16 03:45:09] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-16 03:45:14] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-16 03:47:10] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2020-10-16 03:47:11] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 03:47:12] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-16 04:07:42] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 04:07:52] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 05:25:42] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 05:27:29] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 05:27:37] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 05:27:47] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 05:27:52] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 05:34:34] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 05:34:39] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 05:34:49] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 05:34:54] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-16 05:57:22] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 10:31:37] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 10:31:39] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 10:31:40] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-19 10:31:54] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-19 10:31:57] views.py [INFO] :We Get A New Custom, He Login's Name Is zhangyan
+[2020-10-19 10:31:57] views.py [INFO] :Welcome zhangyan, Have A Good Time
+[2020-10-19 11:28:25] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:29:06] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:29:17] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:29:23] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:29:28] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:42:14] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:43:49] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:44:44] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:45:45] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:46:21] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:49:12] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:49:35] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:50:09] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:50:41] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:50:57] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:51:06] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:51:46] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:52:00] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 11:52:25] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 01:21:57] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 01:22:29] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 01:22:36] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 01:25:20] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 01:36:53] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 01:36:54] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2020-10-19 01:36:55] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2020-10-19 01:36:59] log.py [WARNING] :Not Found: /favicon.ico
+[2020-10-19 01:37:03] views.py [INFO] :We Get A New Custom, He Login's Name Is test
+[2020-10-19 01:37:03] views.py [INFO] :Welcome test, Have A Good Time
+[2020-10-19 01:40:39] views.py [INFO] :We Get A New Custom, He Login's Name Is test
+[2020-10-19 01:40:39] views.py [INFO] :Welcome test, Have A Good Time
+[2020-10-19 01:40:42] log.py [WARNING] :Not Found: /favicon.ico
