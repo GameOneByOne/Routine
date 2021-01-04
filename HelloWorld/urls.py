@@ -16,15 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from .Users import views as UsersApi
-from .Tasks import views as TasksApi
+from HelloWorld.Book.views import BookInfo
 from . import views
 
 
 urlpatterns = [
+    # HTML View
     path('admin/', admin.site.urls),
-    url('^users$', UsersApi.Users.as_view()),
-    url('^tasks$', TasksApi.Tasks.as_view()),
-    url('^$',views.InitViews),
-    url('^main$',views.MainViews)
+    path('login/', views.LoginView),
+        
+    # API View 
+    path('book/', BookInfo.as_view())
+    
 ]
