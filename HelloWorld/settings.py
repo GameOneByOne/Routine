@@ -39,13 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'HelloWorld.Users',
-    'HelloWorld.Tasks',
-    'HelloWorld.Comments',
-    'HelloWorld.Teams',
-    'HelloWorld.Notifications',
-    'HelloWorld.Messages'
+    'rest_framework'
 ]
 
 REST_FRAMEWORK = {
