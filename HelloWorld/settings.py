@@ -27,7 +27,7 @@ SECRET_KEY = 'b)%n9evbyrc-v49!=j$itt!o9&!hxbil6r+&1&9)wa)s6!u^=*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'HelloWorld.Book'
+    'HelloWorld.Book',
+    'HelloWorld.User'
 ]
 
 REST_FRAMEWORK = {
@@ -140,6 +141,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/' # 别名 
+MEDIA_ROOT = os.path.join(BASE_DIR, "Resource")
 STATICFILES_DIRS = [ 
     os.path.join(BASE_DIR, "Statics"), 
 ]

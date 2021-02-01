@@ -1094,3 +1094,878 @@ django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '
 [2020-12-28 01:50:53] views.py [INFO] :Ooooch Some One Login Failed, Maybe He Input Error id_care Or id_password : zhangyan, 521125
 [2020-12-28 01:52:16] views.py [INFO] :We Get A New Custom, He Login's Name Is test
 [2020-12-28 01:52:16] views.py [INFO] :Welcome test, Have A Good Time
+[2021-01-04 12:44:53] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 12:45:08] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 12:45:52] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 12:55:39] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 12:55:43] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 12:55:48] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 12:56:09] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 12:56:59] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 12:57:07] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:03:00] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:03:07] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:09:51] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:09:52] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:09:52] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:10:21] log.py [WARNING] :Not Found: /favicon.ico
+[2021-01-04 01:11:01] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-01-04 01:11:01] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:11:02] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:11:13] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-01-04 01:11:14] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:11:15] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:11:19] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-01-04 01:11:20] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:11:20] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:12:22] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:12:23] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:12:23] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:12:35] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:12:36] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:12:36] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:13:05] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:13:06] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:13:07] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:13:31] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:13:32] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:13:33] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:13:49] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:13:50] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:13:51] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:13:54] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:13:55] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:13:55] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:14:11] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:14:12] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:14:12] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:14:18] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:14:18] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:14:19] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:14:31] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:14:32] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:14:32] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:14:34] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:14:35] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:14:36] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:14:38] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:14:39] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:14:40] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:14:42] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:14:43] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:14:44] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:14:47] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:14:48] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:14:49] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:15:05] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:15:06] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:15:06] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:15:09] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:15:09] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:15:10] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:15:15] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:15:15] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:15:16] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:15:25] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:15:26] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:15:27] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:15:32] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:15:32] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:15:33] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:17:19] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\settings.py changed, reloading.
+[2021-01-04 01:17:20] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:17:21] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:21:09] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\views.py changed, reloading.
+[2021-01-04 01:21:10] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:21:11] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:21:14] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-01-04 01:21:15] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:21:16] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:21:25] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-01-04 01:21:25] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:21:26] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:21:32] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-01-04 01:21:33] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:21:34] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:21:37] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-01-04 01:21:38] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:21:38] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:21:42] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-01-04 01:21:42] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:21:43] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:21:49] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-01-04 01:21:49] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:21:50] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:21:53] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-01-04 01:21:54] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:21:55] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:22:01] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-01-04 01:22:02] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:22:02] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:22:08] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-01-04 01:22:09] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:22:09] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:22:30] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-01-04 01:22:31] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:22:31] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:22:41] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-01-04 01:22:42] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:22:42] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:22:46] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-01-04 01:22:46] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:22:47] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:23:06] log.py [ERROR] :Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: object() takes no parameters
+[2021-01-04 01:23:36] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2021-01-04 01:23:37] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:23:37] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:24:14] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2021-01-04 01:24:14] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:24:15] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:24:21] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2021-01-04 01:24:22] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:24:23] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:24:26] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2021-01-04 01:24:26] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:24:27] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:24:32] log.py [ERROR] :Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: LoginView() takes 0 positional arguments but 1 was given
+[2021-01-04 01:24:43] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\views.py changed, reloading.
+[2021-01-04 01:24:44] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-04 01:24:45] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-04 01:25:29] log.py [WARNING] :Not Found: /
+[2021-01-15 10:39:22] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-15 10:39:24] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-15 10:39:24] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-15 10:42:11] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-15 10:42:12] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-15 10:42:13] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-15 10:42:22] log.py [WARNING] :Not Found: /favicon.ico
+[2021-01-15 11:31:05] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-15 11:31:06] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-15 11:31:06] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-01-15 11:31:10] log.py [WARNING] :Not Found: /favicon.ico
+[2021-01-15 11:32:18] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-01-15 11:32:19] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-01-15 11:32:20] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 04:56:43] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 04:57:01] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:00:35] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:04:54] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:05:02] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:05:03] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:05:03] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:05:14] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-02-01 05:05:15] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:05:15] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:05:29] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-02-01 05:05:30] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:05:30] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:05:52] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\urls.py changed, reloading.
+[2021-02-01 05:05:53] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:05:53] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:06:50] exception.py [ERROR] :Invalid HTTP_HOST header: '0.0.0.0:8081'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+[2021-02-01 05:06:50] log.py [WARNING] :Bad Request: /user/
+[2021-02-01 05:06:58] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:06:59] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:07:00] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:07:05] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\settings.py changed, reloading.
+[2021-02-01 05:07:15] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:07:20] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:08:36] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:08:37] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:08:37] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:08:44] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:08:45] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:08:46] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:08:53] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:08:53] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:08:54] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:09:03] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:09:03] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:09:04] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:09:18] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:09:18] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:09:19] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:09:27] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:09:28] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:09:29] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:09:32] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:09:32] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:09:33] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:10:03] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:10:04] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:10:05] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:10:18] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:10:19] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:10:20] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:10:26] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:10:26] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:10:27] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:11:44] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:11:45] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:11:45] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:11:58] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:11:59] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:11:59] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:12:39] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\models.py changed, reloading.
+[2021-02-01 05:12:39] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:12:40] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:13:09] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:13:10] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:13:11] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:13:21] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\models.py changed, reloading.
+[2021-02-01 05:13:22] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:13:22] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:13:28] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\models.py changed, reloading.
+[2021-02-01 05:13:29] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:13:30] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:13:34] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\models.py changed, reloading.
+[2021-02-01 05:13:35] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:13:35] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:13:38] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\models.py changed, reloading.
+[2021-02-01 05:13:39] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:13:39] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:13:46] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\models.py changed, reloading.
+[2021-02-01 05:13:47] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:13:47] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:13:52] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\models.py changed, reloading.
+[2021-02-01 05:13:53] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:13:53] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:13:55] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\models.py changed, reloading.
+[2021-02-01 05:13:56] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:13:56] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:14:42] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\settings.py changed, reloading.
+[2021-02-01 05:14:43] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:14:44] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:14:51] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\settings.py changed, reloading.
+[2021-02-01 05:14:51] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:14:52] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:14:58] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\settings.py changed, reloading.
+[2021-02-01 05:14:59] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:14:59] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:15:11] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:15:11] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:15:12] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:15:15] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:15:16] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:15:16] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:15:18] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\models.py changed, reloading.
+[2021-02-01 05:15:19] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:15:19] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:15:42] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\models.py changed, reloading.
+[2021-02-01 05:15:43] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:15:43] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:15:50] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\models.py changed, reloading.
+[2021-02-01 05:15:50] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:15:51] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:15:56] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\models.py changed, reloading.
+[2021-02-01 05:15:59] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:16:29] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:16:56] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:17:20] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:19:16] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:19:40] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:19:54] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:20:11] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:20:44] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:20:49] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:20:55] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:21:52] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:22:27] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:22:29] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:22:47] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:23:03] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:23:04] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:23:05] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:23:11] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\models.py changed, reloading.
+[2021-02-01 05:23:12] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:23:12] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:23:21] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:23:21] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:23:22] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:23:55] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:23:55] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:23:56] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:24:01] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:24:02] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:24:02] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:24:28] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:24:29] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:24:29] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:24:42] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:24:43] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:24:44] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:25:18] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:25:19] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:25:19] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:27:27] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:27:28] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:27:28] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:27:32] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:27:33] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:27:33] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:27:37] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:27:37] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:27:38] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:27:48] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:27:49] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:27:50] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:27:59] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:28:00] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:28:01] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:28:37] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:28:37] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:28:38] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:28:43] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:28:43] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:28:44] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:28:59] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:29:00] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:29:00] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:29:03] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:29:04] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:29:05] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:29:08] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:29:08] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:29:09] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:29:18] log.py [ERROR] :Internal Server Error: /user/
+Traceback (most recent call last):
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 19, in get
+    user_info = User.objects().get(account=account, password=md5(password))
+TypeError: 'Manager' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\generic\base.py", line 73, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 12, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 20, in get
+    except DoesNotExist:
+NameError: name 'DoesNotExist' is not defined
+[2021-02-01 05:30:42] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:30:42] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:30:43] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:30:51] log.py [ERROR] :Internal Server Error: /user/
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\generic\base.py", line 73, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 13, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 20, in get
+    user_info = User.objects().get(account=account, password=md5(password))
+TypeError: 'Manager' object is not callable
+[2021-02-01 05:31:00] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:31:01] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:31:02] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:31:30] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:31:30] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:31:31] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:31:40] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:31:40] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:31:41] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:31:46] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:31:47] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:31:47] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:31:54] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:31:55] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:31:55] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:32:09] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:32:10] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:32:10] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:32:12] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:32:13] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:32:13] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:32:16] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:32:17] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:32:18] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:32:33] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:32:33] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:32:34] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:32:38] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:32:38] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:32:39] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:32:48] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:32:49] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:32:50] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:33:11] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:33:12] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:33:13] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:33:16] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:33:16] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:33:17] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:33:20] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:33:21] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:33:21] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:33:25] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:33:26] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:33:27] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:33:54] log.py [ERROR] :Internal Server Error: /user/
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\generic\base.py", line 73, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 14, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 29, in post
+    req_data = json.loads(request.body)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 12 (char 11)
+[2021-02-01 05:34:16] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:34:17] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:34:17] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:34:18] log.py [ERROR] :Internal Server Error: /user/
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\generic\base.py", line 73, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 14, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 30, in post
+    req_data = json.loads(request.body)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 12 (char 11)
+[2021-02-01 05:34:32] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:34:33] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:34:34] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:34:36] log.py [ERROR] :Internal Server Error: /user/
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\generic\base.py", line 73, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 14, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 30, in post
+    req_data = json.loads(request.body.decode("utf-8"))
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 12 (char 11)
+[2021-02-01 05:34:51] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:34:52] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:34:52] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:34:54] log.py [ERROR] :Internal Server Error: /user/
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\generic\base.py", line 73, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 14, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 30, in post
+    req_data = json.loads(request.body.decode("utf-8"))
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 12 (char 11)
+[2021-02-01 05:35:06] log.py [ERROR] :Internal Server Error: /user/
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\generic\base.py", line 73, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 14, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 30, in post
+    req_data = json.loads(request.body.decode("utf-8"))
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 12 (char 11)
+[2021-02-01 05:35:14] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:35:15] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:35:16] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:35:18] log.py [ERROR] :Internal Server Error: /user/
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\generic\base.py", line 73, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 14, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 30, in post
+    req_data = json.loads(request.body.decode("utf-8"))
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 12 (char 11)
+[2021-02-01 05:35:29] log.py [ERROR] :Internal Server Error: /user/
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'slug' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\generic\base.py", line 73, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 14, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 35, in post
+    user_info.save()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 751, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 789, in save_base
+    force_update, using, update_fields,
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\base.py", line 932, in _do_insert
+    using=using, raw=raw,
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\models\sql\compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 163, in execute
+    result = self._query(query)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\cursors.py", line 321, in _query
+    conn.query(q)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 505, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 724, in _read_query_result
+    result.read()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 1069, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\connections.py", line 676, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\protocol.py", line 223, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\pymysql\err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'slug' cannot be null")
+[2021-02-01 05:35:38] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:35:38] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:35:39] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:36:59] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:37:00] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:37:00] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:38:24] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:38:24] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:38:25] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:38:50] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:38:50] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:38:51] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:39:02] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:39:03] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:39:03] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:39:06] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:39:07] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:39:07] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:39:11] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:39:12] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:39:12] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:39:14] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:39:15] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:39:15] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:39:25] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:39:25] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:39:26] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:39:30] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:39:30] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:39:31] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:39:46] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\Core\encrypt.py changed, reloading.
+[2021-02-01 05:39:46] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:39:47] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:42:28] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\Core\encrypt.py changed, reloading.
+[2021-02-01 05:42:29] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:42:29] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:42:55] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\Core\encrypt.py changed, reloading.
+[2021-02-01 05:42:55] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:42:56] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:43:36] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:43:37] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:43:37] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:43:39] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py changed, reloading.
+[2021-02-01 05:43:40] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:43:40] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:43:51] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\models.py changed, reloading.
+[2021-02-01 05:43:51] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:43:52] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:43:53] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\Book\models.py changed, reloading.
+[2021-02-01 05:43:54] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:43:55] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:44:18] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\Core\encrypt.py changed, reloading.
+[2021-02-01 05:44:18] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:44:19] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:44:31] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:44:31] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:44:32] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:44:37] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:44:37] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:44:38] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:44:41] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py changed, reloading.
+[2021-02-01 05:44:42] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:44:42] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:44:46] log.py [ERROR] :Internal Server Error: /user/
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\generic\base.py", line 73, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 14, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 36, in post
+    user_info.save()
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py", line 16, in save
+    force_insert=force_insert,
+NameError: name 'force_insert' is not defined
+[2021-02-01 05:47:10] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\Core\encrypt.py changed, reloading.
+[2021-02-01 05:47:10] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:47:11] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:47:13] log.py [ERROR] :Internal Server Error: /user/
+Traceback (most recent call last):
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\django\views\generic\base.py", line 73, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 14, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vixtel\AppData\Local\Programs\Python\Python36\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\views.py", line 36, in post
+    user_info.save()
+  File "C:\Users\vixtel\Desktop\HelloWorld\HelloWorld\User\models.py", line 16, in save
+    force_insert=force_insert,
+NameError: name 'force_insert' is not defined
+[2021-02-01 05:47:17] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\Core\encrypt.py changed, reloading.
+[2021-02-01 05:47:18] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:47:19] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:48:55] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\Core\encrypt.py changed, reloading.
+[2021-02-01 05:48:55] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:48:56] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:48:57] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\Core\encrypt.py changed, reloading.
+[2021-02-01 05:48:58] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:48:59] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:49:00] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\Core\encrypt.py changed, reloading.
+[2021-02-01 05:49:01] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:49:01] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:49:05] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\Core\encrypt.py changed, reloading.
+[2021-02-01 05:49:06] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:49:06] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:49:14] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\Core\encrypt.py changed, reloading.
+[2021-02-01 05:49:15] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:49:16] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:49:39] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\Core\encrypt.py changed, reloading.
+[2021-02-01 05:49:40] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:49:41] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:49:52] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\Core\encrypt.py changed, reloading.
+[2021-02-01 05:49:53] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:49:53] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:49:56] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\Core\encrypt.py changed, reloading.
+[2021-02-01 05:49:56] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:49:57] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:50:00] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\Core\encrypt.py changed, reloading.
+[2021-02-01 05:50:00] selector_events.py [DEBUG] :Using selector: SelectSelector
+[2021-02-01 05:50:01] autoreload.py [INFO] :Watching for file changes with StatReloader
+[2021-02-01 05:51:19] autoreload.py [INFO] :C:\Users\vixtel\Desktop\HelloWorld\Core\encrypt.py changed, reloading.

@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from HelloWorld.Book.views import BookInfo
+from HelloWorld.User.views import UserInfo
 from . import views
 
 
@@ -26,6 +27,7 @@ urlpatterns = [
     path('login/', views.LoginView),
         
     # API View 
-    path('book/', BookInfo.as_view())
+    path('book/', BookInfo.as_view()),
+    path('user/', UserInfo.as_view())
     
 ]
