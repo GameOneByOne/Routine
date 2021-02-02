@@ -13,11 +13,9 @@ class UserInfo(APIView):
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
-
     def get(self, request, *args, **kwargs):
         account = request.GET.get("account", "")
         password = request.GET.get("password", "")
-        print(md5(password))
         try:
             user_info = User.objects.get(account=account, password=md5(password))
         except ObjectDoesNotExist:
@@ -26,16 +24,18 @@ class UserInfo(APIView):
         return Response({"errorCode": 0, "UserInfo":user_info}, status=200)
 
     def post(self, request, *args, **kwargs):
-        print(request.body.decode("utf-8"))
         req_data = json.loads(request.body.decode("utf-8"))
         account = req_data.get("account", "")
         password = req_data.get("password", "")
-        print(generate_slug())
 
-        user_info = User(account=account, password=password)
-        user_info.save()
+        try:
+            user_info = User.objects.get(account=account)
+        except ObjectDoesNotExist:
+            user_info = User(account=account, password=password)
+            user_info.save()
+            return Response({"errorCode": 0}, status=200)
 
-        return Response({"errorCode": 0}, status=200)
+        return Response({"errorCode": 1}, status=200)
 
     def patch(self, request, *args, **kwargs):
         data = {
