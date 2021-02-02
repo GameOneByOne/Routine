@@ -8,17 +8,6 @@
     border-radius: 25px;
 }
 
-#register-cover{
-    position: absolute;
-    float: left;
-    width: 50%;
-    height: 100%;
-    border: 1px;
-    border-style: solid;
-    border-color: black;
-    background-color: blue;
-}
-
 #register-body{
     margin: 8% 10px 10px 10px;
     float: left;

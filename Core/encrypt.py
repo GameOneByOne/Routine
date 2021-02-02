@@ -4,14 +4,19 @@ from django.utils.text import slugify
 
 
 
-def md5(s : str):
+def md5(s: str):
+    """
+    返回字符类型的MD5
+    """
     return hashlib.md5(s.encode(encoding='UTF-8')).hexdigest()
 
 
-def generate_slug(type : str):
-    pass
-    # if type == ""
-    # elif type ==
-    # else:
-    #     return 
-    # return slugify("1 2312 1513 61 234")
+def generate_slug(type: str, key: str):
+    """
+    返回一个唯一的MD5标识
+    """
+    if type == "Book":
+        return slugify("B {}".format(md5(key)))
+    
+    if type == "User":
+        return slugify("U {}".format(md5(key)))

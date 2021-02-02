@@ -8,24 +8,28 @@
     <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap-theme.css' %}">
     <link rel="stylesheet" href="{% static 'custom-0.0.1-dist/css/custom.css' %}">
-    <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.js' %}"></script>
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.js' %}"></script>
+    
 
 </head>
 
 <body>
     <div id="login-body">
-        <form action="/user" method="get">
+    <form>
         <div class="form-group">
             <label for="exampleInputAccount1">Email address</label>
-            <input type="account" class="form-control" placeholder="Account" name="account">
+            <input type="account" class="form-control" id="account" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" placeholder="Password" name="password">
+            <input type="password" class="form-control" id="password">
         </div>
-        <input type="submit" class="btn btn-default">
-        </form>
+        <div id="login" type="submit" class="btn btn-primary">Submit</div>
+    </form>
     </div>
 </body>
+
+<script src="{% static 'custom-0.0.1-dist/js/custom.js' %}"></script>
 </html>
