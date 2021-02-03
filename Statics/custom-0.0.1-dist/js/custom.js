@@ -1,18 +1,21 @@
-function UserToLogin(account, password) {
-    var pageTotal = 0;
+/*
+* There Are Some JQ Function By Self 
+*/
+
+$("#login").click(function(){
     $.ajax({
         url : "/user/",
         type : "get",
-        async : false,//此处需要注意的是要想获取ajax返回的值这个async属性必须设置成同步的，否则获取不到返回值
-        data : {"account":account, "password":password},
+        async : false,
+        data : {"account":$("#account").val(), "password":$("#password").val()},
         dataType : "json",
         success : function(data) {
-            pageTotal = data.pageTotal;
+            if (data.errorCode == 0){
+                window.location.href = "http://" + window.location.host + "/home/";
+            } else {
+                alert("Account Or Password Is Worry")
+            }
         }
         
     });
-    return pageTotal;
-}
-
-
-$("#login").click(UserToLogin());
+});

@@ -8,3 +8,8 @@ def LoginView(request):
     context = {}
     context['hello'] = 'Hello World!'
     return render(request, 'login.html', context)
+
+def HomeView(request):    
+    context = {}
+    context['hello'] = 'Hello World!'
+    return render(request, 'home.html', context)

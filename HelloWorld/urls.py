@@ -25,6 +25,7 @@ urlpatterns = [
     # HTML View
     path('admin/', admin.site.urls),
     path('login/', views.LoginView),
+    path('home/', views.HomeView),
         
     # API View 
     path('book/', BookInfo.as_view()),

@@ -16,12 +16,13 @@ class UserInfo(APIView):
     def get(self, request, *args, **kwargs):
         account = request.GET.get("account", "")
         password = request.GET.get("password", "")
+
         try:
-            user_info = User.objects.get(account=account, password=md5(password))
+            user_info = User.objects.get(account=account, password=password)
         except ObjectDoesNotExist:
             return Response({"errorCode": 1}, status=200)
 
-        return Response({"errorCode": 0, "UserInfo":user_info}, status=200)
+        return Response({"errorCode": 0, "UserInfo":str(user_info)}, status=200)
 
     def post(self, request, *args, **kwargs):
         req_data = json.loads(request.body.decode("utf-8"))
@@ -31,8 +32,7 @@ class UserInfo(APIView):
         try:
             user_info = User.objects.get(account=account)
         except ObjectDoesNotExist:
-            user_info = User(account=account, password=password)
-            user_info.save()
+            User(account=account, password=password).save()
             return Response({"errorCode": 0}, status=200)
 
         return Response({"errorCode": 1}, status=200)
