@@ -4,6 +4,7 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Book Storage</title>
     <link rel="stylesheet" href="{% static 'bootstrap-4.6.0-dist/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'bootstrap-4.6.0-dist/css/bootstrap-theme.css' %}">
@@ -15,7 +16,11 @@
 </head>
 
 <body>
-LOGIN SUCCESS
+    <div id="main-body">
+        <div id="head-nav"></div>
+        <div id="left-user-info"></div>
+        <div id="show-area"></div>
+    </div>
 </body>
 
 <script src="{% static 'custom-0.0.1-dist/js/custom.js' %}"></script>
