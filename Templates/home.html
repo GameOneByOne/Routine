@@ -17,11 +17,15 @@
 <body>
     <div id="main-body">
         <div class="row">
-            <div class="col-sm-10">
+            <div class="col align-self-center">
                 <p class="text-primary h3 text-center">我是标题</p>
             </div>
-            <div class="col-sm-2">
-                <img src="..." class="img-thumbnail rounded-circle" alt="...">
+            <div class="col align-self-end" style="min-width:100px; max-width: 120px;">
+            {% if avatar_url == "" %}
+                <img src="{% static 'image/avatars/avatar_1.png' %}" class="img-thumbnail rounded-circle" alt="Pictur Load Failed">
+            {% else %}
+                <img src="{{ avatar_url }}" class="img-thumbnail rounded-circle" alt="...">
+            {% endif %}
             </div>
         </div>
         <div id="show-area">

@@ -11,7 +11,8 @@ $("#login").click(function(){
         dataType : "json",
         success : function(data) {
             if (data.errorCode == 0){
-                window.location.href = "http://" + window.location.host + "/home/";
+                window.location.href = "http://" + window.location.host + "/home?account=" + 
+                                        $("#account").val()+ "&password=" + $("#password").val();
             } else {
                 alert("Account Or Password Is Worry")
             }
