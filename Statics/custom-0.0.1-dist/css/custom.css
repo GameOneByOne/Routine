@@ -11,48 +11,24 @@
     border-radius: 20px;
 }
 
-#main-body{
-    margin-left: 6%;
-    margin-right: 6%;
+#main-body-up{
     margin-top: 1%;
     border-radius: 15px;
     padding: 1%;
+    width:100%;
+    height:30%;
+    position: absolute;
+    /* background-color: red; */
+}
+
+#main-body-down{
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 3%;
+    border-radius: 5px;
+    padding: 5px;
     width:84%;
-    height:100%;
-    position: absolute;
-    background-color: red;
-}
-
-#head-title{
-    margin-left: 40%;
-    margin-right: 1%;
-    margin-top: 0.5%;
-    border-radius: 5px;
-    padding: 10px;
-    width:20%;
-    height:5%;
-    position: absolute;
-    background-color: blue;
-}
-
-#right-up-user-info{
-    margin-left: 90%;
-    margin-right: 1%;
-    margin-top: 0.5%;
-    border-radius: 20px;
-    padding: 10px;
-    position: relative;
-    background-color: blue;
-}
-
-#show-area{
-    margin-left: 1%;
-    margin-right: 1%;
-    margin-top: 10%;
-    border-radius: 5px;
-    padding: 10px;
-    width:96%;
-    height:75%;
+    height:58%;
     position: absolute;
     background-color: blue;
 }
@@ -67,15 +43,4 @@
     height:3%;
     position: absolute;
     background-color: blue;
-}
-
-#book-window{
-    margin-left: 1%;
-    margin-right: 1%;
-    margin-top: 1%;
-    border-radius: 5px;
-    padding: 10px;
-    display: inline;
-    position: relative;
-    background-color: rgb(255, 153, 0);
 }

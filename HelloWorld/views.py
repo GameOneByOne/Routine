@@ -14,10 +14,18 @@ def HomeView(request):
     context = {}
     context['hello'] = 'Hello World!'
     
+    # 先获取当前用户信息
     account = request.GET.get("account")
     password = request.GET.get("password")
     user_info = User.objects.get(account=account, password=password)
 
     context["avatar_url"] = user_info.avatar_url
+    context["user_name"] = user_info.user_name
+    context["birthday"] = user_info.birthday
+    context["email"] = user_info.email
+
+    # 在获取数据信息
+    print(context)
+
 
     return render(request, 'home.html', context)

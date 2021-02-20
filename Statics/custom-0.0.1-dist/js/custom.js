@@ -20,3 +20,7 @@ $("#login").click(function(){
         
     });
 });
+
+$("#user_avatar").hover(function(){
+    $("#user_info_panel").toggleClass("invisible");
+});
