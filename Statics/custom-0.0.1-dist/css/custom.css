@@ -14,7 +14,7 @@
 #main-body{
     margin-left: 6%;
     margin-right: 6%;
-    margin-top: 2%;
+    margin-top: 1%;
     border-radius: 15px;
     padding: 1%;
     width:84%;
@@ -23,20 +23,8 @@
     background-color: red;
 }
 
-#head-nav{
-    margin-left: 1%;
-    margin-right: 1%;
-    margin-top: 0.5%;
-    border-radius: 5px;
-    padding: 10px;
-    width:96%;
-    height:5%;
-    position: absolute;
-    background-color: blue;
-}
-
-#left-user-info{
-    margin-left: 1%;
+#head-title{
+    margin-left: 40%;
     margin-right: 1%;
     margin-top: 0.5%;
     border-radius: 5px;
@@ -45,4 +33,49 @@
     height:5%;
     position: absolute;
     background-color: blue;
+}
+
+#right-up-user-info{
+    margin-left: 90%;
+    margin-right: 1%;
+    margin-top: 0.5%;
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+    background-color: blue;
+}
+
+#show-area{
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 10%;
+    border-radius: 5px;
+    padding: 10px;
+    width:96%;
+    height:75%;
+    position: absolute;
+    background-color: blue;
+}
+
+#page-nav{
+    margin-left: 40%;
+    margin-right: 1%;
+    margin-top: 55%;
+    border-radius: 5px;
+    padding: 10px;
+    width:20%;
+    height:3%;
+    position: absolute;
+    background-color: blue;
+}
+
+#book-window{
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 1%;
+    border-radius: 5px;
+    padding: 10px;
+    display: inline;
+    position: relative;
+    background-color: rgb(255, 153, 0);
 }
