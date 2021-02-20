@@ -9,6 +9,7 @@ class User(models.Model):
     birthday = models.DateField(null=True, default=None)
     email = models.EmailField(null=True, default=None)
     phone = models.CharField(null=True, max_length=16, default=None)
+    avatar_url = models.ImageField(upload_to="static/image/static/", default=None)
 
     def save(self):
         self.slug = generate_slug("User", "{}{}".format(self.account, self.password))
