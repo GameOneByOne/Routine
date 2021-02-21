@@ -22,12 +22,35 @@
             <div class="col-lg-9 align-self-center">
                 <p class="text-primary h3 text-center">我是标题</p>
             </div>
-            <div id="user_info_panel" class="col-lg-2 invisible">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{ user_name }}</li>
-                    <li class="list-group-item">海盐</li>
-                    <li class="list-group-item">{{ birthday }}</li>
-                    <li class="list-group-item">{{ email }}</li>
+            <div id="user_info_panel" class="col-lg-2 ">
+                <ul class="list-group list-group-flush shadow-lg p-3 mb-5 bg-white rounded">
+                    <li class="list-group-item">    
+                        <div class="row">                   
+                            <div class="col-md-4">用户名图标</div>
+                            <div class="col-md-8">{{ user_name }}</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-4">能量</div>
+                            <div class="col-md-8">
+                                <div class="progress mt-2" style="height: 6px;">
+                                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">                   
+                            <div class="col-md-4">生日图标</div>
+                            <div class="col-md-8">{{ birthday }}</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">                   
+                            <div class="col-md-4">邮箱图标</div>
+                            <div class="col-md-8">{{ email }}</div>
+                        </div>
+                    </li>
                 </ul>
             </div>
             <div class="col-lg-1 align-middle" style="min-width:100px; max-width: 120px;">

@@ -24,8 +24,4 @@ def HomeView(request):
     context["birthday"] = user_info.birthday
     context["email"] = user_info.email
 
-    # 在获取数据信息
-    print(context)
-
-
     return render(request, 'home.html', context)
