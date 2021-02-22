@@ -24,3 +24,41 @@ $("#login").click(function(){
 $("#user_avatar").hover(function(){
     $("#user_info_panel").toggleClass("invisible");
 });
+
+function getBooks(callback){
+    $.ajax({
+      url : '/book/',
+      type : "get",
+      data : "",
+      async : true,
+      success : function(data) {
+        result = data;
+        callback(result);
+      }
+    });
+  }
+
+$(document).ready(function(){
+    if ( $("#main-body-down").length > 0 ) {
+        getBooks(function(result){
+            var book_card = '';
+            var index = 0;
+            for (obj of result) {
+                book_card = 
+                '<div class="card mb-3 mx-md-2" style="max-width: 560px;">'+
+                    '<div class="row no-gutters">' +
+                        '<div class="col-sm-6"><img src="' + obj.cover + '" alt="..."></div>' +
+                        '<div class="col-sm-6">' +
+                            '<div class="card-body">' +
+                                '<h5 class="card-title h6">' + obj.name + '</h5>' +
+                                '<p class="card-text h6">' + obj.author + '</p>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
+                $("#main-body-down").children("div.row:last-child").append(book_card);
+                index++;
+            }
+        });
+    }
+})

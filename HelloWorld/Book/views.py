@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.views import View
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from HelloWorld.Book.models import Book
+from HelloWorld.Book.models import Book, BookSerializer
+from django.http import JsonResponse
+
 
 # Create your views here.
 class BookInfo(APIView):
@@ -11,10 +13,8 @@ class BookInfo(APIView):
         return super().dispatch(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
-        data = {
-            'data': 'get success'
-        }
-        return Response(data, status=200)
+        books = Book.objects.all()
+        return JsonResponse(BookSerializer(books, many=True).data, safe=False, status=200)
 
     def post(self, request, *args, **kwargs):
         data = {
