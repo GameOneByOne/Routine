@@ -39,13 +39,13 @@ function getBooks(callback){
   }
 
 $(document).ready(function(){
-    if ( $("#main-body-down").length > 0 ) {
+    if ( $("#book-window").length > 0 ) {
         getBooks(function(result){
             var book_card = '';
             var index = 0;
             for (obj of result) {
                 book_card = 
-                '<div class="card mb-3 mx-md-2" style="max-width: 560px;">'+
+                '<div class="card mb-3 m-lg-2" style="max-width: 560px;">'+
                     '<div class="row no-gutters">' +
                         '<div class="col-sm-6"><img src="' + obj.cover + '" alt="..."></div>' +
                         '<div class="col-sm-6">' +
@@ -56,9 +56,28 @@ $(document).ready(function(){
                         '</div>' +
                     '</div>' +
                 '</div>';
-                $("#main-body-down").children("div.row:last-child").append(book_card);
+                $("#book-window").append(book_card);
                 index++;
             }
         });
     }
 })
+
+$(window).resize(function() {
+    if ($(window).width() < 1000){
+        if($("#user_info").hasClass("d-none")){
+            $("#user_info").removeClass("d-none");
+        }
+        if (!$("#user_avatar").hasClass("d-none")){
+            $("#user_avatar").addClass("d-none");
+        }
+    }
+    else{
+        if(!$("#user_info").hasClass("d-none")){
+            $("#user_info").addClass("d-none");
+        }
+        if ($("#user_avatar").hasClass("d-none")){
+            $("#user_avatar").removeClass("d-none");
+        }  
+    }
+  });

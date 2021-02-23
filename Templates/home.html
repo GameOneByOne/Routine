@@ -14,52 +14,23 @@
 </head>
 
 <body>
-    <div id="main-body-up">
-        <div class="row">
-            <div class="col-lg-9 align-self-center">
-                <p class="text-primary h3 text-center">我是标题</p>
-            </div>
-            <div id="user_info_panel" class="col-lg-2 ">
-                <ul class="list-group list-group-flush shadow-lg p-3 mb-5 bg-white rounded">
-                    <li class="list-group-item">    
-                        <div class="row">                   
-                            <div class="col-md-4">1</div>
-                            <div class="col-md-8">{{ user_name }}</div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-md-4">2</div>
-                            <div class="col-md-8">
-                                <div class="progress mt-2" style="height: 6px;">
-                                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">                   
-                            <div class="col-md-4">3</div>
-                            <div class="col-md-8">{{ birthday }}</div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">                   
-                            <div class="col-md-4">4</div>
-                            <div class="col-md-8">{{ email }}</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-1 align-middle" style="min-width:100px; max-width: 120px;">
-                {% if avatar_url == "" %}
-                <img id="user_avatar" src="{% static 'image/avatars/avatar_1.png' %}" class="img-thumbnail rounded-circle" alt="Pictur Load Failed">
-                {% else %}
-                <img id="user_avatar" src="{{ avatar_url }}" class="img-thumbnail rounded-circle" alt="...">
-                {% endif %}
-            </div>
+    <div id="main-progress" class="row mx-2">
+        <div class="col-sm-10 align-self-center">
+            <p class="text-primary h3 text-center">我是标题</p>
+        </div>
+        <div id="user_info" class="col-sm-2 align-self-end d-none">
+            <p class="text-primary h3 text-center">1</p>
+        </div>
+
+        <div id="user_avatar" class="col-sm-2 align-self-end" style="min-width:2px; max-width: 100px;">
+            {% if avatar_url == "" %}
+            <img  src="{% static 'image/avatars/avatar_1.png' %}" class="img-thumbnail rounded-circle" alt="Pictur Load Failed">
+            {% else %}
+            <img  src="{{ avatar_url }}" class="img-thumbnail rounded-circle" alt="...">
+            {% endif %}
         </div>
     </div>
-    <div id="main-body-down"><div class="row"></div></div>
+    <div id="book-window" class="row m-lg-2"></div>
     </div>
 </body>
 
