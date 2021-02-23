@@ -21,10 +21,6 @@ $("#login").click(function(){
     });
 });
 
-$("#user_avatar").hover(function(){
-    $("#user_info_panel").toggleClass("invisible");
-});
-
 function getBooks(callback){
     $.ajax({
       url : '/book/',
@@ -45,7 +41,8 @@ $(document).ready(function(){
             var index = 0;
             for (obj of result) {
                 book_card = 
-                '<div class="card mb-3 m-lg-2" style="max-width: 560px;">'+
+                '<div class="mb-3 m-lg-2 shadow-lg p-1 mb-5 bg-white rounded" style="max-width: 560px;">' +
+                    '<div class="book-cover">' +
                     '<img src="' + obj.cover + '" alt="..."></div>' +
                 '</div>';
                 $("#book-window").append(book_card);
@@ -57,19 +54,33 @@ $(document).ready(function(){
 
 $(window).resize(function() {
     if ($(window).width() < 600){
-        if($("#user-info").hasClass("d-none")){
-            $("#user-info").removeClass("d-none");
-        }
         if (!$("#user-avatar").hasClass("d-none")){
             $("#user-avatar").addClass("d-none");
         }
     }
     else{
-        if(!$("#user-info").hasClass("d-none")){
-            $("#user-info").addClass("d-none");
-        }
         if ($("#user-avatar").hasClass("d-none")){
             $("#user-avatar").removeClass("d-none");
         }  
     }
   });
+
+$("#upload-button").hover(function () {
+        $("#upload-button").removeClass("bi-arrow-up-square");
+        $("#upload-button").addClass("bi-arrow-up-square-fill");
+    }, function () {
+        $("#upload-button").removeClass("bi-arrow-up-square-fill");
+        $("#upload-button").addClass("bi-arrow-up-square");
+});
+
+$("#book-mark").hover(function () {
+    $("#book-mark").removeClass("bi-bookmark-heart");
+    $("#book-mark").addClass("bi-bookmark-heart-fill");
+}, function () {
+    $("#book-mark").removeClass("bi-bookmark-heart-fill");
+    $("#book-mark").addClass("bi-bookmark-heart");
+});
+
+$(".book-cover").hover(function(){
+    $(".book-cover").addClass("test");
+});

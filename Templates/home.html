@@ -13,13 +13,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 
-<body>
+<body><i class=""></i>
     <div id="main-progress" class="row p-3 m-4">
         <div id="main-title" class="col align-self-center">
             <img  src="{% static 'image/web/title_small.png' %}" alt="...">
         </div>
-        <div id="user-info" class="col align-self-end d-none">
-            <i class="bi-alarm float-right" style="float:left"></i>
+        <div  class="col align-self-end ">
+            <i class="bi-alarm float-right m-3" style="font-size: 1.5rem; color: black;"></i>
+            <i id="book-mark" class="bi bi-bookmark-heart float-right m-3" style="font-size: 1.5rem; color: black;"></i>
+            <i id="upload-button" class="bi bi-arrow-up-square float-right m-3" style="font-size: 1.5rem; color: black;"></i>
         </div>
         <div id="user-avatar" class="col align-self-end" style="min-width:2px; max-width: 100px;">
             {% if avatar_url == "" %}

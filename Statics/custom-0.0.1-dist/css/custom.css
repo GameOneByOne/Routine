@@ -1,0 +1,19 @@
+#info-panel{
+    position: absolute;
+    right:150px;
+    top:50px;
+    background-color: brown;
+    width:150px;
+    height:200px;
+}
+
+.book-cover{
+    width:117px;
+    height:163px;
+}
+
+.book-cover:hover{
+    transform: scale(1.4); 
+    transition: all 0.4s;  
+    z-index:100;
+}
