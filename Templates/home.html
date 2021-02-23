@@ -14,15 +14,14 @@
 </head>
 
 <body>
-    <div id="main-progress" class="row mx-2">
-        <div class="col-sm-10 align-self-center">
-            <p class="text-primary h3 text-center">我是标题</p>
+    <div id="main-progress" class="row p-3 m-4">
+        <div id="main-title" class="col align-self-center">
+            <img  src="{% static 'image/web/title_small.png' %}" alt="...">
         </div>
-        <div id="user_info" class="col-sm-2 align-self-end d-none">
-            <p class="text-primary h3 text-center">1</p>
+        <div id="user-info" class="col align-self-end d-none">
+            <i class="bi-alarm float-right" style="float:left"></i>
         </div>
-
-        <div id="user_avatar" class="col-sm-2 align-self-end" style="min-width:2px; max-width: 100px;">
+        <div id="user-avatar" class="col align-self-end" style="min-width:2px; max-width: 100px;">
             {% if avatar_url == "" %}
             <img  src="{% static 'image/avatars/avatar_1.png' %}" class="img-thumbnail rounded-circle" alt="Pictur Load Failed">
             {% else %}
@@ -30,7 +29,7 @@
             {% endif %}
         </div>
     </div>
-    <div id="book-window" class="row m-lg-2"></div>
+    <div id="book-window" class="row p-3 m-4"></div>
     </div>
 </body>
 

@@ -46,15 +46,7 @@ $(document).ready(function(){
             for (obj of result) {
                 book_card = 
                 '<div class="card mb-3 m-lg-2" style="max-width: 560px;">'+
-                    '<div class="row no-gutters">' +
-                        '<div class="col-sm-6"><img src="' + obj.cover + '" alt="..."></div>' +
-                        '<div class="col-sm-6">' +
-                            '<div class="card-body">' +
-                                '<h5 class="card-title h6">' + obj.name + '</h5>' +
-                                '<p class="card-text h6">' + obj.author + '</p>' +
-                            '</div>' +
-                        '</div>' +
-                    '</div>' +
+                    '<img src="' + obj.cover + '" alt="..."></div>' +
                 '</div>';
                 $("#book-window").append(book_card);
                 index++;
@@ -64,20 +56,20 @@ $(document).ready(function(){
 })
 
 $(window).resize(function() {
-    if ($(window).width() < 1000){
-        if($("#user_info").hasClass("d-none")){
-            $("#user_info").removeClass("d-none");
+    if ($(window).width() < 600){
+        if($("#user-info").hasClass("d-none")){
+            $("#user-info").removeClass("d-none");
         }
-        if (!$("#user_avatar").hasClass("d-none")){
-            $("#user_avatar").addClass("d-none");
+        if (!$("#user-avatar").hasClass("d-none")){
+            $("#user-avatar").addClass("d-none");
         }
     }
     else{
-        if(!$("#user_info").hasClass("d-none")){
-            $("#user_info").addClass("d-none");
+        if(!$("#user-info").hasClass("d-none")){
+            $("#user-info").addClass("d-none");
         }
-        if ($("#user_avatar").hasClass("d-none")){
-            $("#user_avatar").removeClass("d-none");
+        if ($("#user-avatar").hasClass("d-none")){
+            $("#user-avatar").removeClass("d-none");
         }  
     }
   });
