@@ -4,11 +4,11 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from HelloWorld.Book.models import Book, BookSerializer
 from django.http import JsonResponse
+from Core import improcess
 
 
 # Create your views here.
 class BookInfo(APIView):
-    
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
@@ -18,12 +18,24 @@ class BookInfo(APIView):
 
     def post(self, request, *args, **kwargs):
         book = Book()
-        book.name = "test_book"
-        book.author = "test_author"
-        book.content = request.data['pdf_file']
+        data = request.data["fileId"].split(".")[0].split("_")
+
+        if len(data) < 2: return JsonResponse({"errorCode":1}, safe=False, status=200)
+        elif len(data) == 3: book.name, book.author = data[1], data[2]
+        else: book.name, book.author = data[1], ""
+
+        book.content = request.data["pdf_file"]
+        slug = book.generate_book_slug()
+        book.save()
+
+        improcess.generate_pdf_cover(book.name+".pdf", book.slug+".jpeg")
+        improcess.update_image_size(book.slug+".jpeg", book.slug+".jpeg")
+
+        Book.objects.filter(slug=slug).update(cover="static/image/pdf_cover/{}".format(book.slug+".jpeg"))
 
         if book.save(): return JsonResponse({"errorCode":0}, safe=False, status=200)
-        else: return JsonResponse({"errorCode":1}, safe=False, status=200)
+        return JsonResponse({"errorCode":1}, safe=False, status=200)
+
 
     def patch(self, request, *args, **kwargs):
         data = {

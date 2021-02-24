@@ -94,8 +94,8 @@ $('#md5File').fileinput({
     if (data.errorCode == 1){
         $.toast({
             title: 'Notice!',
-            subtitle: '11 mins ago',
-            content: 'This is a toast message.',
+            subtitle: 'Just Now',
+            content: 'PDF Book Update Failed',
             type: 'info',
             delay: 3000,
             img: {
@@ -110,8 +110,8 @@ $('#md5File').fileinput({
     else{
         $.toast({
             title: 'Notice!',
-            subtitle: '11 mins ago',
-            content: 'This is a toast message.',
+            subtitle: 'Just Now',
+            content: 'PDF Book Update Success',
             type: 'info',
             delay: 3000,
             img: {

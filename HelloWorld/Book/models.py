@@ -10,11 +10,15 @@ class Book(models.Model):
     slug = models.SlugField(blank=False, primary_key=True, default=None, unique=True)
     name = models.CharField(blank=False, db_index=True, max_length=64, default=None)
     author = models.CharField(db_index=True, max_length=64, default=None)
-    cover = models.ImageField(upload_to="static/image/cover", default=None)
+    cover = models.ImageField(upload_to="static/image/pdf_cover", default=None)
     content = models.FileField(upload_to="BookData", default=None)
 
-    def save(self):
+    def generate_book_slug(self):
         self.slug = generate_slug("Book", "{}{}".format(self.name, self.author))
+        return self.slug
+
+    def save(self):
+        
         try:
             already_exist = Book.objects.get(slug=self.slug)
         except ObjectDoesNotExist:
