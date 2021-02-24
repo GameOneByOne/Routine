@@ -17,10 +17,11 @@ class BookInfo(APIView):
         return JsonResponse(BookSerializer(books, many=True).data, safe=False, status=200)
 
     def post(self, request, *args, **kwargs):
+        print("Book Update")
         data = {
             'data': 'post success'
         }
-        return Response(data, status=200)
+        return JsonResponse(data, safe=False, status=200)
 
     def patch(self, request, *args, **kwargs):
         data = {

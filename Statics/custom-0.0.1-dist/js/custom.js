@@ -81,6 +81,26 @@ $("#book-mark").hover(function () {
     $("#book-mark").addClass("bi-bookmark-heart");
 });
 
-$(".book-cover").hover(function(){
-    $(".book-cover").addClass("test");
+function loadFile(file){
+    $("#file-name").html(file.name);
+};
+
+$('#md5File').fileinput({
+    language: 'zh',
+    uploadUrl: 'http://127.0.0.1:8081/book/',
+    enctype: 'multipart/form-data',
+    uploadAsync:true,
+    allowedFileExtensions: ['pdf'],
+    browseClass: 'btn btn-primary',
+    maxFileCount: 1,
+    minFileCount : 1,
+  }).on('filebatchuploadsuccess',function(res) {
+    alert(res);
 });
+
+
+function showPDF(urlSrc){
+var urlPre ="pdfjs/web/viewer.html?file="+ urlSrc;
+    $("#pdfContainer").attr('src',urlPre); 
+    $("#pdf_Modal").modal("show");
+}
