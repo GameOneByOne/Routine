@@ -17,6 +17,7 @@ class BookInfo(APIView):
         return JsonResponse(BookSerializer(books, many=True).data, safe=False, status=200)
 
     def post(self, request, *args, **kwargs):
+        print(request.data)
         book = Book()
         data = request.data["fileId"].split(".")[0].split("_")
 
@@ -28,7 +29,7 @@ class BookInfo(APIView):
         slug = book.generate_book_slug()
         book.save()
 
-        improcess.generate_pdf_cover(book.name+".pdf", book.slug+".jpeg")
+        improcess.generate_pdf_cover(book.slug+".pdf", book.slug+".jpeg")
         improcess.update_image_size(book.slug+".jpeg", book.slug+".jpeg")
 
         Book.objects.filter(slug=slug).update(cover="static/image/pdf_cover/{}".format(book.slug+".jpeg"))

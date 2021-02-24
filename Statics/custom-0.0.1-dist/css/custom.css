@@ -13,7 +13,7 @@
 }
 
 .book-cover:hover{
-    transform: scale(1.4); 
+    transform: scale(1.2); 
     transition: all 0.4s;  
     z-index:100;
 }
