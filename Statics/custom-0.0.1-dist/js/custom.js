@@ -81,10 +81,6 @@ $("#book-mark").hover(function () {
     $("#book-mark").addClass("bi-bookmark-heart");
 });
 
-function loadFile(file){
-    $("#file-name").html(file.name);
-};
-
 $('#md5File').fileinput({
     language: 'zh',
     uploadUrl: 'http://127.0.0.1:8081/book/',
@@ -94,8 +90,39 @@ $('#md5File').fileinput({
     browseClass: 'btn btn-primary',
     maxFileCount: 1,
     minFileCount : 1,
-  }).on('filebatchuploadsuccess',function(res) {
-    alert(res);
+  }).on('fileuploaded',function (event, data, previewId, index) {
+    if (data.errorCode == 1){
+        $.toast({
+            title: 'Notice!',
+            subtitle: '11 mins ago',
+            content: 'This is a toast message.',
+            type: 'info',
+            delay: 3000,
+            img: {
+              src: '',
+              class: 'rounded-pill',
+              title: 'Thumbnail Title',
+              alt: 'Alternative'
+            },
+            pause_on_hover: false
+          });
+    }
+    else{
+        $.toast({
+            title: 'Notice!',
+            subtitle: '11 mins ago',
+            content: 'This is a toast message.',
+            type: 'info',
+            delay: 3000,
+            img: {
+              src: '',
+              class: 'rounded-pill',
+              title: 'Thumbnail Title',
+              alt: 'Alternative'
+            },
+            pause_on_hover: false
+          });
+    }
 });
 
 
