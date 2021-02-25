@@ -42,7 +42,7 @@ $(document).ready(function(){
             for (obj of result) {
                 book_card = 
                 '<div class="mb-3 m-lg-2 shadow-lg p-1 mb-5 bg-white rounded" style="max-width: 560px;">' +
-                    '<div class="book-cover" book_id=obj>' +
+                    '<div class="book-cover" onclick="previewFile(this)" book_id="' + obj.slug + '">' + 
                     '<img src="' + obj.cover + '" alt="..."></div>' +
                 '</div>';
                 $("#book-window").append(book_card);
@@ -125,10 +125,6 @@ $('#md5File').fileinput({
     }
 });
 
-
-// $('#handout_wrap_inner').media({
-// 		width: '100%',
-// 		height: '100%',
-// 		autoplay: true,
-//         src:'http://storage.xuetangx.com/public_assets/xuetangx/PDF/PlayerAPI_v1.0.6.pdf',
-// }); 
+previewFile = function (obj) {
+    window.open(src="http://" + window.location.host + "/viewer?bookSlug=" + $(obj).attr("book_id"));
+};

@@ -25,3 +25,8 @@ def HomeView(request):
     context["email"] = user_info.email
 
     return render(request, 'home.html', context)
+
+def PdfView(request):
+    context = {}
+    context["book_slug"] = request.GET.get("bookSlug")
+    return render(request, 'viewer.html', context)

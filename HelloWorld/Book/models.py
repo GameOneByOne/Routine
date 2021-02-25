@@ -6,10 +6,10 @@ from django.core.exceptions import ObjectDoesNotExist
 
 
 def rename_cover(instance, filename):
-    return "static/image/pdf_cover/{}.jpeg".format(instanch.slug)
+    return "image/pdf_cover/{}.jpeg".format(instanch.slug)
 
 def rename_pdf(instance, filename):
-    return "BookData/{}.pdf".format(instance.slug)
+    return "bookData/{}.pdf".format(instance.slug)
 
 # Create your models here.
 class Book(models.Model):

@@ -26,9 +26,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', views.LoginView),
     path('home/', views.HomeView),
+    path('viewer/', views.PdfView),
         
     # API View 
     path('book/', BookInfo.as_view()),
     path('user/', UserInfo.as_view())
+    
     
 ]

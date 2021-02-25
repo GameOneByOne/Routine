@@ -7,7 +7,7 @@ pip install PyMuPDF
 pip install PIL
 """
 COVER_SIZE = (112, 163)
-PDF_INPUT_PATH = "Resource/BookData/"
+PDF_INPUT_PATH = "Statics/bookData/"
 IMAGE_OUTPUT_PATH = "Statics/image/pdf_cover/"
 
 
