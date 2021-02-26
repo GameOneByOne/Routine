@@ -63,6 +63,7 @@ db.sqlite3-journal
 migrations/
 bookData/
 pdf_cover/
+image/
 
 # Flask stuff:
 instance/

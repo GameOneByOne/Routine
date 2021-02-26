@@ -3,8 +3,9 @@ from django.views import View
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from HelloWorld.User.models import User
-from Core.encrypt import md5, generate_slug
 from django.core.exceptions import ObjectDoesNotExist
+from HelloWorld.User.models import UserSerializer
+from django.http import JsonResponse
 import json
 
 # Create your views here.
@@ -17,12 +18,15 @@ class UserInfo(APIView):
         account = request.GET.get("account", "")
         password = request.GET.get("password", "")
 
+        content = {"errorCode":1}
         try:
             user_info = User.objects.get(account=account, password=password)
+            content = UserSerializer(user_info).data
+            content["errorCode"] = 0
         except ObjectDoesNotExist:
-            return Response({"errorCode": 1}, status=200)
+            pass
 
-        return Response({"errorCode": 0, "UserInfo":str(user_info)}, status=200)
+        return Response(content, status=200)
 
     def post(self, request, *args, **kwargs):
         req_data = json.loads(request.body.decode("utf-8"))

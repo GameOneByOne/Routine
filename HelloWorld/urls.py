@@ -23,9 +23,8 @@ from . import views
 
 urlpatterns = [
     # HTML View
+    path('', views.HomeView),
     path('admin/', admin.site.urls),
-    path('login/', views.LoginView),
-    path('home/', views.HomeView),
     path('viewer/', views.PdfView),
         
     # API View 

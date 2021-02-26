@@ -4,25 +4,28 @@ from django.views.decorators.csrf import csrf_exempt
 from HelloWorld.User.models import User
 import logging
 
-
-def LoginView(request):    
-    context = {}
-    context['hello'] = 'Hello World!'
-    return render(request, 'login.html', context)
-
 def HomeView(request):    
     context = {}
-    context['hello'] = 'Hello World!'
-    
-    # 先获取当前用户信息
-    account = request.GET.get("account")
-    password = request.GET.get("password")
-    user_info = User.objects.get(account=account, password=password)
 
-    context["avatar_url"] = user_info.avatar_url
-    context["user_name"] = user_info.user_name
-    context["birthday"] = user_info.birthday
-    context["email"] = user_info.email
+    # 用户登陆情况存储在cookies中，所以先判断用户cookies中值的情况
+    print(request.COOKIES)
+    slug = request.COOKIES.get("slug", "")
+    if slug == "":
+        context["login_status"] = False
+        context["avatar_url"] = "static/image/avatars/avatar_default.png"
+        return render(request, 'home.html', context)
+
+    # 这里也要加try，因为有可能用户随便更改了cookies，不能默认slug存在
+    try:
+        user_info = User.objects.get(slug=slug)
+        context["login_status"] = True
+        context["avatar_url"] = user_info.avatar_url
+        context["user_name"] = user_info.user_name
+        context["birthday"] = user_info.birthday
+        context["email"] = user_info.email
+    except ObjectDoesNotExist:
+        context["login_status"] = False
+        context["avatar_url"] = "static/image/avatars/avatar_default.png"
 
     return render(request, 'home.html', context)
 

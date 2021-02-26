@@ -2,7 +2,7 @@
 * There Are Some JQ Function By Self 
 */
 
-$("#login").click(function(){
+$("#login-in").click(function(){
     $.ajax({
         url : "/user/",
         type : "get",
@@ -11,13 +11,12 @@ $("#login").click(function(){
         dataType : "json",
         success : function(data) {
             if (data.errorCode == 0){
-                window.location.href = "http://" + window.location.host + "/home?account=" + 
-                                        $("#account").val()+ "&password=" + $("#password").val();
+                $.cookie('slug', data.slug);
+                window.location.href = "http://" + window.location.host;
             } else {
-                alert("Account Or Password Is Worry")
+                $("#login_error").removeClass("d-none");
             }
         }
-        
     });
 });
 

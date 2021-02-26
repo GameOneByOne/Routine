@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{% static 'custom-0.0.1-dist/css/custom.css' %}">
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="{% static 'bootstrap-4.6.0-dist/js/jquery.media.js' %}"></script>
+    <script src="{% static 'bootstrap-4.6.0-dist/js/jquery.cookie.js' %}"></script>
     <script src="{% static 'bootstrap-4.6.0-dist/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'bootstrap-4.6.0-dist/js/fileinput.min.js' %}"></script>
     <script src="{% static 'bootstrap-4.6.0-dist/js/toast.js' %}"></script>
@@ -27,9 +28,9 @@
         <div  class="col align-self-end ">
             <i class="bi-alarm float-right m-3" style="font-size: 1.5rem; color: black;" ></i>
             <i id="book-mark" class="bi bi-bookmark-heart float-right m-3" style="font-size: 1.5rem; color: black;"></i>
-            <i id="upload-button" class="bi bi-arrow-up-square float-right m-3" style="font-size: 1.5rem; color: black;" data-toggle="modal" data-target="#exampleModal"></i>
+            <i id="upload-button" class="bi bi-arrow-up-square float-right m-3" style="font-size: 1.5rem; color: black;" data-toggle="modal" data-target="#updaloadPDFModal"></i>
         </div>
-        <div id="user-avatar" class="col align-self-end" style="min-width:2px; max-width: 100px;">
+        <div id="user-avatar" class="col align-self-end" style="min-width:2px; max-width: 100px;" data-toggle="modal" data-target="#userInfoModal">
             {% if avatar_url == "" %}
             <img  src="{% static 'image/avatars/avatar_1.png' %}" class="img-thumbnail rounded-circle" alt="Pictur Load Failed">
             {% else %}
@@ -40,15 +41,62 @@
     <div id="book-window" class="row p-3 m-4"></div>
     </div>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="updaloadPDFModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-body">
                 <div class="upload-wrap">
-                    <h5 class="modal-title" id="exampleModalLabel">PDF BOOK UPLOAD</h5>
+                    <h5 class="modal-title" id="uploadModalLabel">PDF BOOK UPLOAD</h5>
                     <input type="file" id="md5File" multiple="multiple" name="pdf_file"/>
                 </div>
             </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="userInfoModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                {% if login_status %}
+                    <h5 class="modal-title" id="exampleModalLabel">用户信息</h5>
+                {% else %}
+                    <h5 class="modal-title" id="exampleModalLabel">未登录</h5>
+                {% endif %}
+                    
+                </div>
+                <div class="modal-body">
+                {% if login_status %}
+                    <h5 class="modal-title" id="exampleModalLabel">这里将会展示你的信息</h5>
+                {% else %}
+                    <div class="input-group flex-nowrap mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">用户名</span>
+                        </div>
+                        <input id="account" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>    
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">密码</span>
+                        </div>
+                        <input id="password" type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
+                    </div>
+                    <h6 id="login_error"class=d-none>你的用户名或者密码填错啦</h6>
+                    <h6 id="sign_error"class=d-none>你填的用户名已被占用</h6>
+                {% endif %}
+                </div>
+                <div class="modal-footer">
+                {% if login_status %}
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-info">保存</button>
+                {% else %}
+                    <button id="login-in" type="button" class="btn btn-info">登陆</button>
+                    <button id="sign-up" type="button" class="btn btn-success">注册</button>
+                {% endif %}
+
+
+
+                </div>
             </div>
         </div>
     </div>

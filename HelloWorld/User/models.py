@@ -1,4 +1,6 @@
 from django.db import models
+from rest_framework.serializers import Serializer
+from rest_framework import serializers
 from Core.encrypt import generate_slug
 import datetime
 
@@ -20,3 +22,12 @@ class User(models.Model):
     class Meta:
         db_table = "Model_User"
 
+
+class UserSerializer(serializers.Serializer):
+    slug = serializers.SlugField()
+    account = serializers.CharField()
+    user_name = serializers.CharField()
+    birthday = serializers.DateField()
+    email = serializers.EmailField()
+    phone = serializers.CharField()
+    avatar_url = serializers.ImageField()
