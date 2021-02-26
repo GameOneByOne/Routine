@@ -2,6 +2,13 @@
 * There Are Some JQ Function By Self 
 */
 
+/*
+-------------------------------
+按钮的功能
+-------------------------------
+*/
+
+// 登陆按钮的功能
 $("#login-in").click(function(){
     $.ajax({
         url : "/user/",
@@ -20,6 +27,7 @@ $("#login-in").click(function(){
     });
 });
 
+// 注册按钮的功能
 $("#sign-up").click(function(){
     $.ajax({
         url : "/user/",
@@ -38,13 +46,38 @@ $("#sign-up").click(function(){
     });
 });
 
+// 登出按钮的功能
 $("#login-out").click(function(){
     $.cookie('slug', null);
     window.location.href = "http://" + window.location.host;
 });
 
+// 上传按钮的悬浮事件
+$("#upload-button").hover(function () {
+    $("#upload-button").removeClass("bi-arrow-up-square");
+    $("#upload-button").addClass("bi-arrow-up-square-fill");
+}, function () {
+    $("#upload-button").removeClass("bi-arrow-up-square-fill");
+    $("#upload-button").addClass("bi-arrow-up-square");
+});
+
+// 收藏按钮的悬浮事件
+$("#book-mark").hover(function () {
+$("#book-mark").removeClass("bi-bookmark-heart");
+$("#book-mark").addClass("bi-bookmark-heart-fill");
+}, function () {
+$("#book-mark").removeClass("bi-bookmark-heart-fill");
+$("#book-mark").addClass("bi-bookmark-heart");
+});
 
 
+/*
+-------------------------------
+后台接口
+-------------------------------
+*/
+
+// 获取书籍的接口
 function getBooks(callback){
     $.ajax({
       url : '/book/',
@@ -56,55 +89,9 @@ function getBooks(callback){
         callback(result);
       }
     });
-  }
+}
 
-$(document).ready(function(){
-    if ( $("#book-window").length > 0 ) {
-        getBooks(function(result){
-            var book_card = '';
-            var index = 0;
-            for (obj of result) {
-                book_card = 
-                '<div class="mb-3 m-lg-2 shadow-lg p-1 mb-5 bg-white rounded" style="max-width: 560px;">' +
-                    '<div class="book-cover" onclick="previewFile(this)" book_id="' + obj.slug + '">' + 
-                    '<img src="' + obj.cover + '" alt="..."></div>' +
-                '</div>';
-                $("#book-window").append(book_card);
-                index++;
-            }
-        });
-    }
-})
-
-$(window).resize(function() {
-    if ($(window).width() < 600){
-        if (!$("#user-avatar").hasClass("d-none")){
-            $("#user-avatar").addClass("d-none");
-        }
-    }
-    else{
-        if ($("#user-avatar").hasClass("d-none")){
-            $("#user-avatar").removeClass("d-none");
-        }  
-    }
-  });
-
-$("#upload-button").hover(function () {
-        $("#upload-button").removeClass("bi-arrow-up-square");
-        $("#upload-button").addClass("bi-arrow-up-square-fill");
-    }, function () {
-        $("#upload-button").removeClass("bi-arrow-up-square-fill");
-        $("#upload-button").addClass("bi-arrow-up-square");
-});
-
-$("#book-mark").hover(function () {
-    $("#book-mark").removeClass("bi-bookmark-heart");
-    $("#book-mark").addClass("bi-bookmark-heart-fill");
-}, function () {
-    $("#book-mark").removeClass("bi-bookmark-heart-fill");
-    $("#book-mark").addClass("bi-bookmark-heart");
-});
-
+// PDF文件上传事件
 $('#md5File').fileinput({
     language: 'zh',
     uploadUrl: 'http://' + window.location.host +'/book/',
@@ -149,8 +136,49 @@ $('#md5File').fileinput({
     }
 });
 
+
+/*
+-------------------------------
+界面事件
+-------------------------------
+*/
+
+// 页面加载完成时运行
+$(document).ready(function(){
+    if ( $("#book-window").length > 0 ) {
+        getBooks(function(result){
+            var book_card = '';
+            var index = 0;
+            for (obj of result) {
+                book_card = 
+                '<div class="mb-3 m-lg-2 shadow-lg p-1 mb-5 bg-white rounded" style="max-width: 560px;">' +
+                    '<div class="book-cover" onclick="previewFile(this)" book_id="' + obj.slug + '">' + 
+                    '<img src="' + obj.cover + '" alt="..."></div>' +
+                '</div>';
+                $("#book-window").append(book_card);
+                index++;
+            }
+        });
+    }
+})
+
+// 页面被改变大小时执行
+$(window).resize(function() {
+    if ($(window).width() < 600){
+        if (!$("#user-avatar").hasClass("d-none")){
+            $("#user-avatar").addClass("d-none");
+        }
+    }
+    else{
+        if ($("#user-avatar").hasClass("d-none")){
+            $("#user-avatar").removeClass("d-none");
+        }  
+    }
+});
+
+// 打开PDF Book 时，如果未登陆则提醒一下，非强制注册
 previewFile = function (obj) {
-    if ($.cookie('slug')){
+    if ($.cookie('slug') == "null"){
         alert("你还没有注册哦！希望能注册一下");
     }
     window.open(src="http://" + window.location.host + "/viewer?bookSlug=" + $(obj).attr("book_id"));

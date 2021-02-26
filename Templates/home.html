@@ -21,6 +21,7 @@
 </head>
 
 <body>
+    {% comment %} 上方title区 {% endcomment %}
     <div id="main-progress" class="row p-3 m-4">
         <div id="main-title" class="col align-self-center">
             <img  src="{% static 'image/web/title_small.png' %}" alt="...">
@@ -38,22 +39,25 @@
             {% endif %}
         </div>
     </div>
+    {% comment %} 下方Book区 {% endcomment %}
     <div id="book-window" class="row p-3 m-4"></div>
     </div>
 
+    {% comment %} PDF Book 上传的Model {% endcomment %}
     <div class="modal fade" id="updaloadPDFModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-            <div class="modal-body">
-                <div class="upload-wrap">
-                    <h5 class="modal-title" id="uploadModalLabel">PDF BOOK UPLOAD</h5>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">PDF 分享</h5>
+                </div>
+                <div class="modal-body upload-wrap">
                     <input type="file" id="md5File" multiple="multiple" name="pdf_file"/>
                 </div>
-            </div>
             </div>
         </div>
     </div>
 
+    {% comment %} User 的 登陆 注册 信息展示的 Model {% endcomment %}
     <div class="modal fade" id="userInfoModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -63,7 +67,6 @@
                 {% else %}
                     <h5 class="modal-title" id="exampleModalLabel">未登录</h5>
                 {% endif %}
-                    
                 </div>
                 <div class="modal-body">
                 {% if login_status %}
@@ -97,7 +100,6 @@
         </div>
     </div>
 
-<div id="handout_wrap_inner"></div>
 </body>
 
 <script src="{% static 'custom-0.0.1-dist/js/custom.js' %}"></script>
