@@ -17,7 +17,7 @@ class BookInfo(APIView):
         return JsonResponse(BookSerializer(books, many=True).data, safe=False, status=200)
 
     def post(self, request, *args, **kwargs):
-        print(request.data)
+        if len(request.data) == 0: return JsonResponse({"errorCode":1}, safe=False, status=200)
         book = Book()
         data = request.data["fileId"].split(".")[0].split("_")
 

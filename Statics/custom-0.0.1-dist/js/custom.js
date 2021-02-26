@@ -95,7 +95,7 @@ $('#md5File').fileinput({
         $.toast({
             title: 'Notice!',
             subtitle: 'Just Now',
-            content: 'PDF Book Update Failed',
+            content: '文件上传失败，请重试',
             type: 'info',
             delay: 3000,
             img: {
@@ -111,7 +111,7 @@ $('#md5File').fileinput({
         $.toast({
             title: 'Notice!',
             subtitle: 'Just Now',
-            content: 'PDF Book Update Success',
+            content: '文件上传成功，感谢你的分享',
             type: 'info',
             delay: 3000,
             img: {
