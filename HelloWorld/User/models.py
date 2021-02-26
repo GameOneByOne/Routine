@@ -10,9 +10,7 @@ class User(models.Model):
     account = models.CharField(blank=False, db_index=True, max_length=64, default=None)
     user_name = models.CharField(blank=False, db_index=True, max_length=64, default="未填写")
     password = models.CharField(blank=False, max_length=64, default=None)
-    birthday = models.DateField(null=True, default="1990-01-01")
     email = models.EmailField(null=True, default=None)
-    phone = models.CharField(null=True, max_length=16, default=None)
     avatar_url = models.ImageField(upload_to="static/image/static/", default=None)
 
     def save(self):
@@ -27,7 +25,5 @@ class UserSerializer(serializers.Serializer):
     slug = serializers.SlugField()
     account = serializers.CharField()
     user_name = serializers.CharField()
-    birthday = serializers.DateField()
     email = serializers.EmailField()
-    phone = serializers.CharField()
     avatar_url = serializers.ImageField()
