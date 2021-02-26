@@ -83,7 +83,7 @@ $("#book-mark").hover(function () {
 
 $('#md5File').fileinput({
     language: 'zh',
-    uploadUrl: 'http://127.0.0.1:8081/book/',
+    uploadUrl: 'http://' + window.location.host +'/book/',
     enctype: 'multipart/form-data',
     uploadAsync:true,
     allowedFileExtensions: ['pdf'],
