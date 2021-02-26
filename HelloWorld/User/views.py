@@ -26,20 +26,23 @@ class UserInfo(APIView):
         except ObjectDoesNotExist:
             pass
 
-        return Response(content, status=200)
+        return JsonResponse(content, status=200)
 
     def post(self, request, *args, **kwargs):
-        req_data = json.loads(request.body.decode("utf-8"))
-        account = req_data.get("account", "")
-        password = req_data.get("password", "")
+        account = request.POST.get("account", "")
+        password = request.POST.get("password", "")
+
+        content = dict()
+        content["errorCode"] = 1
 
         try:
             user_info = User.objects.get(account=account)
         except ObjectDoesNotExist:
             User(account=account, password=password).save()
-            return Response({"errorCode": 0}, status=200)
+            content = UserSerializer(User.objects.get(account=account)).data
+            content["errorCode"] = 0
 
-        return Response({"errorCode": 1}, status=200)
+        return JsonResponse(content, status=200)
 
     def patch(self, request, *args, **kwargs):
         data = {

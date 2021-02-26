@@ -11,7 +11,7 @@ $("#login-in").click(function(){
         dataType : "json",
         success : function(data) {
             if (data.errorCode == 0){
-                $.cookie('slug', data.slug);
+                $.cookie('slug', data.slug, {expires: 7});
                 window.location.href = "http://" + window.location.host;
             } else {
                 $("#login_error").removeClass("d-none");
@@ -19,6 +19,31 @@ $("#login-in").click(function(){
         }
     });
 });
+
+$("#sign-up").click(function(){
+    $.ajax({
+        url : "/user/",
+        type : "post",
+        async : false,
+        data : {"account":$("#account").val(), "password":$("#password").val()},
+        dataType : "json",
+        success : function(data) {
+            if (data.errorCode == 0){
+                $.cookie('slug', data.slug, {expires: 7});
+                window.location.href = "http://" + window.location.host;
+            } else {
+                $("#sign_error").removeClass("d-none");
+            }
+        }
+    });
+});
+
+$("#login-out").click(function(){
+    $.cookie('slug', null);
+    window.location.href = "http://" + window.location.host;
+});
+
+
 
 function getBooks(callback){
     $.ajax({
@@ -125,5 +150,8 @@ $('#md5File').fileinput({
 });
 
 previewFile = function (obj) {
+    if ($.cookie('slug')){
+        alert("你还没有注册哦！希望能注册一下");
+    }
     window.open(src="http://" + window.location.host + "/viewer?bookSlug=" + $(obj).attr("book_id"));
 };

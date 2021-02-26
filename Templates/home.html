@@ -67,7 +67,7 @@
                 </div>
                 <div class="modal-body">
                 {% if login_status %}
-                    <h5 class="modal-title" id="exampleModalLabel">这里将会展示你的信息</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">这里将会展示你的信息, 施工中</h5>
                 {% else %}
                     <div class="input-group flex-nowrap mb-3">
                         <div class="input-group-prepend">
@@ -87,15 +87,11 @@
                 </div>
                 <div class="modal-footer">
                 {% if login_status %}
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-info">保存</button>
+                    <button id="login-out" type="button" class="btn btn-danger" data-dismiss="modal">退出登录</button>
                 {% else %}
                     <button id="login-in" type="button" class="btn btn-info">登陆</button>
                     <button id="sign-up" type="button" class="btn btn-success">注册</button>
                 {% endif %}
-
-
-
                 </div>
             </div>
         </div>

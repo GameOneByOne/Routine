@@ -21,7 +21,6 @@ def HomeView(request):
         context["login_status"] = True
         context["avatar_url"] = user_info.avatar_url
         context["user_name"] = user_info.user_name
-        context["birthday"] = user_info.birthday
         context["email"] = user_info.email
     except ObjectDoesNotExist:
         context["login_status"] = False
