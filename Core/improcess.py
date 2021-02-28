@@ -1,14 +1,12 @@
 from PIL import Image
 import sys, fitz
 import os
+from HelloWorld.settings import * 
 
 """
 pip install PyMuPDF
 pip install PIL
 """
-COVER_SIZE = (112, 163)
-PDF_INPUT_PATH = "Statics/bookData/"
-IMAGE_OUTPUT_PATH = "Statics/image/pdf_cover/"
 
 
 def update_image_size(image_name, output_name):

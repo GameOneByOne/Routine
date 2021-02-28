@@ -8,7 +8,7 @@ pip install PIL
 """
 COVER_SIZE = (112, 163)
 PDF_INPUT_PATH = "../Statics/bookData/"
-OUTPUT_PATH = "../Statics/image/pdf_cover/"
+IMAGE_OUTPUT_PATH = "../Statics/image/pdf_cover/"
 
 
 def update_image_size(image_name, output_name):
@@ -21,7 +21,7 @@ def generate_pdf_cover(pdf_name, output_name):
     pdfDoc[0].getPixmap().writePNG("{}{}".format(IMAGE_OUTPUT_PATH, output_name))
     return output_name
 
-pdf_path = "Statics/bookData/b-8c68cc99eab6bfb9c58da2ae96e42a3b.pdf"
+pdf_path = "Statics/bookData/b-d41d8cd98f00b204e9800998ecf8427e.pdf"
 def split_pdf(pdf_path):
     # 先建立PDF文件夹
     dir_name, file_name_with_ext = os.path.split(pdf_path)
@@ -31,22 +31,23 @@ def split_pdf(pdf_path):
     if os.path.exists(file_dir_name): os.rmdir(file_dir_name)
     os.mkdir(file_dir_name)
     
-    with fitz.open(pdf_path) as doc:
-        for page_num, page in enumerate(doc):
-            with open("{}/{:0>5d}.txt".format(file_dir_name, page_num), "w", encoding="utf-8") as f:
-                f.write(page.getText() + '\n')
-
-    pdf = None
-    page_num = 0
-    for page_num, txt_file in enumerate(os.listdir(file_dir_name)):
-        if (page % 100 == 0):
-            if pdf: 
-                pdf.save("{}/{:0>5d}.pdf".format(file_dir_name, page_num/100))
-                pdf.close()
+    with fitz.open(pdf_path) as pdf_pages:
+        pages_count = pdf_pages.page_count
+        print(pages_count)
+        file_num = 0
+        page_num = 0
+        for page_num in range(100, pages_count, 100):
             pdf = fitz.open()
+            pdf.insert_pdf(pdf_pages, from_page=page_num-100, to_page=page_num)
+            pdf.save("{}/{:0>2d}.pdf".format(file_dir_name, file_num))
+            pdf.close()
+            file_num += 1
 
-        with open("{}/{:0>5d}.txt".format(file_dir_name, page_num)) as f:
-            pdf.insertPDF()
-
+        if page_num != pages_count:
+            pdf = fitz.open()
+            pdf.insert_pdf(pdf_pages, from_page=page_num, to_page=pages_count)
+            pdf.save("{}/{:0>2d}.pdf".format(file_dir_name, file_num))
+            pdf.close()
+            
 
 split_pdf(pdf_path)

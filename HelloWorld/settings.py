@@ -145,4 +145,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "Statics"), 
 ]
 
+# FILE PATH Settings
+COVER_SIZE = (112, 163)
+PDF_INPUT_PATH = "Statics/bookData/"
+IMAGE_OUTPUT_PATH = "Statics/image/pdf_cover/"
+
+# URI PATH Settings
+PDF_COVER_PATH = STATIC_URL + "image/pdf_cover/"
+
 
