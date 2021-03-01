@@ -95,10 +95,10 @@ DATABASES = {
     'default': { 
         'ENGINE': 'django.db.backends.mysql',    # 数据库引擎
         'NAME': 'Dream', 
-        'HOST': '45.63.123.241', 
-        'PORT': 3306,
-        'USER': 'root',
-        'PASSWORD': '!J4gPq]!STG}?!te',
+        'HOST': '', 
+        'PORT': ,
+        'USER': '',
+        'PASSWORD': '',
     } 
 }
 
