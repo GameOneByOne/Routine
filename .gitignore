@@ -114,7 +114,9 @@ env.bak/
 venv.bak/
 __pycache__/
 *.pyc
-.vscode
+.vscodie
+*.rdb
+settings.py
 
 # Spyder project settings
 .spyderproject
