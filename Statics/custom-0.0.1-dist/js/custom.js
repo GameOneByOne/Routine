@@ -149,13 +149,19 @@ $(document).ready(function(){
         getBooks(function(result){
             var book_card = '';
             var index = 0;
+            var row_id = "row-0";
             for (obj of result) {
+                if (index % 6 == 0) {
+                    if (index != 0) {
+                        $("#book-window").append('</div>');
+                    }
+                    row_id = 'row-' + index.toString(10)
+                    $("#book-window").append('<div id="' + row_id + '" class="row">');
+                }
                 book_card = 
-                '<div class="mb-3 m-lg-2 shadow-lg p-1 mb-5 bg-white rounded" style="max-width: 560px;">' +
-                    '<div class="book-cover" onclick="previewFile(this)" book_id="' + obj.slug + '">' + 
-                    '<img src="' + obj.cover + '" alt="..."></div>' +
-                '</div>';
-                $("#book-window").append(book_card);
+                    '<div class="col-2 book-cover" onclick="previewFile(this)" book_id="' + obj.slug + '">' + 
+                    '<img class="img-fluid bg-white shadow-lg rounded" src="' + obj.cover + '" alt="..."></div>';
+                $("#" + row_id).append(book_card);
                 index++;
             }
         });

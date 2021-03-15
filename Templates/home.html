@@ -22,26 +22,28 @@
 
 <body>
     {% comment %} 上方title区 {% endcomment %}
-    <div id="main-progress" class="row p-3 m-4">
-        <div id="main-title" class="col align-self-center">
-            <img  src="{% static 'image/web/title_small.png' %}" alt="...">
-        </div>
-        <div  class="col align-self-end ">
-            <i class="bi-alarm float-right m-3" style="font-size: 1.5rem; color: black;" ></i>
-            <i id="book-mark" class="bi bi-bookmark-heart float-right m-3" style="font-size: 1.5rem; color: black;"></i>
-            <i id="upload-button" class="bi bi-arrow-up-square float-right m-3" style="font-size: 1.5rem; color: black;" data-toggle="modal" data-target="#updaloadPDFModal"></i>
-        </div>
-        <div id="user-avatar" class="col align-self-end" style="min-width:2px; max-width: 100px;" data-toggle="modal" data-target="#userInfoModal">
-            {% if avatar_url == "" %}
-            <img  src="{% static 'image/avatars/avatar_1.png' %}" class="img-thumbnail rounded-circle" alt="Pictur Load Failed">
-            {% else %}
-            <img  src="{{ avatar_url }}" class="img-thumbnail rounded-circle" alt="...">
-            {% endif %}
+    <div id="main-progress" class="container">
+        <div class="row p-3 m-4">
+            <div id="main-title" class="col align-self-center">
+                <img  src="{% static 'image/web/title_small.png' %}" alt="...">
+            </div>
+            <div  class="col align-self-end ">
+                <i class="bi-alarm float-right m-3" style="font-size: 1.5rem; color: black;" ></i>
+                <i id="book-mark" class="bi bi-bookmark-heart float-right m-3" style="font-size: 1.5rem; color: black;"></i>
+                <i id="upload-button" class="bi bi-arrow-up-square float-right m-3" style="font-size: 1.5rem; color: black;" data-toggle="modal" data-target="#updaloadPDFModal"></i>
+            </div>
+            <div id="user-avatar" class="col align-self-end" style="min-width:2px; max-width: 100px;" data-toggle="modal" data-target="#userInfoModal">
+                {% if avatar_url == "" %}
+                <img  src="{% static 'image/avatars/avatar_1.png' %}" class="img-thumbnail rounded-circle" alt="Pictur Load Failed">
+                {% else %}
+                <img  src="{{ avatar_url }}" class="img-thumbnail rounded-circle" alt="...">
+                {% endif %}
+            </div>
         </div>
     </div>
+    
     {% comment %} 下方Book区 {% endcomment %}
-    <div id="book-window" class="row p-3 m-4"></div>
-    </div>
+    <div id="book-window" class="container"></div>
 
     {% comment %} PDF Book 上传的Model {% endcomment %}
     <div class="modal fade" id="updaloadPDFModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
@@ -68,7 +70,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">未登录</h5>
                 {% endif %}
                 </div>
-                <div class="modal-body">
+                <div class="modal-body container">
                 {% if login_status %}
                     <h5 class="modal-title" id="exampleModalLabel">这里将会展示你的信息, 施工中</h5>
                 {% else %}

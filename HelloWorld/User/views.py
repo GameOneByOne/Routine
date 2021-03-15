@@ -27,7 +27,7 @@ class UserInfo(APIView):
             logging.info("Account : {} Request Login In Success".format(account))
         except ObjectDoesNotExist:
             content["errorCode"] = 1
-            logging.info("Account : {} , password : {}, Request Login In Error".format(password))
+            logging.info("Account : {} , password : {}, Request Login In Error".format(account, password))
 
         return JsonResponse(content, status=200)
 
