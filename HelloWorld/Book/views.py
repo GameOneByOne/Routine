@@ -6,6 +6,7 @@ from HelloWorld.Book.models import Book, BookSerializer
 from django.http import JsonResponse
 from Core import improcess
 from HelloWorld.settings import * 
+import logging
 import os
 
 
@@ -19,7 +20,10 @@ class BookInfo(APIView):
         return JsonResponse(BookSerializer(books, many=True).data, safe=False, status=200)
 
     def post(self, request, *args, **kwargs):
-        if len(request.data) == 0: return JsonResponse({"errorCode":1}, safe=False, status=200)
+        if len(request.data) == 0: 
+            logging.info("Request POST BOOK Api , But Have No Data Upload, So Return 1")
+            return JsonResponse({"errorCode":1}, safe=False, status=200)
+
         book = Book()
         data = request.data["fileId"].split(".")[0].split("_")
 
@@ -29,8 +33,13 @@ class BookInfo(APIView):
         book.content = request.data["pdf_file"]
 
         if book.save():
-            improcess.generate_pdf_cover(book.slug+".pdf", book.slug+".jpeg")
-            improcess.update_image_size(book.slug+".jpeg", book.slug+".jpeg")
+            logging.info("Book Data Parse Success , Begin To Generate And Resize Cover")
+            if not improcess.generate_pdf_cover(book.slug+".pdf", book.slug+".jpeg"): 
+                return JsonResponse({"errorCode":1, "content":""}, safe=False, status=200)
+
+            if not improcess.update_image_size(book.slug+".jpeg", book.slug+".jpeg"):
+                return JsonResponse({"errorCode":1, "content":""}, safe=False, status=200)
+
             return JsonResponse({"errorCode":0, "content":""}, safe=False, status=200)
 
         return JsonResponse({"errorCode":1, "content":""}, safe=False, status=200)

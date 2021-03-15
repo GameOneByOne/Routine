@@ -6,6 +6,7 @@ from HelloWorld.User.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from HelloWorld.User.models import UserSerializer
 from django.http import JsonResponse
+import logging
 import json
 
 # Create your views here.
@@ -18,13 +19,15 @@ class UserInfo(APIView):
         account = request.GET.get("account", "")
         password = request.GET.get("password", "")
 
-        content = {"errorCode":1}
+        content = dict()
         try:
             user_info = User.objects.get(account=account, password=password)
             content = UserSerializer(user_info).data
             content["errorCode"] = 0
+            logging.info("Account : {} Request Login In Success".format(account))
         except ObjectDoesNotExist:
-            pass
+            content["errorCode"] = 1
+            logging.info("Account : {} , password : {}, Request Login In Error".format(password))
 
         return JsonResponse(content, status=200)
 
@@ -33,14 +36,15 @@ class UserInfo(APIView):
         password = request.POST.get("password", "")
 
         content = dict()
-        content["errorCode"] = 1
-
         try:
             user_info = User.objects.get(account=account)
+            content["errorCode"] = 1
+            logging.info("Account : {} Request Sign In Failed".format(account))
         except ObjectDoesNotExist:
             User(account=account, password=password).save()
             content = UserSerializer(User.objects.get(account=account)).data
             content["errorCode"] = 0
+            logging.info("Account : {} Request Sign In Success".format(account))
 
         return JsonResponse(content, status=200)
 
