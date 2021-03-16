@@ -116,10 +116,16 @@
                 <div class="modal-body container row">
                     <div class="col-5"><img id="pdfInfoCover" class="img-fluid bg-white shadow-lg rounded" src=""></div>
                     <div class="col-7">
-                        <div class="row"><h5>图书名字</h5></div>
-                        <div class="row"><h5>图书作者</h5></div>
-                        <div class="row"><h5>图书分享人</h5></div>
-                        <div class="row"><h5>图书分享日期</h5></div>
+                        <dl class="row">
+                            <dt class="col-sm-5">图书名称</dt>
+                            <dd id="ModelBookName" class="col-sm-9"></dd>
+                            <dt class="col-sm-5">图书作者</dt>
+                            <dd id="ModelBookAuthor" class="col-sm-9"></dd>
+                            <dt class="col-sm-5">图书分享人</dt>
+                            <dd id="ModelBookUploadPeople" class="col-sm-9"></dd>
+                            <dt class="col-sm-5">图书分享日期</dt>
+                            <dd id="ModelBookUploadDate" class="col-sm-9"></dd>
+                        </dl>
                     </div>
                 </div>
                 <div class="modal-footer row" id="bookPieces">

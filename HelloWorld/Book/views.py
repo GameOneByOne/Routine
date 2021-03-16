@@ -24,6 +24,7 @@ class BookInfo(APIView):
             try:
                 book_info = BookSerializer(Book.objects.get(slug=request.GET["slug"])).data
                 book_info["pieces"] = os.listdir(book_path)
+                book_info["pieces"].reverse()
                 return JsonResponse(book_info, safe=False, status=200)
 
             except ObjectDoesNotExist:
@@ -40,7 +41,11 @@ class BookInfo(APIView):
         book.name = request.data["bookName"] if request.data.get("bookName", "") != "" else "未命名PDF"
         book.author = request.data["bookAuthor"] if request.data.get("bookAuthor", "") != "" else "未命名作者"
         book.upload_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        book.upload_people = User.objects.get(slug=request.COOKIES.get("slug", ""))
+        print(request.COOKIES.get("slug", ""))
+        if request.COOKIES.get("slug", "null") == "null":
+            book.upload_people = None
+        else:
+            book.upload_people = User.objects.get(slug=request.COOKIES.get("slug", ""))
         book.content = request.data["pdf_file"]
 
         if book.save():

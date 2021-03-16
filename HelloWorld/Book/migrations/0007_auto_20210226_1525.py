@@ -16,9 +16,4 @@ class Migration(migrations.Migration):
             name='content',
             field=models.FileField(default=None, upload_to=HelloWorld.Book.models.rename_pdf),
         ),
-        migrations.AlterField(
-            model_name='book',
-            name='cover',
-            field=models.ImageField(default=None, upload_to=HelloWorld.Book.models.rename_cover),
-        ),
     ]

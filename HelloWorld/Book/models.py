@@ -7,9 +7,6 @@ from django.core.exceptions import ObjectDoesNotExist
 from HelloWorld.settings import *
 
 
-def rename_cover(instance, filename):
-    return "image/pdf_cover/{}.jpeg".format(instance.slug)
-
 def rename_pdf(instance, filename):
     print(instance.slug)
     return "bookData/{}.pdf".format(instance.slug)
@@ -42,6 +39,11 @@ class BookSerializer(serializers.Serializer):
     name = serializers.CharField()
     author = serializers.CharField()
     cover = serializers.SerializerMethodField()
+    upload_date = serializers.CharField()
+    try:
+        upload_people = serializers.CharField(source='upload_people.user_name')
+    except:
+        upload_people = "123"
 
     def get_cover(self, obj):
         return PDF_COVER_PATH + obj.slug + ".jpeg"

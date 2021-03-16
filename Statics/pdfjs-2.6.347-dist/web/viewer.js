@@ -1973,7 +1973,7 @@ function webViewerInitialized() {
   let file;
   const queryString = document.location.search.substring(1);
   const params = (0, _ui_utils.parseQueryString)(queryString);
-  file = "../static/bookData/" + document.getElementById("viewer").getAttribute("book-slug") + ".pdf"
+  file = "../static/bookData/" + document.getElementById("viewer").getAttribute("book-page");
   validateFileURL(file);
   const fileInput = document.createElement("input");
   fileInput.id = appConfig.openFileInputName;

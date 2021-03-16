@@ -8,7 +8,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
 develop-eggs/
 dist/
 downloads/
@@ -116,6 +115,7 @@ venv.bak/
 __pycache__/
 *.pyc
 .vscodie
+.vscode/
 *.rdb
 settings.py
 
