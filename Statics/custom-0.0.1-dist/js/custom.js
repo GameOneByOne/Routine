@@ -160,7 +160,7 @@ $(document).ready(function(){
                 }
                 book_card = 
                     '<div class="col-2 book-cover" onclick="previewFile(this)" book_id="' + obj.slug + '">' + 
-                    '<img class="img-fluid bg-white shadow-lg rounded" src="' + obj.cover + '" alt="..."></div>';
+                    '<img class="img-fluid bg-white shadow-lg rounded" src="' + obj.cover + '"></div>';
                 $("#" + row_id).append(book_card);
                 index++;
             }
@@ -187,5 +187,23 @@ previewFile = function (obj) {
     if ($.cookie('slug') == "null"){
         alert("你还没有注册哦！希望能注册一下");
     }
-    window.open(src="http://" + window.location.host + "/viewer?bookSlug=" + $(obj).attr("book_id"));
+    var page = 0
+    $.ajax({
+        url : '/book/?slug=' + $(obj).attr("book_id"),
+        type : "get",
+        data : "",
+        async : true,
+        success : function(data) {
+            $('#bookPieces').html("");
+            for (page=0; page<data.pieces.length; ++page){
+                $('#bookPieces').append('<button id=""class="row-2 btn btn-info btn-sm" type="button">'+ page * 100 + '~' + (page+1) * 100 + '页</button>');
+            }
+            $('#pdfInfoCover').attr("src","/static/image/pdf_cover/" + $(obj).attr("book_id") + ".jpeg");
+            $('#BookInfoModal').modal('show')
+        }
+      });
+
+    
+    
+    // window.open(src="http://" + window.location.host + "/viewer?bookSlug=" + $(obj).attr("book_id"));
 };

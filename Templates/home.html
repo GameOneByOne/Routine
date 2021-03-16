@@ -45,12 +45,12 @@
     {% comment %} 下方Book区 {% endcomment %}
     <div id="book-window" class="container"></div>
 
-    {% comment %} PDF Book 上传的Model {% endcomment %}
+    {% comment %} PDFBook上传的Model {% endcomment %}
     <div class="modal fade" id="updaloadPDFModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">PDF 分享</h5>
+                    <h5 class="modal-title">PDF 分享</h5>
                 </div>
                 <div class="modal-body upload-wrap">
                     <input type="file" id="md5File" multiple="multiple" name="pdf_file"/>
@@ -59,20 +59,20 @@
         </div>
     </div>
 
-    {% comment %} User 的 登陆 注册 信息展示的 Model {% endcomment %}
+    {% comment %} User的登陆和注册信息展示的 Model {% endcomment %}
     <div class="modal fade" id="userInfoModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                 {% if login_status %}
-                    <h5 class="modal-title" id="exampleModalLabel">用户信息</h5>
+                    <h5 class="modal-title">用户信息</h5>
                 {% else %}
-                    <h5 class="modal-title" id="exampleModalLabel">未登录</h5>
+                    <h5 class="modal-title">未登录</h5>
                 {% endif %}
                 </div>
                 <div class="modal-body container">
                 {% if login_status %}
-                    <h5 class="modal-title" id="exampleModalLabel">这里将会展示你的信息, 施工中</h5>
+                    <h5 class="modal-title">这里将会展示你的信息, 施工中</h5>
                 {% else %}
                     <div class="input-group flex-nowrap mb-3">
                         <div class="input-group-prepend">
@@ -97,6 +97,29 @@
                     <button id="login-in" type="button" class="btn btn-info">登陆</button>
                     <button id="sign-up" type="button" class="btn btn-success">注册</button>
                 {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% comment %} Book信息展示的 Model {% endcomment %}
+    <div class="modal fade" id="BookInfoModal" tabindex="-1" aria-labelledby="BookModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content container-fluid">
+                <div class="modal-header">
+                    <h5 class="modal-title">PDF Info</h5>
+                </div>
+                <div class="modal-body container row">
+                    <div class="col-5"><img id="pdfInfoCover" class="img-fluid bg-white shadow-lg rounded" src=""></div>
+                    <div class="col-7">
+                        <div class="row"><h5>123</h5></div>
+                        <div class="row"><h5>123</h5></div>
+                        <div class="row"><h5>123</h5></div>
+                        <div class="row"><h5>123</h5></div>
+                        <div class="row"><h5>123</h5></div>
+                    </div>
+                </div>
+                <div class="modal-footer row" id="bookPieces">
                 </div>
             </div>
         </div>
