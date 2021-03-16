@@ -1,4 +1,5 @@
 from django.db import models
+from HelloWorld.User.models import User
 from rest_framework.serializers import Serializer
 from rest_framework import serializers
 from Core.encrypt import generate_slug
@@ -19,6 +20,8 @@ class Book(models.Model):
     name = models.CharField(blank=False, db_index=True, max_length=64, default=None)
     author = models.CharField(db_index=True, max_length=64, default=None)
     content = models.FileField(upload_to=rename_pdf, default=None)
+    upload_date = models.CharField(blank=False, db_index=True, max_length=64, default=None)
+    upload_people = models.ForeignKey(to=User, null=True, to_field="slug", related_name="upload_people", on_delete=models.SET_NULL)
         
 
     def save(self):

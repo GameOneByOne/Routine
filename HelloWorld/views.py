@@ -6,9 +6,7 @@ import logging
 
 def HomeView(request):    
     context = {}
-
     # 用户登陆情况存储在cookies中，所以先判断用户cookies中值的情况
-    print(request.COOKIES)
     slug = request.COOKIES.get("slug", "")
     if slug == "":
         context["login_status"] = False

@@ -3,9 +3,11 @@ from django.views import View
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from HelloWorld.Book.models import Book, BookSerializer
+from HelloWorld.User.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse
 from Core import improcess
+import time
 from HelloWorld.settings import * 
 import logging
 import os
@@ -21,7 +23,6 @@ class BookInfo(APIView):
             book_path = "Statics/bookData/{}".format(request.GET["slug"])
             try:
                 book_info = BookSerializer(Book.objects.get(slug=request.GET["slug"])).data
-                print(book_info)
                 book_info["pieces"] = os.listdir(book_path)
                 return JsonResponse(book_info, safe=False, status=200)
 
@@ -36,11 +37,10 @@ class BookInfo(APIView):
             return JsonResponse({"errorCode":1}, safe=False, status=200)
 
         book = Book()
-        data = request.data["fileId"].split(".")[0].split("_")
-
-        if len(data) < 2: return JsonResponse({"errorCode":1}, safe=False, status=200)
-        elif len(data) == 3: book.name, book.author = data[1], data[2]
-        else: book.name, book.author = data[1], ""
+        book.name = request.data["bookName"] if request.data.get("bookName", "") != "" else "未命名PDF"
+        book.author = request.data["bookAuthor"] if request.data.get("bookAuthor", "") != "" else "未命名作者"
+        book.upload_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        book.upload_people = User.objects.get(slug=request.COOKIES.get("slug", ""))
         book.content = request.data["pdf_file"]
 
         if book.save():

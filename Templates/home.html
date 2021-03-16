@@ -14,7 +14,7 @@
     <script src="{% static 'bootstrap-4.6.0-dist/js/jquery.media.js' %}"></script>
     <script src="{% static 'bootstrap-4.6.0-dist/js/jquery.cookie.js' %}"></script>
     <script src="{% static 'bootstrap-4.6.0-dist/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'bootstrap-4.6.0-dist/js/fileinput.min.js' %}"></script>
+    <script src="{% static 'bootstrap-4.6.0-dist/js/fileinput.js' %}"></script>
     <script src="{% static 'bootstrap-4.6.0-dist/js/toast.js' %}"></script>
     <script src="{% static 'bootstrap-4.6.0-dist/js/zh.js' %}"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -54,6 +54,10 @@
                 </div>
                 <div class="modal-body upload-wrap">
                     <input type="file" id="md5File" multiple="multiple" name="pdf_file"/>
+                </div>
+                <div class="modal-footer">
+                    <h6>我们建议你再上传电子书的时候，也一并填写书名和作者</h6>
+                    <h6>当然这不是强制的，图书管理员也会在后台对电子书进行整理</h6>
                 </div>
             </div>
         </div>
@@ -104,7 +108,7 @@
 
     {% comment %} Book信息展示的 Model {% endcomment %}
     <div class="modal fade" id="BookInfoModal" tabindex="-1" aria-labelledby="BookModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content container-fluid">
                 <div class="modal-header">
                     <h5 class="modal-title">PDF Info</h5>
@@ -112,11 +116,10 @@
                 <div class="modal-body container row">
                     <div class="col-5"><img id="pdfInfoCover" class="img-fluid bg-white shadow-lg rounded" src=""></div>
                     <div class="col-7">
-                        <div class="row"><h5>123</h5></div>
-                        <div class="row"><h5>123</h5></div>
-                        <div class="row"><h5>123</h5></div>
-                        <div class="row"><h5>123</h5></div>
-                        <div class="row"><h5>123</h5></div>
+                        <div class="row"><h5>图书名字</h5></div>
+                        <div class="row"><h5>图书作者</h5></div>
+                        <div class="row"><h5>图书分享人</h5></div>
+                        <div class="row"><h5>图书分享日期</h5></div>
                     </div>
                 </div>
                 <div class="modal-footer row" id="bookPieces">
