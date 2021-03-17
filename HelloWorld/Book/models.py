@@ -24,7 +24,7 @@ class Book(models.Model):
     def save(self):
         self.slug = generate_slug("Book", "{}{}".format(self.name, self.author))
         try:
-            already_exist = Book.objects.get(slug=self.slug)
+            Book.objects.get(slug=self.slug)
         except ObjectDoesNotExist:
             super().save()
             return True
