@@ -11,6 +11,9 @@ pip install PIL
 
 
 def update_image_size(image_name, output_name):
+    """
+    重新调整图片大小为设置的宽高
+    """
     try:
         img = Image.open("{}{}".format(IMAGE_OUTPUT_PATH, image_name))
         img.resize(COVER_SIZE).save("{}{}".format(IMAGE_OUTPUT_PATH, output_name))
@@ -21,6 +24,9 @@ def update_image_size(image_name, output_name):
     return True
 
 def generate_pdf_cover(pdf_name, output_name):
+    """
+    获取PDF文档的第一页作为封面图片
+    """
     try:
         pdfDoc = fitz.open("{}{}".format(PDF_INPUT_PATH, pdf_name))
         pdfDoc[0].getPixmap().writePNG("{}{}".format(IMAGE_OUTPUT_PATH, output_name))
@@ -31,6 +37,9 @@ def generate_pdf_cover(pdf_name, output_name):
     return True
 
 def split_pdf(pdf_path):
+    """
+    对PDF文件进行切割，每100页，切割为一个小PDF 
+    """
     dir_name, file_name_with_ext = os.path.split(pdf_path)
     file_name_no_ext, _ = os.path.splitext(file_name_with_ext) 
     file_dir_name = os.path.join(dir_name, file_name_no_ext)

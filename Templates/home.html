@@ -57,7 +57,7 @@
                     <input type="file" id="md5File" multiple="multiple" name="pdf_file"/>
                 </div>
                 <div class="modal-footer">
-                    <h6>我们建议你再上传电子书的时候，也一并填写书名和作者</h6>
+                    <h6>我们建议你再上传电子书时，一并填写书名和作者</h6>
                     <h6>当然这不是强制的，图书管理员也会在后台对电子书进行整理</h6>
                 </div>
             </div>
@@ -79,18 +79,27 @@
                 {% if login_status %}
                     <h5 class="modal-title">这里将会展示你的信息, 施工中</h5>
                 {% else %}
-                    <div class="input-group flex-nowrap mb-3">
+                    <div class="input-group flex-nowrap input-group-sm mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping">用户名</span>
+                            <span class="input-group-text" id="addon-wrapping">Email*</span>
                         </div>
-                        <input id="account" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-                    </div>    
-                    <div class="input-group flex-nowrap">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping">密码</span>
-                        </div>
-                        <input id="password" type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
+                        <input id="email" type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping">
                     </div>
+                    <p class="font-weight-lighter"><small>你的邮箱会在登陆时，作为账户名使用，当然这一步是需要验证的</small></p>
+                    <div class="input-group flex-nowrap input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">Password*</span>
+                        </div>
+                        <input id="passWord" type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">User Name</span>
+                        </div>
+                        <input id="userName" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>   
+                    <p class="font-weight-lighter"><small>用户名会在网站的各处显示，如果需要的话</small></p>
+
                     <h6 id="login_error"class=d-none>你的用户名或者密码填错啦</h6>
                     <h6 id="sign_error"class=d-none>你填的用户名已被占用</h6>
                 {% endif %}

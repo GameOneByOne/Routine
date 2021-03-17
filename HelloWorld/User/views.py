@@ -16,36 +16,40 @@ class UserInfo(APIView):
         return super().dispatch(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
-        account = request.GET.get("account", "")
+        email = request.GET.get("email", "")
         password = request.GET.get("password", "")
 
         content = dict()
         try:
-            user_info = User.objects.get(account=account, password=password)
+            user_info = User.objects.get(email=email, password=password)
             content = UserSerializer(user_info).data
             content["errorCode"] = 0
-            logging.info("Account : {} Request Login In Success".format(account))
+            logging.info("Email : {} Request Login In Success".format(email))
         except ObjectDoesNotExist:
             content["errorCode"] = 1
-            logging.info("Account : {} , password : {}, Request Login In Error".format(account, password))
+            logging.info("Email : {} , password : {}, Request Login In Error".format(email, password))
 
         return JsonResponse(content, status=200)
 
     def post(self, request, *args, **kwargs):
-        account = request.POST.get("account", "")
-        password = request.POST.get("password", "")
+        email = request.POST.get("email", "")
 
         content = dict()
         try:
-            user_info = User.objects.get(account=account)
+            user_info = User.objects.get(email=email)
             content["errorCode"] = 1
-            logging.info("Account : {} Request Sign In Failed".format(account))
+            logging.info("Email : {} Request Sign In Failed".format(email))
         except ObjectDoesNotExist:
-            User(account=account, password=password).save()
-            content = UserSerializer(User.objects.get(account=account)).data
-            content["errorCode"] = 0
-            logging.info("Account : {} Request Sign In Success".format(account))
-
+            user = UserSerializer(data=request.POST)
+            if user.is_valid():
+                user.save()
+                content = UserSerializer(User.objects.get(email=email)).data
+                content["errorCode"] = 0
+                logging.info("Email : {} Request Sign In Success".format(email))
+            else:
+                content["errorCode"] = 1
+                logging.info("Email : {} Request Sign In Filed Because Of Invaild Format".format(email))
+                
         return JsonResponse(content, status=200)
 
     def patch(self, request, *args, **kwargs):

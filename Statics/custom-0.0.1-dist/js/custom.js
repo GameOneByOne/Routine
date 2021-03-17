@@ -10,40 +10,49 @@
 
 // 登陆按钮的功能
 $("#login-in").click(function(){
-    $.ajax({
-        url : "/user/",
-        type : "get",
-        async : false,
-        data : {"account":$("#account").val(), "password":$("#password").val()},
-        dataType : "json",
-        success : function(data) {
-            if (data.errorCode == 0){
-                $.cookie('slug', data.slug, {expires: 7});
-                window.location.href = "http://" + window.location.host;
-            } else {
-                $("#login_error").removeClass("d-none");
+    if ($("#email").val() == "" || $("#passWord").val() == ""){
+        alert("邮箱和密码不能为空");
+    } else {
+        $.ajax({
+            url : "/user/",
+            type : "get",
+            async : false,
+            data : {"email":$("#email").val(), "password":$("#passWord").val()},
+            dataType : "json",
+            success : function(data) {
+                if (data.errorCode == 0){
+                    $.cookie('slug', data.slug, {expires: 7});
+                    window.location.href = "http://" + window.location.host;
+                } else {
+                    $("#login_error").removeClass("d-none");
+                }
             }
-        }
-    });
+        });
+    }
+
 });
 
 // 注册按钮的功能
 $("#sign-up").click(function(){
-    $.ajax({
-        url : "/user/",
-        type : "post",
-        async : false,
-        data : {"account":$("#account").val(), "password":$("#password").val()},
-        dataType : "json",
-        success : function(data) {
-            if (data.errorCode == 0){
-                $.cookie('slug', data.slug, {expires: 7});
-                window.location.href = "http://" + window.location.host;
-            } else {
-                $("#sign_error").removeClass("d-none");
+    if ($("#email").val() == "" || $("#passWord").val() == ""){
+        alert("邮箱和密码不能为空");
+    } else {
+        $.ajax({
+            url : "/user/",
+            type : "post",
+            async : false,
+            data : {"email":$("#email").val(), "password":$("#passWord").val()},
+            dataType : "json",
+            success : function(data) {
+                if (data.errorCode == 0){
+                    $.cookie('slug', data.slug, {expires: 7});
+                    window.location.href = "http://" + window.location.host;
+                } else {
+                    $("#sign_error").removeClass("d-none");
+                }
             }
-        }
-    });
+        });
+    }
 });
 
 // 登出按钮的功能

@@ -25,6 +25,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+test.html
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -117,7 +118,7 @@ __pycache__/
 .vscodie
 .vscode/
 *.rdb
-settings.py
+secret.py
 
 # Spyder project settings
 .spyderproject
