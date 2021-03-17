@@ -1,6 +1,7 @@
 from PIL import Image
 import sys, fitz
 import os
+import shutil
 from HelloWorld.settings import * 
 
 """
@@ -34,7 +35,7 @@ def split_pdf(pdf_path):
     file_name_no_ext, _ = os.path.splitext(file_name_with_ext) 
     file_dir_name = os.path.join(dir_name, file_name_no_ext)
 
-    if os.path.exists(file_dir_name): os.rmdir(file_dir_name)
+    if os.path.exists(file_dir_name): shutil.rmtree(file_dir_name)
     os.mkdir(file_dir_name)
 
     try:

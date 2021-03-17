@@ -41,22 +41,23 @@ class BookInfo(APIView):
         book.name = request.data["bookName"] if request.data.get("bookName", "") != "" else "未命名PDF"
         book.author = request.data["bookAuthor"] if request.data.get("bookAuthor", "") != "" else "未命名作者"
         book.upload_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        print(request.COOKIES.get("slug", ""))
-        if request.COOKIES.get("slug", "null") == "null":
-            book.upload_people = None
-        else:
-            book.upload_people = User.objects.get(slug=request.COOKIES.get("slug", ""))
+
+        if request.COOKIES.get("slug", "null") == "null": book.upload_people = User.objects.get(slug="Default")
+        else: book.upload_people = User.objects.get(slug=request.COOKIES.get("slug", "Default"))
         book.content = request.data["pdf_file"]
 
         if book.save():
             logging.info("Book Data Parse Success , Begin To Generate And Resize Cover And Split Pdf")
             if not improcess.generate_pdf_cover(book.slug+".pdf", book.slug+".jpeg"): 
+                Book.objects.get(slug=book.slug).delete()
                 return JsonResponse({"errorCode":1, "content":""}, safe=False, status=200)
 
             if not improcess.update_image_size(book.slug+".jpeg", book.slug+".jpeg"):
+                Book.objects.get(slug=book.slug).delete()
                 return JsonResponse({"errorCode":1, "content":""}, safe=False, status=200)
 
             if not improcess.split_pdf("Statics/bookData/{}.pdf".format(book.slug)):
+                Book.objects.get(slug=book.slug).delete()
                 return JsonResponse({"errorCode":1, "content":""}, safe=False, status=200)
 
             return JsonResponse({"errorCode":0, "content":""}, safe=False, status=200)

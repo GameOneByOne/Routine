@@ -40,10 +40,8 @@ class BookSerializer(serializers.Serializer):
     author = serializers.CharField()
     cover = serializers.SerializerMethodField()
     upload_date = serializers.CharField()
-    try:
-        upload_people = serializers.CharField(source='upload_people.user_name')
-    except:
-        upload_people = "123"
+    upload_people = serializers.CharField(source='upload_people.user_name')
+        
 
     def get_cover(self, obj):
         return PDF_COVER_PATH + obj.slug + ".jpeg"
