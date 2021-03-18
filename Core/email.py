@@ -4,7 +4,7 @@ import re
 import time
 
 def is_email(recv_email):
-    return re.match("[a-z0-9A-z_\.]@[0-9a-zA-Z]\.com", recv_email)
+    return re.match("[a-z0-9A-z_\.]*@[0-9a-zA-Z]*\.com", recv_email)
 
 def send_email(recv_email, message):
     #SMTP服务器

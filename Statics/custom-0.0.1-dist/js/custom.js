@@ -38,7 +38,7 @@ $("#sign-up").click(function(){
         alert("邮箱和密码不能为空");
     } else if ($("#RandomCode").hasClass("d-none")){
         $.ajax({
-            url : "/user/",
+            url : "/user/randomcode",
             type : "get",
             async : false,
             data : {"email":$("#email").val()},
@@ -46,25 +46,47 @@ $("#sign-up").click(function(){
             success : function(data) {
                 if (data.errorCode == 0){
                     $("#RandomCode").removeClass("d-none")
-                    $("#RandomCode").removeClass("d-none")
+                    $("#RandomCode").removeClass("d-none");
+                    $("#UserErrorInfo").html(data.desc);
+                    $("#UserErrorInfo").removeClass("d-none");
+                    $.cookie('email', $("#email").val());
+                    $.cookie('password', $("#passWord").val());
                 } else {
-                    $("#sign_error").removeClass("d-none");
+                    $("#UserErrorInfo").html(data.desc);
+                    $("#UserErrorInfo").removeClass("d-none");
                 }
             }
         });
     } else {
         $.ajax({
-            url : "/user/",
+            url : "/user/randomcode",
             type : "post",
             async : false,
-            data : {"email":$("#email").val(), "password":$("#passWord").val()},
+            data : {"code":$("#RandomCode").val()},
             dataType : "json",
             success : function(data) {
                 if (data.errorCode == 0){
-                    $.cookie('slug', data.slug, {expires: 7});
-                    window.location.href = "http://" + window.location.host;
+                    $.ajax({
+                        url : "/user/",
+                        type : "post",
+                        async : false,
+                        data : {"email":$("#email").val(), "password":$("#passWord").val()},
+                        dataType : "json",
+                        success : function(data) {
+                            if (data.errorCode == 0){
+                                $.cookie('slug', data.slug, {expires: 7});
+                                $.cookie('enail', 'null');
+                                $.cookie('password', 'null');
+                                window.location.href = "http://" + window.location.host;
+                            } else {
+                                $("#UserErrorInfo").html(data.desc);
+                                $("#UserErrorInfo").removeClass("d-none");
+                            }
+                        }
+                    });
                 } else {
-                    $("#sign_error").removeClass("d-none");
+                    $("#UserErrorInfo").html(data.desc);
+                    $("#UserErrorInfo").removeClass("d-none");
                 }
             }
         });

@@ -30,24 +30,24 @@ class UserInfo(APIView):
     def post(self, request, *args, **kwargs):
         email = request.POST.get("email", "")
 
-        content = dict()
         try:
             user_info = User.objects.get(email=email)
-            content["errorCode"] = 1
-            logging.info("Email : {} Request Sign In Failed".format(email))
+            logging.info("Email : {} Request Sign Up Failed, Because Signed Already".format(email))
+            return JsonResponse({"errorCode": 0, "desc": "The Email Have Signed Already, Did You Forget Your Password?"}, status=200)
+
         except ObjectDoesNotExist:
             user = UserSerializer(data=request.POST)
             if user.is_valid():
                 user.save()
                 content = UserSerializer(User.objects.get(email=email)).data
                 content["errorCode"] = 0
-                logging.info("Email : {} Request Sign In Success".format(email))
-            else:
-                content["errorCode"] = 1
-                logging.info("Email : {} Request Sign In Filed Because Of Invaild Format".format(email))
-                
-        return JsonResponse(content, status=200)
+                logging.info("Email : {} Request Sign Up Success".format(email))
+                return JsonResponse(content, status=200)
 
+            else:
+                logging.info("Email : {} Request Sign Up Filed Because Of Invaild Format".format(email))
+                return JsonResponse({"errorCode": 0, "desc": "Sign Up Failed, Please Call The Web Manager"}, status=200)
+                
     def patch(self, request, *args, **kwargs):
         data = {
             'data': 'patch success'
@@ -68,14 +68,20 @@ class EmailCode(APIView):
     def get(self, request, *args, **kwargs):
         email = request.GET.get("email", "")
         if is_email(email): 
-            code = send_sign_up_email(email)
+            redis_conn = get_redis_connection("default")
 
-            if code:
-                redis_conn = get_redis_connection("default")
-                redis_conn.set(email, code, ex=60)
-                return JsonResponse({"errorCode": 0}, status=200)
+            # 先检查之前有没有发过
+            remain_time = redis_conn.ttl(email)
+            if remain_time <= 0:
+                code = send_sign_up_email(email)
+                if code:
+                    redis_conn.set(email, code, ex=60)
+                    return JsonResponse({"errorCode": 0, "desc": "Varify Email Had Sent"}, status=200)
 
-        return JsonResponse({"errorCode": 1}, status=200)
+            else:
+                return JsonResponse({"errorCode": 1, "desc": "Try Again? Please Hold On {} Seconds".format(remain_time)}, status=200)
+
+        return JsonResponse({"errorCode": 1, "desc": "Your Email's Format Is Worry, Please Check."}, status=200)
 
     def post(self, request, *args, **kwargs):
         code = request.GET.get("code", "")
@@ -85,4 +91,4 @@ class EmailCode(APIView):
         if pre_code and code == pre_code.decode("utf-8"):
             return JsonResponse({"errorCode": 0}, status=200) 
 
-        return JsonResponse({"errorCode": 1}, status=200) 
+        return JsonResponse({"errorCode": 1, "desc": "Code Varify Error. Did You Input The Correct Code?"}, status=200) 

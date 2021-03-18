@@ -104,12 +104,11 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="addon-wrapping">Email Code</span>
                         </div>
-                        <input id="userName" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                        <input id="userName" type="text" class="form-control" placeholder="RandomCode" aria-label="RandomCode" aria-describedby="addon-wrapping">
                     </div> 
                     <p id="RandomCodeTip" class="font-weight-lighter d-none"><small>一封邮件已经发往你的邮箱，里面包含了验证码</small></p>
 
-                    <h6 id="login_error"class=d-none>你的用户名或者密码填错啦</h6>
-                    <h6 id="sign_error"class=d-none>你填的用户名已被占用</h6>
+                    <h6 id="UserErrorInfo" class=d-none></h6>
                 {% endif %}
                 </div>
                 <div class="modal-footer">
