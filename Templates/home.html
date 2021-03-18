@@ -85,7 +85,7 @@
                         </div>
                         <input id="email" type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping">
                     </div>
-                    <p class="font-weight-lighter"><small>你的邮箱会在登陆时，作为账户名使用，当然这一步是需要验证的</small></p>
+                    <p class="font-weight-lighter"><small>你的邮箱会在登陆时，作为账户名使用</small></p>
                     <div class="input-group flex-nowrap input-group-sm mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="addon-wrapping">Password*</span>
@@ -99,6 +99,14 @@
                         <input id="userName" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
                     </div>   
                     <p class="font-weight-lighter"><small>用户名会在网站的各处显示，如果需要的话</small></p>
+
+                    <div id="RandomCode" class="input-group flex-nowrap input-group-sm mb-3 d-none">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">Email Code</span>
+                        </div>
+                        <input id="userName" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div> 
+                    <p id="RandomCodeTip" class="font-weight-lighter d-none"><small>一封邮件已经发往你的邮箱，里面包含了验证码</small></p>
 
                     <h6 id="login_error"class=d-none>你的用户名或者密码填错啦</h6>
                     <h6 id="sign_error"class=d-none>你填的用户名已被占用</h6>

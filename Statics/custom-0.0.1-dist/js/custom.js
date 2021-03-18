@@ -36,6 +36,22 @@ $("#login-in").click(function(){
 $("#sign-up").click(function(){
     if ($("#email").val() == "" || $("#passWord").val() == ""){
         alert("邮箱和密码不能为空");
+    } else if ($("#RandomCode").hasClass("d-none")){
+        $.ajax({
+            url : "/user/",
+            type : "get",
+            async : false,
+            data : {"email":$("#email").val()},
+            dataType : "json",
+            success : function(data) {
+                if (data.errorCode == 0){
+                    $("#RandomCode").removeClass("d-none")
+                    $("#RandomCode").removeClass("d-none")
+                } else {
+                    $("#sign_error").removeClass("d-none");
+                }
+            }
+        });
     } else {
         $.ajax({
             url : "/user/",
@@ -72,11 +88,11 @@ $("#upload-button").hover(function () {
 
 // 收藏按钮的悬浮事件
 $("#book-mark").hover(function () {
-$("#book-mark").removeClass("bi-bookmark-heart");
-$("#book-mark").addClass("bi-bookmark-heart-fill");
+    $("#book-mark").removeClass("bi-bookmark-heart");
+    $("#book-mark").addClass("bi-bookmark-heart-fill");
 }, function () {
-$("#book-mark").removeClass("bi-bookmark-heart-fill");
-$("#book-mark").addClass("bi-bookmark-heart");
+    $("#book-mark").removeClass("bi-bookmark-heart-fill");
+    $("#book-mark").addClass("bi-bookmark-heart");
 });
 
 

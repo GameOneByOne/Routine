@@ -1,17 +1,13 @@
-from django.shortcuts import render
-from django.views import View
 from rest_framework.views import APIView
-from rest_framework.response import Response
-from HelloWorld.User.models import User
+from HelloWorld.User.models import User, UserSerializer
 from django.core.exceptions import ObjectDoesNotExist
-from HelloWorld.User.models import UserSerializer
 from django.http import JsonResponse
+from django_redis import get_redis_connection
+from Core.email import send_sign_up_email, is_email
 import logging
-import json
 
 # Create your views here.
 class UserInfo(APIView):
-    
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
@@ -56,10 +52,37 @@ class UserInfo(APIView):
         data = {
             'data': 'patch success'
         }
-        return Response(data, status=200)
+        return JsonResponse(data, status=200)
 
     def delete(self, request, *args, **kwargs):
         data = {
             'data': 'delete success'
         }
-        return Response(data, status=200)
+        return JsonResponse(data, status=200)
+
+
+class EmailCode(APIView):
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
+        email = request.GET.get("email", "")
+        if is_email(email): 
+            code = send_sign_up_email(email)
+
+            if code:
+                redis_conn = get_redis_connection("default")
+                redis_conn.set(email, code, ex=60)
+                return JsonResponse({"errorCode": 0}, status=200)
+
+        return JsonResponse({"errorCode": 1}, status=200)
+
+    def post(self, request, *args, **kwargs):
+        code = request.GET.get("code", "")
+        
+        redis_conn = get_redis_connection("default")
+        pre_code = redis_conn.get(email)
+        if pre_code and code == pre_code.decode("utf-8"):
+            return JsonResponse({"errorCode": 0}, status=200) 
+
+        return JsonResponse({"errorCode": 1}, status=200) 

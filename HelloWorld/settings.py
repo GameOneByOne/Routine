@@ -38,7 +38,6 @@ ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -52,11 +51,6 @@ INSTALLED_APPS = [
 ]
 
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    # ]
     'DEFAULT_PARSER_CLASSES':[
         'rest_framework.parsers.JSONParser',
         'rest_framework.parsers.FormParser',
@@ -100,13 +94,25 @@ WSGI_APPLICATION = 'HelloWorld.wsgi.application'
 
 DATABASES = {
     'default': { 
-        'ENGINE': 'django.db.backends.mysql',    # 数据库引擎
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': secret.MYSQL_DATABASE, 
         'HOST': secret.MYSQL_HOST, 
         'PORT': secret.MYSQL_PORT,
         'USER': secret.MYSQL_USER,
         'PASSWORD': secret.MYSQL_PW,
     } 
+}
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://{}:{}".format(secret.REDIS_HOST,secret.REDIS_PORT,),
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "CONNECTION_POOL_KWARGS": {"max_connections": 100}
+            # "PASSWORD": "密码",
+        }
+    }
 }
 
 
