@@ -36,7 +36,7 @@ $("#login-in").click(function(){
 $("#sign-up").click(function(){
     if ($("#email").val() == "" || $("#passWord").val() == ""){
         alert("邮箱和密码不能为空");
-    } else if ($("#RandomCode").hasClass("d-none")){
+    } else if ($("#RandomCodeInput").hasClass("d-none")){
         $.ajax({
             url : "/user/randomcode",
             type : "get",
@@ -45,12 +45,12 @@ $("#sign-up").click(function(){
             dataType : "json",
             success : function(data) {
                 if (data.errorCode == 0){
-                    $("#RandomCode").removeClass("d-none")
-                    $("#RandomCode").removeClass("d-none");
+                    $("#RandomCodeInput").removeClass("d-none")
                     $("#UserErrorInfo").html(data.desc);
                     $("#UserErrorInfo").removeClass("d-none");
                     $.cookie('email', $("#email").val());
                     $.cookie('password', $("#passWord").val());
+                    $("#sign-up").html("验证");
                 } else {
                     $("#UserErrorInfo").html(data.desc);
                     $("#UserErrorInfo").removeClass("d-none");
@@ -62,7 +62,7 @@ $("#sign-up").click(function(){
             url : "/user/randomcode",
             type : "post",
             async : false,
-            data : {"code":$("#RandomCode").val()},
+            data : {"code":$("#RandomCode").val(), "email":$.cookie('email')},
             dataType : "json",
             success : function(data) {
                 if (data.errorCode == 0){
@@ -70,12 +70,12 @@ $("#sign-up").click(function(){
                         url : "/user/",
                         type : "post",
                         async : false,
-                        data : {"email":$("#email").val(), "password":$("#passWord").val()},
+                        data : {"email":$.cookie('email'), "password":$.cookie('password')},
                         dataType : "json",
                         success : function(data) {
                             if (data.errorCode == 0){
                                 $.cookie('slug', data.slug, {expires: 7});
-                                $.cookie('enail', 'null');
+                                $.cookie('email', 'null');
                                 $.cookie('password', 'null');
                                 window.location.href = "http://" + window.location.host;
                             } else {

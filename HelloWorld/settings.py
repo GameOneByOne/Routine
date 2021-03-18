@@ -18,10 +18,10 @@ from HelloWorld.secret import secret
 
 # Build Log Setting 
 logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
 handler = TimedRotatingFileHandler('Log/Service.log', when = 'd', interval = 1, backupCount=10)
 handler.setFormatter(logging.Formatter('[%(asctime)s] %(filename)s [%(levelname)s] :%(message)s'))
 logger.addHandler(handler)
-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

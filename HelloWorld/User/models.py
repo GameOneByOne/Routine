@@ -21,7 +21,22 @@ class User(models.Model):
 
 
 class UserSerializer(serializers.Serializer):
-    slug = serializers.SlugField()
+    slug = serializers.SlugField(read_only=True)
     email = serializers.EmailField()
-    user_name = serializers.CharField()
-    avatar_url = serializers.ImageField()
+    password = serializers.CharField(write_only=True)
+    user_name = serializers.CharField(required=False)
+    avatar_url = serializers.ImageField(required=False)
+
+    def create(self, validated_data, *args, **kargs):
+        user = User(**validated_data)
+        user.save()
+        return user
+
+    def update(self,instance, validated_data):
+        instance.slug = validated_data.get('slug',instance.slug)
+        instance.email = validated_data.get('email',instance.email)
+        instance.password = validated_data.get('password',instance.password)
+        instance.user_name = validated_data.get('user_name',instance.user_name)
+        instance.avatar_url = validated_data.get('avatar_url',instance.avatar_url)
+        instance.save()
+        return instance

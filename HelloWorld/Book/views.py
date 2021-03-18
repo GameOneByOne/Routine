@@ -9,7 +9,7 @@ from django.http import JsonResponse
 from Core import improcess
 import time
 from HelloWorld.settings import * 
-import logging
+from HelloWorld.settings import logger as log
 import os
 
 
@@ -34,7 +34,7 @@ class BookInfo(APIView):
 
     def post(self, request, *args, **kwargs):
         if len(request.data) == 0: 
-            logging.info("Request POST BOOK Api , But Have No Data Upload, So Return 1")
+            log.info("Request POST BOOK Api , But Have No Data Upload, So Return 1")
             return JsonResponse({"errorCode":1}, safe=False, status=200)
 
         book = Book()
@@ -47,7 +47,7 @@ class BookInfo(APIView):
         book.content = request.data["pdf_file"]
 
         if book.save():
-            logging.info("Book Data Parse Success , Begin To Generate And Resize Cover And Split Pdf")
+            log.info("Book Data Parse Success , Begin To Generate And Resize Cover And Split Pdf")
             if not improcess.generate_pdf_cover(book.slug+".pdf", book.slug+".jpeg"): 
                 Book.objects.get(slug=book.slug).delete()
                 return JsonResponse({"errorCode":1, "content":""}, safe=False, status=200)

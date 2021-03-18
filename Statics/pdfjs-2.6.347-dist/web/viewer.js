@@ -3844,7 +3844,7 @@ const defaultOptions = {
     kind: OptionKind.API
   },
   cMapUrl: {
-    value: "../web/cmaps/",
+    value: "/static/pdfjs-2.6.347-dist/web/cmaps/",
     kind: OptionKind.API
   },
   disableAutoFetch: {
