@@ -44,11 +44,16 @@
     </div>
     
     {% comment %} 下方Book区 {% endcomment %}
-    <div id="book-window" class="container"></div>
+    <div id="book-window" class="container">
+        <div class="row"></div>
+    </div>
+
+    {% comment %} 底部区 {% endcomment %}
+    <div id="down-info" class="container">3123123123</div>
 
     {% comment %} PDFBook上传的Model {% endcomment %}
     <div class="modal fade" id="updaloadPDFModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">PDF 分享</h5>
@@ -57,8 +62,8 @@
                     <input type="file" id="md5File" multiple="multiple" name="pdf_file"/>
                 </div>
                 <div class="modal-footer">
-                    <h6>我们建议你再上传电子书时，一并填写书名和作者</h6>
-                    <h6>当然这不是强制的，图书管理员也会在后台对电子书进行整理</h6>
+                    <h6 class="text-muted">我们建议你在上传电子书时，一并填写书名和作者</h6>
+                    <h6 class="text-muted">当然这不是强制的，图书管理员也会在后台对电子书进行整理</h6>
                 </div>
             </div>
         </div>
@@ -85,20 +90,20 @@
                         </div>
                         <input id="email" type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping">
                     </div>
-                    <p class="font-weight-lighter"><small>你的邮箱会在登陆时，作为账户名使用</small></p>
+                    <p class="font-weight-lighter text-black-50"><small>你的邮箱会在登陆时，作为账户名使用</small></p>
                     <div class="input-group flex-nowrap input-group-sm mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="addon-wrapping">Password*</span>
                         </div>
                         <input id="passWord" type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
                     </div>
-                    <div class="input-group flex-nowrap input-group-sm mb-3">
+                    <div id="UserName"class="input-group flex-nowrap input-group-sm mb-3 d-none">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="addon-wrapping">User Name</span>
                         </div>
                         <input id="userName" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
                     </div>   
-                    <p class="font-weight-lighter"><small>用户名会在网站的各处显示，如果需要的话</small></p>
+                    <p id="UserName" class="font-weight-lighter text-black-50"><small>用户名会在网站的各处显示，如果需要的话</small></p>
 
                     <div id="RandomCodeInput" class="input-group flex-nowrap input-group-sm mb-3 d-none">
                         <div class="input-group-prepend">
@@ -107,7 +112,7 @@
                         <input id="RandomCode" type="text" class="form-control" placeholder="RandomCode" aria-label="RandomCode" aria-describedby="addon-wrapping">
                     </div> 
 
-                    <h6 id="UserErrorInfo" class=d-none></h6>
+                    <h6 id="UserErrorInfo" class="d-none text-danger"></h6>
                 {% endif %}
                 </div>
                 <div class="modal-footer">

@@ -24,7 +24,8 @@ $("#login-in").click(function(){
                     $.cookie('slug', data.slug, {expires: 7});
                     window.location.href = "http://" + window.location.host;
                 } else {
-                    $("#login_error").removeClass("d-none");
+                    $("#UserErrorInfo").html(data.desc);
+                    $("#UserErrorInfo").removeClass("d-none");
                 }
             }
         });
@@ -51,6 +52,9 @@ $("#sign-up").click(function(){
                     $.cookie('email', $("#email").val());
                     $.cookie('password', $("#passWord").val());
                     $("#sign-up").html("验证");
+                    $("#sign-up").removeClass("btn-success");
+                    $("#sign-up").addClass("btn-warning");
+                    $("#UserName").removeClass("d-none");
                 } else {
                     $("#UserErrorInfo").html(data.desc);
                     $("#UserErrorInfo").removeClass("d-none");
@@ -146,7 +150,7 @@ $('#md5File').fileinput({
     uploadAsync:true,
     allowedFileExtensions: ['pdf'],
     browseClass: 'btn btn-primary',
-    maxFileCount: 1,
+    maxFileCount: 10,
     minFileCount : 1,
   }).on('fileuploaded',function (event, data, previewId, index) {
     if (data.errorCode == 1){
@@ -192,25 +196,18 @@ $('#md5File').fileinput({
 
 // 页面加载完成时运行
 $(document).ready(function(){
+    $.cookie("page_num", 0);
     if ( $("#book-window").length > 0 ) {
+        var page_num = $.cookie("page_num");
         getBooks(function(result){
             var book_card = '';
-            var index = 0;
-            var row_id = "row-0";
             for (obj of result) {
-                if (index % 6 == 0) {
-                    if (index != 0) {
-                        $("#book-window").append('</div>');
-                    }
-                    row_id = 'row-' + index.toString(10)
-                    $("#book-window").append('<div id="' + row_id + '" class="row">');
-                }
                 book_card = 
-                    '<div class="col-2 book-cover" onclick="previewFile(this)" book_id="' + obj.slug + '">' + 
-                    '<img class="img-fluid bg-white shadow-lg rounded" src="' + obj.cover + '"></div>';
-                $("#" + row_id).append(book_card);
-                index++;
+                    '<div class="col-2 book-cover mt-3 md-3" onclick="previewFile(this)" book_id="' + obj.slug + '">' + 
+                    '<img class="img-fluid bg-white shadow-lg rounded-lg" src="' + obj.cover + '"></div>';
+                $("#book-window").children("div.row").last().append(book_card);
             }
+            $.cookie("page_num", parseInt(page_num) + result.length);
         });
     }
 })
@@ -227,6 +224,29 @@ $(window).resize(function() {
             $("#user-avatar").removeClass("d-none");
         }  
     }
+});
+
+// 页面滚动到底部的时候
+$(window).scroll(function() {
+    var height = $(window).scrollTop();
+   
+    if(height + $(window).height() == $(document).height()) {
+        
+        if ( $("#book-window").length > 0 ) {
+            var page_num = $.cookie("page_num");
+            getBooks(function(result){
+                var book_card = '';
+                for (obj of result) {
+                    book_card = 
+                        '<div class="col-2 book-cover mt-3 md-3" onclick="previewFile(this)" book_id="' + obj.slug + '">' + 
+                        '<img class="img-fluid bg-white shadow-lg rounded-lg" src="' + obj.cover + '"></div>';
+                    $("#book-window").children("div.row").last().append(book_card);
+                }
+                $.cookie("page_num", parseInt(page_num) + result.length);
+            });
+        }
+    }
+
 });
 
 // 打开PDF Book 时，如果未登陆则提醒一下，非强制注册

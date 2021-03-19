@@ -15,17 +15,15 @@ class UserInfo(APIView):
         email = request.GET.get("email", "")
         password = request.GET.get("password", "")
 
-        content = dict()
         try:
             user_info = User.objects.get(email=email, password=password)
             content = UserSerializer(user_info).data
-            content["errorCode"] = 0
             log.info("Email : {} Request Login In Success".format(email))
-        except ObjectDoesNotExist:
-            content["errorCode"] = 1
-            log.info("Email : {} , password : {}, Request Login In Error".format(email, password))
+            return JsonResponse({"errorCode": 0}, status=200)
 
-        return JsonResponse(content, status=200)
+        except ObjectDoesNotExist:
+            log.info("Email : {} , password : {}, Request Login In Error".format(email, password))
+            return JsonResponse({"errorCode": 1, "desc":"Your Email Or Password Is Worry, Please Check."}, status=200)        
 
     def post(self, request, *args, **kwargs):
         email = request.POST.get("email", "")
@@ -33,7 +31,7 @@ class UserInfo(APIView):
         try:
             user_info = User.objects.get(email=email)
             log.info("Email : {} Request Sign Up Failed, Because Signed Already".format(email))
-            return JsonResponse({"errorCode": 0, "desc": "The Email Have Signed Already, Did You Forget Your Password?"}, status=200)
+            return JsonResponse({"errorCode": 1, "desc": "The Email Have Signed Already, Did You Forget Your Password?"}, status=200)
 
         except ObjectDoesNotExist:
             user = UserSerializer(data=request.POST)
@@ -47,7 +45,7 @@ class UserInfo(APIView):
 
             else:
                 log.info("Email : {} Request Sign Up Filed Because Of {}".format(email, user.errors))
-                return JsonResponse({"errorCode": 0, "desc": "Sign Up Failed, Please Call The Web Manager"}, status=200)
+                return JsonResponse({"errorCode": 1, "desc": "Sign Up Failed, Please Call The Web Manager"}, status=200)
                 
     def patch(self, request, *args, **kwargs):
         data = {
@@ -68,6 +66,7 @@ class EmailCode(APIView):
 
     def get(self, request, *args, **kwargs):
         email = request.GET.get("email", "")
+        log.info("email: {} Acquire Sign Up Random Code".format(email))
         if is_email(email): 
             redis_conn = get_redis_connection("default")
 

@@ -15,6 +15,9 @@ import rest_framework
 import logging
 from logging.handlers import TimedRotatingFileHandler
 from HelloWorld.secret import secret
+import platform
+
+IS_UNIX = False if "Windows" in platform.platform() else True
 
 # Build Log Setting 
 logger = logging.getLogger()

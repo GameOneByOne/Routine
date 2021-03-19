@@ -24,21 +24,19 @@ class BookInfo(APIView):
             try:
                 book_info = BookSerializer(Book.objects.get(slug=request.GET["slug"])).data
                 book_info["pieces"] = os.listdir(book_path)
-                book_info["pieces"].reverse()
+                if IS_UNIX: book_info["pieces"].reverse()
                 return JsonResponse(book_info, safe=False, status=200)
 
             except ObjectDoesNotExist:
                 return JsonResponse({}, safe=False, status=200)
 
-        return JsonResponse(BookSerializer(Book.objects.all(), many=True).data, safe=False, status=200)
+        page_num = int(request.COOKIES["page_num"])
+        print(page_num)
+        return JsonResponse(BookSerializer(Book.objects.all(), many=True).data[page_num:page_num+12], safe=False, status=200)
 
     def post(self, request, *args, **kwargs):
-        if len(request.data) == 0: 
-            log.info("Request POST BOOK Api , But Have No Data Upload, So Return 1")
-            return JsonResponse({"errorCode":1}, safe=False, status=200)
-
         book = Book()
-        book.name = request.data["bookName"] if request.data.get("bookName", "") != "" else "未命名PDF"
+        book.name = request.data["bookName"] if request.data.get("bookName", "") != "" else request.data["fileId"]
         book.author = request.data["bookAuthor"] if request.data.get("bookAuthor", "") != "" else "未命名作者"
         book.upload_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
