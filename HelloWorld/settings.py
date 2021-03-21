@@ -109,7 +109,7 @@ DATABASES = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://{}:{}".format(secret.REDIS_HOST,secret.REDIS_PORT,),
+        "LOCATION": "redis://{}:{}".format(secret.REDIS_HOST,secret.REDIS_PORT),
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             "CONNECTION_POOL_KWARGS": {"max_connections": 100}
@@ -162,7 +162,7 @@ STATICFILES_DIRS = [
 ]
 
 # FILE PATH Settings
-COVER_SIZE = (218, 318)
+COVER_SIZE = (800, 1200)
 PDF_INPUT_PATH = "Statics/bookData/"
 IMAGE_OUTPUT_PATH = "Statics/image/pdf_cover/"
 

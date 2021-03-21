@@ -49,12 +49,14 @@ $("#sign-up").click(function(){
                     $("#RandomCodeInput").removeClass("d-none")
                     $("#UserErrorInfo").html(data.desc);
                     $("#UserErrorInfo").removeClass("d-none");
-                    $.cookie('email', $("#email").val());
-                    $.cookie('password', $("#passWord").val());
                     $("#sign-up").html("验证");
                     $("#sign-up").removeClass("btn-success");
                     $("#sign-up").addClass("btn-warning");
                     $("#UserName").removeClass("d-none");
+                    $("#login-in").addClass("d-none");
+                    $("#resend-email").removeClass("d-none");
+                    $("#email").attr("disabled","disabled");
+                    $("#passWord").attr("disabled","disabled");
                 } else {
                     $("#UserErrorInfo").html(data.desc);
                     $("#UserErrorInfo").removeClass("d-none");
@@ -95,6 +97,20 @@ $("#sign-up").click(function(){
             }
         });
     }
+});
+
+// 重发按钮的功能
+$("#resend-email").click(function(){
+    $.ajax({
+        url : "/user/randomcode",
+        type : "get",
+        async : false,
+        data : {"email":$("#email").val()},
+        dataType : "json",
+        success : function(data) {
+            $("#UserErrorInfo").html(data.desc);
+        }
+    });
 });
 
 // 登出按钮的功能
@@ -162,7 +178,7 @@ $('#md5File').fileinput({
             delay: 3000,
             img: {
               src: '',
-              class: 'rounded-pill',
+              class: 'rounded-lg',
               title: 'Thumbnail Title',
               alt: 'Alternative'
             },
@@ -178,7 +194,7 @@ $('#md5File').fileinput({
             delay: 3000,
             img: {
               src: '',
-              class: 'rounded-pill',
+              class: 'rounded-lg',
               title: 'Thumbnail Title',
               alt: 'Alternative'
             },
@@ -204,7 +220,7 @@ $(document).ready(function(){
             for (obj of result) {
                 book_card = 
                     '<div class="col-2 book-cover mt-3 md-3" onclick="previewFile(this)" book_id="' + obj.slug + '">' + 
-                    '<img class="img-fluid bg-white shadow-lg rounded-lg" src="' + obj.cover + '"></div>';
+                    '<img class="img-fluid bg-white shadow-lg rounded-lg" src="' + obj.cover + '" width="200px" height="300px"></div>';
                 $("#book-window").children("div.row").last().append(book_card);
             }
             $.cookie("page_num", parseInt(page_num) + result.length);

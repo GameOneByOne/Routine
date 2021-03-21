@@ -79,6 +79,9 @@ class EmailCode(APIView):
                     redis_conn.set(email, code, ex=60)
                     return JsonResponse({"errorCode": 0, "desc": "Varify Email Had Sent"}, status=200)
 
+                else:
+                    return JsonResponse({"errorCode": 1, "desc": "Your Email Is Not Exist.."}, status=200)
+
             else:
                 return JsonResponse({"errorCode": 1, "desc": "Try Again? Please Hold On {} Seconds".format(remain_time)}, status=200)
 

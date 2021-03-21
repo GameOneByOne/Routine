@@ -24,7 +24,11 @@ def send_email(recv_email, message):
     #登陆邮箱
     mailServer.login(sender,passwd)
     #发送邮件
-    mailServer.sendmail(sender, [recv_email], msg.as_string())
+    try:
+        mailServer.sendmail(sender, [recv_email], msg.as_string())
+    except smtplib.SMTPRecipientsRefused as e:
+        mailServer.quit()
+        return False
     #退出邮箱
     mailServer.quit()
     return True

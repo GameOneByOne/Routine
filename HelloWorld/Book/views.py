@@ -40,8 +40,10 @@ class BookInfo(APIView):
         book.author = request.data["bookAuthor"] if request.data.get("bookAuthor", "") != "" else "未命名作者"
         book.upload_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
-        if request.COOKIES.get("slug", "null") == "null": book.upload_people = User.objects.get(slug="Default")
-        else: book.upload_people = User.objects.get(slug=request.COOKIES.get("slug", "Default"))
+        if request.COOKIES.get("slug", "null") == "null" or request.COOKIES.get("slug", "null") == "undefined": 
+            book.upload_people = User.objects.get(slug="Default")
+        else: 
+            book.upload_people = User.objects.get(slug=request.COOKIES.get("slug", "Default"))
         book.content = request.data["pdf_file"]
 
         if book.save():

@@ -49,7 +49,7 @@
     </div>
 
     {% comment %} 底部区 {% endcomment %}
-    <div id="down-info" class="container">3123123123</div>
+    <div id="down-info" class="container"><br><br></div>
 
     {% comment %} PDFBook上传的Model {% endcomment %}
     <div class="modal fade" id="updaloadPDFModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
@@ -119,6 +119,7 @@
                 {% if login_status %}
                     <button id="login-out" type="button" class="btn btn-danger" data-dismiss="modal">退出登录</button>
                 {% else %}
+                    <button id="resend-email" type="button" class="btn btn-danger d-none">重发</button>
                     <button id="login-in" type="button" class="btn btn-info">登陆</button>
                     <button id="sign-up" type="button" class="btn btn-success">注册</button>
                 {% endif %}
@@ -135,7 +136,7 @@
                     <h5 class="modal-title">PDF Info</h5>
                 </div>
                 <div class="modal-body container row">
-                    <div class="col-5"><img id="pdfInfoCover" class="img-fluid bg-white shadow-lg rounded" src=""></div>
+                    <div class="col-5"><img id="pdfInfoCover" class="img-fluid bg-white shadow-lg rounded-lg" src="" width="300px" height="450px"></div>
                     <div class="col-7">
                         <dl class="row">
                             <dt class="col-sm-5">图书名称</dt>
