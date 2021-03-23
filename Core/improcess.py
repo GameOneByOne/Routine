@@ -29,7 +29,7 @@ def generate_pdf_cover(pdf_name, output_name):
     """
     try:
         pdfDoc = fitz.open("{}{}".format(PDF_INPUT_PATH, pdf_name))
-        pdfDoc[0].getPixmap(matrix=fitz.Matrix(4.0, 4.0).preRotate(0), alpha=False).writePNG("{}{}".format(IMAGE_OUTPUT_PATH, output_name))
+        pdfDoc[0].getPixmap(matrix=fitz.Matrix(8.0, 8.0).preRotate(0), alpha=False).writePNG("{}{}".format(IMAGE_OUTPUT_PATH, output_name))
     except Exception as e:
         logging.error("A Book Happen Error When Generate Cover, {}".format(e))
         return False

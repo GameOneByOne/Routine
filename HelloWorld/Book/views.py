@@ -48,8 +48,8 @@ class BookInfo(APIView):
 
         if book.save():
             log.info("Book Data Parse Success , Begin To Generate And Resize Cover And Split Pdf")
-            if improcess.generate_pdf_cover(book.slug+".pdf", book.slug+".jpeg") and 
-                improcess.update_image_size(book.slug+".jpeg", book.slug+".jpeg") and 
+            if improcess.generate_pdf_cover(book.slug+".pdf", book.slug+".jpeg") and \
+                improcess.update_image_size(book.slug+".jpeg", book.slug+".jpeg") and \
                 improcess.split_pdf("Statics/bookData/{}.pdf".format(book.slug)): 
 
                 return JsonResponse({"errorCode":0, "content":""}, safe=False, status=200)
