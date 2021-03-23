@@ -31,7 +31,7 @@ class BookInfo(APIView):
                 return JsonResponse({}, safe=False, status=200)
 
         page_num = int(request.COOKIES["page_num"])
-        
+
         return JsonResponse(BookSerializer(Book.objects.all(), many=True).data[page_num:page_num+12], safe=False, status=200)
 
     def post(self, request, *args, **kwargs):
@@ -48,19 +48,14 @@ class BookInfo(APIView):
 
         if book.save():
             log.info("Book Data Parse Success , Begin To Generate And Resize Cover And Split Pdf")
-            if not improcess.generate_pdf_cover(book.slug+".pdf", book.slug+".jpeg"): 
+            if improcess.generate_pdf_cover(book.slug+".pdf", book.slug+".jpeg") and 
+                improcess.update_image_size(book.slug+".jpeg", book.slug+".jpeg") and 
+                improcess.split_pdf("Statics/bookData/{}.pdf".format(book.slug)): 
+
+                return JsonResponse({"errorCode":0, "content":""}, safe=False, status=200)
+            else:
                 Book.objects.get(slug=book.slug).delete()
                 return JsonResponse({"errorCode":1, "content":""}, safe=False, status=200)
-
-            if not improcess.update_image_size(book.slug+".jpeg", book.slug+".jpeg"):
-                Book.objects.get(slug=book.slug).delete()
-                return JsonResponse({"errorCode":1, "content":""}, safe=False, status=200)
-
-            if not improcess.split_pdf("Statics/bookData/{}.pdf".format(book.slug)):
-                Book.objects.get(slug=book.slug).delete()
-                return JsonResponse({"errorCode":1, "content":""}, safe=False, status=200)
-
-            return JsonResponse({"errorCode":0, "content":""}, safe=False, status=200)
 
         return JsonResponse({"errorCode":1, "content":""}, safe=False, status=200)
 
