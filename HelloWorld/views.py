@@ -1,8 +1,7 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
-from django.views.decorators.csrf import csrf_exempt
 from HelloWorld.User.models import User
-import logging
+from HelloWorld.settings import logger as log 
 
 def HomeView(request):    
     context = {}

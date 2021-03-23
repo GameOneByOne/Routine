@@ -39,7 +39,6 @@ class UserInfo(APIView):
                 user.save()
                 content = UserSerializer(User.objects.get(email=email)).data
                 content["errorCode"] = 0
-                content["login_status"] = True
                 log.info("Email : {} Request Sign Up Success".format(email))
                 return JsonResponse(content, status=200)
 

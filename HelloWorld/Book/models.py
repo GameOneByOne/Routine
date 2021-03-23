@@ -8,7 +8,6 @@ from HelloWorld.settings import *
 
 
 def rename_pdf(instance, filename):
-    print(instance.slug)
     return "bookData/{}.pdf".format(instance.slug)
 
 # Create your models here.

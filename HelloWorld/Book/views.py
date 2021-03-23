@@ -31,12 +31,12 @@ class BookInfo(APIView):
                 return JsonResponse({}, safe=False, status=200)
 
         page_num = int(request.COOKIES["page_num"])
-        print(page_num)
+        
         return JsonResponse(BookSerializer(Book.objects.all(), many=True).data[page_num:page_num+12], safe=False, status=200)
 
     def post(self, request, *args, **kwargs):
         book = Book()
-        book.name = request.data["bookName"] if request.data.get("bookName", "") != "" else request.data["fileId"]
+        book.name = request.data["bookName"] if request.data.get("bookName", "") != "" else request.data["pdf_file"]._name.split(".")[0]
         book.author = request.data["bookAuthor"] if request.data.get("bookAuthor", "") != "" else "未命名作者"
         book.upload_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
