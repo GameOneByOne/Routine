@@ -68,7 +68,7 @@ $("#sign-up").click(function(){
             url : "/user/randomcode",
             type : "post",
             async : false,
-            data : {"code":$("#RandomCode").val(), "email":$.cookie('email')},
+            data : {"code":$("#RandomCode").val(), "email":$("#email").val()},
             dataType : "json",
             success : function(data) {
                 if (data.errorCode == 0){
@@ -76,13 +76,11 @@ $("#sign-up").click(function(){
                         url : "/user/",
                         type : "post",
                         async : false,
-                        data : {"email":$.cookie('email'), "password":$.cookie('password')},
+                        data : {"email":$("#email").val(), "password":$("#passWord").val()},
                         dataType : "json",
                         success : function(data) {
                             if (data.errorCode == 0){
                                 $.cookie('slug', data.slug, {expires: 7});
-                                $.cookie('email', 'null');
-                                $.cookie('password', 'null');
                                 window.location.href = "http://" + window.location.host;
                             } else {
                                 $("#UserErrorInfo").html(data.desc);
@@ -126,6 +124,12 @@ $("#upload-button").hover(function () {
 }, function () {
     $("#upload-button").removeClass("bi-arrow-up-square-fill");
     $("#upload-button").addClass("bi-arrow-up-square");
+});
+
+// 头像悬浮事件
+$("#user-avatar").hover(function () {
+    $("#user-avatar").addClass("shadow-lg");
+    $("#user-avatar").addClass("rounded-circle");
 });
 
 // 收藏按钮的悬浮事件
@@ -212,6 +216,11 @@ $('#md5File').fileinput({
 
 // 页面加载完成时运行
 $(document).ready(function(){
+    // 加载头像
+    var avatarId = $("#user-avatar").attr("avatar_id");
+    var svgCode = multiavatar(avatarId);
+    $("#user-avatar").html(svgCode);
+    // 记载书籍
     $.cookie("page_num", 0);
     if ( $("#book-window").length > 0 ) {
         var page_num = $.cookie("page_num");
@@ -220,7 +229,7 @@ $(document).ready(function(){
             for (obj of result) {
                 book_card = 
                     '<div class="col-2 book-cover mt-3 md-3" onclick="previewFile(this)" book_id="' + obj.slug + '">' + 
-                    '<img class="img-fluid bg-white shadow-lg rounded-lg" src="' + obj.cover + '" width="200px" height="300px"></div>';
+                    '<img class="img-fluid bg-white shadow-lg rounded-lg" src="' + obj.cover + '" width="150px" height="225px"></div>';
                 $("#book-window").children("div.row").last().append(book_card);
             }
             $.cookie("page_num", parseInt(page_num) + result.length);

@@ -4,6 +4,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse
 from django_redis import get_redis_connection
 from Core.email import send_sign_up_email, is_email
+from Core.encrypt import md5
 from HelloWorld.settings import logger as log
 
 # Create your views here.
@@ -35,7 +36,9 @@ class UserInfo(APIView):
 
         except ObjectDoesNotExist:
             user = UserSerializer(data=request.POST)
+            
             if user.is_valid():
+                user.validated_data["avatar_id"] = md5(user.validated_data["email"])[:18]
                 user.save()
                 content = UserSerializer(User.objects.get(email=email)).data
                 content["errorCode"] = 0
