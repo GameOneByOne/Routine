@@ -58,16 +58,3 @@ class BookInfo(APIView):
                 return JsonResponse({"errorCode":1, "content":""}, safe=False, status=200)
 
         return JsonResponse({"errorCode":1, "content":""}, safe=False, status=200)
-
-
-    def patch(self, request, *args, **kwargs):
-        data = {
-            'data': 'patch success'
-        }
-        return Response(data, status=200)
-
-    def delete(self, request, *args, **kwargs):
-        data = {
-            'data': 'delete success'
-        }
-        return Response(data, status=200)

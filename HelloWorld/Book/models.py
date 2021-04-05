@@ -18,7 +18,7 @@ class Book(models.Model):
     content = models.FileField(upload_to=rename_pdf, default=None)
     upload_date = models.CharField(blank=False, db_index=True, max_length=64, default=None)
     upload_people = models.ForeignKey(to=User, null=True, to_field="slug", related_name="upload_people", on_delete=models.SET_NULL)
-        
+    public = models.BooleanField(default=False)
 
     def save(self):
         self.slug = generate_slug("Book", "{}{}".format(self.name, self.author))

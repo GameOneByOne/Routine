@@ -85,7 +85,7 @@ class EmailCode(APIView):
                     return JsonResponse({"errorCode": 1, "desc": "Your Email Is Not Exist.."}, status=200)
 
             else:
-                return JsonResponse({"errorCode": 1, "desc": "Try Again? Please Hold On {} Seconds".format(remain_time)}, status=200)
+                return JsonResponse({"errorCode": 1, "desc": "Code Has Been Sent, Please Hold On {} Seconds".format(remain_time)}, status=200)
 
         return JsonResponse({"errorCode": 1, "desc": "Your Email's Format Is Worry, Please Check."}, status=200)
 
@@ -98,4 +98,5 @@ class EmailCode(APIView):
 
         if pre_code and code == pre_code.decode("utf-8"):
             return JsonResponse({"errorCode": 0}, status=200) 
+            
         return JsonResponse({"errorCode": 1, "desc": "Code Varify Error. Did You Input The Correct Code?"}, status=200) 
