@@ -126,11 +126,6 @@ $("#upload-button").hover(function () {
     $("#upload-button").addClass("bi-arrow-up-square");
 });
 
-// 头像悬浮事件
-$("#user-avatar").hover(function () {
-    $("#user-avatar").addClass("shadow-lg");
-    $("#user-avatar").addClass("rounded-circle");
-});
 
 // 收藏按钮的悬浮事件
 $("#book-mark").hover(function () {
@@ -208,6 +203,7 @@ $('#md5File').fileinput({
 });
 
 
+
 /*
 -------------------------------
 界面事件
@@ -219,7 +215,8 @@ $(document).ready(function(){
     // 加载头像
     var avatarId = $("#user-avatar").attr("avatar_id");
     var svgCode = multiavatar(avatarId);
-    $("#user-avatar").html(svgCode);
+    $("#user-avatar").html(svgCode); // 填充右上角的头像
+    $("#info-avatar").html(svgCode); // 填充用户信息页的头像
     // 记载书籍
     $.cookie("page_num", 0);
     if ( $("#book-window").length > 0 ) {

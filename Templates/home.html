@@ -76,32 +76,40 @@
                 </div>
                 <div class="modal-body container">
                 {% if login_status %}
-                    <h5 class="modal-title">这里将会展示你的信息, 施工中</h5>
+                    <div class="row">
+                        <div class="col-3"><div id="info-avatar"></div></div>
+                        <div class="col-2"> </div>
+                        <div class="col-7">
+                            <div class="row">昵称</div>
+                            <div class="row">邮箱</div>
+                            <div class="row">头衔</div>
+                        </div>
+                    </div>
+                    <div class="row"></div>
                 {% else %}
                     <div class="input-group flex-nowrap input-group-sm mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping">Email*</span>
+                            <span class="input-group-text" id="addon-wrapping">登陆邮箱*</span>
                         </div>
                         <input id="email" type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping">
                     </div>
-                    <p class="font-weight-lighter text-black-50"><small>你的邮箱会在登陆时，作为账户名使用</small></p>
+
                     <div class="input-group flex-nowrap input-group-sm mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping">Password*</span>
+                            <span class="input-group-text" id="addon-wrapping">登陆密码*</span>
                         </div>
                         <input id="passWord" type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
                     </div>
                     <div id="UserName"class="input-group flex-nowrap input-group-sm mb-3 d-none">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping">User Name</span>
+                            <span class="input-group-text" id="addon-wrapping">昵称</span>
                         </div>
                         <input id="userName" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
                     </div>   
-                    <p id="UserName" class="font-weight-lighter text-black-50"><small>用户名会在网站的各处显示，如果需要的话</small></p>
 
                     <div id="RandomCodeInput" class="input-group flex-nowrap input-group-sm mb-3 d-none">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping">Email Code</span>
+                            <span class="input-group-text" id="addon-wrapping">验证码</span>
                         </div>
                         <input id="RandomCode" type="text" class="form-control" placeholder="RandomCode" aria-label="RandomCode" aria-describedby="addon-wrapping">
                     </div> 
