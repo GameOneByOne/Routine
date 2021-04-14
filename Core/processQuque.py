@@ -1,8 +1,8 @@
 from abc import ABCMeta,abstractmethod
-from metaclass import SingletonType
+from Core.metaclass import SingletonType
 from queue import Queue
 from logging import log
-from threading import Thread
+from multiprocessing import Process
 import time
 
 class ProcessManager(metaclass=SingletonType):
@@ -13,8 +13,10 @@ class ProcessManager(metaclass=SingletonType):
         if q_name in self.queue_map.keys(): return -1
         p_queue = cls(q_name)
         self.queue_map[q_name] = p_queue
-        p_queue.setDaemon(True)
-        p_queue.start()
+
+        p_queue.daemon = False
+        p_queue.run()
+        print(1111111111)
 
     def push(self, q_name, *args):
         self.queue_map[q_name].push(*args)
@@ -23,13 +25,12 @@ class ProcessManager(metaclass=SingletonType):
         pass
 
 
-class ProcessQueue(Thread, metaclass=ABCMeta):
+class ProcessQueue(Process, metaclass=ABCMeta):
     def __init__(self, q_name):
         super().__init__()
         self.queue_name = q_name;
         self.wait_queue = Queue(maxsize=50)
         self.done_count = 0;
-        pass
 
     @abstractmethod
     def process(self, item):

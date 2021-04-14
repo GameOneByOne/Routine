@@ -6,6 +6,7 @@ from django_redis import get_redis_connection
 from Core.email import send_sign_up_email, is_email
 from Core.encrypt import md5
 from HelloWorld.settings import logger as log
+from Core.processQuque import ProcessManager
 
 # Create your views here.
 class UserInfo(APIView):
@@ -75,14 +76,15 @@ class EmailCode(APIView):
             # 先检查之前有没有发过
             remain_time = redis_conn.ttl(email)
             if remain_time <= 0:
-                code = send_sign_up_email(email)
+                pQueueManager.push("SendEmailCode", email)
+                # code = send_sign_up_email(email)
 
-                if code:
-                    redis_conn.set(email, code, ex=60)
-                    return JsonResponse({"errorCode": 0, "desc": "Varify Email Had Sent"}, status=200)
+                # if code:
+                #     redis_conn.set(email, code, ex=60)
+                #     return JsonResponse({"errorCode": 0, "desc": "Varify Email Had Sent"}, status=200)
 
-                else:
-                    return JsonResponse({"errorCode": 1, "desc": "Your Email Is Not Exist.."}, status=200)
+                # else:
+                return JsonResponse({"errorCode": 1, "desc": "Your Email Is Not Exist.."}, status=200)
 
             else:
                 return JsonResponse({"errorCode": 1, "desc": "Code Has Been Sent, Please Hold On {} Seconds".format(remain_time)}, status=200)

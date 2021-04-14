@@ -49,8 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'HelloWorld.Book',
-    'HelloWorld.User'
+    'Book',
+    'User',
+    'ProcessQueue'
 ]
 
 REST_FRAMEWORK = {
@@ -168,5 +169,4 @@ IMAGE_OUTPUT_PATH = "Statics/image/pdf_cover/"
 
 # URI PATH Settings
 PDF_COVER_PATH = STATIC_URL + "image/pdf_cover/"
-
 
