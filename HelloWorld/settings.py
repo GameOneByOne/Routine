@@ -49,9 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'Book',
-    'User',
-    'ProcessQueue'
+    'HelloWorld.Book',
+    'HelloWorld.User',
+    'HelloWorld.ProcessQueue'
 ]
 
 REST_FRAMEWORK = {
@@ -113,8 +113,8 @@ CACHES = {
         "LOCATION": "redis://{}:{}".format(secret.REDIS_HOST,secret.REDIS_PORT),
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            "CONNECTION_POOL_KWARGS": {"max_connections": 100}
-            # "PASSWORD": "密码",
+            "CONNECTION_POOL_KWARGS": {"max_connections": 100},
+            "PASSWORD": secret.REDIS_PW
         }
     }
 }

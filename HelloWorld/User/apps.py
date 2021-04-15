@@ -3,7 +3,7 @@ from Core.processQuque import ProcessQueue
 
 
 class UserConfig(AppConfig):
-    name = 'User'
+    name = 'HelloWorld.User'
 
 
 class SendEmailCodeQueue(ProcessQueue):

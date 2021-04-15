@@ -2,7 +2,7 @@ from abc import ABCMeta,abstractmethod
 from Core.metaclass import SingletonType
 from queue import Queue
 from logging import log
-from multiprocessing import Process
+from threading import Thread
 import time
 
 class ProcessManager(metaclass=SingletonType):
@@ -13,10 +13,10 @@ class ProcessManager(metaclass=SingletonType):
         if q_name in self.queue_map.keys(): return -1
         p_queue = cls(q_name)
         self.queue_map[q_name] = p_queue
-
         p_queue.daemon = False
-        p_queue.run()
-        print(1111111111)
+        # print(1111111111)
+        p_queue.start()
+        # print(1111111111)
 
     def push(self, q_name, *args):
         self.queue_map[q_name].push(*args)
@@ -25,7 +25,7 @@ class ProcessManager(metaclass=SingletonType):
         pass
 
 
-class ProcessQueue(Process, metaclass=ABCMeta):
+class ProcessQueue(Thread, metaclass=ABCMeta):
     def __init__(self, q_name):
         super().__init__()
         self.queue_name = q_name;
@@ -53,3 +53,6 @@ class ProcessQueue(Process, metaclass=ABCMeta):
                     self.process(self.wait_queue.get())
                 except Exception as e:
                     log.error("[ ProcessQueue ] Our Queue {} Is Error When We Process, MayBe You Should Have A Look !".format(self.queue_name))
+
+            else:
+                time.sleep(1)
