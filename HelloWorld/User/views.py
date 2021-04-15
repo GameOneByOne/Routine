@@ -39,7 +39,6 @@ class UserInfo(APIView):
             user = UserSerializer(data=request.POST)
             
             if user.is_valid():
-                user.validated_data["avatar_id"] = md5(user.validated_data["email"])[:18]
                 user.save()
                 content = UserSerializer(User.objects.get(email=email)).data
                 content["errorCode"] = 0
@@ -47,20 +46,8 @@ class UserInfo(APIView):
                 return JsonResponse(content, status=200)
 
             else:
-                log.info("Email : {} Request Sign Up Filed Because Of {}".format(email, user.errors))
+                log.info("Email : {} Request Sign Up Failed Because Of {}".format(email, user.errors))
                 return JsonResponse({"errorCode": 1, "desc": "Sign Up Failed, Please Call The Web Manager"}, status=200)
-                
-    def patch(self, request, *args, **kwargs):
-        data = {
-            'data': 'patch success'
-        }
-        return JsonResponse(data, status=200)
-
-    def delete(self, request, *args, **kwargs):
-        data = {
-            'data': 'delete success'
-        }
-        return JsonResponse(data, status=200)
 
 
 class EmailCode(APIView):
@@ -77,15 +64,7 @@ class EmailCode(APIView):
             remain_time = redis_conn.ttl(email)
             if remain_time <= 0:
                 pQueueManager.push("SendEmailCodeQueue", email)
-                # code = send_sign_up_email(email)
-
-                # if code:
-                #     redis_conn.set(email, code, ex=60)
-                #     return JsonResponse({"errorCode": 0, "desc": "Varify Email Had Sent"}, status=200)
-
-                # else:
-                return JsonResponse({"errorCode": 1, "desc": "Your Email Is Not Exist.."}, status=200)
-
+                return JsonResponse({"errorCode": 1, "desc": "Code Has Been Sent"}, status=200)
             else:
                 return JsonResponse({"errorCode": 1, "desc": "Code Has Been Sent, Please Hold On {} Seconds".format(remain_time)}, status=200)
 

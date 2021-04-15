@@ -10,10 +10,12 @@ class User(models.Model):
     email = models.EmailField(null=True, default=None)
     user_name = models.CharField(blank=False, db_index=True, max_length=64, default="Sharer")
     password = models.CharField(blank=False, max_length=64, default=None)
-    avatar_id =models.CharField(blank=True, max_length=64, default="")
+    avatar_id = models.CharField(blank=True, max_length=64, default="")
 
     def save(self):
         self.slug = generate_slug("User", "{}{}".format(self.email, self.password))
+        self.password = md5(self.password)
+        if avatar_id == "": self.avatar_id = md5(self.email)[:18]
         super().save()
 
     class Meta:
