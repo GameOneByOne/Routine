@@ -2,8 +2,8 @@ from rest_framework.views import APIView
 from HelloWorld.User.models import User, UserSerializer
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse
+from Core.email import is_email
 from django_redis import get_redis_connection
-from Core.email import send_sign_up_email, is_email
 from Core.encrypt import md5
 from HelloWorld.settings import logger as log
 from HelloWorld.ProcessQueue.apps import pQueueManager
@@ -64,7 +64,7 @@ class EmailCode(APIView):
             remain_time = redis_conn.ttl(email)
             if remain_time <= 0:
                 pQueueManager.push("SendEmailCodeQueue", email)
-                return JsonResponse({"errorCode": 1, "desc": "Code Has Been Sent"}, status=200)
+                return JsonResponse({"errorCode": 0, "desc": "Code Has Been Sent"}, status=200)
             else:
                 return JsonResponse({"errorCode": 1, "desc": "Code Has Been Sent, Please Hold On {} Seconds".format(remain_time)}, status=200)
 

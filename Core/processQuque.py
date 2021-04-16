@@ -1,9 +1,11 @@
 from abc import ABCMeta,abstractmethod
 from Core.metaclass import SingletonType
 from queue import Queue
-from logging import log
+import logging
 from threading import Thread
 import time
+log = logging.getLogger("Service")
+
 
 class ProcessManager(metaclass=SingletonType):
     def __init__(self):
@@ -14,9 +16,7 @@ class ProcessManager(metaclass=SingletonType):
         p_queue = cls(q_name)
         self.queue_map[q_name] = p_queue
         p_queue.daemon = False
-        # print(1111111111)
         p_queue.start()
-        # print(1111111111)
 
     def push(self, q_name, *args):
         self.queue_map[q_name].push(*args)

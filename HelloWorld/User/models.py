@@ -15,7 +15,8 @@ class User(models.Model):
     def save(self):
         self.slug = generate_slug("User", "{}{}".format(self.email, self.password))
         self.password = md5(self.password)
-        if avatar_id == "": self.avatar_id = md5(self.email)[:18]
+
+        if self.avatar_id == "": self.avatar_id = md5(self.email)[:18]
         super().save()
 
     class Meta:

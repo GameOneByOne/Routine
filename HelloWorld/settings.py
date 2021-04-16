@@ -20,7 +20,7 @@ import platform
 IS_UNIX = False if "Windows" in platform.platform() else True
 
 # Build Log Setting 
-logger = logging.getLogger()
+logger = logging.getLogger("Service")
 logger.setLevel(logging.DEBUG)
 handler = TimedRotatingFileHandler('Log/Service.log', when = 'd', interval = 1, backupCount=10)
 handler.setFormatter(logging.Formatter('[%(asctime)s] %(filename)s [%(levelname)s] :%(message)s'))

@@ -32,7 +32,7 @@ class BookInfo(APIView):
 
         page_num = int(request.COOKIES["page_num"])
 
-        return JsonResponse(BookSerializer(Book.objects.all(), many=True).data[page_num:page_num+12], safe=False, status=200)
+        return JsonResponse(BookSerializer(Book.objects.filter(public=True), many=True).data[page_num:page_num+12], safe=False, status=200)
 
     def post(self, request, *args, **kwargs):
         book = Book()
