@@ -39,9 +39,10 @@ class BookInfo(APIView):
         book_name = request.data["bookName"] if request.data.get("bookName", "") != "" else request.data["pdf_file"]._name.split(".")[0]
         book_author = request.data["bookAuthor"] if request.data.get("bookAuthor", "") != "" else "未命名作者"
         book_slug = generate_slug("Book", "{}".format(book_name))
+        
         try:
             Book.objects.get(slug=book_slug)
-            return JsonResponse({"errorCode":1, "content":"书名重复"}, safe=False, status=200)
+            return JsonResponse({"errorCode":1, "desc":"书名重复"}, safe=False, status=200)
 
         except ObjectDoesNotExist:
             book = Book()
@@ -60,4 +61,4 @@ class BookInfo(APIView):
             log.info("Book Data Parse Success , Begin To Generate And Resize Cover And Split Pdf")
             pQueueManager.push("ProcessBookQueue", book.slug)
 
-            return JsonResponse({"errorCode":0, "content":"上传成功啦，等后台处理完成，就可以浏览啦，大概需要1分钟左右"}, safe=False, status=200)
+            return JsonResponse({"errorCode":0, "desc":"上传成功啦，等后台处理完成，就可以浏览啦，大概需要1分钟左右"}, safe=False, status=200)

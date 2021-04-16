@@ -38,9 +38,7 @@ class BookSerializer(serializers.Serializer):
     upload_people = serializers.SerializerMethodField()
         
     def get_upload_people(self, obj):
-        if obj.upload_people:
-            return obj.upload_people.user_name
-        
+        if obj.upload_people: return obj.upload_people.user_name
         return "未命名" 
 
     def get_cover(self, obj):

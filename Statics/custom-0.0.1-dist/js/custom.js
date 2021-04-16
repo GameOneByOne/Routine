@@ -11,7 +11,7 @@
 // 登陆按钮的功能
 $("#login-in").click(function(){
     if ($("#email").val() == "" || $("#passWord").val() == ""){
-        alert("邮箱和密码不能为空");
+        WindowsRemander("error", "邮箱和密码不能为空");
     } else {
         $.ajax({
             url : "/user/",
@@ -136,6 +136,24 @@ $("#book-mark").hover(function () {
     $("#book-mark").addClass("bi-bookmark-heart");
 });
 
+// 小窗口弹窗事件
+function WindowsRemander(type, content){
+    $.toast({
+        title: content,
+        subtitle: '',
+        // content: content,
+        type: type,
+        delay: 6000,
+        img: {
+          src: '',
+          class: 'rounded-lg',
+          title: 'Thumbnail Title',
+          alt: ''
+        },
+        pause_on_hover: true
+      });
+}
+
 
 /*
 -------------------------------
@@ -169,36 +187,10 @@ $('#md5File').fileinput({
     minFileCount : 1,
   }).on('fileuploaded',function (event, data, previewId, index) {
     if (data.errorCode == 1){
-        $.toast({
-            title: 'Notice!',
-            subtitle: 'Just Now',
-            content: '文件上传失败，请重试',
-            type: 'info',
-            delay: 3000,
-            img: {
-              src: '',
-              class: 'rounded-lg',
-              title: 'Thumbnail Title',
-              alt: 'Alternative'
-            },
-            pause_on_hover: false
-          });
+        WindowsRemander('warn', data.desc);
     }
     else{
-        $.toast({
-            title: 'Notice!',
-            subtitle: 'Just Now',
-            content: '文件上传成功，感谢你的分享',
-            type: 'info',
-            delay: 3000,
-            img: {
-              src: '',
-              class: 'rounded-lg',
-              title: 'Thumbnail Title',
-              alt: 'Alternative'
-            },
-            pause_on_hover: false
-          });
+        WindowsRemander("info", "感谢分享!");
     }
 });
 
