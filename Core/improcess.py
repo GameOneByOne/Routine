@@ -3,6 +3,7 @@ import sys, fitz
 import os
 import shutil
 from HelloWorld.settings import * 
+from HelloWorld.settings import logger as log
 
 """
 pip install PyMuPDF
@@ -15,12 +16,15 @@ def update_image_size(image_name, output_name):
     重新调整图片大小为设置的宽高
     """
     try:
+        log.debug("[ Book Process ] {} Image Begin To Update Size".format(output_name))
         img = Image.open("{}{}".format(IMAGE_OUTPUT_PATH, image_name))
         img.resize(COVER_SIZE).save("{}{}".format(IMAGE_OUTPUT_PATH, output_name))
+
     except Exception as e:
-        logging.error("A Book Happen Error When Resize Cover, {}".format(e))
+        log.error("[ Book Process ] A Book Happen Error When Resize Cover, {}".format(e))
         return False
 
+    log.debug("[ Book Process ] {} Image Update Size Success".format(output_name))
     return True
 
 def generate_pdf_cover(pdf_name, output_name):
@@ -28,18 +32,22 @@ def generate_pdf_cover(pdf_name, output_name):
     获取PDF文档的第一页作为封面图片
     """
     try:
+        log.debug("[ Book Process ] {} Cover Begin To Generate".format(pdf_name))
         pdfDoc = fitz.open("{}{}".format(PDF_INPUT_PATH, pdf_name))
         pdfDoc[0].getPixmap(matrix=fitz.Matrix(8.0, 8.0).preRotate(0), alpha=False).writePNG("{}{}".format(IMAGE_OUTPUT_PATH, output_name))
+
     except Exception as e:
-        logging.error("A Book Happen Error When Generate Cover, {}".format(e))
+        log.error("[ Book Process ] A Book Happen Error When Generate Cover, {}".format(e))
         return False
-        
+
+    log.debug("[ Book Process ] {} Cover Generate Success".format(pdf_name))    
     return True
 
 def split_pdf(pdf_path):
     """
     对PDF文件进行切割，每100页，切割为一个小PDF 
     """
+    log.debug("[ Book Process ] {} Begin To Spilt To Some Pieces".format(pdf_path)) 
     dir_name, file_name_with_ext = os.path.split(pdf_path)
     file_name_no_ext, _ = os.path.splitext(file_name_with_ext) 
     file_dir_name = os.path.join(dir_name, file_name_no_ext)
@@ -65,6 +73,8 @@ def split_pdf(pdf_path):
                 pdf.save("{}/{:0>2d}.pdf".format(file_dir_name, file_num))
                 pdf.close()
     except:
+        log.error("[ Book Process ] A Book Happen Error When Split Pdf, {}".format(e))
         return False
 
+    log.debug("[ Book Process ] {} Spilt To Some Pieces Success".format(pdf_path)) 
     return True

@@ -56,7 +56,7 @@ class EmailCode(APIView):
 
     def get(self, request, *args, **kwargs):
         email = request.GET.get("email", "")
-        log.info("email: {} Acquire Sign Up Random Code".format(email))
+        log.info("Email: {} Acquire Sign Up Random Code".format(email))
         if is_email(email): 
             redis_conn = get_redis_connection("default")
 

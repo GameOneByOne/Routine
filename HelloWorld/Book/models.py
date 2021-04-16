@@ -21,13 +21,10 @@ class Book(models.Model):
     public = models.BooleanField(default=False)
 
     def save(self):
-        self.slug = generate_slug("Book", "{}{}".format(self.name, self.author))
-        try:
-            Book.objects.get(slug=self.slug)
-        except ObjectDoesNotExist:
-            super().save()
-            return True
-        return False
+        super().save()
+
+    def update(self):
+        super().save()
 
     class Meta:
         db_table = "Model_Book"
@@ -38,8 +35,13 @@ class BookSerializer(serializers.Serializer):
     author = serializers.CharField()
     cover = serializers.SerializerMethodField()
     upload_date = serializers.CharField()
-    upload_people = serializers.CharField(source='upload_people.user_name')
+    upload_people = serializers.SerializerMethodField()
         
+    def get_upload_people(self, obj):
+        if obj.upload_people:
+            return obj.upload_people.user_name
+        
+        return "未命名" 
 
     def get_cover(self, obj):
         return PDF_COVER_PATH + obj.slug + ".jpeg"

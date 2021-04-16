@@ -1,10 +1,9 @@
 from abc import ABCMeta,abstractmethod
 from Core.metaclass import SingletonType
 from queue import Queue
-import logging
 from threading import Thread
 import time
-log = logging.getLogger("Service")
+from HelloWorld.settings import logger as log
 
 
 class ProcessManager(metaclass=SingletonType):
@@ -12,7 +11,7 @@ class ProcessManager(metaclass=SingletonType):
         self.queue_map = {}
 
     def create_queue(self, q_name, cls):
-        if q_name in self.queue_map.keys(): return -1
+        if q_name in self.queue_map.keys(): return 
         p_queue = cls(q_name)
         self.queue_map[q_name] = p_queue
         p_queue.daemon = False
@@ -41,6 +40,7 @@ class ProcessQueue(Thread, metaclass=ABCMeta):
             log.warn("[ ProcessQueue ] Our Queue {} Is Full, MayBe We Have Some Trouble !".format(self.queue_name))
             return 
 
+        log.debug("[ ProcessQueue ] A New Item Push Into Our Queue {} ".format(self.queue_name))
         self.wait_queue.put(args[0])
 
     def stat(self):
@@ -52,7 +52,7 @@ class ProcessQueue(Thread, metaclass=ABCMeta):
                 try:
                     self.process(self.wait_queue.get())
                 except Exception as e:
-                    log.error("[ ProcessQueue ] Our Queue {} Is Error When We Process, MayBe You Should Have A Look !".format(self.queue_name))
+                    log.error("[ ProcessQueue ] Our Queue {} Is Error When We Process, MayBe You Should Have A Look ! {}".format(self.queue_name, e))
 
             else:
                 time.sleep(1)
