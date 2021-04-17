@@ -11,7 +11,7 @@
 // 登陆按钮的功能
 $("#login-in").click(function(){
     if ($("#email").val() == "" || $("#passWord").val() == ""){
-        WindowsRemander("error", "邮箱和密码不能为空");
+        WindowsRemanderError("我们遇到了一个问题", "刚刚", "在<font color=\"green\">登录</font>的时候，输入的邮箱和密码不能为空哦！");
     } else {
         $.ajax({
             url : "/user/",
@@ -36,7 +36,7 @@ $("#login-in").click(function(){
 // 注册按钮的功能
 $("#sign-up").click(function(){
     if ($("#email").val() == "" || $("#passWord").val() == ""){
-        alert("邮箱和密码不能为空");
+        WindowsRemanderError("我们遇到了一个问题", "刚刚", "在<font color=\"orange\">注册</font>的时候，输入的邮箱和密码不能为空哦！");
     } else if ($("#RandomCodeInput").hasClass("d-none")){
         $.ajax({
             url : "/user/randomcode",
@@ -126,26 +126,102 @@ $("#upload-button").hover(function () {
     $("#upload-button").addClass("bi-arrow-up-square");
 });
 
+// 更换头像按钮事件
+$("#ChangeAvatar").click(function(){  
+    var new_avatar = md5(Math.random()).substr(0,18);
+    var svgCode = multiavatar(new_avatar);
+    $("#user-avatar").attr("avatar_id", new_avatar);
+    $("#user-avatar").html(svgCode); // 填充右上角的头像
+    $("#info-avatar").html(svgCode); // 填充用户信息页的头像
 
-// 收藏按钮的悬浮事件
-$("#book-mark").hover(function () {
-    $("#book-mark").removeClass("bi-bookmark-heart");
-    $("#book-mark").addClass("bi-bookmark-heart-fill");
-}, function () {
-    $("#book-mark").removeClass("bi-bookmark-heart-fill");
-    $("#book-mark").addClass("bi-bookmark-heart");
+    if ($("#SaveChange").hasClass("d-none")){
+        $("#SaveChange").removeClass("d-none")
+    }
+
+    if ($("#CancelChange").hasClass("d-none")){
+        $("#CancelChange").removeClass("d-none")
+    }
 });
 
-// 小窗口弹窗事件
-function WindowsRemander(type, content){
+// 用户信息保存按钮事件
+$("#SaveChange").click(function(){
+    var new_avatar = $("#user-avatar").attr("avatar_id");
+    
+    $.ajax({
+        url : '/user/',
+        type : "patch",
+        data : {"avatar_id": new_avatar, "slug": $.cookie("slug")},
+        async : true,
+        success : function(data){
+            if (data.errorCode == 0){
+                $.cookie("avatar_id", new_avatar);
+                WindowsRemanderInfo("一个小提醒", "刚刚", data.desc);
+            } else {
+                WindowsRemanderInfo("一个小提醒", "刚刚", data.desc);
+                var old_avatar = $.cookie('avatar_id');
+                var svgCode = multiavatar(old_avatar);
+                $("#user-avatar").html(svgCode); // 填充右上角的头像
+                $("#info-avatar").html(svgCode); // 填充用户信息页的头像
+            }
+            
+        }
+      });
+});
+
+// 用户信息取消按钮事件
+$("#CancelChange").click(function(){
+    var old_avatar = $.cookie('avatar_id');
+    var svgCode = multiavatar(old_avatar);
+    $("#user-avatar").html(svgCode); // 填充右上角的头像
+    $("#info-avatar").html(svgCode); // 填充用户信息页的头像
+});
+
+// 小窗口弹窗信息事件
+function WindowsRemanderInfo(title, subtitle, content){
     $.toast({
-        title: content,
-        subtitle: '',
-        // content: content,
-        type: type,
+        title: title,
+        subtitle: subtitle,
+        content: content,
+        type: 'info',
+        delay: 6000,
+        img: {
+          src: 'static/image/icon/right.png',
+          class: 'rounded-lg',
+          title: 'Thumbnail Title',
+          alt: ''
+        },
+        pause_on_hover: true
+      });
+}
+
+// 小窗口弹窗警告事件
+function WindowsRemanderWarn(title, subtitle, content){
+    $.toast({
+        title: title,
+        subtitle: subtitle,
+        content: content,
+        type: 'warn',
         delay: 6000,
         img: {
           src: '',
+          class: 'rounded-lg',
+          title: 'Thumbnail Title',
+          alt: ''
+        },
+        pause_on_hover: true
+      });
+}
+
+// 小窗口弹窗错误事件
+function WindowsRemanderError(title, subtitle, content){
+    $.toast({
+        title: title,
+        subtitle: subtitle,
+        content: content,
+        type: 'error',
+        delay: 6000,
+        img: {
+          src: 'static/image/icon/error.png',
           class: 'rounded-lg',
           title: 'Thumbnail Title',
           alt: ''
@@ -187,10 +263,10 @@ $('#md5File').fileinput({
     minFileCount : 1,
   }).on('fileuploaded',function (event, data, previewId, index) {
     if (data.errorCode == 1){
-        WindowsRemander('warn', data.desc);
+        WindowsRemanderInfo(data.desc);
     }
     else{
-        WindowsRemander("info", "感谢分享!");
+        WindowsRemanderInfo("感谢分享!");
     }
 });
 
@@ -209,7 +285,9 @@ $(document).ready(function(){
     var svgCode = multiavatar(avatarId);
     $("#user-avatar").html(svgCode); // 填充右上角的头像
     $("#info-avatar").html(svgCode); // 填充用户信息页的头像
-    // 记载书籍
+    $.cookie("avatar_id", avatarId);
+
+    // 加载书籍
     $.cookie("page_num", 0);
     if ( $("#book-window").length > 0 ) {
         var page_num = $.cookie("page_num");

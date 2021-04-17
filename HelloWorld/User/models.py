@@ -19,14 +19,17 @@ class User(models.Model):
         if self.avatar_id == "": self.avatar_id = md5(self.email)[:18]
         super().save()
 
+    def update(self):
+        super().save()
+
     class Meta:
         db_table = "Model_User"
 
 
 class UserSerializer(serializers.Serializer):
     slug = serializers.SlugField(read_only=True)
-    email = serializers.EmailField()
-    password = serializers.CharField(write_only=True)
+    email = serializers.EmailField(required=False)
+    password = serializers.CharField(write_only=True, required=False)
     user_name = serializers.CharField(required=False)
     avatar_id = serializers.CharField(required=False)
 
@@ -41,5 +44,5 @@ class UserSerializer(serializers.Serializer):
         instance.password = validated_data.get('password',instance.password)
         instance.user_name = validated_data.get('user_name',instance.user_name)
         instance.avatar_id = validated_data.get('avatar_id',instance.avatar_id)
-        instance.save()
+        instance.update()
         return instance
