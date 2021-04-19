@@ -118,6 +118,7 @@ __pycache__/
 .vscode/
 *.rdb
 secret.py
+*.icloud
 
 # Spyder project settings
 .spyderproject
