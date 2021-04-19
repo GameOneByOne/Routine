@@ -21,10 +21,9 @@ class BookInfo(APIView):
 
     def get(self, request, *args, **kwargs):
         if request.GET.get("slug", "") != "":
-            book_path = "Statics/bookData/{}".format(request.GET["slug"])
             try:
                 book_info = BookSerializer(Book.objects.get(slug=request.GET["slug"])).data
-                book_info["pieces"] = os.listdir(book_path)
+                book_info["pieces"] = os.listdir("Statics/bookData/{}".format(request.GET["slug"]))
                 if IS_UNIX: book_info["pieces"].reverse()
                 return JsonResponse(book_info, safe=False, status=200)
 
@@ -52,8 +51,9 @@ class BookInfo(APIView):
             book.upload_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
             book.public = False
 
-            if (request.COOKIES.get("slug", "null") != "null") and (request.COOKIES.get("slug", "null") == "undefined"): 
-                book.upload_people = User.objects.get(slug=request.COOKIES.get("slug", "Default"))
+            print(request.COOKIES)
+            if (request.COOKIES.get("slug", "null") != "null") and (request.COOKIES.get("slug", "null") != "undefined"): 
+                book.upload_people = User.objects.get(slug=request.COOKIES.get("slug", ""))
                 
             book.content = request.data["pdf_file"]
             book.save()

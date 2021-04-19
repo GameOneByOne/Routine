@@ -11,20 +11,20 @@ pip install PIL
 """
 
 
-def update_image_size(image_name, output_name):
+def update_image_size(image_name):
     """
     重新调整图片大小为设置的宽高
     """
     try:
-        log.debug("[ Book Process ] {} Image Begin To Update Size".format(output_name))
+        log.debug("[ Book Process ] {} Image Begin To Update Size".format(image_name))
         img = Image.open("{}{}".format(IMAGE_OUTPUT_PATH, image_name))
-        img.resize(COVER_SIZE).save("{}{}".format(IMAGE_OUTPUT_PATH, output_name))
+        img.resize(COVER_SIZE).save("{}{}".format(IMAGE_OUTPUT_PATH, image_name))
 
     except Exception as e:
         log.error("[ Book Process ] A Book Happen Error When Resize Cover, {}".format(e))
         return False
 
-    log.debug("[ Book Process ] {} Image Update Size Success".format(output_name))
+    log.debug("[ Book Process ] {} Image Update Size Success".format(image_name))
     return True
 
 def generate_pdf_cover(pdf_name, output_name):

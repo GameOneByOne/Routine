@@ -79,7 +79,7 @@ $("#sign-up").click(function(){
                         url : "/user/",
                         type : "post",
                         async : false,
-                        data : {"email":$("#email").val(), "password":$("#passWord").val()},
+                        data : {"email":$("#email").val(), "password":$("#passWord").val(), "user_name":$("#userName").val()},
                         dataType : "json",
                         success : function(data) {
                             if (data.errorCode == 0){
