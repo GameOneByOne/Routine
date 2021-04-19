@@ -49,9 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'HelloWorld.ProcessQueue',
     'HelloWorld.Book',
     'HelloWorld.User',
-    'HelloWorld.ProcessQueue',
     'HelloWorld.Reminder'
 ]
 

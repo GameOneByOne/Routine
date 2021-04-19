@@ -59,6 +59,6 @@ class BookInfo(APIView):
             book.save()
 
             log.info("Book Data Parse Success , Begin To Generate And Resize Cover And Split Pdf")
-            pQueueManager.push("ProcessBookQueue", book.slug)
+            pQueueManager.push("ProcessBookQueue", [request.COOKIES.get("csrftoken", ""), book.slug])
 
             return JsonResponse({"errorCode":0, "desc":"上传成功啦，等后台处理完成，就可以浏览啦"}, safe=False, status=200)

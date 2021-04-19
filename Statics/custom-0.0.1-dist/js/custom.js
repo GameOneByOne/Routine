@@ -11,7 +11,7 @@
 // 登陆按钮的功能
 $("#login-in").click(function(){
     if ($("#email").val() == "" || $("#passWord").val() == ""){
-        WindowsRemanderError("我们遇到了一个问题", "刚刚", "在<font color=\"green\">登录</font>的时候，输入的邮箱和密码不能为空哦！");
+        WindowsRemanderError("在<font color=\"green\">登录</font>的时候，输入的邮箱和密码不能为空哦！");
     } else {
         $.ajax({
             url : "/user/",
@@ -37,7 +37,7 @@ $("#login-in").click(function(){
 // 注册按钮的功能
 $("#sign-up").click(function(){
     if ($("#email").val() == "" || $("#passWord").val() == ""){
-        WindowsRemanderError("我们遇到了一个问题", "刚刚", "在<font color=\"orange\">注册</font>的时候，输入的邮箱和密码不能为空哦！");
+        WindowsRemanderError("在<font color=\"orange\">注册</font>的时候，输入的邮箱和密码不能为空哦！");
     } else if ($("#RandomCodeInput").hasClass("d-none")){
         $.ajax({
             url : "/user/randomcode",
@@ -160,9 +160,9 @@ $("#SaveChange").click(function(){
         success : function(data){
             if (data.errorCode == 0){
                 $.cookie("avatar_id", new_avatar);
-                WindowsRemanderInfo("一个小提醒", "刚刚", data.desc);
+                WindowsRemanderInfo(data.desc);
             } else {
-                WindowsRemanderInfo("一个小提醒", "刚刚", data.desc);
+                WindowsRemanderError(data.desc);
                 var old_avatar = $.cookie('avatar_id');
                 var svgCode = multiavatar(old_avatar);
                 $("#user-avatar").html(svgCode); // 填充右上角的头像
@@ -182,10 +182,10 @@ $("#CancelChange").click(function(){
 });
 
 // 小窗口弹窗信息事件
-function WindowsRemanderInfo(title, subtitle, content){
+function WindowsRemanderInfo(content){
     $.toast({
-        title: title,
-        subtitle: subtitle,
+        title: "一个小提醒",
+        subtitle: "刚刚",
         content: content,
         type: 'info',
         delay: 6000,
@@ -200,10 +200,10 @@ function WindowsRemanderInfo(title, subtitle, content){
 }
 
 // 小窗口弹窗警告事件
-function WindowsRemanderWarn(title, subtitle, content){
+function WindowsRemanderWarn(content){
     $.toast({
-        title: title,
-        subtitle: subtitle,
+        title: "我们想提醒你一下",
+        subtitle: "刚刚",
         content: content,
         type: 'warn',
         delay: 6000,
@@ -218,10 +218,10 @@ function WindowsRemanderWarn(title, subtitle, content){
 }
 
 // 小窗口弹窗错误事件
-function WindowsRemanderError(title, subtitle, content){
+function WindowsRemanderError(content){
     $.toast({
-        title: title,
-        subtitle: subtitle,
+        title: "我们遇到了一个问题",
+        subtitle: "刚刚",
         content: content,
         type: 'error',
         delay: 6000,
@@ -253,9 +253,15 @@ function getMsg(delay) {
         async : true,
         success : function(data) {
             if (data.errorCode == 0){
-                if (data.type == "info") WindowsRemanderInfo(data.desc);
-                else if (data.type == "warn") WindowsRemanderWarn(data.desc);
-                else if (data.type == "error") WindowsRemanderError(data.desc);
+                if (data.msg_type == "[info]") {
+                    WindowsRemanderInfo(data.desc);
+                }
+                else if (data.msg_type == "[warn]") {
+                    WindowsRemanderWarn(data.desc);
+                }
+                else if (data.msg_type == "[error]"){
+                    WindowsRemanderError(data.desc);
+                } 
             }
         }
     });
@@ -286,11 +292,11 @@ $('#md5File').fileinput({
     maxFileCount: 10,
     minFileCount : 1,
   }).on('fileuploaded',function (event, data, previewId, index) {
-    if (data.errorCode == 1){
-        WindowsRemanderInfo(data.desc);
+    if (data.response.errorCode == 1){
+        WindowsRemanderError(data.response.desc);
     }
     else{
-        WindowsRemanderInfo("感谢分享!");
+        WindowsRemanderInfo(data.response.desc);
     }
 });
 
@@ -327,7 +333,7 @@ $(document).ready(function(){
         });
     }
 
-    setInterval("getMsg()", 5000);
+    setInterval("getMsg()", 10000);
 })
 
 // 页面被改变大小时执行
@@ -367,7 +373,7 @@ $(window).scroll(function() {
 
 });
 
-// 打开PDF Book 时，如果未登陆则提醒一下，非强制注册
+// 打开PDF Book 时.
 previewFile = function (obj) {
     var page = 0
     $.ajax({

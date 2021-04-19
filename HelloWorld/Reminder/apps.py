@@ -15,4 +15,4 @@ class RemindMessageQueue(ProcessQueue):
 
     def process(self, item):
         redis_conn = get_redis_connection("default")
-        redis_conn.lpush(item["key"], item["msg"])
+        redis_conn.lpush(item[0], item[1])

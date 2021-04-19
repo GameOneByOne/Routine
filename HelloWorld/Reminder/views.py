@@ -18,8 +18,12 @@ class ReminderInfo(APIView):
         remind_msg = redis_conn.lpop(key)
 
         if remind_msg:
-            msg_result = re.search("\[warn\]|\[info\]|\[error\]", remind_msg.decode("utf-8"))
+            remind_msg = remind_msg.decode("utf-8")
+            msg_result = re.search("\[warn\]|\[info\]|\[error\]", remind_msg)
             msg_type, msg_span = msg_result.group(), msg_result.span()
             return JsonResponse({"errorCode": 0, "desc":remind_msg[msg_span[-1]:], "msg_type":msg_type}, status=200)
 
         return JsonResponse({"errorCode": 1}, status=200)
+
+    def post(self, request, *args, **kwargs):
+        pass

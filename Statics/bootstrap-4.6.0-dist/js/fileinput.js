@@ -3354,6 +3354,7 @@
                 type: 'POST',
                 dataType: 'json',
                 data: formdata,
+                headers:{"X-CSRFToken":$.cookie("csrftoken")},
                 cache: false,
                 processData: false,
                 contentType: false
@@ -4007,6 +4008,7 @@
                     url: self._encodeURI(vUrl),
                     type: 'POST',
                     dataType: 'json',
+                    headers:{"X-CSRFToken":$.cookie("csrftoken")},
                     data: $.extend(true, {}, {key: vKey}, extraData)
                 }, self._ajaxDeleteSettings);
                 self._handler($el, 'click', function () {
