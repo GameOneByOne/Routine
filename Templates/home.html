@@ -65,9 +65,9 @@
     </div>
 
     {% comment %} User的登陆和注册信息展示的 Model {% endcomment %}
-    <div class="modal fade" id="userInfoModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+    <div class="modal fade " id="userInfoModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content rounded-lg">
                 <div class="modal-header">
                 {% if login_status %}
                     <h5 class="modal-title">用户信息</h5>
@@ -156,7 +156,7 @@
                 <div class="modal-footer">
                 {% if login_status %}
                     <button id="SaveChange" type="button" class="btn btn-success d-none" >保存</button>
-                    <button id="CancelChange" type="button" class="btn btn-warning d-none" >取消</button>
+                    <button id="CancelChange" type="button" class="btn btn-warning d-none" data-dismiss="modal">取消</button>
                     <button id="login-out" type="button" class="btn btn-danger" data-dismiss="modal">退出登录</button>
                 {% else %}
                     <button id="resend-email" type="button" class="btn btn-danger d-none">重发</button>
@@ -171,7 +171,7 @@
     {% comment %} Book信息展示的 Model {% endcomment %}
     <div class="modal fade" id="BookInfoModal" tabindex="-1" aria-labelledby="BookModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content container-fluid">
+            <div class="modal-content container-fluid rounded-lg">
                 <div class="modal-header">
                     <h5 class="modal-title">PDF Info</h5>
                 </div>
@@ -180,13 +180,13 @@
                     <div class="col-7">
                         <dl class="row">
                             <dt class="col-sm-5">图书名称</dt>
-                            <dd id="ModelBookName" class="col-sm-9"></dd>
+                            <dd id="ModelBookName" class="col-sm-9 h6"></dd>
                             <dt class="col-sm-5">图书作者</dt>
-                            <dd id="ModelBookAuthor" class="col-sm-9"></dd>
+                            <dd id="ModelBookAuthor" class="col-sm-9 h6"></dd>
                             <dt class="col-sm-5">图书分享人</dt>
-                            <dd id="ModelBookUploadPeople" class="col-sm-9"></dd>
+                            <dd id="ModelBookUploadPeople" class="col-sm-9 h6"></dd>
                             <dt class="col-sm-5">图书分享日期</dt>
-                            <dd id="ModelBookUploadDate" class="col-sm-9"></dd>
+                            <dd id="ModelBookUploadDate" class="col-sm-9 h6"></dd>
                         </dl>
                     </div>
                 </div>

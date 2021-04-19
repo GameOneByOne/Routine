@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'HelloWorld.Book',
     'HelloWorld.User',
-    'HelloWorld.ProcessQueue'
+    'HelloWorld.ProcessQueue',
+    'HelloWorld.Reminder'
 ]
 
 REST_FRAMEWORK = {

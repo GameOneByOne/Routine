@@ -18,6 +18,7 @@ $("#login-in").click(function(){
             type : "get",
             async : false,
             data : {"email":$("#email").val(), "password":$("#passWord").val()},
+            headers:{"X-CSRFToken":$.cookie("csrftoken")},
             dataType : "json",
             success : function(data) {
                 if (data.errorCode == 0){
@@ -43,6 +44,7 @@ $("#sign-up").click(function(){
             type : "get",
             async : false,
             data : {"email":$("#email").val()},
+            headers:{"X-CSRFToken":$.cookie("csrftoken")},
             dataType : "json",
             success : function(data) {
                 if (data.errorCode == 0){
@@ -69,6 +71,7 @@ $("#sign-up").click(function(){
             type : "post",
             async : false,
             data : {"code":$("#RandomCode").val(), "email":$("#email").val()},
+            headers:{"X-CSRFToken":$.cookie("csrftoken")},
             dataType : "json",
             success : function(data) {
                 if (data.errorCode == 0){
@@ -104,6 +107,7 @@ $("#resend-email").click(function(){
         type : "get",
         async : false,
         data : {"email":$("#email").val()},
+        headers:{"X-CSRFToken":$.cookie("csrftoken")},
         dataType : "json",
         success : function(data) {
             $("#UserErrorInfo").html(data.desc);
@@ -151,6 +155,7 @@ $("#SaveChange").click(function(){
         url : '/user/',
         type : "patch",
         data : {"avatar_id": new_avatar, "slug": $.cookie("slug")},
+        headers:{"X-CSRFToken":$.cookie("csrftoken")},
         async : true,
         success : function(data){
             if (data.errorCode == 0){
@@ -343,9 +348,6 @@ $(window).scroll(function() {
 
 // 打开PDF Book 时，如果未登陆则提醒一下，非强制注册
 previewFile = function (obj) {
-    if ($.cookie('slug') == "null"){
-        alert("你还没有注册哦！希望能注册一下");
-    }
     var page = 0
     $.ajax({
         url : '/book/?slug=' + $(obj).attr("book_id"),

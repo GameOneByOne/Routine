@@ -20,3 +20,6 @@ class ProcessBookQueue(ProcessQueue):
                 cur_book = Book.objects.get(slug=item)
                 cur_book.public = True
                 cur_book.update()
+
+        else:
+            pass

@@ -34,7 +34,7 @@ class UserInfo(APIView):
         try:
             user_info = User.objects.get(email=email)
             log.info("Email : {} Request Sign Up Failed, Because Signed Already".format(email))
-            return JsonResponse({"errorCode": 1, "desc": "欸? 这个邮箱已经注册过啦，你是邮箱本人还是不明觉厉的黑客？"}, status=200)
+            return JsonResponse({"errorCode": 1, "desc": "欸? 这个邮箱已经注册过啦"}, status=200)
 
         except ObjectDoesNotExist:
             user = UserSerializer(data=request.POST)
@@ -67,18 +67,24 @@ class EmailCode(APIView):
     def get(self, request, *args, **kwargs):
         email = request.GET.get("email", "")
         log.info("Email: {} Acquire Sign Up Random Code".format(email))
-        if is_email(email): 
-            redis_conn = get_redis_connection("default")
+        try:
+            User.objects.get(email=email)
+            log.info("Email: {} Has Already Sign Up".format(email))
+            return JsonResponse({"errorCode": 1, "desc": "欸? 这个邮箱已经注册过啦"}, status=200)
 
-            # 先检查之前有没有发过
-            remain_time = redis_conn.ttl(email)
-            if remain_time <= 0:
-                pQueueManager.push("SendEmailCodeQueue", email)
-                return JsonResponse({"errorCode": 0, "desc": "验证码已经上路~~"}, status=200)
-            else:
-                return JsonResponse({"errorCode": 1, "desc": "拜托..验证码已经发过啦, {} 秒后，再来呗".format(remain_time)}, status=200)
+        except ObjectDoesNotExist:
+            if is_email(email): 
+                redis_conn = get_redis_connection("default")
 
-        return JsonResponse({"errorCode": 1, "desc": "诶..邮箱格式好像不对, 检查一下呗"}, status=200)
+                # 先检查之前有没有发过
+                remain_time = redis_conn.ttl(email)
+                if remain_time <= 0:
+                    pQueueManager.push("SendEmailCodeQueue", email)
+                    return JsonResponse({"errorCode": 0, "desc": "验证码已经上路~~"}, status=200)
+                else:
+                    return JsonResponse({"errorCode": 1, "desc": "拜托..验证码已经发过啦, {} 秒后再来呗".format(remain_time)}, status=200)
+
+            return JsonResponse({"errorCode": 1, "desc": "诶..邮箱格式好像不对, 检查一下呗"}, status=200)
 
     def post(self, request, *args, **kwargs):
         code = request.data.get("code", "")
@@ -90,4 +96,4 @@ class EmailCode(APIView):
         if pre_code and code == pre_code.decode("utf-8"):
             return JsonResponse({"errorCode": 0}, status=200) 
             
-        return JsonResponse({"errorCode": 1, "desc": "嘿..验证码输错啦, 再试一下, 加油！"}, status=200)
+        return JsonResponse({"errorCode": 1, "desc": "嘿..验证码输错啦, 再试一下"}, status=200)
