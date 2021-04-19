@@ -236,11 +236,30 @@ function WindowsRemanderError(title, subtitle, content){
 }
 
 
+
+
 /*
 -------------------------------
 后台接口
 -------------------------------
 */
+
+// 实时获取消息事件
+function getMsg(delay) {
+    $.ajax({
+        url : '/message/',
+        type : "get",
+        data : "",
+        async : true,
+        success : function(data) {
+            if (data.errorCode == 0){
+                if (data.type == "info") WindowsRemanderInfo(data.desc);
+                else if (data.type == "warn") WindowsRemanderWarn(data.desc);
+                else if (data.type == "error") WindowsRemanderError(data.desc);
+            }
+        }
+    });
+}
 
 // 获取书籍的接口
 function getBooks(callback){
@@ -307,6 +326,8 @@ $(document).ready(function(){
             $.cookie("page_num", parseInt(page_num) + result.length);
         });
     }
+
+    setInterval("getMsg()", 5000);
 })
 
 // 页面被改变大小时执行
@@ -366,7 +387,7 @@ previewFile = function (obj) {
             $('#pdfInfoCover').attr("src","/static/image/pdf_cover/" + $(obj).attr("book_id") + ".jpeg");
             $('#BookInfoModal').modal('show')
         }
-      });
+    });
     
 };
 

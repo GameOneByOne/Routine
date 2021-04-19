@@ -18,6 +18,7 @@ from django.urls import path
 from django.conf.urls import url
 from HelloWorld.Book.views import BookInfo
 from HelloWorld.User.views import UserInfo, EmailCode
+from HelloWorld.Reminder.views import ReminderInfo
 from . import views
 
 
@@ -31,6 +32,7 @@ urlpatterns = [
     path('book/', BookInfo.as_view()),
     path('user/', UserInfo.as_view()),
     path('user/randomcode', EmailCode.as_view()),
+    path('message/', ReminderInfo.as_view()),
     
     
 ]
