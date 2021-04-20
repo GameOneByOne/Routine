@@ -7,10 +7,12 @@ from django_redis import get_redis_connection
 from Core.encrypt import md5
 from HelloWorld.settings import logger as log
 from HelloWorld.ProcessQueue.apps import pQueueManager
+from django.middleware.csrf import get_token
 
 # Create your views here.
 class UserInfo(APIView):
     def dispatch(self, request, *args, **kwargs):
+        get_token(request)
         return super().dispatch(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
@@ -64,8 +66,10 @@ class UserInfo(APIView):
 
         return JsonResponse({"errorCode": 1, "desc": "诶～有错误产生啦，得找管理员查查"}, status=200)
 
+
 class EmailCode(APIView):
     def dispatch(self, request, *args, **kwargs):
+        get_token(request)
         return super().dispatch(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):

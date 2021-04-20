@@ -80,6 +80,7 @@ $("#sign-up").click(function(){
                         type : "post",
                         async : false,
                         data : {"email":$("#email").val(), "password":$("#passWord").val(), "user_name":$("#userName").val()},
+                        headers:{"X-CSRFToken":$.cookie("csrftoken")},
                         dataType : "json",
                         success : function(data) {
                             if (data.errorCode == 0){
@@ -117,7 +118,9 @@ $("#resend-email").click(function(){
 
 // 登出按钮的功能
 $("#login-out").click(function(){
-    $.cookie('slug', "null");
+    $.removeCookie('slug');
+    $.removeCookie('csrftoken');
+    $.removeCookie('sessionid');
     window.location.href = "http://" + window.location.host;
 });
 
