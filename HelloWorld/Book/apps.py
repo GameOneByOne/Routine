@@ -23,7 +23,7 @@ class ProcessBookQueue(ProcessQueue):
                 log.debug("[ ProcessBookQueue ] {} Book Pdf Process Success!".format(book_slug))
                 cur_book = Book.objects.get(slug=book_slug)
                 cur_book.public = True
-                cur_book.update()
+                cur_book.save()
                 log.debug("[ ProcessBookQueue ] {} Book Data Update Success!".format(book_slug))
                 
                 pQueueManager.push("RemindMessageQueue", [item[0], "[info]你刚刚上传的 <font color=\"blue\">{}</font> 已经处理完啦，刷新页面即可看到".format(cur_book.name)])

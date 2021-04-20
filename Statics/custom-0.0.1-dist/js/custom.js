@@ -117,7 +117,7 @@ $("#resend-email").click(function(){
 
 // 登出按钮的功能
 $("#login-out").click(function(){
-    $.cookie('slug', null);
+    $.cookie('slug', "null");
     window.location.href = "http://" + window.location.host;
 });
 
@@ -128,6 +128,22 @@ $("#upload-button").hover(function () {
 }, function () {
     $("#upload-button").removeClass("bi-arrow-up-square-fill");
     $("#upload-button").addClass("bi-arrow-up-square");
+});
+
+// 消息按钮的悬浮事件
+$("#msg-trans").hover(function () {
+    $("#msg-trans").removeClass("bi-chat-square-text");
+    $("#msg-trans").addClass("bi-chat-square-text-fill");
+}, function () {
+    $("#msg-trans").removeClass("bi-chat-square-text-fill");
+    $("#msg-trans").addClass("bi-chat-square-text");
+});
+
+// 上传按钮的点击事件
+$("#upload-button").click(function(){
+    if ($.cookie("slug") == null){
+        WindowsRemanderError("我们建议你登陆之后再分享图书，这样做是为了上传文件的安全");
+    }
 });
 
 // 更换头像按钮事件
@@ -181,6 +197,15 @@ $("#CancelChange").click(function(){
     $("#info-avatar").html(svgCode); // 填充用户信息页的头像
 });
 
+// 用户提交消息事件
+$("#send-msg").click(function(){
+    if ($("#UserMessage").val() == ""){
+        WindowsRemanderWarn("你可能得留下点什么，才可以提交哦！");
+    } else {
+        sendMsg($("#UserMessage").val());
+    }
+});
+
 // 小窗口弹窗信息事件
 function WindowsRemanderInfo(content){
     $.toast({
@@ -224,7 +249,7 @@ function WindowsRemanderError(content){
         subtitle: "刚刚",
         content: content,
         type: 'error',
-        delay: 6000,
+        delay: 10000,
         img: {
           src: 'static/image/icon/error.png',
           class: 'rounded-lg',
@@ -236,15 +261,13 @@ function WindowsRemanderError(content){
 }
 
 
-
-
 /*
 -------------------------------
 后台接口
 -------------------------------
 */
 
-// 实时获取消息事件
+// 实时获取消息接口
 function getMsg(delay) {
     $.ajax({
         url : '/message/',
@@ -299,6 +322,24 @@ $('#md5File').fileinput({
         WindowsRemanderInfo(data.response.desc);
     }
 });
+
+// 用户提交消息的接口
+function sendMsg(message){
+    $.ajax({
+        url : '/message/',
+        type : "post",
+        data : {"message":message},
+        headers:{"X-CSRFToken":$.cookie("csrftoken")},
+        async : true,
+        success : function(data) {
+          if (data.errorCode == 0){
+              WindowsRemanderInfo(data.desc);
+          } else {
+              WindowsRemanderError(data.desc);
+          }
+        }
+      });
+}
 
 
 

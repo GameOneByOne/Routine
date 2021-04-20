@@ -31,6 +31,7 @@
                 <img  src="{% static 'image/web/title_small.png' %}" alt="...">
             </div>
             <div  class="col align-self-end ">
+                <i id="msg-trans" class="bi bi-chat-square-text float-right m-3" style="font-size: 1.5rem; color: black;" data-toggle="modal" data-target="#MsgModal"></i>
                 <i id="upload-button" class="bi bi-arrow-up-square float-right m-3" style="font-size: 1.5rem; color: black;" data-toggle="modal" data-target="#updaloadPDFModal"></i>
             </div>
             <div id="user-avatar" class="col align-self-end" avatar_id="{{ avatar_id }}" style="min-width:2px; max-width: 100px;" data-toggle="modal" data-target="#userInfoModal">
@@ -49,7 +50,7 @@
     {% comment %} PDFBook上传的Model {% endcomment %}
     <div class="modal fade" id="updaloadPDFModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content rounded-lg">
                 <div class="modal-header">
                     <h5 class="modal-title">PDF 分享</h5>
                 </div>
@@ -196,6 +197,40 @@
         </div>
     </div>
 
+    {% comment %} Msg的交互Model 用于和网站用户沟通和反馈 {% endcomment %}
+    <div class="modal fade" id="MsgModal" tabindex="-1" aria-labelledby="MsgModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content container-fluid rounded-lg">
+                <div class="modal-header">
+                    <h5 class="modal-title">欢迎提意见，说想法</h5>
+                </div>
+                <div class="modal-body row">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-11">
+                            <p><strong>小站说明：</strong></p>
+                            <p><strong>1、本站资源可以免费在线浏览和下载(下载还在开发中)，不需要注册、登陆、积分、月卡、点赞、收藏、用券、关注等等套路操作</strong></p>
+                            <p><strong>2、小站属于非营利性个人网站，如本站资源有侵权行为，可留言联系，删除资源</strong></p>
+                            <p><strong>3、希望未来的世界越来越开放，而不是被资本侵蚀，让资本在生活中建起了一堵堵墙</strong></p>
+                        </div>
+                    </div>
+                    <div class="row container">
+                        <div class="col-1"></div>
+                        <div class="col-11">
+                            <div class="input-group">
+                                <span class="input-group-text">你想留言的是</span>
+                            </div>
+                            <textarea id="UserMessage" class="form-control" aria-label="With textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer row">
+                    <button id="send-msg" type="button" class="btn btn-info" data-dismiss="modal">提交</button>
+                    <button id="cancel-msg" type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 <script src="{% static 'custom-0.0.1-dist/js/custom.js' %}"></script>

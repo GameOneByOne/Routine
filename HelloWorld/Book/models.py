@@ -23,9 +23,6 @@ class Book(models.Model):
     def save(self):
         super().save()
 
-    def update(self):
-        super().save()
-
     class Meta:
         db_table = "Model_Book"
 

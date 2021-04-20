@@ -26,4 +26,6 @@ class ReminderInfo(APIView):
         return JsonResponse({"errorCode": 1}, status=200)
 
     def post(self, request, *args, **kwargs):
-        pass
+        message = request.POST.get("message", "")
+        log.info("[ ReminderInfo ] We Receive A Message : {}".format(message))
+

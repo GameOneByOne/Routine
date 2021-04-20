@@ -31,16 +31,17 @@ class BookInfo(APIView):
                 return JsonResponse({}, safe=False, status=200)
 
         page_num = int(request.COOKIES["page_num"])
-
         return JsonResponse(BookSerializer(Book.objects.filter(public=True), many=True).data[page_num:page_num+12], safe=False, status=200)
 
     def post(self, request, *args, **kwargs):
         book_name = request.data["bookName"] if request.data.get("bookName", "") != "" else request.data["pdf_file"]._name.split(".")[0]
         book_author = request.data["bookAuthor"] if request.data.get("bookAuthor", "") != "" else "未命名作者"
         book_slug = generate_slug("Book", "{}".format(book_name))
+        log.info("Book {} Parse Begin ".format(book_slug))
         
         try:
             Book.objects.get(slug=book_slug)
+            log.warn("Book {} Is Already In Database So We Return Error ".format(book_slug))
             return JsonResponse({"errorCode":1, "desc":"书名重复"}, safe=False, status=200)
 
         except ObjectDoesNotExist:
@@ -51,14 +52,13 @@ class BookInfo(APIView):
             book.upload_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
             book.public = False
 
-            print(request.COOKIES)
-            if (request.COOKIES.get("slug", "null") != "null") and (request.COOKIES.get("slug", "null") != "undefined"): 
+            if (request.COOKIES.get("slug", "null") != "null"): 
                 book.upload_people = User.objects.get(slug=request.COOKIES.get("slug", ""))
                 
             book.content = request.data["pdf_file"]
             book.save()
 
-            log.info("Book Data Parse Success , Begin To Generate And Resize Cover And Split Pdf")
+            log.info("Book {} Parse Success , Push To Queue For Generate And Resize Cover And Split Pdf".format(book.slug))
             pQueueManager.push("ProcessBookQueue", [request.COOKIES.get("csrftoken", ""), book.slug])
 
             return JsonResponse({"errorCode":0, "desc":"上传成功啦，等后台处理完成，就可以浏览啦"}, safe=False, status=200)
