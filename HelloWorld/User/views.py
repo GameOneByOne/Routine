@@ -14,6 +14,7 @@ class UserInfo(APIView):
         return super().dispatch(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
+        # 用于用户的登陆验证
         email = request.GET.get("email", "")
         password = request.GET.get("password", "")
 
@@ -29,6 +30,7 @@ class UserInfo(APIView):
             return JsonResponse({"errorCode": 1, "desc":"诶呀!! 不明入侵者!!"}, status=200)        
 
     def post(self, request, *args, **kwargs):
+        # 用于用户的注册请求
         email = request.POST.get("email", "")
 
         try:
@@ -40,6 +42,7 @@ class UserInfo(APIView):
             user = UserSerializer(data=request.POST)
             
             if user.is_valid():
+                # 这里将信息保存后，还要将信息返回，为了将页面切换到登录状态
                 user.save()
                 content = UserSerializer(User.objects.get(email=email)).data
                 content["errorCode"] = 0
@@ -51,6 +54,7 @@ class UserInfo(APIView):
                 return JsonResponse({"errorCode": 1, "desc": "由于宇宙射线原因, 本次注册失败了, 请等管理员修复..."}, status=200)
 
     def patch(self, request, *args, **kwargs):
+        # 用于用户的部分信息更新，目前实现的是头像的更新
         slug = request.POST.get("slug", "")
         user_ins = User.objects.get(slug=slug)
         user = UserSerializer(user_ins, data=request.POST)
