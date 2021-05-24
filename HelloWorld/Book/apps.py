@@ -30,9 +30,9 @@ class ProcessBookQueue(ProcessQueue):
                 log.debug("[ ProcessBookQueue ] {} Book Data Update Success!".format(book_slug))
                 
                 # 给用户的消息推送
-                pQueueManager.push("RemindMessageQueue", [item[0], "[info]你刚刚上传的 <font color=\"blue\">{}</font> 已经处理完啦，刷新页面即可看到".format(cur_book.name)])
+                pQueueManager.push("RemindMessageQueue", [csrf, "[info]你刚刚上传的 <font color=\"blue\">{}</font> 已经处理完啦，刷新页面即可看到".format(cur_book.name)])
                 return 
 
         log.debug("[ ProcessBookQueue ] {} Book Pdf Process Failed!".format(book_slug))
-        pQueueManager.push("RemindMessageQueue", [item[0], "[error]你刚刚上传的 PDF 在处理的时候产生错误，处理失败"])
+        pQueueManager.push("RemindMessageQueue", [csrf, "[error]你刚刚上传的 PDF 在处理的时候产生错误，处理失败"])
         return 

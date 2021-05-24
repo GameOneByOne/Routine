@@ -16,7 +16,7 @@ def send_email(recv_email, message):
     #设置发送的内容, 转化为邮件文本
     msg = MIMEText(message, _subtype="html")
     #主题
-    msg["Subject"]= "A Test Message For Python Api"
+    msg["Subject"]= "Shared Pdf Sign Up Code"
     #发送者
     msg["From"] = sender
     #创建SMTP 服务器 连接
