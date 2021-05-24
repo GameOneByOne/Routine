@@ -12,7 +12,7 @@ def send_email(recv_email, message):
     #发邮件的地址
     sender = "yanzhang_a2@163.com"
     #发送这邮箱的密码
-    passwd = "OSUBQWTHOZZLXHII"
+    passwd = "CLENPKROCVPRUJOE"
     #设置发送的内容, 转化为邮件文本
     msg = MIMEText(message, _subtype="html")
     #主题
@@ -20,15 +20,20 @@ def send_email(recv_email, message):
     #发送者
     msg["From"] = sender
     #创建SMTP 服务器 连接
+    print(33333333333333333333333333)
     mailServer = smtplib.SMTP(SMTPSever,25)
     #登陆邮箱
+    print(4444444444444444444444)
     mailServer.login(sender,passwd)
     #发送邮件
     try:
-        mailServer.sendmail(sender, [recv_email], msg.as_string())
+        print(123123123123)
+        mailServer.sendmail(sender, [recv_email,sender], msg.as_string())
     except smtplib.SMTPRecipientsRefused as e:
+        print(e)
         mailServer.quit()
         return False
     #退出邮箱
+    print(125123512341)
     mailServer.quit()
     return True

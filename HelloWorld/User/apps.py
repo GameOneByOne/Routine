@@ -18,6 +18,7 @@ class SendEmailCodeQueue(ProcessQueue):
     def process(self, item):
         # 先获取一下验证码，时间戳的小数部分， 消息也是这里写死的
         random_code = str(time.time()).split(".")[-1]
+        print(random_code)
         message = """
             <h3>Welcome Friend<h3>
             <p>&nbsp;&nbsp;&nbsp;&nbsp; We are gald about received your sign up request, your verify code is {} <p>

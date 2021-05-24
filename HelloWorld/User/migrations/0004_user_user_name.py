@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='user',
             name='user_name',
-            field=models.CharField(db_index=True, default='未命名', max_length=64),
+            field=models.CharField(db_index=True, default='no name', max_length=64),
         ),
     ]
