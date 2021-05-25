@@ -2,7 +2,7 @@ import re
 import smtplib
 from email.mime.text import  MIMEText
 from HelloWorld.secret import secret
-from HelloWorld.secret import logger as log
+from HelloWorld.settings import logger as log
 
 
 def is_email(recv_email):

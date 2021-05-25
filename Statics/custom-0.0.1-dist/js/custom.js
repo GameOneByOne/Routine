@@ -430,10 +430,11 @@ previewFile = function (obj) {
             for (page=0; page<data.pieces.length; ++page){
                 $('#bookPieces').append('<button book_id="'+ data.slug +'" page_id="' + data.pieces[page] + '" class="row-2 btn btn-info btn-sm" onclick="watchPdf(this)" type="button">'+ page * 100 + '~' + (page+1) * 100 + '页</button>');
             }
-            $('#ModelBookName').html(data.name);
-            $('#ModelBookAuthor').html(data.author);
-            $('#ModelBookUploadPeople').html(data.upload_people);
-            $('#ModelBookUploadDate').html(data.upload_date);
+
+            $('#pBookName').html(data.name);
+            $('#pBookAuthor').html(data.author);
+            $('#pBookUploader').html(data.upload_people);
+            $('#pBookUploadDate').html(data.upload_date);
             $('#pdfInfoCover').attr("src","/static/image/pdf_cover/" + $(obj).attr("book_id") + ".jpeg");
             $('#BookInfoModal').modal('show')
         }
