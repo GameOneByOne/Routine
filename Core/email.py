@@ -1,35 +1,35 @@
+import re
 import smtplib
 from email.mime.text import  MIMEText
-import re
-import time
+from HelloWorld.secret import secret
+from HelloWorld.secret import logger as log
+
 
 def is_email(recv_email):
     return re.match("[a-z0-9A-z_\.]*@[0-9a-zA-Z]*\.com", recv_email)
 
 def send_email(recv_email, message):
-    #SMTP服务器
-    SMTPSever = "smtp.163.com"
-    #发邮件的地址
-    sender = "yanzhang_a2@163.com"
-    #发送这邮箱的密码
-    passwd = "CLENPKROCVPRUJOE"
+    log.debug("[ Send Email ] Begin To Send Email To {}".format(recv_email))
     #设置发送的内容, 转化为邮件文本
     msg = MIMEText(message, _subtype="html")
-    #主题
     msg["Subject"]= "Shared Pdf Sign Up Code"
-    #发送者
-    msg["From"] = sender
-    #创建SMTP 服务器 连接
-    mailServer = smtplib.SMTP_SSL(SMTPSever,465)
-    #登陆邮箱
-    mailServer.login(sender,passwd)
-    #发送邮件
+    msg["From"] = secret.SENDER
+
+    #创建SMTP 服务器连接 并登陆
+    log.debug("[ Send Email ] Connecting To Smtp Server And Login")
+    mailServer = smtplib.SMTP_SSL(secret.SMTP_SERVER, 465, timeout=10)
+    mailServer.login(secret.SENDER,secret.SMTP_PASSWD)
+    
     try:
-        mailServer.sendmail(sender, [recv_email,sender], msg.as_string())
+        #发送邮件
+        log.debug("[ Send Email ] Succeed To Connect Smtp Server Begin To Send Email")
+        mailServer.sendmail(secret.SENDER, [recv_email,secret.SENDER], msg.as_string())
     except smtplib.SMTPRecipientsRefused as e:
+        log.error("[ Send Email ] Send Email To {} Failed , Because Of {}".format(recv_email, e))
         mailServer.quit()
         return False
+        
     #退出邮箱
-    print(125123512341)
     mailServer.quit()
+    log.debug("[ Send Email ] Finished Msg To {}".format(recv_email))
     return True

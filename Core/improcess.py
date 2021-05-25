@@ -9,7 +9,21 @@ from HelloWorld.settings import logger as log
 pip install PyMuPDF
 pip install PIL
 """
+def generate_pdf_cover(pdf_name, output_name):
+    """
+    获取PDF文档的第一页作为封面图片
+    """
+    try:
+        log.debug("[ Book Process ] {} Cover Begin To Generate".format(pdf_name))
+        pdfDoc = fitz.open("{}{}".format(PDF_INPUT_PATH, pdf_name))
+        pdfDoc[0].getPixmap(matrix=fitz.Matrix(8.0, 8.0).preRotate(0), alpha=False).writePNG("{}{}".format(IMAGE_OUTPUT_PATH, output_name))
 
+    except Exception as e:
+        log.error("[ Book Process ] A Book Happen Error When Generate Cover, {}".format(e))
+        return False
+
+    log.debug("[ Book Process ] {} Cover Generate Success".format(pdf_name))    
+    return True
 
 def update_image_size(image_name):
     """
@@ -25,22 +39,6 @@ def update_image_size(image_name):
         return False
 
     log.debug("[ Book Process ] {} Image Update Size Success".format(image_name))
-    return True
-
-def generate_pdf_cover(pdf_name, output_name):
-    """
-    获取PDF文档的第一页作为封面图片
-    """
-    try:
-        log.debug("[ Book Process ] {} Cover Begin To Generate".format(pdf_name))
-        pdfDoc = fitz.open("{}{}".format(PDF_INPUT_PATH, pdf_name))
-        pdfDoc[0].getPixmap(matrix=fitz.Matrix(8.0, 8.0).preRotate(0), alpha=False).writePNG("{}{}".format(IMAGE_OUTPUT_PATH, output_name))
-
-    except Exception as e:
-        log.error("[ Book Process ] A Book Happen Error When Generate Cover, {}".format(e))
-        return False
-
-    log.debug("[ Book Process ] {} Cover Generate Success".format(pdf_name))    
     return True
 
 def split_pdf(pdf_path):

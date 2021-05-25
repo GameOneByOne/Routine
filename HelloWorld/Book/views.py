@@ -57,7 +57,7 @@ class BookInfo(APIView):
             book.upload_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
             book.public = False
 
-            # 这里判断一下是否是有登陆用户的上传
+            # 这里判断一下是否是登陆用户的上传
             if (request.COOKIES.get("slug", "null") != "null"): 
                 book.upload_people = User.objects.get(slug=request.COOKIES.get("slug", ""))
                 
@@ -68,4 +68,4 @@ class BookInfo(APIView):
             log.info("Book {} Parse Success , Push To Queue For Generate And Resize Cover And Split Pdf".format(book.slug))
             pQueueManager.push("ProcessBookQueue", [request.COOKIES.get("csrftoken", ""), book.slug])
 
-            return JsonResponse({"errorCode":0, "desc":"上传成功啦，等后台处理完成，就可以浏览啦"}, safe=False, status=200)
+            return JsonResponse({"errorCode":0, "desc":"上传成功，等后台处理完成，就可以浏览啦"}, safe=False, status=200)

@@ -51,6 +51,7 @@ class ProcessQueue(Thread, metaclass=ABCMeta):
             if (not self.wait_queue.empty()):
                 try:
                     self.process(self.wait_queue.get())
+                    log.debug("[ ProcessQueue ] Our Queue {} Completed A Item".format(self.queue_name))
                 except Exception as e:
                     log.error("[ ProcessQueue ] Our Queue {} Is Error When We Process, MayBe You Should Have A Look ! {}".format(self.queue_name, e))
 
