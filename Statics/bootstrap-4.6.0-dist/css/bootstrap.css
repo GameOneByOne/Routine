@@ -7729,6 +7729,11 @@ button.bg-dark:focus {
   border-top-right-radius: 0.25rem !important;
 }
 
+.rounded-top-lg {
+  border-top-left-radius: 0.9rem !important;
+  border-top-right-radius: 0.9rem !important;
+}
+
 .rounded-right {
   border-top-right-radius: 0.25rem !important;
   border-bottom-right-radius: 0.25rem !important;
@@ -7745,7 +7750,7 @@ button.bg-dark:focus {
 }
 
 .rounded-lg {
-  border-radius: 0.3rem !important;
+  border-radius: 1.0rem !important;
 }
 
 .rounded-circle {

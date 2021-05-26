@@ -27,14 +27,18 @@
     {% comment %} 上方title区 {% endcomment %}
     <div id="main-progress" class="container">
         <div class="row p-3 m-4">
-            <div id="main-title" class="col align-self-center">
+            <div id="main-title" class="col-4 align-self-center justify-content-center">
                 <img  src="{% static 'image/web/title_small.png' %}" alt="...">
             </div>
-            <div  class="col align-self-end ">
-                <i id="msg-trans" class="bi bi-chat-square-text float-right m-3" style="font-size: 1.5rem; color: black;" data-toggle="modal" data-target="#MsgModal"></i>
-                <i id="upload-button" class="bi bi-arrow-up-square float-right m-3" style="font-size: 1.5rem; color: black;" data-toggle="modal" data-target="#updaloadPDFModal"></i>
+            <div class="col-7 justify-content-end align-self-center ">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-outline-dark">首页</button>
+                    <button type="button" class="btn btn-outline-dark">吐槽</button>
+                    <button type="button" class="btn btn-outline-dark">网站动态</button>
+                    <button type="button" class="btn btn-outline-dark">赞助本站</button>
+                </div>
             </div>
-            <div id="user-avatar" class="col align-self-end" avatar_id="{{ avatar_id }}" style="min-width:2px; max-width: 100px;" data-toggle="modal" data-target="#userInfoModal">
+            <div id="user-avatar" class="col-1 align-self-center" avatar_id="{{ avatar_id }}" style="min-width:2px; max-width: 100px;" data-toggle="modal" data-target="#userInfoModal">
             </div>
         </div>
     </div>
@@ -67,7 +71,7 @@
 
     {% comment %} User的登陆和注册信息展示的 Model {% endcomment %}
     <div class="modal fade " id="userInfoModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
-        <div class="modal-dialog ">
+        <div class="modal-dialog rounded-lg">
             <div class="modal-content rounded-lg">
                 <div class="modal-header">
                 {% if login_status %}
@@ -130,7 +134,7 @@
                         </div>
                         <input id="email" type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping">
                     </div>
-
+                    
                     <div class="input-group flex-nowrap input-group-sm mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="addon-wrapping">登陆密码*</span>
@@ -230,21 +234,23 @@
                 <div class="modal-body row">
                     <div class="row">
                         <div class="col-1"></div>
-                        <div class="col-11">
+                        <div class="col-10">
                             <p><strong>小站说明：</strong></p>
-                            <p><strong>1、本站资源可以免费在线浏览和下载(下载还在开发中)，不需要注册、登陆、积分、月卡、点赞、收藏、用券、关注等等操作</strong></p>
-                            <p><strong>2、本站属于非营利性个人网站，目的是免费分享一些经典书籍的电子版，如本站资源有侵权行为，可留言联系，删除资源</strong></p>
-                            <p><strong>3、由于某(cai)些(wu)原(xian)因(zhi)，本站带宽不高，所以在PDF的浏览页面使用了缓存管理，第一次打开可能有些慢，之后打开会快很多</strong></p
+                            <h6>1、本站资源可以免费在线浏览和下载(下载还在开发中)，不需要注册、登陆、积分、月卡、点赞、收藏、用券、关注等等操作</strong></h6>
+                            <h6>2、本站属于非营利性个人网站，目的是免费分享一些经典书籍的电子版，如本站资源有侵权行为，可留言联系，删除资源</strong></h6>
+                            <h6>3、由于某(cai)些(wu)原(xian)因(zhi)，本站带宽不高，所以在PDF的浏览页面使用了缓存管理，第一次打开可能有些慢，之后打开会快很多</strong></h6>
                         </div>
+                        <div class="col-1"></div>
                     </div>
                     <div class="row container">
                         <div class="col-1"></div>
-                        <div class="col-11">
+                        <div class="col-10">
                             <div class="input-group">
                                 <span class="input-group-text">你想留言的是</span>
                             </div>
                             <textarea id="UserMessage" class="form-control" aria-label="With textarea"></textarea>
                         </div>
+                        <div class="col-1"></div>
                     </div>
                 </div>
                 <div class="modal-footer row">
@@ -254,6 +260,8 @@
             </div>
         </div>
     </div>
+
+
 </body>
 
 <script src="{% static 'custom-0.0.1-dist/js/custom.js' %}"></script>

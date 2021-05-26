@@ -217,9 +217,9 @@ function WindowsRemanderInfo(content){
         subtitle: "刚刚",
         content: content,
         type: 'info',
-        delay: 6000,
+        delay: 3000,
         img: {
-          src: 'static/image/icon/right.png',
+          src: '',
           class: 'rounded-lg',
           title: 'Thumbnail Title',
           alt: ''
@@ -235,7 +235,7 @@ function WindowsRemanderWarn(content){
         subtitle: "刚刚",
         content: content,
         type: 'warn',
-        delay: 6000,
+        delay: 3000,
         img: {
           src: '',
           class: 'rounded-lg',
@@ -253,9 +253,9 @@ function WindowsRemanderError(content){
         subtitle: "刚刚",
         content: content,
         type: 'error',
-        delay: 10000,
+        delay: 5000,
         img: {
-          src: 'static/image/icon/error.png',
+          src: '',
           class: 'rounded-lg',
           title: 'Thumbnail Title',
           alt: ''

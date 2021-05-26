@@ -5,7 +5,7 @@
  **/
 (function ($) {
     var TOAST_CONTAINER_HTML = '<div class="toast-container" aria-live="polite" aria-atomic="true"></div>';
-    var TOAST_WRAPPER_HTML = '<div class="toast-wrapper"></div>';
+    var TOAST_WRAPPER_HTML = '<div class="toast-wrapper rounded-lg"></div>';
 
     $.toast = function (opts) {
         // If container is not set in opts use body
@@ -85,12 +85,12 @@
             }
         }
 
-        html = '<div id="' + id + '" class="toast" role="alert" aria-live="assertive" aria-atomic="true" ' + delay_or_autohide + ' ' + pause_on_hover + '>';
-        html += '<div class="toast-header ' + bg_header_class + ' ' + fg_header_class + '">';
+        html = '<div id="' + id + '" class="toast rounded-lg" role="alert" aria-live="assertive" aria-atomic="true" ' + delay_or_autohide + ' ' + pause_on_hover + '>';
+        html += '<div class="toast-header rounded-top-lg ' + bg_header_class + ' ' + fg_header_class + '">';
 
-        if (typeof img !== 'undefined') {
-            html += '<img src="' + img.src + '" class="' + (img.class || '') + ' mr-2" alt="' + (img.alt || 'Image') + '" ' + (typeof img.title !== 'undefined' ? 'data-toggle="tooltip" title="' + img.title + '"' : '') + '>';
-        }
+        // if (typeof img !== 'undefined') {
+        //     html += '<img src="' + img.src + '" class="' + (img.class || '') + ' mr-2" alt="' + (img.alt || 'Image') + '" ' + (typeof img.title !== 'undefined' ? 'data-toggle="tooltip" title="' + img.title + '"' : '') + '>';
+        // }
 
         html += '<strong class="mr-auto">' + title + '</strong>';
         html += '<small class="' + fg_subtitle_class + '">' + subtitle + '</small>';
