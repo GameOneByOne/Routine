@@ -124,28 +124,10 @@ $("#login-out").click(function(){
     window.location.href = "http://" + window.location.host;
 });
 
-// 上传按钮的悬浮事件
-$("#upload-button").hover(function () {
-    $("#upload-button").removeClass("bi-arrow-up-square");
-    $("#upload-button").addClass("bi-arrow-up-square-fill");
-}, function () {
-    $("#upload-button").removeClass("bi-arrow-up-square-fill");
-    $("#upload-button").addClass("bi-arrow-up-square");
-});
-
-// 消息按钮的悬浮事件
-$("#msg-trans").hover(function () {
-    $("#msg-trans").removeClass("bi-chat-square-text");
-    $("#msg-trans").addClass("bi-chat-square-text-fill");
-}, function () {
-    $("#msg-trans").removeClass("bi-chat-square-text-fill");
-    $("#msg-trans").addClass("bi-chat-square-text");
-});
-
 // 上传按钮的点击事件
 $("#upload-button").click(function(){
     if ($.cookie("slug") == null){
-        WindowsRemanderError("我们建议你登陆之后再分享图书，这样做是为了上传文件的安全");
+        WindowsRemanderWarn("我们建议你登陆之后再分享图书");
     }
 });
 
@@ -208,6 +190,18 @@ $("#send-msg").click(function(){
         sendMsg($("#UserMessage").val());
         $("#UserMessage").val("");
     }
+});
+
+// 返回主页的消息事件
+$("#main-page").click(function(){
+    $("#book-window").removeClass("d-none");
+    $("#desc-window").addClass("d-none");
+});
+
+// 网站说明的消息事件
+$("#desc-page").click(function(){
+    $("#book-window").addClass("d-none");
+    $("#desc-window").removeClass("d-none");
 });
 
 // 小窗口弹窗信息事件
