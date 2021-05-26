@@ -206,6 +206,7 @@ $("#send-msg").click(function(){
         WindowsRemanderWarn("你可能得留下点什么，才可以提交哦！");
     } else {
         sendMsg($("#UserMessage").val());
+        $("#UserMessage").val("");
     }
 });
 

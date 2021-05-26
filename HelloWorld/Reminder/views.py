@@ -37,4 +37,4 @@ class ReminderInfo(APIView):
         # 获取头部中的消息，并打印在日志中
         message = request.POST.get("message", "")
         log.info("[ ReminderInfo ] We Receive A Message : {}".format(message))
-
+        return JsonResponse({"errorCode": 0, "desc": "感谢你的留言"}, status=200)
