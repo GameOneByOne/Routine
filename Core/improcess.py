@@ -16,7 +16,7 @@ def generate_pdf_cover(pdf_name, output_name):
     try:
         log.debug("[ Book Process ] {} Cover Begin To Generate".format(pdf_name))
         pdfDoc = fitz.open("{}{}".format(PDF_INPUT_PATH, pdf_name))
-        pdfDoc[0].getPixmap(matrix=fitz.Matrix(8.0, 8.0).preRotate(0), alpha=False).writePNG("{}{}".format(IMAGE_OUTPUT_PATH, output_name))
+        pdfDoc[0].getPixmap(matrix=fitz.Matrix(16.0, 16.0).preRotate(0), alpha=False).writePNG("{}{}".format(IMAGE_OUTPUT_PATH, output_name))
 
     except Exception as e:
         log.error("[ Book Process ] A Book Happen Error When Generate Cover, {}".format(e))
