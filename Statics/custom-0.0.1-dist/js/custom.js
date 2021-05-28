@@ -480,8 +480,17 @@ previewFile = function (obj) {
             $('#pdfInfoCover').attr("src","/static/image/pdf_cover/" + $(obj).attr("book_id") + ".jpeg");
             $('#BookInfoModal').modal('show');
 
+            // 填充Tag
+            var tagList = data.tag.split(",")
+            $("#pBookTag").html("");
+            for (tag=0; tag<tagList.length; ++tag){
+                $("#pBookTag").append('<span class="badge badge-warning h5">' + tagList[tag] + '</span> ');
+            }
+            $("#pBookTag").append('<span id="edit-tag" class="badge badge-dark h5" data-toggle="modal" data-target="#TagEditModal">Edit</span> ');
+            
             // 填充TagModel
-            alert(data.tag);
+            $("#bookTag").val(data.tag);
+
         }
     });
     
