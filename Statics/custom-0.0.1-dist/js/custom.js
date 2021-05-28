@@ -146,6 +146,7 @@ $("#ChangeAvatar").click(function(){
     if ($("#CancelChange").hasClass("d-none")){
         $("#CancelChange").removeClass("d-none")
     }
+    getMsg();
 });
 
 // 用户信息保存按钮事件
@@ -196,12 +197,44 @@ $("#send-msg").click(function(){
 $("#main-page").click(function(){
     $("#book-window").removeClass("d-none");
     $("#desc-window").addClass("d-none");
+    getMsg();
 });
 
 // 网站说明的消息事件
 $("#desc-page").click(function(){
     $("#book-window").addClass("d-none");
     $("#desc-window").removeClass("d-none");
+    getMsg();
+});
+
+// 标签卡的点击事件
+$("#toal-tag").click(function(){
+    $("#toal-tag").addClass("active");
+    $("#my-favorite").removeClass("active");
+    $("#click-most").removeClass("active");
+    $("#favorite-most").removeClass("active");
+    getMsg();
+});
+$("#my-favorite").click(function(){
+    $("#toal-tag").removeClass("active");
+    $("#my-favorite").addClass("active");
+    $("#click-most").removeClass("active");
+    $("#favorite-most").removeClass("active");
+    getMsg();
+});
+$("#click-most").click(function(){
+    $("#toal-tag").removeClass("active");
+    $("#my-favorite").removeClass("active");
+    $("#click-most").addClass("active");
+    $("#favorite-most").removeClass("active");
+    getMsg();
+});
+$("#favorite-most").click(function(){
+    $("#toal-tag").removeClass("active");
+    $("#my-favorite").removeClass("active");
+    $("#click-most").removeClass("active");
+    $("#favorite-most").addClass("active");
+    getMsg();
 });
 
 // 小窗口弹窗信息事件
@@ -266,7 +299,7 @@ function WindowsRemanderError(content){
 */
 
 // 实时获取消息接口
-function getMsg(delay) {
+function getMsg() {
     $.ajax({
         url : '/message/',
         type : "get",
@@ -300,6 +333,8 @@ function getBooks(callback){
         callback(result);
       }
     });
+
+    getMsg();
 }
 
 // PDF文件上传事件
@@ -372,7 +407,7 @@ $(document).ready(function(){
         });
     }
 
-    setInterval("getMsg()", 10000);
+    getMsg();
 })
 
 // 页面被改变大小时执行
@@ -385,6 +420,17 @@ $(window).resize(function() {
     else{
         if ($("#user-avatar").hasClass("d-none")){
             $("#user-avatar").removeClass("d-none");
+        }  
+    }
+
+    if ($(window).width() < 600){
+        if (!$("#tag-window").hasClass("d-none")){
+            $("#tag-window").addClass("d-none");
+        }
+    }
+    else{
+        if ($("#tag-window").hasClass("d-none")){
+            $("#tag-window").removeClass("d-none");
         }  
     }
 });
@@ -409,6 +455,7 @@ $(window).scroll(function() {
             });
         }
     }
+    getMsg();
 
 });
 
@@ -422,16 +469,19 @@ previewFile = function (obj) {
         async : true,
         success : function(data) {
             $('#bookPieces').html("");
+            // 填充 BookModel
             for (page=0; page<data.pieces.length; ++page){
                 $('#bookPieces').append('<button book_id="'+ data.slug +'" page_id="' + data.pieces[page] + '" class="row-2 btn btn-info btn-sm" onclick="watchPdf(this)" type="button">'+ page * 100 + '~' + (page+1) * 100 + '页</button>');
             }
-
             $('#pBookName').html(data.name);
             $('#pBookAuthor').html(data.author);
             $('#pBookUploader').html(data.upload_people);
             $('#pBookUploadDate').html(data.upload_date);
             $('#pdfInfoCover').attr("src","/static/image/pdf_cover/" + $(obj).attr("book_id") + ".jpeg");
-            $('#BookInfoModal').modal('show')
+            $('#BookInfoModal').modal('show');
+
+            // 填充TagModel
+            alert(data.tag);
         }
     });
     

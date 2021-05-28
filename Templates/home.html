@@ -47,7 +47,7 @@
     <div id="tag-window" class="container mb-4 p-1">
         <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link active" href="#">全部</a>
+            <a id="toal-tag" class="nav-link active" href="#">全部</a>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">分类</a>
@@ -58,16 +58,17 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">我的收藏</a>
+            <a id="my-favorite" class="nav-link" href="#">我的收藏</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">点击最多</a>
+            <a id="click-most" class="nav-link" href="#">点击最多</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">收藏最多</a>
+            <a id="favorite-most" class="nav-link" href="#">收藏最多</a>
         </li>
         </ul>
     </div>
+
     {% comment %} 下方Book区 {% endcomment %}
     <div id="book-window" class="container">
         <div class="row"></div>
@@ -217,15 +218,20 @@
                         <dl class="row">
                             <dt class="col-sm-3">书名</dt>
                             <dd id="pBookName" class="col-sm-9"></dd>
-
                             <dt class="col-sm-3">作者</dt>
                             <dd id="pBookAuthor" class="col-sm-9"></dd>
-
                             <dt class="col-sm-3">分享者</dt>
                             <dd id="pBookUploader" class="col-sm-9"></dd>
-
                             <dt class="col-sm-3">分享日期</dt>
                             <dd id="pBookUploadDate" class="col-sm-9"></dd>    
+                            <dt class="col-sm-3">标签</dt>
+                            <dd id="pBookTag" class="col-sm-9">
+                            <span class="badge badge-warning h5">Unix</span>
+                            <span class="badge badge-warning h5">Linux</span>
+                            <span class="badge badge-warning h5">C++</span>
+                            <span class="badge badge-warning h5">C</span>
+                            <span id="edit-tag" class="badge badge-dark h5" data-toggle="modal" data-target="#TagEditModal">Edit</span>
+                            </dd>
                         </dl>         
                     </div>
                     </div>
@@ -273,6 +279,24 @@
         </div>
     </div>
 
+    {% comment %} Msg的交互Model 用于管理员更新Tag的操作 {% endcomment %}
+    <div class="modal fade" id="TagEditModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content container-fluid rounded-lg">
+                <div class="modal-header">
+                    <h5 id="TagEditBookTitle" class="modal-title"></h5>
+                </div>
+                <div class="modal-body row">
+                    <label for="bookTag">Book Tag</label>
+                    <input type="email" class="form-control" id="bookTag">
+                </div>
+                <div class="modal-footer row">
+                    <button id="save-tag" type="button" class="btn btn-info" data-dismiss="modal">保存</button>
+                    <button id="cancel-tag" type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

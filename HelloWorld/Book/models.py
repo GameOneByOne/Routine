@@ -19,6 +19,7 @@ class Book(models.Model):
     upload_date = models.CharField(blank=False, db_index=True, max_length=64, default=None)
     upload_people = models.ForeignKey(to=User, null=True, to_field="slug", related_name="upload_people", on_delete=models.SET_NULL)
     public = models.BooleanField(default=False)
+    tag =  models.CharField(max_length=64, default="")
 
     def save(self):
         super().save()
@@ -33,6 +34,7 @@ class BookSerializer(serializers.Serializer):
     cover = serializers.SerializerMethodField()
     upload_date = serializers.CharField()
     upload_people = serializers.SerializerMethodField()
+    tag = serializers.CharField()
         
     def get_upload_people(self, obj):
         if obj.upload_people: return obj.upload_people.user_name
@@ -40,4 +42,7 @@ class BookSerializer(serializers.Serializer):
 
     def get_cover(self, obj):
         return PDF_COVER_PATH + obj.slug + ".jpeg"
+
+    def get_tag(self, obj):
+        return obj.tag.split(",")
     

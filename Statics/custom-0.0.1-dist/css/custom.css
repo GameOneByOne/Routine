@@ -28,7 +28,7 @@ body{
 -------------------------------
 */
 .book-cover:hover{
-    transform: scale(1.2); 
-    transition: all 0.4s;  
+    transform: scale(1.1); 
+    transition: all 0.2s;  
     z-index:100;
 }
