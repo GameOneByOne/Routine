@@ -10,7 +10,6 @@ from HelloWorld.settings import *
 def rename_pdf(instance, filename):
     return "bookData/{}.pdf".format(instance.slug)
 
-# Create your models here.
 class Book(models.Model):
     slug = models.SlugField(blank=False, primary_key=True, default=None, unique=True)
     name = models.CharField(blank=False, db_index=True, max_length=256, default=None)
