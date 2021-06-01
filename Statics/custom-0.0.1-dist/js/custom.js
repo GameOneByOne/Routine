@@ -321,41 +321,6 @@ function getMsg() {
     });
 }
 
-// 获取书籍的接口
-function getBooks(callback){
-    $.ajax({
-      url : '/book/',
-      type : "get",
-      data : "",
-      async : true,
-      success : function(data) {
-        result = data;
-        callback(result);
-      }
-    });
-
-    getMsg();
-}
-
-// PDF文件上传事件
-$('#md5File').fileinput({
-    language: 'zh',
-    uploadUrl: 'http://' + window.location.host +'/book/',
-    enctype: 'multipart/form-data',
-    uploadAsync:true,
-    allowedFileExtensions: ['pdf'],
-    browseClass: 'btn btn-primary',
-    maxFileCount: 10,
-    minFileCount : 1,
-  }).on('fileuploaded',function (event, data, previewId, index) {
-    if (data.response.errorCode == 1){
-        WindowsRemanderError(data.response.desc);
-    }
-    else{
-        WindowsRemanderInfo(data.response.desc);
-    }
-});
-
 // 用户提交消息的接口
 function sendMsg(message){
     $.ajax({
@@ -456,46 +421,4 @@ $(window).scroll(function() {
         }
     }
     getMsg();
-
 });
-
-// 打开PDF Book 时.
-previewFile = function (obj) {
-    var page = 0
-    $.ajax({
-        url : '/book/?slug=' + $(obj).attr("book_id"),
-        type : "get",
-        data : "",
-        async : true,
-        success : function(data) {
-            $('#bookPieces').html("");
-            // 填充 BookModel
-            for (page=0; page<data.pieces.length; ++page){
-                $('#bookPieces').append('<button book_id="'+ data.slug +'" page_id="' + data.pieces[page] + '" class="row-2 btn btn-info btn-sm" onclick="watchPdf(this)" type="button">'+ page * 100 + '~' + (page+1) * 100 + '页</button>');
-            }
-            $('#pBookName').html(data.name);
-            $('#pBookAuthor').html(data.author);
-            $('#pBookUploader').html(data.upload_people);
-            $('#pBookUploadDate').html(data.upload_date);
-            $('#pdfInfoCover').attr("src","/static/image/pdf_cover/" + $(obj).attr("book_id") + ".jpeg");
-            $('#BookInfoModal').modal('show');
-
-            // 填充Tag
-            var tagList = data.tag.split(",")
-            $("#pBookTag").html("");
-            for (tag=0; tag<tagList.length; ++tag){
-                $("#pBookTag").append('<span class="badge badge-warning h5">' + tagList[tag] + '</span> ');
-            }
-            $("#pBookTag").append('<span id="edit-tag" class="badge badge-dark h5" data-toggle="modal" data-target="#TagEditModal">Edit</span> ');
-            
-            // 填充TagModel
-            $("#bookTag").val(data.tag);
-
-        }
-    });
-    
-};
-
-watchPdf = function(obj){
-    window.open(src="http://" + window.location.host + "/viewer?bookSlug=" + $(obj).attr("book_id") + "&pageSlug=" + $(obj).attr("page_id"));
-};
