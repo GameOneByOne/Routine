@@ -4,12 +4,12 @@
  * @version 0.7.1
  **/
 (function ($) {
-    var TOAST_CONTAINER_HTML = '<div class="toast-container" aria-live="polite" aria-atomic="true"></div>';
+    var TOAST_CONTAINER_HTML = '<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 101" aria-live="polite" aria-atomic="true"></div>';
     var TOAST_WRAPPER_HTML = '<div class="toast-wrapper rounded-lg"></div>';
 
     $.toast = function (opts) {
         // If container is not set in opts use body
-        var general_container = $('body');
+        var general_container = $('main');
         if (opts.container && opts.container.length === 1)
             general_container = opts.container;
 
@@ -71,32 +71,12 @@
                 fg_dismiss_class = 'text-white';
                 break;
         }
-
-        if (pause_on_hover !== false) {
-            var hide_timestamp = Math.floor(Date.now() / 1000) + (delay / 1000);
-
-            delay_or_autohide = 'data-autohide="false"';
-            pause_on_hover = 'data-hide-timestamp="' + hide_timestamp + '"';
-        } else {
-            if (delay === -1) {
-                delay_or_autohide = 'data-autohide="false"';
-            } else {
-                delay_or_autohide = 'data-delay="' + delay + '"';
-            }
-        }
-
-        html = '<div id="' + id + '" class="toast rounded-lg" role="alert" aria-live="assertive" aria-atomic="true" ' + delay_or_autohide + ' ' + pause_on_hover + '>';
-        html += '<div class="toast-header rounded-top-lg ' + bg_header_class + ' ' + fg_header_class + '">';
-
-        // if (typeof img !== 'undefined') {
-        //     html += '<img src="' + img.src + '" class="' + (img.class || '') + ' mr-2" alt="' + (img.alt || 'Image') + '" ' + (typeof img.title !== 'undefined' ? 'data-toggle="tooltip" title="' + img.title + '"' : '') + '>';
-        // }
-
-        html += '<strong class="mr-auto">' + title + '</strong>';
-        html += '<small class="' + fg_subtitle_class + '">' + subtitle + '</small>';
-        html += '<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">';
-        html += '<span aria-hidden="true" class="' + fg_dismiss_class + '">&times;</span>';
-        html += '</button>';
+       
+        html += '<div id="liveToast" class="toast hide m-1" role="alert" aria-live="assertive" aria-atomic="true">';
+        html += '<div class="toast-header"><img src="..." class="rounded me-2" alt="...">'
+        html += '<strong class="me-auto">' + title + '</strong>';
+        html += '<small>' + subtitle + '</small>';
+        html += '<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>';
         html += '</div>';
 
         if (content !== '') {
@@ -105,7 +85,6 @@
             html += '</div>';
         }
 
-        html += '</div>';
 
         toast_wrapper.append(html);
         toast_wrapper.find('.toast:last').toast('show');

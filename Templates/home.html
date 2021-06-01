@@ -12,6 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="{% static 'jq-cookies-1.4.1/jquery.cookie.min.js' %}"></script>
     <script src="{% static 'bootstrap-5.0.1/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'bootstrap-5.0.1/js/toast.js' %}"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/@multiavatar/multiavatar/multiavatar.min.js"></script>
     <link rel="stylesheet" href="{% static 'bootstrap-5.0.1/css/sidebars.css' %}">
@@ -79,6 +80,7 @@
   </symbol>
 </svg>
 
+
 <main>
 
 {% comment %} 左方导航区 {% endcomment %}
@@ -120,9 +122,9 @@
         <strong>奔跑的蜗牛</strong>
     </div>
 </div>
-    
-    
-<div class="container-xl">
+
+
+<div class="container" style="margin-left: 280px;">
     {% comment %} 右上方标签区 {% endcomment %}
     <div id="top-tag" class="row align-items-stretch px-3">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
@@ -152,6 +154,7 @@
         </nav>
     </div>
 
+    {% comment %} 知识库链接 {% endcomment %}
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 px-4">
         <div class="col">
             <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg " >
@@ -175,7 +178,7 @@
         </div>
 
         <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
+            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2F1812.img.pp.sohu.com.cn%2Fimages%2Fblog%2F2009%2F11%2F18%2F18%2F8%2F125b6560a6ag214.jpg&refer=http%3A%2F%2F1812.img.pp.sohu.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625120696&t=f4f4dd68cdb9c7819324a07b43c8f23e');">
             <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                 <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h2>
                 <ul class="d-flex list-unstyled mt-auto">

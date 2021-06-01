@@ -124,13 +124,6 @@ $("#login-out").click(function(){
     window.location.href = "http://" + window.location.host;
 });
 
-// 上传按钮的点击事件
-$("#upload-button").click(function(){
-    if ($.cookie("slug") == null){
-        WindowsRemanderWarn("我们建议你登陆之后再分享图书");
-    }
-});
-
 // 更换头像按钮事件
 $("#ChangeAvatar").click(function(){  
     var new_avatar = md5(Math.random()).substr(0,18);
@@ -193,21 +186,8 @@ $("#send-msg").click(function(){
     }
 });
 
-// 返回主页的消息事件
-$("#main-page").click(function(){
-    $("#book-window").removeClass("d-none");
-    $("#desc-window").addClass("d-none");
-    getMsg();
-});
 
-// 网站说明的消息事件
-$("#desc-page").click(function(){
-    $("#book-window").addClass("d-none");
-    $("#desc-window").removeClass("d-none");
-    getMsg();
-});
-
-// 标签卡的点击事件
+// 导航的点击事件
 $("#main-page").click(function(){
     $("#main-page").addClass("active");
     $("#my-stock").removeClass("active");
@@ -339,8 +319,6 @@ function sendMsg(message){
       });
 }
 
-
-
 /*
 -------------------------------
 界面事件
@@ -374,51 +352,3 @@ $(document).ready(function(){
 
     getMsg();
 })
-
-// 页面被改变大小时执行
-$(window).resize(function() {
-    if ($(window).width() < 600){
-        if (!$("#user-avatar").hasClass("d-none")){
-            $("#user-avatar").addClass("d-none");
-        }
-    }
-    else{
-        if ($("#user-avatar").hasClass("d-none")){
-            $("#user-avatar").removeClass("d-none");
-        }  
-    }
-
-    if ($(window).width() < 600){
-        if (!$("#tag-window").hasClass("d-none")){
-            $("#tag-window").addClass("d-none");
-        }
-    }
-    else{
-        if ($("#tag-window").hasClass("d-none")){
-            $("#tag-window").removeClass("d-none");
-        }  
-    }
-});
-
-// 页面滚动到底部的时候
-$(window).scroll(function() {
-    var height = $(window).scrollTop();
-   
-    if(height + $(window).height() == $(document).height()) {
-        
-        if ( $("#book-window").length > 0 ) {
-            var page_num = $.cookie("page_num");
-            getBooks(function(result){
-                var book_card = '';
-                for (obj of result) {
-                    book_card = 
-                        '<div class="col-2 book-cover mt-3 md-3" onclick="previewFile(this)" book_id="' + obj.slug + '">' + 
-                        '<img class="img-fluid bg-white shadow-lg rounded-lg" src="' + obj.cover + '"></div>';
-                    $("#book-window").children("div.row").last().append(book_card);
-                }
-                $.cookie("page_num", parseInt(page_num) + result.length);
-            });
-        }
-    }
-    getMsg();
-});
