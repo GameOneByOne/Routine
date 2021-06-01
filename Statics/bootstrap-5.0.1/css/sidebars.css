@@ -12,7 +12,7 @@ main {
   flex-wrap: nowrap;
   height: 100vh;
   height: -webkit-fill-available;
-  max-height: 100vh;
+  max-height: auto;
   overflow-x: auto;
   overflow-y: hidden;
 }
@@ -87,3 +87,8 @@ main {
 
 .fw-semibold { font-weight: 600; }
 .lh-tight { line-height: 1.25; }
+
+#left-nav {
+  position:fixed;
+  height: 100%;
+}

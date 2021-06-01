@@ -16,6 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@multiavatar/multiavatar/multiavatar.min.js"></script>
     <link rel="stylesheet" href="{% static 'bootstrap-5.0.1/css/sidebars.css' %}">
     <link rel="stylesheet" href="{% static 'bootstrap-5.0.1/css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'custom-0.0.1-dist/css/custom.css' %}">
 </head>
 
 <body>
@@ -79,49 +80,51 @@
 </svg>
 
 <main>
-    {% comment %} 左方导航区 {% endcomment %}
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-            <span class="fs-4">Knowledge Stock</span>
+
+{% comment %} 左方导航区 {% endcomment %}
+<div id="left-nav" class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        <span class="fs-4">Knowledge Stock</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+        <a href="#" class="nav-link active" aria-current="page">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+        首页
         </a>
-        <hr>
-        <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
-            <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-            首页
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link text-white">
-            <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-            我的知识库
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link text-white">
-            <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
-            每日排行
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link text-white">
-            <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
-            乘凉小憩
-            </a>
-        </li>
-        </ul>
-        <hr>
-        <div class="dropdown" data-bs-toggle="modal" data-bs-target="#userInfoModal">
-            <img id="user-avatar" avatar_id="{{ avatar_id }}" class="rounded-circle me-2" width="32" height="32">
-            <strong>奔跑的蜗牛</strong>
-        </div>
+    </li>
+    <li>
+        <a href="#" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+        我的知识库
+        </a>
+    </li>
+    <li>
+        <a href="#" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+        每日排行
+        </a>
+    </li>
+    <li>
+        <a href="#" class="nav-link text-white">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+        乘凉小憩
+        </a>
+    </li>
+    </ul>
+    <hr>
+    <div class="dropdown" data-bs-toggle="modal" data-bs-target="#userInfoModal">
+        <img id="user-avatar" avatar_id="{{ avatar_id }}" class="rounded-circle me-2" width="32" height="32">
+        <strong>奔跑的蜗牛</strong>
     </div>
-    <div class="b-example-divider"></div>
+</div>
     
-    <div class="container-xxxl" id="nav-title">
-    <div class="row align-items-stretch px-3">
+    
+<div class="container-xl">
+    {% comment %} 右上方标签区 {% endcomment %}
+    <div id="top-tag" class="row align-items-stretch px-3">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Top navbar</a>
@@ -146,13 +149,13 @@
             </form>
             </div>
         </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 px-4">
         <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
-            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg " >
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover" style="background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2F1812.img.pp.sohu.com.cn%2Fimages%2Fblog%2F2009%2F11%2F18%2F18%2F8%2F125b6560a6ag214.jpg&refer=http%3A%2F%2F1812.img.pp.sohu.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625120696&t=f4f4dd68cdb9c7819324a07b43c8f23e');">
                 <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h2>
                 <ul class="d-flex list-unstyled mt-auto">
                 <li class="me-auto">
@@ -191,153 +194,112 @@
             </div>
             </div>
         </div>
-
-        <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
-            <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h2>
-                <ul class="d-flex list-unstyled mt-auto">
-                <li class="me-auto">
-                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                </li>
-                <li class="d-flex align-items-center me-3">
-                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                    <small>California</small>
-                </li>
-                <li class="d-flex align-items-center">
-                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-                    <small>5d</small>
-                </li>
-                </ul>
-            </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
-            <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h2>
-                <ul class="d-flex list-unstyled mt-auto">
-                <li class="me-auto">
-                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                </li>
-                <li class="d-flex align-items-center me-3">
-                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                    <small>California</small>
-                </li>
-                <li class="d-flex align-items-center">
-                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-                    <small>5d</small>
-                </li>
-                </ul>
-            </div>
-            </div>
-        </div>
     </div>
-    </div>
-    {% comment %} User的登陆和注册信息展示的 Model {% endcomment %}
-    <div class="modal fade " id="userInfoModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog rounded-lg">
-            <div class="modal-content rounded-lg">
-                <div class="modal-header">
-                {% if login_status %}
-                    <h5 class="modal-title">用户信息</h5>
-                {% else %}
-                    <h5 class="modal-title">未登录</h5>
-                {% endif %}
-                </div>
-                <div class="modal-body container">
-                {% if login_status %}
-                    <div class="row">
-                        <div class="col-5">
-                            <div class="row">
-                                <div class="col">
-                                    <div id="info-avatar"></div>
-                                </div>
-                            </div>
-                            <div class="row "></div>
-                            <div class="row ">
-                                <div class="col-3"></div>
-                                <div class="col-9">
-                                    <button id="ChangeAvatar" type="button" class="btn btn-outline-dark btn-sm">更换头像</button>
-                                </div>
+</div>
+
+{% comment %} User的登陆和注册信息展示的 Model {% endcomment %}
+<div class="modal fade " id="userInfoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog rounded-lg">
+        <div class="modal-content rounded-lg">
+            <div class="modal-header">
+            {% if login_status %}
+                <h5 class="modal-title">用户信息</h5>
+            {% else %}
+                <h5 class="modal-title">未登录</h5>
+            {% endif %}
+            </div>
+            <div class="modal-body container">
+            {% if login_status %}
+                <div class="row">
+                    <div class="col-5">
+                        <div class="row">
+                            <div class="col">
+                                <div id="info-avatar"></div>
                             </div>
                         </div>
-                        <div class="col-7">
-                            <div class="row">
-                                <div class="col-2">
-                                    <svg t="1618629978935" class="icon" viewBox="0 0 1417 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="32687" width="24" height="24"><path d="M1260.31354387-0.00058795h-1102.77538313c-86.96949757 0.08837381-157.44761315 70.56787026-157.53598699 157.52908279v708.93472527c0.08837381 86.96949757 70.56787026 157.44761315 157.5304636 157.53598698h1102.7836682c86.96949757-0.08837381 157.44899401-70.56787026 157.53598698-157.52908277v-708.93472527c-0.08837381-86.96949757-70.56787026-157.44761315-157.52908277-157.535987zM1339.07532357 866.46460095c-0.05661447 43.48405836-35.29152976 78.71897363-78.77006474 78.77696896h-1102.76709809c-43.478535-0.06489952-78.70516524-35.29705312-78.76039889-78.77006475v-708.93058276c0.05523363-43.48405836 35.29152976-78.71897363 78.77006476-78.77558811h1102.7670981c43.478535 0.06489952 78.70516524 35.29705312 78.76177972 78.77006476z" p-id="32688"></path><path d="M1111.4809966 543.19319419c42.53542071-36.15455526 70.05695915-89.32383116 70.05695914-149.34069669 0-108.57965644-88.34481503-196.9258523-196.92585228-196.92585231s-196.90928221 88.34619585-196.9092822 196.92585231c0 60.01686553 27.56296366 113.18614142 70.09976521 149.34069669-88.28958139 46.00961621-148.87259165 138.25392573-148.87259166 244.50686538 0 21.75238548 17.636099 39.38710363 39.38710365 39.38710363 21.75238548 0 39.38710363-17.636099 39.38710363-39.38710363 0-108.57965644 88.34619585-196.92447147 196.92447146-196.92447144s196.9258523 88.34481503 196.9258523 196.92447144c0 0 0 0 0 0 0 21.75238548 17.636099 39.38710363 39.38710362 39.38710363 21.75238548 0 39.38710363-17.636099 39.38710365-39.38710363 0 0 0 0 0 0-0.01242757-106.25293966-60.55539346-198.49862999-148.84773652-244.50686538zM866.46460095 393.85111666c0-65.25439477 52.89725025-118.14888334 118.15026419-118.14888335s118.14888334 52.89725025 118.14888335 118.14888335c0 65.25439477-52.89725025 118.14888334-118.14888335 118.14888334-65.22263542-0.07180373-118.07569878-52.92762875-118.14888334-118.14335998zM669.53598698 275.68704407h-472.61210346c-21.75238548 0-39.38710363 17.636099-39.38710363 39.38710363s17.636099 39.38710363 39.38710363 39.38710364h472.61210346c21.75238548 0 39.38710363-17.636099 39.38710363-39.38710364s-17.636099-39.38710363-39.38710363-39.38710363zM630.14888334 472.61289637h-433.22499982c-21.75238548 0-39.38710363 17.636099-39.38710363 39.38710363s17.636099 39.38710363 39.38710363 39.38710363h433.22499982c21.75238548 0 39.38710363-17.636099 39.38710364-39.38710363s-17.636099-39.38710363-39.38710364-39.38710363zM512 669.53598698h-315.07473564c-21.75238548 0-39.38710363 17.636099-39.38710362 39.38710363s17.636099 39.38710363 39.38710362 39.38710364h315.07473564c21.75238548 0 39.38710363-17.636099 39.38710363-39.38710364s-17.636099-39.38710363-39.38710363-39.38710363z" p-id="32689"></path></svg>
-                                </div>
-                                <div class="col-5">
-                                    <p>{{ user_name }}</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-2">
-                                    <svg t="1618630008220" class="icon" viewBox="0 0 1303 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="21263" width="24" height="24"><path d="M1293.964 157.975c-6.703-35.188-27.555-56.32-62.464-61.905-0.745 0-1.397-0.745-2.048-0.745-0.652 0-1.304-0.652-2.048-0.652l-1.304-0.744H119.808c-16.756 0-32.21 2.14-47.01 6.33l-2.049 0.745A101.47 101.47 0 0 0 0.931 197.353V887.9c0 27.462 8.75 54.924 24.855 76.707 1.397 2.141 3.351 4.282 5.4 7.075l0.651 0.745 1.396 1.396c25.507 28.858 62.464 45.708 101.47 45.708h1049.134c53.062 0 99.514-37.981 110.22-90.112l0.744-2.048v-0.745c1.304-7.727 2.7-15.453 2.7-22.528V177.804c-1.396-5.586-2.048-11.916-3.444-19.736zM423.843 549.423l-126.418 118.97c-72.61 68.235-145.221 135.912-217.925 204.8V256l344.343 293.516z m452.515-1.397C990.673 450.84 1103.686 354.397 1218 257.303V861.93L1074.734 730.3 876.45 548.025z m-544.023 194.84l151.365-141.5c25.507 21.877 50.363 43.008 75.31 64.14 14.058 11.916 28.207 23.924 41.706 35.84l18.152 15.546c19.55 16.85 37.61 16.85 57.717 0 45.8-38.726 91.508-78.196 138.612-117.574l83.41 76.707c95.51 87.971 190.277 175.29 286.44 263.261H123.811c70.004-66.094 139.264-130.886 208.524-196.422zM648.378 637.3a135272.448 135272.448 0 0 1-354.397-302.73L107.8 175.476c81.269-2.7 437.714-4.747 739.608-4.747 175.476 0 297.89 0.651 346.95 2.048L648.377 637.393z" p-id="21264"></path></svg>
-                                </div>
-                                <div class="col-5">
-                                    <p>{{ email }}</p>
-                                </div>
-                            </div>
-                            <div class="row align-items-center">
-                                <div class="col-2">
-                                    <svg t="1618630226159" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="27751" width="24" height="24"><path d="M891.392 870.4a40.96 40.96 0 1 1 0 81.92H117.76a40.96 40.96 0 1 1 0-81.92h773.632zM501.76 153.6a40.96 40.96 0 0 1 40.96 40.96v517.632a40.96 40.96 0 1 1-81.92 0V194.56a40.96 40.96 0 0 1 40.96-40.96zM215.04 51.2a40.96 40.96 0 0 1 40.96 40.96v620.032a40.96 40.96 0 1 1-81.92 0V92.16a40.96 40.96 0 0 1 40.96-40.96z m573.44 204.8a40.96 40.96 0 0 1 40.96 40.96v415.232a40.96 40.96 0 1 1-81.92 0V296.96a40.96 40.96 0 0 1 40.96-40.96z" fill="#2c2c2c" p-id="27752"></path></svg>
-                                </div>
-                                <div class="col-5">
-                                    <div class="progress" style="height: 5px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                      </div>
-                                </div>
+                        <div class="row "></div>
+                        <div class="row ">
+                            <div class="col-3"></div>
+                            <div class="col-9">
+                                <button id="ChangeAvatar" type="button" class="btn btn-outline-dark btn-sm">更换头像</button>
                             </div>
                         </div>
                     </div>
-                    <div class="row"></div>
-                {% else %}
-                    <div class="input-group flex-nowrap input-group-sm mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping">登陆邮箱*</span>
+                    <div class="col-7">
+                        <div class="row">
+                            <div class="col-2">
+                                <svg t="1618629978935" class="icon" viewBox="0 0 1417 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="32687" width="24" height="24"><path d="M1260.31354387-0.00058795h-1102.77538313c-86.96949757 0.08837381-157.44761315 70.56787026-157.53598699 157.52908279v708.93472527c0.08837381 86.96949757 70.56787026 157.44761315 157.5304636 157.53598698h1102.7836682c86.96949757-0.08837381 157.44899401-70.56787026 157.53598698-157.52908277v-708.93472527c-0.08837381-86.96949757-70.56787026-157.44761315-157.52908277-157.535987zM1339.07532357 866.46460095c-0.05661447 43.48405836-35.29152976 78.71897363-78.77006474 78.77696896h-1102.76709809c-43.478535-0.06489952-78.70516524-35.29705312-78.76039889-78.77006475v-708.93058276c0.05523363-43.48405836 35.29152976-78.71897363 78.77006476-78.77558811h1102.7670981c43.478535 0.06489952 78.70516524 35.29705312 78.76177972 78.77006476z" p-id="32688"></path><path d="M1111.4809966 543.19319419c42.53542071-36.15455526 70.05695915-89.32383116 70.05695914-149.34069669 0-108.57965644-88.34481503-196.9258523-196.92585228-196.92585231s-196.90928221 88.34619585-196.9092822 196.92585231c0 60.01686553 27.56296366 113.18614142 70.09976521 149.34069669-88.28958139 46.00961621-148.87259165 138.25392573-148.87259166 244.50686538 0 21.75238548 17.636099 39.38710363 39.38710365 39.38710363 21.75238548 0 39.38710363-17.636099 39.38710363-39.38710363 0-108.57965644 88.34619585-196.92447147 196.92447146-196.92447144s196.9258523 88.34481503 196.9258523 196.92447144c0 0 0 0 0 0 0 21.75238548 17.636099 39.38710363 39.38710362 39.38710363 21.75238548 0 39.38710363-17.636099 39.38710365-39.38710363 0 0 0 0 0 0-0.01242757-106.25293966-60.55539346-198.49862999-148.84773652-244.50686538zM866.46460095 393.85111666c0-65.25439477 52.89725025-118.14888334 118.15026419-118.14888335s118.14888334 52.89725025 118.14888335 118.14888335c0 65.25439477-52.89725025 118.14888334-118.14888335 118.14888334-65.22263542-0.07180373-118.07569878-52.92762875-118.14888334-118.14335998zM669.53598698 275.68704407h-472.61210346c-21.75238548 0-39.38710363 17.636099-39.38710363 39.38710363s17.636099 39.38710363 39.38710363 39.38710364h472.61210346c21.75238548 0 39.38710363-17.636099 39.38710363-39.38710364s-17.636099-39.38710363-39.38710363-39.38710363zM630.14888334 472.61289637h-433.22499982c-21.75238548 0-39.38710363 17.636099-39.38710363 39.38710363s17.636099 39.38710363 39.38710363 39.38710363h433.22499982c21.75238548 0 39.38710363-17.636099 39.38710364-39.38710363s-17.636099-39.38710363-39.38710364-39.38710363zM512 669.53598698h-315.07473564c-21.75238548 0-39.38710363 17.636099-39.38710362 39.38710363s17.636099 39.38710363 39.38710362 39.38710364h315.07473564c21.75238548 0 39.38710363-17.636099 39.38710363-39.38710364s-17.636099-39.38710363-39.38710363-39.38710363z" p-id="32689"></path></svg>
+                            </div>
+                            <div class="col-5">
+                                <p>{{ user_name }}</p>
+                            </div>
                         </div>
-                        <input id="email" type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping">
+                        <div class="row">
+                            <div class="col-2">
+                                <svg t="1618630008220" class="icon" viewBox="0 0 1303 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="21263" width="24" height="24"><path d="M1293.964 157.975c-6.703-35.188-27.555-56.32-62.464-61.905-0.745 0-1.397-0.745-2.048-0.745-0.652 0-1.304-0.652-2.048-0.652l-1.304-0.744H119.808c-16.756 0-32.21 2.14-47.01 6.33l-2.049 0.745A101.47 101.47 0 0 0 0.931 197.353V887.9c0 27.462 8.75 54.924 24.855 76.707 1.397 2.141 3.351 4.282 5.4 7.075l0.651 0.745 1.396 1.396c25.507 28.858 62.464 45.708 101.47 45.708h1049.134c53.062 0 99.514-37.981 110.22-90.112l0.744-2.048v-0.745c1.304-7.727 2.7-15.453 2.7-22.528V177.804c-1.396-5.586-2.048-11.916-3.444-19.736zM423.843 549.423l-126.418 118.97c-72.61 68.235-145.221 135.912-217.925 204.8V256l344.343 293.516z m452.515-1.397C990.673 450.84 1103.686 354.397 1218 257.303V861.93L1074.734 730.3 876.45 548.025z m-544.023 194.84l151.365-141.5c25.507 21.877 50.363 43.008 75.31 64.14 14.058 11.916 28.207 23.924 41.706 35.84l18.152 15.546c19.55 16.85 37.61 16.85 57.717 0 45.8-38.726 91.508-78.196 138.612-117.574l83.41 76.707c95.51 87.971 190.277 175.29 286.44 263.261H123.811c70.004-66.094 139.264-130.886 208.524-196.422zM648.378 637.3a135272.448 135272.448 0 0 1-354.397-302.73L107.8 175.476c81.269-2.7 437.714-4.747 739.608-4.747 175.476 0 297.89 0.651 346.95 2.048L648.377 637.393z" p-id="21264"></path></svg>
+                            </div>
+                            <div class="col-5">
+                                <p>{{ email }}</p>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-2">
+                                <svg t="1618630226159" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="27751" width="24" height="24"><path d="M891.392 870.4a40.96 40.96 0 1 1 0 81.92H117.76a40.96 40.96 0 1 1 0-81.92h773.632zM501.76 153.6a40.96 40.96 0 0 1 40.96 40.96v517.632a40.96 40.96 0 1 1-81.92 0V194.56a40.96 40.96 0 0 1 40.96-40.96zM215.04 51.2a40.96 40.96 0 0 1 40.96 40.96v620.032a40.96 40.96 0 1 1-81.92 0V92.16a40.96 40.96 0 0 1 40.96-40.96z m573.44 204.8a40.96 40.96 0 0 1 40.96 40.96v415.232a40.96 40.96 0 1 1-81.92 0V296.96a40.96 40.96 0 0 1 40.96-40.96z" fill="#2c2c2c" p-id="27752"></path></svg>
+                            </div>
+                            <div class="col-5">
+                                <div class="progress" style="height: 5px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="input-group flex-nowrap input-group-sm mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping">登陆密码*</span>
-                        </div>
-                        <input id="passWord" type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
+                </div>
+                <div class="row"></div>
+            {% else %}
+                <div class="input-group flex-nowrap input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">登陆邮箱*</span>
                     </div>
-                    <div id="UserName"class="input-group flex-nowrap input-group-sm mb-3 d-none">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping">昵称</span>
-                        </div>
-                        <input id="userName" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
-                    </div>   
-
-                    <div id="RandomCodeInput" class="input-group flex-nowrap input-group-sm mb-3 d-none">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping">验证码</span>
-                        </div>
-                        <input id="RandomCode" type="text" class="form-control" placeholder="RandomCode" aria-label="RandomCode" aria-describedby="addon-wrapping">
-                    </div> 
-
-                    <h6 id="UserErrorInfo" class="d-none text-danger"></h6>
-                {% endif %}
+                    <input id="email" type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping">
                 </div>
-                <div class="modal-footer">
-                {% if login_status %}
-                    <button id="SaveChange" type="button" class="btn btn-success d-none" >保存</button>
-                    <button id="CancelChange" type="button" class="btn btn-warning d-none" data-dismiss="modal">取消</button>
-                    <button id="login-out" type="button" class="btn btn-danger" data-dismiss="modal">退出登录</button>
-                {% else %}
-                    <button id="resend-email" type="button" class="btn btn-danger d-none">重发</button>
-                    <button id="login-in" type="button" class="btn btn-info">登陆</button>
-                    <button id="sign-up" type="button" class="btn btn-success">注册</button>
-                {% endif %}
+                
+                <div class="input-group flex-nowrap input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">登陆密码*</span>
+                    </div>
+                    <input id="passWord" type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
                 </div>
+                <div id="UserName"class="input-group flex-nowrap input-group-sm mb-3 d-none">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">昵称</span>
+                    </div>
+                    <input id="userName" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>   
+
+                <div id="RandomCodeInput" class="input-group flex-nowrap input-group-sm mb-3 d-none">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">验证码</span>
+                    </div>
+                    <input id="RandomCode" type="text" class="form-control" placeholder="RandomCode" aria-label="RandomCode" aria-describedby="addon-wrapping">
+                </div> 
+
+                <h6 id="UserErrorInfo" class="d-none text-danger"></h6>
+            {% endif %}
+            </div>
+            <div class="modal-footer">
+            {% if login_status %}
+                <button id="SaveChange" type="button" class="btn btn-success d-none" >保存</button>
+                <button id="CancelChange" type="button" class="btn btn-warning d-none" data-dismiss="modal">取消</button>
+                <button id="login-out" type="button" class="btn btn-danger" data-dismiss="modal">退出登录</button>
+            {% else %}
+                <button id="resend-email" type="button" class="btn btn-danger d-none">重发</button>
+                <button id="login-in" type="button" class="btn btn-info">登陆</button>
+                <button id="sign-up" type="button" class="btn btn-success">注册</button>
+            {% endif %}
             </div>
         </div>
     </div>
+</div>
 
 </main>
 

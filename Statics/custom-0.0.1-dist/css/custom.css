@@ -27,8 +27,8 @@ body{
 页面动效
 -------------------------------
 */
-.book-cover:hover{
+.div-cover:hover{
     transform: scale(1.1); 
-    transition: all 0.2s;  
+    transition: all 0.8s;  
     z-index:100;
 }
