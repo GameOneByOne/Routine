@@ -208,32 +208,32 @@ $("#desc-page").click(function(){
 });
 
 // 标签卡的点击事件
-$("#toal-tag").click(function(){
-    $("#toal-tag").addClass("active");
-    $("#my-favorite").removeClass("active");
-    $("#click-most").removeClass("active");
-    $("#favorite-most").removeClass("active");
+$("#main-page").click(function(){
+    $("#main-page").addClass("active");
+    $("#my-stock").removeClass("active");
+    $("#ranking").removeClass("active");
+    $("#desc-site").removeClass("active");
     getMsg();
 });
-$("#my-favorite").click(function(){
-    $("#toal-tag").removeClass("active");
-    $("#my-favorite").addClass("active");
-    $("#click-most").removeClass("active");
-    $("#favorite-most").removeClass("active");
+$("#my-stock").click(function(){
+    $("#main-page").removeClass("active");
+    $("#my-stock").addClass("active");
+    $("#ranking").removeClass("active");
+    $("#desc-site").removeClass("active");
     getMsg();
 });
-$("#click-most").click(function(){
-    $("#toal-tag").removeClass("active");
-    $("#my-favorite").removeClass("active");
-    $("#click-most").addClass("active");
-    $("#favorite-most").removeClass("active");
+$("#ranking").click(function(){
+    $("#main-page").removeClass("active");
+    $("#my-stock").removeClass("active");
+    $("#ranking").addClass("active");
+    $("#desc-site").removeClass("active");
     getMsg();
 });
-$("#favorite-most").click(function(){
-    $("#toal-tag").removeClass("active");
-    $("#my-favorite").removeClass("active");
-    $("#click-most").removeClass("active");
-    $("#favorite-most").addClass("active");
+$("#desc-site").click(function(){
+    $("#main-page").removeClass("active");
+    $("#my-stock").removeClass("active");
+    $("#ranking").removeClass("active");
+    $("#desc-site").addClass("active");
     getMsg();
 });
 
