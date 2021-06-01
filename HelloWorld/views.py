@@ -27,5 +27,5 @@ def HomeView(request):
 
 def PdfView(request):
     context = {}
-    context["book_page"] = request.GET.get("bookSlug") + "/" +request.GET.get("pageSlug")
+    # context["book_page"] = request.GET.get("bookSlug") + "/" +request.GET.get("pageSlug")
     return render(request, 'viewer.html', context)

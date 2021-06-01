@@ -22,14 +22,14 @@
 	{
         if (define.amd) // for Require.js
         {
-            var cmModePath  = "./lib/codemirror/mode/";
-            var cmAddonPath = "./lib/codemirror/addon/";
-
+            var cmModePath  = "static/markdown-1.5.0/lib/codemirror/mode/";
+            var cmAddonPath = "static/markdown-1.5.0/lib/codemirror/addon/";
+            
             var codeMirrorModules = [
                 "jquery", "marked", "prettify",
                 "katex", "raphael", "underscore", "flowchart",  "jqueryflowchart",  "sequenceDiagram",
 
-                "./lib/codemirror/lib/codemirror",
+                "static/markdown-1.5.0/lib/codemirror/lib/codemirror",
                 cmModePath + "css/css",
                 cmModePath + "sass/sass",
                 cmModePath + "shell/shell",
@@ -169,7 +169,7 @@
         appendMarkdown       : "",             // if in init textarea value not empty, append markdown to textarea
         width                : "100%",
         height               : "100%",
-        path                 : "./lib/",       // Dependents module file directory
+        path                 : "static/markdown-1.5.0/lib/",       // Dependents module file directory
         pluginPath           : "",             // If this empty, default use settings.path + "../plugins/"
         delay                : 300,            // Delay parse markdown to html, Uint : ms
         autoLoadModules      : true,           // Automatic load dependent module files
