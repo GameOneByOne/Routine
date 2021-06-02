@@ -127,29 +127,33 @@
 
 {% comment %} 右方展示区 {% endcomment %}
 <div class="container" style="margin-left: 380px;">
-    {% comment %} 上方标签区 {% endcomment %}
-    <div id="top-tag" class="row align-items-stretch px-3">
+    <div id="top-nav" class="row align-items-stretch px-3">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Top navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
+            {% comment %} 上方首页标志区 {% endcomment %}
+            <a id="brand-for-main-page" class="navbar-brand" href="#">首页</a>
+            <a id="brand-for-my-stock" class="navbar-brand d-none" href="#">知识库</a>
+            <a id="brand-for-ranking" class="navbar-brand d-none" href="#">排行</a>
+            <a id="brand-for-desc-site" class="navbar-brand d-none" href="#">说明</a>
+
+            
             <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
+            {% comment %} 上方首页标签区 {% endcomment %}
+            <ul id="tag-for-main-page" class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item"><a class="nav-link" href="#">标签一</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">标签二</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">标签三</a></li>
+            </ul>
+            <ul id="tag-for-my-stock" class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item"><a class="nav-link" href="#">创建知识库</a></li>
+            </ul>
+            <ul id="tag-for-ranking" class="navbar-nav me-auto mb-2 mb-md-0">
+            </ul>
+            <ul id="tag-for-desc-site" class="navbar-nav me-auto mb-2 mb-md-0">
             </ul>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn btn-outline-info" type="submit">Search</button>
             </form>
             </div>
         </div>

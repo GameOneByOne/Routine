@@ -197,6 +197,14 @@ $("#main-page").click(function(){
     $("#my-stock").removeClass("active");
     $("#ranking").removeClass("active");
     $("#desc-site").removeClass("active");
+    $("#brand-for-main-page").removeClass("d-none");
+    $("#brand-for-my-stock").addClass("d-none");
+    $("#brand-for-ranking").addClass("d-none");
+    $("#brand-for-desc-site").addClass("d-none");
+    $("#tag-for-main-page").removeClass("d-none");
+    $("#tag-for-my-stock").addClass("d-none");
+    $("#tag-for-ranking").addClass("d-none");
+    $("#tag-for-desc-site").addClass("d-none");
     getMsg();
 });
 $("#my-stock").click(function(){
@@ -204,6 +212,14 @@ $("#my-stock").click(function(){
     $("#my-stock").addClass("active");
     $("#ranking").removeClass("active");
     $("#desc-site").removeClass("active");
+    $("#brand-for-main-page").addClass("d-none");
+    $("#brand-for-my-stock").removeClass("d-none");
+    $("#brand-for-ranking").addClass("d-none");
+    $("#brand-for-desc-site").addClass("d-none");
+    $("#tag-for-main-page").addClass("d-none");
+    $("#tag-for-my-stock").removeClass("d-none");
+    $("#tag-for-ranking").addClass("d-none");
+    $("#tag-for-desc-site").addClass("d-none");
     getMsg();
 });
 $("#ranking").click(function(){
@@ -211,6 +227,14 @@ $("#ranking").click(function(){
     $("#my-stock").removeClass("active");
     $("#ranking").addClass("active");
     $("#desc-site").removeClass("active");
+    $("#brand-for-main-page").addClass("d-none");
+    $("#brand-for-my-stock").addClass("d-none");
+    $("#brand-for-ranking").removeClass("d-none");
+    $("#brand-for-desc-site").addClass("d-none");
+    $("#tag-for-main-page").addClass("d-none");
+    $("#tag-for-my-stock").addClass("d-none");
+    $("#tag-for-ranking").removeClass("d-none");
+    $("#tag-for-desc-site").addClass("d-none");
     getMsg();
 });
 $("#desc-site").click(function(){
@@ -218,6 +242,14 @@ $("#desc-site").click(function(){
     $("#my-stock").removeClass("active");
     $("#ranking").removeClass("active");
     $("#desc-site").addClass("active");
+    $("#brand-for-main-page").addClass("d-none");
+    $("#brand-for-my-stock").addClass("d-none");
+    $("#brand-for-ranking").addClass("d-none");
+    $("#brand-for-desc-site").removeClass("d-none");
+    $("#tag-for-main-page").addClass("d-none");
+    $("#tag-for-my-stock").addClass("d-none");
+    $("#tag-for-ranking").addClass("d-none");
+    $("#tag-for-desc-site").removeClass("d-none");
     getMsg();
 });
 
