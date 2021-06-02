@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'HelloWorld.ProcessQueue',
-    'HelloWorld.Book',
+    'HelloWorld.Stock',
     'HelloWorld.User',
     'HelloWorld.Reminder'
 ]
@@ -169,5 +169,5 @@ PDF_INPUT_PATH = "Statics/bookData/"
 IMAGE_OUTPUT_PATH = "Statics/image/pdf_cover/"
 
 # URI PATH Settings
-PDF_COVER_PATH = STATIC_URL + "image/pdf_cover/"
+BOOK_COVER_PATH = STATIC_URL + "image/pdf_cover/"
 

@@ -145,6 +145,8 @@ $("#ChangeAvatar").click(function(){
 // 用户信息保存按钮事件
 $("#SaveChange").click(function(){
     var new_avatar = $("#user-avatar").attr("avatar_id");
+    $("#SaveChange").addClass("d-none");
+    $("#CancelChange").addClass("d-none");
     
     $.ajax({
         url : '/user/',
@@ -156,6 +158,7 @@ $("#SaveChange").click(function(){
             if (data.errorCode == 0){
                 $.cookie("avatar_id", new_avatar);
                 WindowsRemanderInfo(data.desc);
+
             } else {
                 WindowsRemanderError(data.desc);
                 var old_avatar = $.cookie('avatar_id');
@@ -174,6 +177,8 @@ $("#CancelChange").click(function(){
     var svgCode = multiavatar(old_avatar);
     $("#user-avatar").html(svgCode); // 填充右上角的头像
     $("#info-avatar").html(svgCode); // 填充用户信息页的头像
+    $("#SaveChange").addClass("d-none");
+    $("#CancelChange").addClass("d-none");
 });
 
 // 用户提交消息事件
@@ -185,7 +190,6 @@ $("#send-msg").click(function(){
         $("#UserMessage").val("");
     }
 });
-
 
 // 导航的点击事件
 $("#main-page").click(function(){
@@ -329,6 +333,7 @@ function sendMsg(message){
 $(document).ready(function(){
     // 加载头像
     var avatarId = $("#user-avatar").attr("avatar_id");
+    
     var svgCode = multiavatar(avatarId);
     $("#user-avatar").html(svgCode); // 填充右上角的头像
     $("#info-avatar").html(svgCode); // 填充用户信息页的头像

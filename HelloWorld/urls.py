@@ -14,9 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from django.conf.urls import url
-from HelloWorld.Book.views import BookInfo
+from HelloWorld.Stock.views import StockInfo
 from HelloWorld.User.views import UserInfo, EmailCode
 from HelloWorld.Reminder.views import ReminderInfo
 from . import views
@@ -27,9 +27,10 @@ urlpatterns = [
     path('', views.HomeView),
     path('admin/', admin.site.urls),
     path('viewer/', views.PdfView),
+    # path('viewer/', views.PdfView),
         
     # API View 
-    path('book/', BookInfo.as_view()),
+    re_path('^stock/(?P<slug>[0-9a-zA-Z]{32})$', StockInfo.as_view()),
     path('user/', UserInfo.as_view()),
     path('user/randomcode', EmailCode.as_view()),
     path('message/', ReminderInfo.as_view()),

@@ -9,6 +9,7 @@ def HomeView(request):
     slug = request.COOKIES.get("slug", "")
     if slug == "":
         context["login_status"] = False
+        context["user_name"] = "未登陆"
         context["avatar_id"] = "ahf64532a2124a1231"
         return render(request, 'home.html', context)
 
@@ -19,6 +20,7 @@ def HomeView(request):
         context["avatar_id"] = user_info.avatar_id
         context["user_name"] = user_info.user_name
         context["email"] = user_info.email
+        
     except ObjectDoesNotExist:
         context["login_status"] = False
         context["avatar_id"] = "ahf64532a2124a1231"
