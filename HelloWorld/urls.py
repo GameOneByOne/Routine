@@ -31,6 +31,7 @@ urlpatterns = [
         
     # API View 
     re_path('^stock/(?P<slug>[0-9a-zA-Z]{32})$', StockInfo.as_view()),
+    path('stock/', StockInfo.as_view()),
     path('user/', UserInfo.as_view()),
     path('user/randomcode', EmailCode.as_view()),
     path('message/', ReminderInfo.as_view()),

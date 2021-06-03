@@ -73,7 +73,7 @@
         }
        
         html += '<div id="liveToast" class="toast hide m-1" role="alert" aria-live="assertive" aria-atomic="true">';
-        html += '<div class="toast-header"><img src="..." class="rounded me-2" alt="...">'
+        html += '<div class="toast-header">'
         html += '<strong class="me-auto">' + title + '</strong>';
         html += '<small>' + subtitle + '</small>';
         html += '<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>';

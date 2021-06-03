@@ -10,7 +10,7 @@ html {
 main {
   display: flex;
   flex-wrap: nowrap;
-  height: 100vh;
+  height: 100%;
   height: -webkit-fill-available;
   max-height: auto;
   overflow-x: auto;

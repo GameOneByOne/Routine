@@ -191,6 +191,40 @@ $("#send-msg").click(function(){
     }
 });
 
+// 用户新建知识库的保存事件
+$("#stock-save").click(function(){
+    var formdata = new FormData(); 
+    formdata.append('name', $("#knowledge-name").val());
+    formdata.append('cover',$("#knowledge-cover")[0].files[0]);
+
+    $.ajax({
+        url : '/stock/',
+        type : "post",
+        processData:false,
+        contentType:false,
+        data : formdata,
+        headers:{"X-CSRFToken":$.cookie("csrftoken")},
+        async : true,
+        success : function(data){
+            if (data.errorCode == 0){
+                WindowsRemanderInfo(data.desc);
+            } else {
+                WindowsRemanderError(data.desc);
+            }
+        }
+    });
+    $("#show-picture").addClass("d-none");
+    $("#knowledge-name").val("");
+    $("#knowledge-cover").val("");
+});
+
+// 用户取消新建知识库的事件
+$("#stock-cancel").click(function(){
+    $("#show-picture").addClass("d-none");
+    $("#knowledge-name").val("");
+    $("#knowledge-cover").val("");
+});
+
 // 导航的点击事件
 $("#main-page").click(function(){
     $("#main-page").addClass("active");
@@ -291,6 +325,7 @@ function WindowsRemanderWarn(content){
 
 // 小窗口弹窗错误事件
 function WindowsRemanderError(content){
+    alert("failed1");
     $.toast({
         title: "我们遇到了一个问题",
         subtitle: "刚刚",
@@ -355,6 +390,23 @@ function sendMsg(message){
       });
 }
 
+// 获取Stock
+function getStocks(callback) {
+    $.ajax({
+        url : '/stock/',
+        type : "get",
+        data : "",
+        async : true,
+        success : function(data) {
+            if (data.errorCode == 0){
+                callback(data.data);
+            } else {
+                WindowsRemanderError(data.desc);
+            }
+        }
+    });
+}
+
 /*
 -------------------------------
 界面事件
@@ -371,21 +423,45 @@ $(document).ready(function(){
     $("#info-avatar").html(svgCode); // 填充用户信息页的头像
     $.cookie("avatar_id", avatarId);
 
-    // 加载书籍
-    $.cookie("page_num", 0);
-    if ( $("#book-window").length > 0 ) {
-        var page_num = $.cookie("page_num");
-        getBooks(function(result){
-            var book_card = '';
+    // 加载Stock
+    if ( $("#down-stock-window").length > 0 ) {
+        getStocks(function(result){
+            var stock_card = '';
             for (obj of result) {
-                book_card = 
-                    '<div class="col-2 book-cover mt-3 md-3" onclick="previewFile(this)" book_id="' + obj.slug + '">' + 
-                    '<img class="img-fluid bg-white shadow-lg rounded-lg" src="' + obj.cover + '" width="150px" height="225px"></div>';
-                $("#book-window").children("div.row").last().append(book_card);
+                stock_card = 
+                    '<div id="' + obj.slug + '" class="col">' + 
+                    '<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg " >' + 
+                    '<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover" style="background-image: url()">' +
+                        '<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">' + obj.name + '</h2>'
+                        '<ul class="d-flex list-unstyled mt-auto">' +
+                        '<li class="me-auto">' +
+                            '<img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">' +
+                        '</li>' +
+                        '<li class="d-flex align-items-center me-3">' +
+                            '<svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>' +
+                            '<small>Earth</small>' +
+                        '</li>' +
+                        '<li class="d-flex align-items-center">' +
+                            '<svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>' +
+                            '<small>3d</small>' +
+                        '</li></ul></div></div></div>'
+                $("#down-stock-window").append(stock_card);
             }
-            $.cookie("page_num", parseInt(page_num) + result.length);
         });
     }
 
     getMsg();
 })
+
+// 定义用户上传图片的展示
+$("#knowledge-cover").change(function(){
+    var file = this.files;
+    var reader = new FileReader();
+    reader.readAsDataURL(file[0]);
+    reader.onload = function () {
+        $("#show-picture").css("background-image", "url('" + reader.result + "')");
+        $("#show-picture").attr("background-data", reader.result);
+        $("#show-picture").css("background-size", "cover");
+    }
+    $("#show-picture").removeClass("d-none");
+});

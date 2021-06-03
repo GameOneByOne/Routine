@@ -131,21 +131,21 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
         <div class="container-fluid">
             {% comment %} 上方首页标志区 {% endcomment %}
-            <a id="brand-for-main-page" class="navbar-brand" href="#">首页</a>
-            <a id="brand-for-my-stock" class="navbar-brand d-none" href="#">知识库</a>
-            <a id="brand-for-ranking" class="navbar-brand d-none" href="#">排行</a>
-            <a id="brand-for-desc-site" class="navbar-brand d-none" href="#">说明</a>
+            <a id="brand-for-main-page" class="navbar-brand">首页</a>
+            <a id="brand-for-my-stock" class="navbar-brand d-none">知识库</a>
+            <a id="brand-for-ranking" class="navbar-brand d-none">排行</a>
+            <a id="brand-for-desc-site" class="navbar-brand d-none">说明</a>
 
             
             <div class="collapse navbar-collapse" id="navbarCollapse">
             {% comment %} 上方首页标签区 {% endcomment %}
             <ul id="tag-for-main-page" class="navbar-nav me-auto mb-2 mb-md-0">
-                <li class="nav-item"><a class="nav-link" href="#">标签一</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">标签二</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">标签三</a></li>
+                <li class="nav-item"><a class="nav-link">标签一</a></li>
+                <li class="nav-item"><a class="nav-link">标签二</a></li>
+                <li class="nav-item"><a class="nav-link">标签三</a></li>
             </ul>
-            <ul id="tag-for-my-stock" class="navbar-nav me-auto mb-2 mb-md-0">
-                <li class="nav-item"><a class="nav-link" href="#">创建知识库</a></li>
+            <ul id="tag-for-my-stock" class="navbar-nav me-auto mb-2 mb-md-0 d-none">
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="modal" data-bs-target="#StockCreateModal">创建知识库</a></li>
             </ul>
             <ul id="tag-for-ranking" class="navbar-nav me-auto mb-2 mb-md-0">
             </ul>
@@ -161,7 +161,7 @@
     </div>
 
     {% comment %} 下方知识库链接 {% endcomment %}
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 px-4">
+    <div id="down-stock-window" class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 px-4">
         <div class="col">
             <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg " >
             <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover" style="background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2F1812.img.pp.sohu.com.cn%2Fimages%2Fblog%2F2009%2F11%2F18%2F18%2F8%2F125b6560a6ag214.jpg&refer=http%3A%2F%2F1812.img.pp.sohu.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625120696&t=f4f4dd68cdb9c7819324a07b43c8f23e');">
@@ -183,26 +183,6 @@
             </div>
         </div>
 
-        <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2F1812.img.pp.sohu.com.cn%2Fimages%2Fblog%2F2009%2F11%2F18%2F18%2F8%2F125b6560a6ag214.jpg&refer=http%3A%2F%2F1812.img.pp.sohu.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625120696&t=f4f4dd68cdb9c7819324a07b43c8f23e');">
-            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h2>
-                <ul class="d-flex list-unstyled mt-auto">
-                <li class="me-auto">
-                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                </li>
-                <li class="d-flex align-items-center me-3">
-                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                    <small>Pakistan</small>
-                </li>
-                <li class="d-flex align-items-center">
-                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-                    <small>4d</small>
-                </li>
-                </ul>
-            </div>
-            </div>
-        </div>
     </div>
 </div>
 
@@ -309,6 +289,56 @@
         </div>
     </div>
 </div>
+
+{% comment %} Stock的新增Model {% endcomment %}
+<div class="modal fade" id="StockCreateModal" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">新创建一个知识库</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="form-floating mb-3">
+                <input class="form-control" id="knowledge-name" placeholder=" ">
+                <label for="knowledge-name">在这里输入你的知识库名称</label>
+            </div>
+            <figcaption class="blockquote-footer">
+                例如： <cite title="Source Title">C++基础</cite>
+            </figcaption>
+            <div class="input-group mb-3">
+                <input type="file" class="form-control" id="knowledge-cover">
+            </div>
+            <figcaption class="blockquote-footer">
+                你可以上传一张图片作为你知识库的封面，或者也可以使用系统默认的纯色封面（黑色）
+            </figcaption>
+            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg " >
+                <div id="show-picture" class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 d-none">
+                    <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h2>
+                    <ul class="d-flex list-unstyled mt-auto">
+                    <li class="me-auto">
+                        <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                    </li>
+                    <li class="d-flex align-items-center me-3">
+                        <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                        <small>Earth</small>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                        <small>3d</small>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button id="stock-cancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+            <button id="stock-save" type="button" class="btn btn-primary" data-bs-dismiss="modal">新建</button>
+        </div>
+        </div>
+    </div>
+</div>
+
 
 </main>
 <script src="{% static 'custom-0.0.1-dist/js/custom.js' %}"></script>
