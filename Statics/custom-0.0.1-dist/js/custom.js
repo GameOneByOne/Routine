@@ -193,29 +193,36 @@ $("#send-msg").click(function(){
 
 // 用户新建知识库的保存事件
 $("#stock-save").click(function(){
-    var formdata = new FormData(); 
-    formdata.append('name', $("#knowledge-name").val());
-    formdata.append('cover',$("#knowledge-cover")[0].files[0]);
-
-    $.ajax({
-        url : '/stock/',
-        type : "post",
-        processData:false,
-        contentType:false,
-        data : formdata,
-        headers:{"X-CSRFToken":$.cookie("csrftoken")},
-        async : true,
-        success : function(data){
-            if (data.errorCode == 0){
-                WindowsRemanderInfo(data.desc);
-            } else {
-                WindowsRemanderError(data.desc);
+    if (($("#knowledge-name").val().length > 32) || ($("#knowledge-name").val().length < 1)){
+        alert("名称长度不符...");
+        return ;
+    } else {
+        var formdata = new FormData(); 
+        formdata.append('name', $("#knowledge-name").val());
+        formdata.append('tag', $("#knowledge-tag").val());
+        formdata.append('cover',$("#knowledge-cover")[0].files[0]);
+    
+        $.ajax({
+            url : '/stock/',
+            type : "post",
+            processData:false,
+            contentType:false,
+            data : formdata,
+            headers:{"X-CSRFToken":$.cookie("csrftoken")},
+            async : true,
+            success : function(data){
+                if (data.errorCode == 0){
+                    WindowsRemanderInfo(data.desc);
+                } else {
+                    WindowsRemanderError(data.desc);
+                }
             }
-        }
-    });
-    $("#show-picture").addClass("d-none");
-    $("#knowledge-name").val("");
-    $("#knowledge-cover").val("");
+        });
+        $("#show-picture").addClass("d-none");
+        $("#knowledge-name").val("");
+        $("#knowledge-cover").val("");
+    }
+
 });
 
 // 用户取消新建知识库的事件
@@ -427,25 +434,32 @@ $(document).ready(function(){
     if ( $("#down-stock-window").length > 0 ) {
         getStocks(function(result){
             var stock_card = '';
+            console.log(result);
             for (obj of result) {
+                var avatar_svg = multiavatar(obj.author_avatar);
                 stock_card = 
                     '<div id="' + obj.slug + '" class="col">' + 
                     '<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg " >' + 
-                    '<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover" style="background-image: url()">' +
-                        '<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">' + obj.name + '</h2>'
-                        '<ul class="d-flex list-unstyled mt-auto">' +
-                        '<li class="me-auto">' +
-                            '<img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">' +
-                        '</li>' +
-                        '<li class="d-flex align-items-center me-3">' +
-                            '<svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>' +
-                            '<small>Earth</small>' +
-                        '</li>' +
-                        '<li class="d-flex align-items-center">' +
-                            '<svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>' +
-                            '<small>3d</small>' +
-                        '</li></ul></div></div></div>'
-                $("#down-stock-window").append(stock_card);
+                    '<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover" style="background-image: url(' + obj.cover + '); background-size: cover">' +
+                    '<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">' + obj.name + '</h2>' + 
+                    '<ul class="d-flex list-unstyled mt-auto">' +
+                    '<li class="me-auto">' +
+                    '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="' + obj.author_name + '"><svg id="user-avatar" class="rounded-circle me-2" width="32" height="32">' + avatar_svg + '<svg></a>' +
+                    '</li>' +
+                    '<li class="d-flex align-items-center me-3">' +
+                    '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="阅读数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#people-circle"/></svg></a>' +
+                    '<small>' + obj.read_count + '</small>' +
+                    '</li>' +
+                    '<li class="d-flex align-items-center me-3">' +
+                    '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="收藏数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#heart"/></svg></a>' +
+                    '<small>' + obj.marked_count + '</small>' +
+                    '</li>' +
+                    '<li class="d-flex align-items-center">' +
+                    '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="最近更新"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg></a>' +
+                    '<small>'+ obj.upgrade_date +'</small>' +
+                    '</li></ul></div></div></div>';
+
+                $("#down-stock-window").children("div.row").last().append(stock_card);
             }
         });
     }

@@ -168,6 +168,3 @@ COVER_SIZE = (800, 1200)
 PDF_INPUT_PATH = "Statics/bookData/"
 IMAGE_OUTPUT_PATH = "Statics/image/pdf_cover/"
 
-# URI PATH Settings
-BOOK_COVER_PATH = STATIC_URL + "image/pdf_cover/"
-

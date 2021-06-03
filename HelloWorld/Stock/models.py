@@ -33,13 +33,27 @@ class Stock(models.Model):
 class StockSerializer(serializers.Serializer):
     slug = serializers.SlugField()
     name = serializers.CharField()
-    author = serializers.CharField()
-    cover = serializers.FileField()
+    author_slug = serializers.SerializerMethodField()
+    author_avatar = serializers.SerializerMethodField()
+    author_name = serializers.SerializerMethodField()
+    cover = serializers.SerializerMethodField()
     upgrade_date = serializers.CharField()
     public = serializers.BooleanField()
     marked_count = serializers.IntegerField()
     read_count = serializers.IntegerField()
     tag = serializers.SerializerMethodField()
+
+    def get_author_name(self, obj):
+        return obj.author.user_name
+
+    def get_author_avatar(self, obj):
+        return obj.author.avatar_id
+
+    def get_author_slug(self, obj):
+        return obj.author.slug
+
+    def get_cover(self, obj):
+        return "" if obj.cover.name == "undefined" else "/static/" + obj.cover.name
 
     def get_tag(self, obj):
         return obj.tag.split(",")
