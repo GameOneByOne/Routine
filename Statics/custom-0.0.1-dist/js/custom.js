@@ -191,6 +191,26 @@ $("#send-msg").click(function(){
     }
 });
 
+// 用户新建知识库的预览事件
+$("#stock-browse").click(function(){
+    var reader = new FileReader();
+    
+    if ($("#knowledge-cover")[0].files.length > 0){
+        reader.readAsDataURL($("#knowledge-cover")[0].files[0]);
+        reader.onload = function () {
+            $("#example-stock-cover").css("background-image", "url('" + reader.result + "')");
+            $("#example-stock-cover").css("background-size", "cover");
+            $("#example-stock-title").html($("#knowledge-name").val());
+        }
+    } else {
+        $("#example-stock-cover").css("background-image", "url()");
+        $("#example-stock-cover").css("background-size", "cover");
+        $("#example-stock-title").html($("#knowledge-name").val());  
+    }
+    $("#show-stock-browse").removeClass("d-none");
+
+});
+
 // 用户新建知识库的保存事件
 $("#stock-save").click(function(){
     if (($("#knowledge-name").val().length > 32) || ($("#knowledge-name").val().length < 1)){
@@ -200,6 +220,7 @@ $("#stock-save").click(function(){
         var formdata = new FormData(); 
         formdata.append('name', $("#knowledge-name").val());
         formdata.append('tag', $("#knowledge-tag").val());
+        formdata.append('describe', $("#knowledge-desc").val());
         formdata.append('cover',$("#knowledge-cover")[0].files[0]);
     
         $.ajax({
@@ -227,7 +248,7 @@ $("#stock-save").click(function(){
 
 // 用户取消新建知识库的事件
 $("#stock-cancel").click(function(){
-    $("#show-picture").addClass("d-none");
+    $("#show-stock-browse").addClass("d-none");
     $("#knowledge-name").val("");
     $("#knowledge-cover").val("");
 });
@@ -434,11 +455,10 @@ $(document).ready(function(){
     if ( $("#down-stock-window").length > 0 ) {
         getStocks(function(result){
             var stock_card = '';
-            console.log(result);
             for (obj of result) {
                 var avatar_svg = multiavatar(obj.author_avatar);
                 stock_card = 
-                    '<div id="' + obj.slug + '" class="col">' + 
+                    '<div id="' + obj.slug + '" class="col" data-bs-toggle="modal" data-bs-target="#StockInfoModal">' + 
                     '<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg " >' + 
                     '<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover" style="background-image: url(' + obj.cover + '); background-size: cover">' +
                     '<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">' + obj.name + '</h2>' + 
@@ -466,16 +486,3 @@ $(document).ready(function(){
 
     getMsg();
 })
-
-// 定义用户上传图片的展示
-$("#knowledge-cover").change(function(){
-    var file = this.files;
-    var reader = new FileReader();
-    reader.readAsDataURL(file[0]);
-    reader.onload = function () {
-        $("#show-picture").css("background-image", "url('" + reader.result + "')");
-        $("#show-picture").attr("background-data", reader.result);
-        $("#show-picture").css("background-size", "cover");
-    }
-    $("#show-picture").removeClass("d-none");
-});

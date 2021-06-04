@@ -22,6 +22,7 @@ class Stock(models.Model):
     public = models.BooleanField(default=False)
     marked_count = models.IntegerField(blank=False, db_index=True, default=0)
     read_count = models.IntegerField(blank=False, db_index=True, default=0)
+    describe = models.CharField(max_length=128, default="")
     tag = models.CharField(max_length=64, default="")
 
     def save(self):
@@ -41,6 +42,7 @@ class StockSerializer(serializers.Serializer):
     public = serializers.BooleanField()
     marked_count = serializers.IntegerField()
     read_count = serializers.IntegerField()
+    describe = serializers.CharField()
     tag = serializers.SerializerMethodField()
 
     def get_author_name(self, obj):

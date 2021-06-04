@@ -32,6 +32,7 @@ class StockInfo(APIView):
         stock_name = request.data["name"].strip(" ").strip("\r").strip("\n").strip("\t")
         stock_tag = request.data["name"].strip(" ").strip("\r").strip("\n").strip("\t")
         stock_cover = request.data["cover"]
+        stock_desc = request.data["describe"]
         stock_author_slug = request.COOKIES.get("slug")
         stock_author = None
         stock_upgrade_date = time.strftime("%Y-%m-%d", time.localtime())
@@ -59,6 +60,7 @@ class StockInfo(APIView):
             stock.upgrade_date = stock_upgrade_date
             stock.cover = stock_cover
             stock.tag = stock_tag
+            stock.describe = stock_desc
             stock.save()
 
             log.info("Stock {}-{} Parse Success".format(stock_slug, stock_name))

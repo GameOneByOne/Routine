@@ -86,7 +86,6 @@
     </symbol>
 </svg>
 
-
 <main>
 
 {% comment %} 左方导航区 {% endcomment %}
@@ -169,6 +168,8 @@
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 px-4"></div>
     </div>
 </div>
+
+</main>
 
 {% comment %} User的登陆和注册信息展示的 Model {% endcomment %}
 <div class="modal fade " id="userInfoModal" tabindex="-1" aria-hidden="true">
@@ -297,6 +298,75 @@
             <figcaption class="blockquote-footer">
                 <cite title="Source Title">例如:C++,linux,考研（用英文逗号分隔）</cite>
             </figcaption>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="knowledge-desc" placeholder=" ">
+                <label for="knowledge-desc">3、写段话让大家初步认识你的知识库</label>
+            </div>
+            <figcaption class="blockquote-footer">
+                <cite id="name-valid" title="Source Title">例如： 介绍C++基本语法的使用和一些易错点的说明</cite>
+            </figcaption>
+            <div class="input-group mb-3">
+                <input type="file" class="form-control" id="knowledge-cover">
+            </div>
+            <figcaption class="blockquote-footer">
+                <cite title="Source Title">你可以上传一张图片作为你知识库的封面，或者也可以使用系统默认的纯色封面（黑色）</cite>
+            </figcaption>
+            <div id="show-stock-browse" class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg d-none"> 
+                <div id="example-stock-cover" class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover">
+                    <h2 id="example-stock-title" class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h2> 
+                    <ul class="d-flex list-unstyled mt-auto">
+                    <li class="me-auto">
+                    <a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title=" obj.author_name "><svg id="user-avatar" class="rounded-circle me-2" width="32" height="32"> avatar_svg <svg></a>
+                    </li>
+                    <li class="d-flex align-items-center me-3">
+                    <a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="阅读数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#people-circle"/></svg></a>
+                    <small> 1423 </small>
+                    </li>
+                    <li class="d-flex align-items-center me-3">
+                    <a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="收藏数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#heart"/></svg></a>
+                    <small> 768 </small>
+                    </li>
+                    <li class="d-flex align-items-center">
+                    <a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="最近更新"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg></a>
+                    <small> 2022年6月17日 </small>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button id="stock-browse" type="button" class="btn btn-warning">生成预览</button>
+            <button id="stock-cancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+            <button id="stock-save" type="button" class="btn btn-primary" data-bs-dismiss="modal">新建</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+{% comment %} Stock的详细信息Model {% endcomment %}
+<div class="modal fade" id="StockInfoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="stock-title"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="knowledge-name1" placeholder=" ">
+                <label for="knowledge-name1">1、在这里输入你的知识库名称</label>
+            </div>
+            <figcaption class="blockquote-footer">
+                <cite id="name-valid" title="Source Title">例如： C++基础, 名称要在1个字符和32个字符之间</cite>
+            </figcaption>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="knowledge-tag1" placeholder=" ">
+                <label for="knowledge-tag1">2、在这里添加你知识库的标签</label>
+            </div>
+            <figcaption class="blockquote-footer">
+                <cite title="Source Title">例如:C++,linux,考研（用英文逗号分隔）</cite>
+            </figcaption>
             <div class="input-group mb-3">
                 <input type="file" class="form-control" id="knowledge-cover">
             </div>
@@ -323,15 +393,17 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button id="stock-cancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-            <button id="stock-save" type="button" class="btn btn-primary" data-bs-dismiss="modal">新建</button>
+            <button id="stock-cancel" type="button" class="btn btn-secondary" >编辑</button>
+            <button id="stock-save" type="button" class="btn btn-primary">保存</button>
+            <button id="stock-save" type="button" class="btn btn-primary">取消</button>
+            <button id="stock-save" type="button" class="btn btn-primary">上传新章节</button>
+            <button id="stock-save" type="button" class="btn btn-primary">阅读</button>
         </div>
         </div>
     </div>
 </div>
 
 
-</main>
 <script src="{% static 'custom-0.0.1-dist/js/custom.js' %}"></script>
 <script src="{% static 'bootstrap-5.0.1/js/sidebars.js' %}"></script>
 </body>
