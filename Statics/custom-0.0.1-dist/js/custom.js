@@ -201,19 +201,21 @@ $("#stock-browse").click(function(){
             $("#example-stock-cover").css("background-image", "url('" + reader.result + "')");
             $("#example-stock-cover").css("background-size", "cover");
             $("#example-stock-title").html($("#knowledge-name").val());
+            $("#example-stock-desc").html($("#knowledge-desc").val());
         }
     } else {
         $("#example-stock-cover").css("background-image", "url()");
         $("#example-stock-cover").css("background-size", "cover");
-        $("#example-stock-title").html($("#knowledge-name").val());  
+        $("#example-stock-title").html($("#knowledge-name").val()); 
+        $("#example-stock-desc").html($("#knowledge-desc").val()); 
     }
     $("#show-stock-browse").removeClass("d-none");
 
 });
 
 // 用户新建知识库的保存事件
-$("#stock-save").click(function(){
-    if (($("#knowledge-name").val().length > 32) || ($("#knowledge-name").val().length < 1)){
+$("#stock-create").click(function(){
+    if (($("#knowledge-name").val().length > 12) || ($("#knowledge-name").val().length < 1)){
         alert("名称长度不符...");
         return ;
     } else {
@@ -243,15 +245,64 @@ $("#stock-save").click(function(){
         $("#knowledge-name").val("");
         $("#knowledge-cover").val("");
     }
-
 });
 
 // 用户取消新建知识库的事件
-$("#stock-cancel").click(function(){
+$("#stock-cancel-create").click(function(){
     $("#show-stock-browse").addClass("d-none");
     $("#knowledge-name").val("");
     $("#knowledge-cover").val("");
 });
+
+// 用户编辑知识库的事件
+$("#stock-edit").click(function(){
+    $("#knowledge-name-edit").attr("disabled", false);
+    $("#knowledge-desc-edit").attr("disabled", false);
+    $("#knowledge-tag-edit").attr("disabled", false);
+    $("#knowledge-cover-edit").attr("disabled", false);
+});
+
+// 用户更新知识库的事件
+$("#stock-update").click(function(){
+    if (($("#knowledge-name").val().length > 12) || ($("#knowledge-name").val().length < 1)){
+        alert("名称长度不符...");
+        return ;
+    } else {
+        var formdata = new FormData(); 
+        formdata.append('name', $("#knowledge-name-edit").val());
+        formdata.append('tag', $("#knowledge-tag-edit").val());
+        formdata.append('describe', $("#knowledge-desc-edit").val());
+        formdata.append('slug', $("#StockInfoModal").attr("stockSlug"));
+
+        if ($("#knowledge-cover-edit").length != 0){
+            alert("12312");
+            formdata.append('cover',$("#knowledge-cover-edit")[0].files[0]);
+        }
+        
+    
+        $.ajax({
+            url : '/stock/',
+            type : "patch",
+            processData:false,
+            contentType:false,
+            data : formdata,
+            headers:{"X-CSRFToken":$.cookie("csrftoken")},
+            async : true,
+            success : function(data){
+                if (data.errorCode == 0){
+                    WindowsRemanderInfo(data.desc);
+                } else {
+                    WindowsRemanderError(data.desc);
+                }
+            }
+        });
+        $("#show-picture").addClass("d-none");
+        $("#knowledge-name").val("");
+        $("#knowledge-cover").val("");
+    }
+});
+
+// 用户上传新章节的事件
 
 // 导航的点击事件
 $("#main-page").click(function(){
@@ -494,10 +545,13 @@ function generateStocksInMainPage(datas){
     for (obj of datas) {
         var avatar_svg = multiavatar(obj.author_avatar);
         stock_card = 
-            '<div id="' + obj.slug + ' "class="col" onclick=updateStockModel(this) data-bs-toggle="modal" data-bs-target="#StockInfoModal">' + 
+            '<div id="' + obj.slug + ' "class="col" data-bs-toggle="modal" data-bs-target="#StockInfoModal">' + 
             '<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg " >' + 
             '<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover" style="background-image: url(' + obj.cover + '); background-size: cover">' +
-            '<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">' + obj.name + '</h2>' + 
+            '<figure class="pt-5 mt-5 mb-4 lh-1 fw-bold">' +
+            '<blockquote class="blockquote"><h6 class="display-6">' + obj.name + '</h6></blockquote>' +
+            '<figcaption class="blockquote-footer">' + obj.describe + '</figcaption>' +
+            '</figure>' +
             '<ul class="d-flex list-unstyled mt-auto">' +
             '<li class="me-auto">' +
             '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="' + obj.author_name + '"><svg id="user-avatar" class="rounded-circle me-2" width="32" height="32">' + avatar_svg + '<svg></a>' +
@@ -524,10 +578,13 @@ function generateStocksInSelfPage(datas){
     for (obj of datas) {
         var avatar_svg = multiavatar(obj.author_avatar);
         stock_card = 
-            '<div id="' + obj.slug + ' "class="col" onclick=updateStockModel(this) data-bs-toggle="modal" data-bs-target="#StockInfoModal">' + 
+            '<div id="' + obj.slug + '" tag="' + obj.tag + '" class="col" onclick=updateStockModel(this) data-bs-toggle="modal" data-bs-target="#StockInfoModal">' + 
             '<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg " >' + 
             '<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover" style="background-image: url(' + obj.cover + '); background-size: cover">' +
-            '<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">' + obj.name + '</h2>' + 
+            '<figure class="pt-5 mt-5 mb-4 lh-1 fw-bold">' +
+            '<blockquote class="blockquote"><h6 class="display-6">' + obj.name + '</h6></blockquote>' + 
+            '<figcaption class="blockquote-footer">' + obj.describe + '</figcaption>' +
+            '</figure>' +
             '<ul class="d-flex list-unstyled mt-auto">' +
             '<li class="me-auto">' +
             '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="' + obj.author_name + '"><svg id="user-avatar" class="rounded-circle me-2" width="32" height="32">' + avatar_svg + '<svg></a>' +
@@ -554,4 +611,12 @@ function cleanStockInHtml(){
 }
 
 function updateStockModel(obj){
+    $("#knowledge-name-edit").val($("#" + obj.id).children("div").children("div").children("figure").children("blockquote").children("h6").html());
+    $("#knowledge-name-edit").attr("disabled", true);
+    $("#knowledge-desc-edit").val($("#" + obj.id).children("div").children("div").children("figure").children("figcaption").html());
+    $("#knowledge-desc-edit").attr("disabled", true);
+    $("#knowledge-tag-edit").val(obj.tag);
+    $("#knowledge-tag-edit").attr("disabled", true);
+    $("#knowledge-cover-edit").attr("disabled", true);
+    $("#StockInfoModal").attr("stockSlug", obj.id)
 }

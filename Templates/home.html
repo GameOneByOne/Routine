@@ -313,7 +313,10 @@
             </figcaption>
             <div id="show-stock-browse" class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg d-none"> 
                 <div id="example-stock-cover" class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover">
-                    <h2 id="example-stock-title" class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h2> 
+                    <figure class="pt-5 mt-5 mb-4 lh-1 fw-bold">
+                        <blockquote class="blockquote"><h6 id="example-stock-title" class="display-6"></h6></blockquote>
+                        <figcaption id="example-stock-desc" class="blockquote-footer"></figcaption>
+                    </figure>
                     <ul class="d-flex list-unstyled mt-auto">
                     <li class="me-auto">
                     <a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title=" obj.author_name "><svg id="user-avatar" class="rounded-circle me-2" width="32" height="32"> avatar_svg <svg></a>
@@ -337,8 +340,8 @@
 
         <div class="modal-footer">
             <button id="stock-browse" type="button" class="btn btn-warning">生成预览</button>
-            <button id="stock-cancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-            <button id="stock-save" type="button" class="btn btn-primary" data-bs-dismiss="modal">新建</button>
+            <button id="stock-cancel-create" type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+            <button id="stock-create" type="button" class="btn btn-primary" data-bs-dismiss="modal">新建</button>
         </div>
         </div>
     </div>
@@ -367,8 +370,15 @@
             <figcaption class="blockquote-footer">
                 <cite title="Source Title">例如:C++,linux,考研（用英文逗号分隔）</cite>
             </figcaption>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="knowledge-desc-edit" placeholder=" ">
+                <label for="knowledge-desc-edit">3、写段话让大家初步认识你的知识库</label>
+            </div>
+            <figcaption class="blockquote-footer">
+                <cite id="name-valid" title="Source Title">例如： 介绍C++基本语法的使用和一些易错点的说明</cite>
+            </figcaption>
             <div class="input-group mb-3">
-                <input type="file" class="form-control" id="knowledge-cover">
+                <input type="file" class="form-control" id="knowledge-cover-edit">
             </div>
             <figcaption class="blockquote-footer">
                 <cite title="Source Title">你可以上传一张图片作为你知识库的封面，或者也可以使用系统默认的纯色封面（黑色）</cite>
@@ -393,9 +403,9 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button id="stock-cancel" type="button" class="btn btn-secondary" >编辑</button>
-            <button id="stock-save" type="button" class="btn btn-primary">保存</button>
-            <button id="stock-save" type="button" class="btn btn-primary">取消</button>
+            <button id="stock-edit" type="button" class="btn btn-secondary" >编辑</button>
+            <button id="stock-update" type="button" class="btn btn-primary">保存</button>
+            <button id="stock-cancel-edit" type="button" class="btn btn-primary" data-bs-dismiss="modal">取消</button>
             <button id="stock-save" type="button" class="btn btn-primary">上传新章节</button>
             <button id="stock-save" type="button" class="btn btn-primary">阅读</button>
         </div>
