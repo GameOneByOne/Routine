@@ -25,15 +25,16 @@ class StockInfo(APIView):
             except ObjectDoesNotExist:
                 return JsonResponse({"errorCode": 1, "desc": "你要查看的这个知识库不存在哦！"}, safe=False, status=200)
 
-        if request.data.get("userSlug", "") != "":
+
+        if request.GET.get("userSlug", "") != "":
             # 先看用户在不在
             user = None
             try:
-                user = User.object.get(slug=request.get("userSlug", ""))
+                user = User.objects.get(slug=request.GET.get("userSlug", ""))
             except ObjectDoesNotExist:
                 return JsonResponse({"errorCode": 1, "desc": "你还未登陆哦"}, safe=False, status=200)
                 
-            return JsonResponse({"errorCode": 0, "data":StockSerializer(Stock.objects.get(author=user), many=True).data}, safe=False, status=200)
+            return JsonResponse({"errorCode": 0, "data":StockSerializer(Stock.objects.filter(author=user), many=True).data}, safe=False, status=200)
 
         return JsonResponse({"errorCode": 0, "data":StockSerializer(Stock.objects.all(), many=True).data}, safe=False, status=200)
 

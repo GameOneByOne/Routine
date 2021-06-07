@@ -264,7 +264,7 @@ $("#stock-edit").click(function(){
 
 // 用户更新知识库的事件
 $("#stock-update").click(function(){
-    if (($("#knowledge-name").val().length > 12) || ($("#knowledge-name").val().length < 1)){
+    if (($("#knowledge-name-edit").val().length > 12) || ($("#knowledge-name-edit").val().length < 1)){
         alert("名称长度不符...");
         return ;
     } else {
@@ -274,12 +274,10 @@ $("#stock-update").click(function(){
         formdata.append('describe', $("#knowledge-desc-edit").val());
         formdata.append('slug', $("#StockInfoModal").attr("stockSlug"));
 
-        if ($("#knowledge-cover-edit").length != 0){
-            alert("12312");
+        if ($("#knowledge-cover-edit")[0].files.length != 0){
             formdata.append('cover',$("#knowledge-cover-edit")[0].files[0]);
         }
         
-    
         $.ajax({
             url : '/stock/',
             type : "patch",
@@ -291,14 +289,14 @@ $("#stock-update").click(function(){
             success : function(data){
                 if (data.errorCode == 0){
                     WindowsRemanderInfo(data.desc);
+                    cleanStockInHtml("#down-stock-window-my");
+                    getStocksByUserSlug(generateStocksInSelfPage);
                 } else {
                     WindowsRemanderError(data.desc);
                 }
             }
         });
-        $("#show-picture").addClass("d-none");
-        $("#knowledge-name").val("");
-        $("#knowledge-cover").val("");
+
     }
 });
 
@@ -319,7 +317,9 @@ $("#main-page").click(function(){
     $("#tag-for-my-stock").addClass("d-none");
     $("#tag-for-ranking").addClass("d-none");
     $("#tag-for-desc-site").addClass("d-none");
-    cleanStockInHtml();
+    $("#down-stock-window-my").children("div.row").addClass("d-none");
+    $("#down-stock-window-main").children("div.row").removeClass("d-none");
+    cleanStockInHtml("#down-stock-window-main");
     getStocks(generateStocksInMainPage);
     getMsg();
 });
@@ -337,8 +337,9 @@ $("#my-stock").click(function(){
     $("#tag-for-my-stock").removeClass("d-none");
     $("#tag-for-ranking").addClass("d-none");
     $("#tag-for-desc-site").addClass("d-none");
-
-    cleanStockInHtml();
+    $("#down-stock-window-my").children("div.row").removeClass("d-none");
+    $("#down-stock-window-main").children("div.row").addClass("d-none");
+    cleanStockInHtml("#down-stock-window-my");
     getStocksByUserSlug(generateStocksInSelfPage);
     getMsg();
 });
@@ -413,7 +414,6 @@ function WindowsRemanderWarn(content){
 
 // 小窗口弹窗错误事件
 function WindowsRemanderError(content){
-    alert("failed1");
     $.toast({
         title: "我们遇到了一个问题",
         subtitle: "刚刚",
@@ -498,9 +498,9 @@ function getStocks(callback){
 // 获取某些用户创建的Stock
 function getStocksByUserSlug(callback){
     $.ajax({
-        url : '/stock/',
+        url : '/stock/?userSlug=' + $.cookie("slug"),
         type : "get",
-        data : {"userSlug": $.cookie("slug")},
+        data : "",
         async : true,
         success : function(data) {
             if (data.errorCode == 0){
@@ -569,7 +569,7 @@ function generateStocksInMainPage(datas){
             '<small>'+ obj.upgrade_date +'</small>' +
             '</li></ul></div></div></div>';
 
-        $("#down-stock-window").children("div.row").last().append(stock_card);
+        $("#down-stock-window-main").children("div.row").last().append(stock_card);
     }
 }
 
@@ -602,12 +602,12 @@ function generateStocksInSelfPage(datas){
             '<small>'+ obj.upgrade_date +'</small>' +
             '</li></ul></div></div></div>';
 
-        $("#down-stock-window").children("div.row").last().append(stock_card);
+        $("#down-stock-window-my").children("div.row").last().append(stock_card);
     }
 }
 
-function cleanStockInHtml(){
-    $("#down-stock-window").children("div.row").last().html("")
+function cleanStockInHtml(div){
+    $(div).children("div.row").last().html("")
 }
 
 function updateStockModel(obj){

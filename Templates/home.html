@@ -129,11 +129,11 @@
 </div>
 
 {% comment %} 右方展示区 {% endcomment %}
-<div class="container" style="margin-left: 380px;">
+<div class="container" style="margin-left: 280px;">
     <div id="top-nav" class="row align-items-stretch px-3">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
         <div class="container-fluid">
-            {% comment %} 上方首页标志区 {% endcomment %}
+            {% comment %} 上方首页区 {% endcomment %}
             <a id="brand-for-main-page" class="navbar-brand">首页</a>
             <a id="brand-for-my-stock" class="navbar-brand d-none">知识库</a>
             <a id="brand-for-ranking" class="navbar-brand d-none">排行</a>
@@ -141,7 +141,7 @@
 
             
             <div class="collapse navbar-collapse" id="navbarCollapse">
-            {% comment %} 上方首页标签区 {% endcomment %}
+            {% comment %} 上方标签区 {% endcomment %}
             <ul id="tag-for-main-page" class="navbar-nav me-auto mb-2 mb-md-0">
                 <li class="nav-item"><a class="nav-link">标签一</a></li>
                 <li class="nav-item"><a class="nav-link">标签二</a></li>
@@ -163,8 +163,13 @@
         </nav>
     </div>
 
-    {% comment %} 下方知识库链接 {% endcomment %}
-    <div id="down-stock-window">
+    {% comment %} 下方首页知识库链接 {% endcomment %}
+    <div id="down-stock-window-main">
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 px-4"></div>
+    </div>
+    
+    {% comment %} 下方我的知识库链接 {% endcomment %}
+    <div id="down-stock-window-my">
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 px-4"></div>
     </div>
 </div>
@@ -289,7 +294,7 @@
                 <label for="knowledge-name">1、在这里输入你的知识库名称</label>
             </div>
             <figcaption class="blockquote-footer">
-                <cite id="name-valid" title="Source Title">例如： C++基础, 名称要在1个字符和32个字符之间</cite>
+                <cite id="name-valid" title="Source Title">例如： C++基础, 名称要在1个字符和12个字符之间</cite>
             </figcaption>
             <div class="form-floating mb-3">
                 <input class="form-control" id="knowledge-tag" placeholder=" ">
@@ -349,19 +354,20 @@
 
 {% comment %} Stock的详细信息Model {% endcomment %}
 <div class="modal fade" id="StockInfoModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="stock-title"></h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body row">
+        <div class="col-8">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="knowledge-name-edit" placeholder=" ">
                 <label for="knowledge-name-edit">1、在这里输入你的知识库名称</label>
             </div>
             <figcaption class="blockquote-footer">
-                <cite id="name-valid" title="Source Title">例如： C++基础, 名称要在1个字符和32个字符之间</cite>
+                <cite id="name-valid" title="Source Title">例如： C++基础, 名称要在1个字符和12个字符之间</cite>
             </figcaption>
             <div class="form-floating mb-3">
                 <input class="form-control" id="knowledge-tag-edit" placeholder=" ">
@@ -383,36 +389,37 @@
             <figcaption class="blockquote-footer">
                 <cite title="Source Title">你可以上传一张图片作为你知识库的封面，或者也可以使用系统默认的纯色封面（黑色）</cite>
             </figcaption>
-            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg " >
-                <div id="show-picture" class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 d-none">
-                    <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h2>
-                    <ul class="d-flex list-unstyled mt-auto">
-                    <li class="me-auto">
-                        <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                    </li>
-                    <li class="d-flex align-items-center me-3">
-                        <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                        <small>Earth</small>
-                    </li>
-                    <li class="d-flex align-items-center">
-                        <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-                        <small>3d</small>
-                    </li>
-                    </ul>
-                </div>
-            </div>
+        </div>
+        <div class=col-4>12312312</div>
         </div>
         <div class="modal-footer">
-            <button id="stock-edit" type="button" class="btn btn-secondary" >编辑</button>
-            <button id="stock-update" type="button" class="btn btn-primary">保存</button>
+            <button id="stock-edit" type="button" class="btn btn-secondary">编辑</button>
+            <button id="stock-update" type="button" class="btn btn-primary" data-bs-dismiss="modal">保存</button>
             <button id="stock-cancel-edit" type="button" class="btn btn-primary" data-bs-dismiss="modal">取消</button>
-            <button id="stock-save" type="button" class="btn btn-primary">上传新章节</button>
-            <button id="stock-save" type="button" class="btn btn-primary">阅读</button>
+            <button id="stock-save" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#PieceUploadModal">上传新章节</button>
+            <button id="stock-save" type="button" class="btn btn-primary" data-bs-dismiss="modal">阅读</button>
         </div>
         </div>
     </div>
 </div>
 
+{% comment %} 新章节的上传Model {% endcomment %}
+<div class="modal fade" id="PieceUploadModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            12312312
+        </div>
+        <div class="modal-footer">
+            <button id="piece-cancel" type="button" class="btn btn-primary" data-bs-dismiss="modal">取消</button>
+            <button id="piece-upload" type="button" class="btn btn-primary" data-bs-dismiss="modal">上传</button>
+        </div>
+        </div>
+    </div>
+</div>
 
 <script src="{% static 'custom-0.0.1-dist/js/custom.js' %}"></script>
 <script src="{% static 'bootstrap-5.0.1/js/sidebars.js' %}"></script>
