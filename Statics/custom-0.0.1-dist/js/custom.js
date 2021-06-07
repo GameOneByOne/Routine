@@ -255,6 +255,7 @@ $("#stock-cancel").click(function(){
 
 // 导航的点击事件
 $("#main-page").click(function(){
+    if ($("#main-page").hasClass("active")){ return ; } 
     $("#main-page").addClass("active");
     $("#my-stock").removeClass("active");
     $("#ranking").removeClass("active");
@@ -267,9 +268,12 @@ $("#main-page").click(function(){
     $("#tag-for-my-stock").addClass("d-none");
     $("#tag-for-ranking").addClass("d-none");
     $("#tag-for-desc-site").addClass("d-none");
+    cleanStockInHtml();
+    getStocks(generateStocksInMainPage);
     getMsg();
 });
 $("#my-stock").click(function(){
+    if ($("#my-stock").hasClass("active")){ return ; } 
     $("#main-page").removeClass("active");
     $("#my-stock").addClass("active");
     $("#ranking").removeClass("active");
@@ -282,9 +286,13 @@ $("#my-stock").click(function(){
     $("#tag-for-my-stock").removeClass("d-none");
     $("#tag-for-ranking").addClass("d-none");
     $("#tag-for-desc-site").addClass("d-none");
+
+    cleanStockInHtml();
+    getStocksByUserSlug(generateStocksInSelfPage);
     getMsg();
 });
 $("#ranking").click(function(){
+    if ($("#ranking").hasClass("active")){ return ; } 
     $("#main-page").removeClass("active");
     $("#my-stock").removeClass("active");
     $("#ranking").addClass("active");
@@ -300,6 +308,7 @@ $("#ranking").click(function(){
     getMsg();
 });
 $("#desc-site").click(function(){
+    if ($("#desc-site").hasClass("active")){ return ; } 
     $("#main-page").removeClass("active");
     $("#my-stock").removeClass("active");
     $("#ranking").removeClass("active");
@@ -418,8 +427,8 @@ function sendMsg(message){
       });
 }
 
-// 获取Stock
-function getStocks(callback) {
+// 获取全部Stock
+function getStocks(callback){
     $.ajax({
         url : '/stock/',
         type : "get",
@@ -434,6 +443,26 @@ function getStocks(callback) {
         }
     });
 }
+
+// 获取某些用户创建的Stock
+function getStocksByUserSlug(callback){
+    $.ajax({
+        url : '/stock/',
+        type : "get",
+        data : {"userSlug": $.cookie("slug")},
+        async : true,
+        success : function(data) {
+            if (data.errorCode == 0){
+                callback(data.data);
+            } else {
+                WindowsRemanderError(data.desc);
+            }
+        }
+    });
+} 
+
+
+
 
 /*
 -------------------------------
@@ -451,38 +480,78 @@ $(document).ready(function(){
     $("#info-avatar").html(svgCode); // 填充用户信息页的头像
     $.cookie("avatar_id", avatarId);
 
+    // 先清空Stock
+    cleanStockInHtml();
+
     // 加载Stock
-    if ( $("#down-stock-window").length > 0 ) {
-        getStocks(function(result){
-            var stock_card = '';
-            for (obj of result) {
-                var avatar_svg = multiavatar(obj.author_avatar);
-                stock_card = 
-                    '<div id="' + obj.slug + '" class="col" data-bs-toggle="modal" data-bs-target="#StockInfoModal">' + 
-                    '<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg " >' + 
-                    '<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover" style="background-image: url(' + obj.cover + '); background-size: cover">' +
-                    '<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">' + obj.name + '</h2>' + 
-                    '<ul class="d-flex list-unstyled mt-auto">' +
-                    '<li class="me-auto">' +
-                    '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="' + obj.author_name + '"><svg id="user-avatar" class="rounded-circle me-2" width="32" height="32">' + avatar_svg + '<svg></a>' +
-                    '</li>' +
-                    '<li class="d-flex align-items-center me-3">' +
-                    '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="阅读数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#people-circle"/></svg></a>' +
-                    '<small>' + obj.read_count + '</small>' +
-                    '</li>' +
-                    '<li class="d-flex align-items-center me-3">' +
-                    '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="收藏数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#heart"/></svg></a>' +
-                    '<small>' + obj.marked_count + '</small>' +
-                    '</li>' +
-                    '<li class="d-flex align-items-center">' +
-                    '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="最近更新"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg></a>' +
-                    '<small>'+ obj.upgrade_date +'</small>' +
-                    '</li></ul></div></div></div>';
-
-                $("#down-stock-window").children("div.row").last().append(stock_card);
-            }
-        });
-    }
-
+    getStocks(generateStocksInMainPage);
     getMsg();
-})
+});
+
+
+function generateStocksInMainPage(datas){
+    var stock_card = '';
+    for (obj of datas) {
+        var avatar_svg = multiavatar(obj.author_avatar);
+        stock_card = 
+            '<div id="' + obj.slug + ' "class="col" onclick=updateStockModel(this) data-bs-toggle="modal" data-bs-target="#StockInfoModal">' + 
+            '<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg " >' + 
+            '<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover" style="background-image: url(' + obj.cover + '); background-size: cover">' +
+            '<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">' + obj.name + '</h2>' + 
+            '<ul class="d-flex list-unstyled mt-auto">' +
+            '<li class="me-auto">' +
+            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="' + obj.author_name + '"><svg id="user-avatar" class="rounded-circle me-2" width="32" height="32">' + avatar_svg + '<svg></a>' +
+            '</li>' +
+            '<li class="d-flex align-items-center me-3">' +
+            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="阅读数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#people-circle"/></svg></a>' +
+            '<small>' + obj.read_count + '</small>' +
+            '</li>' +
+            '<li class="d-flex align-items-center me-3">' +
+            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="收藏数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#heart"/></svg></a>' +
+            '<small>' + obj.marked_count + '</small>' +
+            '</li>' +
+            '<li class="d-flex align-items-center">' +
+            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="最近更新"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg></a>' +
+            '<small>'+ obj.upgrade_date +'</small>' +
+            '</li></ul></div></div></div>';
+
+        $("#down-stock-window").children("div.row").last().append(stock_card);
+    }
+}
+
+function generateStocksInSelfPage(datas){
+    var stock_card = '';
+    for (obj of datas) {
+        var avatar_svg = multiavatar(obj.author_avatar);
+        stock_card = 
+            '<div id="' + obj.slug + ' "class="col" onclick=updateStockModel(this) data-bs-toggle="modal" data-bs-target="#StockInfoModal">' + 
+            '<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg " >' + 
+            '<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover" style="background-image: url(' + obj.cover + '); background-size: cover">' +
+            '<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">' + obj.name + '</h2>' + 
+            '<ul class="d-flex list-unstyled mt-auto">' +
+            '<li class="me-auto">' +
+            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="' + obj.author_name + '"><svg id="user-avatar" class="rounded-circle me-2" width="32" height="32">' + avatar_svg + '<svg></a>' +
+            '</li>' +
+            '<li class="d-flex align-items-center me-3">' +
+            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="阅读数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#people-circle"/></svg></a>' +
+            '<small>' + obj.read_count + '</small>' +
+            '</li>' +
+            '<li class="d-flex align-items-center me-3">' +
+            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="收藏数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#heart"/></svg></a>' +
+            '<small>' + obj.marked_count + '</small>' +
+            '</li>' +
+            '<li class="d-flex align-items-center">' +
+            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="最近更新"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg></a>' +
+            '<small>'+ obj.upgrade_date +'</small>' +
+            '</li></ul></div></div></div>';
+
+        $("#down-stock-window").children("div.row").last().append(stock_card);
+    }
+}
+
+function cleanStockInHtml(){
+    $("#down-stock-window").children("div.row").last().html("")
+}
+
+function updateStockModel(obj){
+}
