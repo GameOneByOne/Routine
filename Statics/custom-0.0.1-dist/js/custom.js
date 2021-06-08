@@ -620,3 +620,33 @@ function updateStockModel(obj){
     $("#knowledge-cover-edit").attr("disabled", true);
     $("#StockInfoModal").attr("stockSlug", obj.id)
 }
+
+function positionTop(obj){
+    if ($(obj).parent().parent().prev().length == 0){
+        return ;
+    }
+
+    var cur_name = $(obj).parent().html();
+    var top_name = $(obj).parent().parent().prev().children().last().html();
+
+    console.log(cur_name);
+    console.log(top_name);
+
+    $(obj).parent().parent().prev().children().last().html(cur_name);
+    $(obj).parent().html(top_name);
+}
+
+function positionDown(obj){
+    if ($(obj).parent().parent().next().length == 0){
+        return ;
+    }
+
+    var cur_name = $(obj).parent().html();
+    var top_name = $(obj).parent().parent().next().children().last().html();
+
+    console.log(cur_name);
+    console.log(top_name);
+
+    $(obj).parent().parent().next().children().last().html(cur_name);
+    $(obj).parent().html(top_name);
+}

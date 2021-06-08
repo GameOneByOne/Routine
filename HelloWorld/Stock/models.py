@@ -4,14 +4,11 @@ from rest_framework import serializers
 from HelloWorld.settings import *
 
 
-# def save_md(instance, filename):
-#     return "Stock/{}/{}.md".format(instance.slug, instance.slug)
-
 def save_cover(instance, filename):
-    return "Stock/{}/cover/{}.{}".format(instance.slug, instance.slug,filename.split(".")[-1])
+    return "Stock/{}/cover/{}.{}".format(instance.slug, instance.slug, filename.split(".")[-1])
 
 def save_piece(instance, filename):
-    return "Stock/{}/piece/{}.md".format(instance.slug, ".".join(filename.split(".")[:-1]))
+    return "Stock/{}/piece/{}.md".format(instance.slug, instance.slug)
 
 class Stock(models.Model):
     slug = models.SlugField(blank=False, primary_key=True, default=None, unique=True)
@@ -30,6 +27,20 @@ class Stock(models.Model):
 
     class Meta:
         db_table = "Model_Stock"
+
+
+class Piece(models.Model):
+    slug = models.SlugField(blank=False, primary_key=True, default=None, unique=True)
+    name = models.CharField(blank=False, max_length=256, default=None)
+    belong_stock = models.ForeignKey(to=Stock, db_index=True, null=True, to_field="slug", related_name="belong_stock", on_delete=models.SET_NULL)
+    content = models.FileField(upload_to=save_piece, default=None)
+
+
+    def save(self):
+        super().save()
+        
+    class Meta:
+        db_table = "Model_Piece"
 
 class StockSerializer(serializers.Serializer):
     slug = serializers.SlugField()
@@ -59,4 +70,16 @@ class StockSerializer(serializers.Serializer):
 
     def get_tag(self, obj):
         return obj.tag.split(",")
-    
+
+
+class PieceSerializer(serializers.Serializer):
+    slug = serializers.SlugField()
+    name = serializers.CharField()
+    belong_stock = serializers.SerializerMethodField()
+    content = serializers.SerializerMethodField()
+
+    def get_belong_stock(self, obj):
+        return obj.belong_stock.slug
+
+    def get_content(self, obj):
+        return "" if obj.cover.name == "undefined" else "/static/" + obj.content.name
