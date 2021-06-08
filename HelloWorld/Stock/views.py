@@ -18,14 +18,6 @@ class StockInfo(APIView):
 
     def get(self, request, *args, **kwargs):
         # 如果是获取某本知识库
-        if kwargs.get("slug", "") != "":
-            try:
-                return JsonResponse({"errorCode": 0, "data":StockSerializer(Stock.objects.get(slug=kwargs.get("slug", ""))).data}, safe=False, status=200)
-
-            except ObjectDoesNotExist:
-                return JsonResponse({"errorCode": 1, "desc": "你要查看的这个知识库不存在哦！"}, safe=False, status=200)
-
-
         if request.GET.get("userSlug", "") != "":
             # 先看用户在不在
             user = None

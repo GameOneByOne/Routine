@@ -78,7 +78,6 @@ class PieceSerializer(serializers.Serializer):
     name = serializers.CharField()
     belong_stock = serializers.SerializerMethodField()
     content = serializers.SerializerMethodField()
-    index = serializers.IntegerField()
 
     def get_belong_stock(self, obj):
         return obj.belong_stock.slug

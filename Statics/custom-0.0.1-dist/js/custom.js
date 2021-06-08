@@ -550,13 +550,13 @@ function getPiecesByStockSlugAndAppend(stockSlug){
         data : "",
         async : true,
         success : function(data) {
-            
             for (var ind=0; ind<data.data.length; ++ind){
                 $("#piece-list").append('<tr><td>' + ind + '</td><td title="' + data.data[ind].name + '">' + data.data[ind].name + '<span class="position-top badge bg-success float-end mx-1" onclick="positionTop(this)">向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>')
             }  
         }
     });
 }
+
 
 
 
@@ -670,8 +670,7 @@ function updateStockModel(obj){
 }
 
 function browseStock(obj){
-    // 先获取该stock的全部piece
-    window.open("https://www.baidu.com");
+    window.open("/viewer");
 }
 
 function positionTop(obj){
