@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="{% static 'bootstrap-5.0.1/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'bootstrap-5.0.1/css/sidebars.css' %}">
     <link rel="stylesheet" href="{% static 'bootstrap-5.0.1/css/editormd.preview.css' %}" />
-    
     <script src="{% static 'bootstrap-5.0.1/js/bootstrap.bundle.js' %}"></script>
     
 </head>
@@ -20,117 +19,169 @@
 
 <main>
 
-{% comment %} 左方内容导航 {% endcomment %}
-<div id="left-nav" class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+{% comment %} 左方内容目录 {% endcomment %}
+<div id="left-nav" class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; position: relative; height:auto">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
         <span class="fs-4">Knowledge Stock</span>
     </a>
     <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-    <li class="nav-item">123</li>
-    <li>234</li>
-    <li>345</li>
-    <li>567</li>
+    <ul>
+    <li>
+        <a id="my-stock" class="nav-link text-white bg-black" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+        第一章节
+        </a>
+    </li>
+    <li>
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+        <div class="card card-body">
+            <nav id="navbar-example1" class="navbar navbar-light bg-light flex-column align-items-stretch p-1">
+            <nav class="nav nav-pills flex-column">
+                <a class="nav-link" href="#item-1">Item 1</a>
+                <nav class="nav nav-pills flex-column">
+                <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
+                <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
+                </nav>
+                <a class="nav-link" href="#item-2">Item 2</a>
+                <a class="nav-link" href="#item-3">Item 3</a>
+                <nav class="nav nav-pills flex-column">
+                <a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
+                <a class="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
+                </nav>
+            </nav>
+            </nav>
+        </div>
+        </div>
+    </li>
+
+    <li>
+        <a id="my-stock" class="nav-link text-white" data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2">
+        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+        第二章节
+        </a>
+    </li>
+    <li>
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+        <div class="card card-body">
+            <nav id="navbar-example2" class="navbar navbar-light bg-light flex-column align-items-stretch p-1">
+            <nav class="nav nav-pills flex-column">
+                <a class="nav-link" href="#item-1">Item 1</a>
+                <nav class="nav nav-pills flex-column">
+                <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
+                <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
+                </nav>
+                <a class="nav-link" href="#item-2">Item 2</a>
+                <a class="nav-link" href="#item-3">Item 3</a>
+                <nav class="nav nav-pills flex-column">
+                <a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
+                <a class="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
+                </nav>
+            </nav>
+            </nav>
+        </div>
+        </div>
+    </li>
     </ul>
     <hr>
 </div>
 
-<div class="container" style="margin-left: 580px; width:100%">
+<div class="container" style="margin-left: 380px; width:100%">
+<p># 我是大标题</p>
+<p>#### 广东业务</p>
+<p></p>
+<p>* 广东分为 **客响** 和 **客服**， 有啥区别 别问， 问就是没有</p>
+<p></p>
+<p>#### 广东机器</p>
+<p></p>
+<p>* 192.168.129.*，该地址段的直接在103上输入IP后八位即可登陆</p>
+<p>  * 客服</p>
+<p>    * 30 ， 测试服务器</p>
+<p>    * 5 ， 客服主服务器，部署有web前端和complaintServer</p>
+<p>    * 28 ，客服服务器，部署有ComplaintServer和AlertServer</p>
+<p>    * 29 ，客服服务器， 部署有ComplaintServer和AlertServer</p>
+<p>    * 31，客服服务器， 部署有ComplaintServer</p>
+<p>    * 32，客服服务器， 部署有ComplaintServer</p>
+<p>  * 客响</p>
+<p>    * 17，客响主服务器， 部署有ComplaintServer</p>
+<p>    * 27，客响服务器， 部署有ComplaintServer</p>
+<p></p>
+<p>* 192.169.42.*， 该地址段的 需要输入 xnj + “ ” + IP后八位即可登陆</p>
+<p>  * 客服</p>
+<p id="item-1-1">    * item 1 11，客服服务器， 部署有ComplaintServer</p>
+<p>    * 12，客服服务器， 部署有ComplaintServer</p>
+<p id="item-3-1"> item 31</p>
+<p>#### 广东数据库</p>
+<p></p>
+<p >#### 广东机器</p>
+
+<p>* 192.168.129.*，该地址段的直接在103上输入IP后八位即可登陆</p>
+<p>  * 客服</p>
+<p>    * 30 ， 测试服务器</p>
+<p>    * 5 ， 客服主服务器，部署有web前端和complaintServer</p>
+<p>    * 28 ，客服服务器，部署有ComplaintServer和AlertServer</p>
+<p>    * 29 ，客服服务器， 部署有ComplaintServer和AlertServer</p>
+<p>    * 31，客服服务器， 部署有ComplaintServer</p>
+<p>    * 32，客服服务器， 部署有ComplaintServer</p>
+<p>  * 客响</p>
+<p>    * 17，客响主服务器， 部署有ComplaintServer</p>
+<p>    * 27，客响服务器， 部署有ComplaintServer</p>
+<p></p>
+<p>* 192.169.42.*， 该地址段的 需要输入 xnj + “ ” + IP后八位即可登陆</p>
+<p>  * 客服</p>
+<p>    * 11，客服服务器， 部署有ComplaintServer</p>
+<p>    * 12，客服服务器， 部署有ComplaintServer</p>
+<p></p>
+<p>#### 广东数据库</p>
+<p></p>
+<p>#### 广东机器</p>
+<p></p>
+<p>* 192.168.129.*，该地址段的直接在103上输入IP后八位即可登陆</p>
+<p id="item-1-2">  * item 2客服</p>
+<p>    * 30 ， 测试服务器</p>
+<p>    * 5 ， 客服主服务器，部署有web前端和complaintServer</p>
+<p>    * 28 ，客服服务器，部署有ComplaintServer和AlertServer</p>
+<p>    * 29 ，客服服务器， 部署有ComplaintServer和AlertServer</p>
+<p>    * 31，客服服务器， 部署有ComplaintServer</p>
+<p>    * 32，客服服务器， 部署有ComplaintServer</p>
+<p>  * 客响</p>
+<p>    * 17，客响主服务器， 部署有ComplaintServer</p>
+<p>    * 27，客响服务器， 部署有ComplaintServer</p>
+<p></p>
+<p>* 192.169.42.*， 该地址段的 需要输入 xnj + “ ” + IP后八位即可登陆</p>
+<p>  * 客服</p>
+<p>    * 11，客服服务器， 部署有ComplaintServer</p>
+<p>    * 12，客服服务器， 部署有ComplaintServer</p>
+<p></p>
+<p>#### 广东数据库</p>
+<p></p>
+<p>#### 广东机器</p>
+<p></p>
+<p>* 192.168.129.*，该地址段的直接在103上输入IP后八位即可登陆</p>
+<p>  * 客服</p>
+<p>    * 30 ， 测试服务器</p>
+<p>    * 5 ， 客服主服务器，部署有web前端和complaintServer</p>
+<p>    * 28 ，客服服务器，部署有ComplaintServer和AlertServer</p>
+<p>    * 29 ，客服服务器， 部署有ComplaintServer和AlertServer</p>
+<p>    * 31，客服服务器， 部署有ComplaintServer</p>
+<p>    * 32，客服服务器， 部署有ComplaintServer</p>
+<p>  * 客响</p>
+<p>    * 17，客响主服务器， 部署有ComplaintServer</p>
+<p>    * 27，客响服务器， 部署有ComplaintServer</p>
+<p></p>
+<p>* 192.169.42.*， 该地址段的 需要输入 xnj + “ ” + IP后八位即可登陆</p>
+<p>  * 客服</p>
+<p>    * 11，客服服务器， 部署有ComplaintServer</p>
+<p>    * 12，客服服务器， 部署有ComplaintServer</p>
+<p></p>
+<p>#### 广东数据库</p>
+<p></p>
+<p>#### 具体详解</p>
     <div id="layout">
     <div id="editormd-view" class="markdown-body editormd-html-preview">
     <textarea id="append-test" style="display:none;"> 
 
-# 我是大标题
-#### 广东业务
-
-* 广东分为 **客响** 和 **客服**， 有啥区别 别问， 问就是没有
-
-#### 广东机器
-
-* 192.168.129.*，该地址段的直接在103上输入IP后八位即可登陆
-  * 客服
-    * 30 ， 测试服务器
-    * 5 ， 客服主服务器，部署有web前端和complaintServer
-    * 28 ，客服服务器，部署有ComplaintServer和AlertServer
-    * 29 ，客服服务器， 部署有ComplaintServer和AlertServer
-    * 31，客服服务器， 部署有ComplaintServer
-    * 32，客服服务器， 部署有ComplaintServer
-  * 客响
-    * 17，客响主服务器， 部署有ComplaintServer
-    * 27，客响服务器， 部署有ComplaintServer
-
-* 192.169.42.*， 该地址段的 需要输入 xnj + “ ” + IP后八位即可登陆
-  * 客服
-    * 11，客服服务器， 部署有ComplaintServer
-    * 12，客服服务器， 部署有ComplaintServer
-
-#### 广东数据库
-
-#### 广东机器
-
-* 192.168.129.*，该地址段的直接在103上输入IP后八位即可登陆
-  * 客服
-    * 30 ， 测试服务器
-    * 5 ， 客服主服务器，部署有web前端和complaintServer
-    * 28 ，客服服务器，部署有ComplaintServer和AlertServer
-    * 29 ，客服服务器， 部署有ComplaintServer和AlertServer
-    * 31，客服服务器， 部署有ComplaintServer
-    * 32，客服服务器， 部署有ComplaintServer
-  * 客响
-    * 17，客响主服务器， 部署有ComplaintServer
-    * 27，客响服务器， 部署有ComplaintServer
-
-* 192.169.42.*， 该地址段的 需要输入 xnj + “ ” + IP后八位即可登陆
-  * 客服
-    * 11，客服服务器， 部署有ComplaintServer
-    * 12，客服服务器， 部署有ComplaintServer
-
-#### 广东数据库
-
-#### 广东机器
-
-* 192.168.129.*，该地址段的直接在103上输入IP后八位即可登陆
-  * 客服
-    * 30 ， 测试服务器
-    * 5 ， 客服主服务器，部署有web前端和complaintServer
-    * 28 ，客服服务器，部署有ComplaintServer和AlertServer
-    * 29 ，客服服务器， 部署有ComplaintServer和AlertServer
-    * 31，客服服务器， 部署有ComplaintServer
-    * 32，客服服务器， 部署有ComplaintServer
-  * 客响
-    * 17，客响主服务器， 部署有ComplaintServer
-    * 27，客响服务器， 部署有ComplaintServer
-
-* 192.169.42.*， 该地址段的 需要输入 xnj + “ ” + IP后八位即可登陆
-  * 客服
-    * 11，客服服务器， 部署有ComplaintServer
-    * 12，客服服务器， 部署有ComplaintServer
-
-#### 广东数据库
-
-#### 广东机器
-
-* 192.168.129.*，该地址段的直接在103上输入IP后八位即可登陆
-  * 客服
-    * 30 ， 测试服务器
-    * 5 ， 客服主服务器，部署有web前端和complaintServer
-    * 28 ，客服服务器，部署有ComplaintServer和AlertServer
-    * 29 ，客服服务器， 部署有ComplaintServer和AlertServer
-    * 31，客服服务器， 部署有ComplaintServer
-    * 32，客服服务器， 部署有ComplaintServer
-  * 客响
-    * 17，客响主服务器， 部署有ComplaintServer
-    * 27，客响服务器， 部署有ComplaintServer
-
-* 192.169.42.*， 该地址段的 需要输入 xnj + “ ” + IP后八位即可登陆
-  * 客服
-    * 11，客服服务器， 部署有ComplaintServer
-    * 12，客服服务器， 部署有ComplaintServer
-
-#### 广东数据库
-
-#### 具体详解</textarea>
+</textarea>
 
     </div>
 </div>
@@ -147,7 +198,7 @@
 <script src="{% static 'markdown-1.5.0/lib/flowchart.min.js' %}"></script>
 <script src="{% static 'markdown-1.5.0/lib/jquery.flowchart.min.js' %}"></script>
 <script src="{% static 'markdown-1.5.0/js/editormd.js' %}"></script>
-<script type="text/javascript">
+{% comment %} <script type="text/javascript">
             $(function() {
                 var testEditormdView, testEditormdView2;
                     
@@ -161,7 +212,7 @@
                 });
             });
         
-</script>
+</script> {% endcomment %}
 <body>
 </html>
 

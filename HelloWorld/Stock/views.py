@@ -111,7 +111,6 @@ class PieceInfo(APIView):
 
     def get(self, request, *args, **kwargs):
         stock_slug = request.GET.get("stock_slug", "")
-        print(PieceSerializer(Piece.objects.filter(belong_stock=stock_slug), many=True))
         return JsonResponse({"errorCode": 0, "data":PieceSerializer(Piece.objects.filter(belong_stock=stock_slug).order_by('index'), many=True).data}, safe=False, status=200)
     
     def post(self, request, *args, **kwargs):

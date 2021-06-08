@@ -26,7 +26,7 @@ urlpatterns = [
     # HTML View
     path('', views.HomeView),
     path('admin/', admin.site.urls),
-    re_path('^stock/(?P<slug>[0-9a-zA-Z]{32})$', views.PdfView),
+    re_path('^stock/(?P<slug>[0-9a-zA-Z\-]{34})$', views.MdView),
         
     # API View 
     path('stock/', StockInfo.as_view()),

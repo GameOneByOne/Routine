@@ -1,9 +1,10 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
 from HelloWorld.User.models import User
+from HelloWorld.Stock.models import Stock, Piece, StockSerializer, PieceSerializer
 from HelloWorld.settings import logger as log 
 
-def HomeView(request):    
+def HomeView(request, *args, **kwargs):    
     context = {}
     # 用户登陆情况存储在cookies中，所以先判断用户cookies中值的情况
     slug = request.COOKIES.get("slug", "")
@@ -27,7 +28,22 @@ def HomeView(request):
 
     return render(request, 'home.html', context)
 
-def PdfView(request):
+def MdView(request, *args, **kwargs):
+    print(kwargs)
     context = {}
+    # 还是需要拿到Stock的Name作为显示的
+    stock = None
+    try:
+        stock = Stock.objects.get(slug=kwargs.get("slug", ""))
+        print(stock)
+        context["stock_name"] = stock.name
+    except ObjectDoesNotExist:
+        return render(request, 'viewer.html', context)
+
+    # 之后再先获取所有Piece的内容，之后在Html中的Js进行分批加载
+    pieces = PieceSerializer(Piece.objects.filter(belong_stock=stock).order_by("index"), many=True).data
+    context["pieces"] = list()
+    for piece in pieces:
+        context["pieces"].append([piece["name"], piece["slug"], piece["content"]])
     # context["book_page"] = request.GET.get("bookSlug") + "/" +request.GET.get("pageSlug")
     return render(request, 'viewer.html', context)

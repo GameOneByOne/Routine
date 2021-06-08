@@ -670,7 +670,7 @@ function updateStockModel(obj){
 }
 
 function browseStock(obj){
-    window.open("/viewer");
+    window.open("/stock/" + obj.id);
 }
 
 function positionTop(obj){
