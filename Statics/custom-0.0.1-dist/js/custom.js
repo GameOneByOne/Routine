@@ -301,6 +301,36 @@ $("#stock-update").click(function(){
 });
 
 // 用户上传新章节的事件
+$("#piece-upload").click(){function(){
+    if ($("#piece-file")[0].files.length == 0){
+        alert("要上传一个文件才行");
+        return ;
+    } else {
+        var formdata = new FormData(); 
+        formdata.append('piece_file',$("#piece-file")[0].files[0]);
+        formdata.append('belong_stock_slug', $("#StockInfoModal").attr("stock-slug"));
+    
+        $.ajax({
+            url : '/piece/',
+            type : "post",
+            processData:false,
+            contentType:false,
+            data : formdata,
+            headers:{"X-CSRFToken":$.cookie("csrftoken")},
+            async : true,
+            success : function(data){
+                if (data.errorCode == 0){
+                    WindowsRemanderInfo(data.desc);
+                } else {
+                    WindowsRemanderError(data.desc);
+                }
+            }
+        });
+        // $("#show-picture").addClass("d-none");
+        // $("#knowledge-name").val("");
+        // $("#knowledge-cover").val("");
+    }
+}};
 
 // 导航的点击事件
 $("#main-page").click(function(){
@@ -611,6 +641,7 @@ function cleanStockInHtml(div){
 }
 
 function updateStockModel(obj){
+    $("#StockInfoModal").attr("stock-slug", obj.id);
     $("#knowledge-name-edit").val($("#" + obj.id).children("div").children("div").children("figure").children("blockquote").children("h6").html());
     $("#knowledge-name-edit").attr("disabled", true);
     $("#knowledge-desc-edit").val($("#" + obj.id).children("div").children("div").children("figure").children("figcaption").html());

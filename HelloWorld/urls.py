@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 from django.conf.urls import url
-from HelloWorld.Stock.views import StockInfo
+from HelloWorld.Stock.views import StockInfo, PieceInfo
 from HelloWorld.User.views import UserInfo, EmailCode
 from HelloWorld.Reminder.views import ReminderInfo
 from . import views
@@ -32,6 +32,7 @@ urlpatterns = [
     # API View 
     re_path('^stock/(?P<slug>[0-9a-zA-Z]{32})$', StockInfo.as_view()),
     path('stock/', StockInfo.as_view()),
+    path('piece/', PieceInfo.as_view()),
     path('user/', UserInfo.as_view()),
     path('user/randomcode', EmailCode.as_view()),
     path('message/', ReminderInfo.as_view()),
