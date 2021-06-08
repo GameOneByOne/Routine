@@ -301,7 +301,7 @@ $("#stock-update").click(function(){
 });
 
 // 用户上传新章节的事件
-$("#piece-upload").click(){function(){
+$("#piece-upload").click(function(){
     if ($("#piece-file")[0].files.length == 0){
         alert("要上传一个文件才行");
         return ;
@@ -309,7 +309,7 @@ $("#piece-upload").click(){function(){
         var formdata = new FormData(); 
         formdata.append('piece_file',$("#piece-file")[0].files[0]);
         formdata.append('belong_stock_slug', $("#StockInfoModal").attr("stock-slug"));
-    
+        
         $.ajax({
             url : '/piece/',
             type : "post",
@@ -330,7 +330,7 @@ $("#piece-upload").click(){function(){
         // $("#knowledge-name").val("");
         // $("#knowledge-cover").val("");
     }
-}};
+});
 
 // 导航的点击事件
 $("#main-page").click(function(){
@@ -542,6 +542,21 @@ function getStocksByUserSlug(callback){
     });
 } 
 
+function getPiecesByStockSlugAndAppend(stockSlug){
+    $("#piece-list").html("");
+    $.ajax({
+        url : '/piece/?stock_slug=' + stockSlug,
+        type : "get",
+        data : "",
+        async : true,
+        success : function(data) {
+            
+            for (var ind=0; ind<data.data.length; ++ind){
+                $("#piece-list").append('<tr><td>' + ind + '</td><td title="' + data.data[ind].name + '">' + data.data[ind].name + '<span class="position-top badge bg-success float-end mx-1" onclick="positionTop(this)">向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>')
+            }  
+        }
+    });
+}
 
 
 
@@ -575,7 +590,7 @@ function generateStocksInMainPage(datas){
     for (obj of datas) {
         var avatar_svg = multiavatar(obj.author_avatar);
         stock_card = 
-            '<div id="' + obj.slug + ' "class="col" data-bs-toggle="modal" data-bs-target="#StockInfoModal">' + 
+            '<div id="' + obj.slug + ' "class="col" onclick=browseStock(this)>' + 
             '<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg " >' + 
             '<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover" style="background-image: url(' + obj.cover + '); background-size: cover">' +
             '<figure class="pt-5 mt-5 mb-4 lh-1 fw-bold">' +
@@ -649,7 +664,14 @@ function updateStockModel(obj){
     $("#knowledge-tag-edit").val(obj.tag);
     $("#knowledge-tag-edit").attr("disabled", true);
     $("#knowledge-cover-edit").attr("disabled", true);
-    $("#StockInfoModal").attr("stockSlug", obj.id)
+    $("#StockInfoModal").attr("stockSlug", obj.id);
+
+    getPiecesByStockSlugAndAppend(obj.id);
+}
+
+function browseStock(obj){
+    // 先获取该stock的全部piece
+    window.open("https://www.baidu.com");
 }
 
 function positionTop(obj){
@@ -659,9 +681,6 @@ function positionTop(obj){
 
     var cur_name = $(obj).parent().html();
     var top_name = $(obj).parent().parent().prev().children().last().html();
-
-    console.log(cur_name);
-    console.log(top_name);
 
     $(obj).parent().parent().prev().children().last().html(cur_name);
     $(obj).parent().html(top_name);
@@ -674,9 +693,6 @@ function positionDown(obj){
 
     var cur_name = $(obj).parent().html();
     var top_name = $(obj).parent().parent().next().children().last().html();
-
-    console.log(cur_name);
-    console.log(top_name);
 
     $(obj).parent().parent().next().children().last().html(cur_name);
     $(obj).parent().html(top_name);

@@ -33,6 +33,7 @@ class Piece(models.Model):
     slug = models.SlugField(blank=False, primary_key=True, default=None, unique=True)
     name = models.CharField(blank=False, max_length=256, default=None)
     belong_stock = models.ForeignKey(to=Stock, db_index=True, null=True, to_field="slug", related_name="belong_stock", on_delete=models.SET_NULL)
+    index = models.IntegerField(blank=False, default=0)
     content = models.FileField(upload_to=save_piece, default=None)
 
 
@@ -77,9 +78,10 @@ class PieceSerializer(serializers.Serializer):
     name = serializers.CharField()
     belong_stock = serializers.SerializerMethodField()
     content = serializers.SerializerMethodField()
+    index = serializers.IntegerField()
 
     def get_belong_stock(self, obj):
         return obj.belong_stock.slug
 
     def get_content(self, obj):
-        return "" if obj.cover.name == "undefined" else "/static/" + obj.content.name
+        return "/static/" + obj.content.name

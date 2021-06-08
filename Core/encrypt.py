@@ -15,8 +15,6 @@ def generate_slug(type: str, key: str):
     """
     返回一个唯一的MD5标识
     """
-    if type == "Stock":
-        return slugify("S {}".format(md5(key)))
-    
-    if type == "User":
-        return slugify("U {}".format(md5(key)))
+    if type == "Stock": return slugify("S {}".format(md5(key)))
+    if type == "User": return slugify("U {}".format(md5(key)))
+    if type == "Piece": return slugify("P {}".format(md5(key)))

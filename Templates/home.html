@@ -361,7 +361,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body row">
-        <div class="col-8">
+        <div class="col-6">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="knowledge-name-edit" placeholder=" ">
                 <label for="knowledge-name-edit">1、在这里输入你的知识库名称</label>
@@ -390,32 +390,12 @@
                 <cite title="Source Title">你可以上传一张图片作为你知识库的封面，或者也可以使用系统默认的纯色封面（黑色）</cite>
             </figcaption>
         </div>
-        <div class=col-4 style="overflow-y:scroll; height:400px;">
+        <div class=col-6 style="overflow-y:scroll; height:400px;">
         <table class="table">
             <thead class="table-dark">
                 <tr><td>序号</td><td>章节名称</td></tr>
-                <tr></tr>
             </thead>
-            <tbody id="test" >
-                <tr><td>1</td><td title="从入门开始">从入门开始<span class="position-top badge bg-success float-end mx-1" onclick="positionTop(this)">向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>2</td><td title="到放弃结束">到放弃结束<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>3</td><td title="我是来测试的">我是来测试的<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>3</td><td title="我是来测试的">我是来测试的<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>3</td><td title="我是来测试的">我是来测试的<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>3</td><td title="我是来测试的">我是来测试的<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>3</td><td title="我是来测试的">我是来测试的<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>3</td><td title="我是来测试的">我是来测试的<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>3</td><td title="我是来测试的">我是来测试的<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>3</td><td title="我是来测试的">我是来测试的<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>3</td><td title="我是来测试的">我是来测试的<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>3</td><td title="我是来测试的">我是来测试的<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>3</td><td title="我是来测试的">我是来测试的<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>3</td><td title="我是来测试的">我是来测试的<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>3</td><td title="我是来测试的">我是来测试的<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>3</td><td title="我是来测试的">我是来测试的<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>3</td><td title="我是来测试的">我是来测试的<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-                <tr><td>3</td><td title="我是来测试的">我是来测试的<span class="position-top badge bg-success float-end mx-1" onclick=positionTop(this)>向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>
-            </tbody>
+            <tbody id="piece-list"></tbody>
         </table>
         
         </div>
