@@ -2,6 +2,7 @@ from django.db import models
 from HelloWorld.User.models import User
 from rest_framework import serializers
 from HelloWorld.settings import *
+import re
 
 
 def save_cover(instance, filename):
@@ -84,3 +85,45 @@ class PieceSerializer(serializers.Serializer):
 
     def get_content(self, obj):
         return "/static/" + obj.content.name
+
+class PieceContentSerializer(serializers.Serializer):
+    content = serializers.SerializerMethodField()
+
+    def get_content(self, obj):
+        # 记录五个级别的标题顺序
+        tilte_one = 0
+        tilte_two = 0
+        tilte_three = 0
+        tilte_four = 0
+        tilte_five = 0
+        result = list()
+        min_title_level = 5
+        content = ""
+        index = 0
+
+        # 读取文件，识别标题 [ 标题名称， 标题id，标题级别]
+        with open("Statics/{}".format(obj.content), "r", encoding="utf-8") as md:
+            temp_result = list()
+            for line in md.readlines():
+                line = line.strip(" ")
+                
+                is_title = re.match("#{1,5}", line)
+                if is_title:
+                    index += 1
+                    # 这里判断是几级标题
+                    temp_line = line
+                    title_level = len(is_title.group())
+                    title_name = temp_line.replace(is_title.group(), "")
+
+                    min_title_level = title_level if min_title_level > title_level else min_title_level
+                    result.append([title_name.strip(), "title-{}".format(index), title_level])
+
+                    # 生成新的标题
+                    new_title = len(is_title.group()) * "#" + " " + "<p id='{}'>".format("title-{}".format(index)) + title_name + "</p>"
+                    content += new_title
+
+                else:
+                    content += line
+
+
+        return {"slug":obj.slug, "rows": result, "content": content, "min_title_level": min_title_level}

@@ -1,5 +1,5 @@
 from rest_framework.views import APIView
-from HelloWorld.Stock.models import Stock, Piece, StockSerializer, PieceSerializer
+from HelloWorld.Stock.models import Stock, Piece, StockSerializer, PieceSerializer, PieceContentSerializer
 from HelloWorld.User.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse
@@ -111,8 +111,19 @@ class PieceInfo(APIView):
 
     def get(self, request, *args, **kwargs):
         stock_slug = request.GET.get("stock_slug", "")
-        return JsonResponse({"errorCode": 0, "data":PieceSerializer(Piece.objects.filter(belong_stock=stock_slug).order_by('index'), many=True).data}, safe=False, status=200)
+        piece_slug = request.GET.get("piece_slug", "")
+
+        if piece_slug != "":
+            try:
+                return JsonResponse({"errorCode": 0, "data":PieceContentSerializer(Piece.objects.get(slug=piece_slug)).data}, safe=False, status=200)
+            except ObjectDoesNotExist:
+                return JsonResponse({"errorCode": 1}, safe=False, status=200)
+
+        if stock_slug != "":
+            return JsonResponse({"errorCode": 0, "data":PieceSerializer(Piece.objects.filter(belong_stock=stock_slug).order_by('index'), many=True).data}, safe=False, status=200)
     
+        return JsonResponse({"errorCode": 1}, safe=False, status=200)
+
     def post(self, request, *args, **kwargs):
         piece_data = request.data["piece_file"]
         piece_name = request.data["piece_file"]._name
