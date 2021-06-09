@@ -339,6 +339,10 @@ $("#main-page").click(function(){
     $("#my-stock").removeClass("active");
     $("#ranking").removeClass("active");
     $("#desc-site").removeClass("active");
+    $("#main-page").removeClass("div-cover");
+    $("#my-stock").addClass("div-cover");
+    $("#ranking").addClass("div-cover");
+    $("#desc-site").addClass("div-cover");
     $("#brand-for-main-page").removeClass("d-none");
     $("#brand-for-my-stock").addClass("d-none");
     $("#brand-for-ranking").addClass("d-none");
@@ -359,6 +363,10 @@ $("#my-stock").click(function(){
     $("#my-stock").addClass("active");
     $("#ranking").removeClass("active");
     $("#desc-site").removeClass("active");
+    $("#main-page").addClass("div-cover");
+    $("#my-stock").removeClass("div-cover");
+    $("#ranking").addClass("div-cover");
+    $("#desc-site").addClass("div-cover");
     $("#brand-for-main-page").addClass("d-none");
     $("#brand-for-my-stock").removeClass("d-none");
     $("#brand-for-ranking").addClass("d-none");
@@ -379,6 +387,10 @@ $("#ranking").click(function(){
     $("#my-stock").removeClass("active");
     $("#ranking").addClass("active");
     $("#desc-site").removeClass("active");
+    $("#main-page").addClass("div-cover");
+    $("#my-stock").addClass("div-cover");
+    $("#ranking").removeClass("div-cover");
+    $("#desc-site").addClass("div-cover");
     $("#brand-for-main-page").addClass("d-none");
     $("#brand-for-my-stock").addClass("d-none");
     $("#brand-for-ranking").removeClass("d-none");
@@ -395,6 +407,10 @@ $("#desc-site").click(function(){
     $("#my-stock").removeClass("active");
     $("#ranking").removeClass("active");
     $("#desc-site").addClass("active");
+    $("#main-page").addClass("div-cover");
+    $("#my-stock").addClass("div-cover");
+    $("#ranking").addClass("div-cover");
+    $("#desc-site").removeClass("div-cover");
     $("#brand-for-main-page").addClass("d-none");
     $("#brand-for-my-stock").addClass("d-none");
     $("#brand-for-ranking").addClass("d-none");
@@ -591,26 +607,26 @@ function generateStocksInMainPage(datas){
         var avatar_svg = multiavatar(obj.author_avatar);
         stock_card = 
             '<div id="' + obj.slug + ' "class="col" onclick=browseStock(this)>' + 
-            '<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg " >' + 
+            '<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-3 shadow-lg " >' + 
             '<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover" style="background-image: url(' + obj.cover + '); background-size: cover">' +
             '<figure class="pt-5 mt-5 mb-4 lh-1 fw-bold">' +
-            '<blockquote class="blockquote"><h6 class="display-6">' + obj.name + '</h6></blockquote>' +
-            '<figcaption class="blockquote-footer">' + obj.describe + '</figcaption>' +
+            '<blockquote class="blockquote"><h6 class="display-6" style="cursor:default">' + obj.name + '</h6></blockquote>' +
+            '<figcaption class="blockquote-footer" style="cursor:default">' + obj.describe + '</figcaption>' +
             '</figure>' +
             '<ul class="d-flex list-unstyled mt-auto">' +
             '<li class="me-auto">' +
-            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="' + obj.author_name + '"><svg id="user-avatar" class="rounded-circle me-2" width="32" height="32">' + avatar_svg + '<svg></a>' +
+            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top"  style="cursor:default" title="' + obj.author_name + '"><svg id="user-avatar" class="rounded-circle me-2" width="32" height="32">' + avatar_svg + '<svg></a>' +
             '</li>' +
             '<li class="d-flex align-items-center me-3">' +
-            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="阅读数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#people-circle"/></svg></a>' +
+            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top"  style="cursor:default" title="阅读数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#people-circle"/></svg></a>' +
             '<small>' + obj.read_count + '</small>' +
             '</li>' +
             '<li class="d-flex align-items-center me-3">' +
-            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="收藏数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#heart"/></svg></a>' +
+            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" style="cursor:default" title="收藏数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#heart"/></svg></a>' +
             '<small>' + obj.marked_count + '</small>' +
             '</li>' +
             '<li class="d-flex align-items-center">' +
-            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="最近更新"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg></a>' +
+            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" style="cursor:default" title="最近更新"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg></a>' +
             '<small>'+ obj.upgrade_date +'</small>' +
             '</li></ul></div></div></div>';
 
@@ -624,26 +640,26 @@ function generateStocksInSelfPage(datas){
         var avatar_svg = multiavatar(obj.author_avatar);
         stock_card = 
             '<div id="' + obj.slug + '" tag="' + obj.tag + '" class="col" onclick=updateStockModel(this) data-bs-toggle="modal" data-bs-target="#StockInfoModal">' + 
-            '<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg " >' + 
+            '<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-3 shadow-lg " >' + 
             '<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover" style="background-image: url(' + obj.cover + '); background-size: cover">' +
             '<figure class="pt-5 mt-5 mb-4 lh-1 fw-bold">' +
-            '<blockquote class="blockquote"><h6 class="display-6">' + obj.name + '</h6></blockquote>' + 
-            '<figcaption class="blockquote-footer">' + obj.describe + '</figcaption>' +
+            '<blockquote class="blockquote"><h6 class="display-6" style="cursor:default">' + obj.name + '</h6></blockquote>' + 
+            '<figcaption class="blockquote-footer" style="cursor:default">' + obj.describe + '</figcaption>' +
             '</figure>' +
             '<ul class="d-flex list-unstyled mt-auto">' +
             '<li class="me-auto">' +
-            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="' + obj.author_name + '"><svg id="user-avatar" class="rounded-circle me-2" width="32" height="32">' + avatar_svg + '<svg></a>' +
+            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" style="cursor:default" title="' + obj.author_name + '"><svg id="user-avatar" class="rounded-circle me-2" width="32" height="32">' + avatar_svg + '<svg></a>' +
             '</li>' +
             '<li class="d-flex align-items-center me-3">' +
-            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="阅读数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#people-circle"/></svg></a>' +
+            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" style="cursor:default"  title="阅读数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#people-circle"/></svg></a>' +
             '<small>' + obj.read_count + '</small>' +
             '</li>' +
             '<li class="d-flex align-items-center me-3">' +
-            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="收藏数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#heart"/></svg></a>' +
+            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" style="cursor:default"  title="收藏数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#heart"/></svg></a>' +
             '<small>' + obj.marked_count + '</small>' +
             '</li>' +
             '<li class="d-flex align-items-center">' +
-            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="最近更新"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg></a>' +
+            '<a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" style="cursor:default"  title="最近更新"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg></a>' +
             '<small>'+ obj.upgrade_date +'</small>' +
             '</li></ul></div></div></div>';
 

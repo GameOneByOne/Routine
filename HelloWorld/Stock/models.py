@@ -3,6 +3,7 @@ from HelloWorld.User.models import User
 from rest_framework import serializers
 from HelloWorld.settings import *
 import re
+import os
 
 
 def save_cover(instance, filename):
@@ -101,6 +102,8 @@ class PieceContentSerializer(serializers.Serializer):
         content = ""
         index = 0
 
+        if not os.path.exists("Statics/{}".format(obj.content)): return result
+            
         # 读取文件，识别标题 [ 标题名称， 标题id，标题级别]
         with open("Statics/{}".format(obj.content), "r", encoding="utf-8") as md:
             temp_result = list()
