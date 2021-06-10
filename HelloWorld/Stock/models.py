@@ -38,7 +38,6 @@ class Piece(models.Model):
     index = models.IntegerField(blank=False, default=0)
     content = models.FileField(upload_to=save_piece, default=None)
 
-
     def save(self):
         super().save()
         
@@ -57,7 +56,7 @@ class StockSerializer(serializers.Serializer):
     marked_count = serializers.IntegerField()
     read_count = serializers.IntegerField()
     describe = serializers.CharField()
-    tag = serializers.SerializerMethodField()
+    tag = serializers.CharField()
 
     def get_author_name(self, obj):
         return obj.author.user_name
@@ -71,8 +70,6 @@ class StockSerializer(serializers.Serializer):
     def get_cover(self, obj):
         return "" if obj.cover.name == "undefined" else "/static/" + obj.cover.name
 
-    def get_tag(self, obj):
-        return obj.tag.split(",")
 
 
 class PieceSerializer(serializers.Serializer):

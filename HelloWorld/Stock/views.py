@@ -77,6 +77,7 @@ class StockInfo(APIView):
         stock_desc = request.data["describe"]
         stock_slug = request.data["slug"]
         stock_author_slug = request.COOKIES.get("slug")
+        stock_pieces = request.data["pieces"]
         
         log.info("Stock {}-{} Patch Request ".format(stock_slug, stock_name))
         # 先检查用户是不是注册用户，可能有爬虫程序之类的
@@ -86,7 +87,7 @@ class StockInfo(APIView):
             log.warn("User {} Maybe Use Script To Operate Our Site ".format(stock_author_slug))
             return JsonResponse({"errorCode":random.random()}, safe=False, status=200) 
         
-        # 之后检查新建的知识库是否与之前的重复
+        # 先更新Stock
         try:
             stock = Stock.objects.get(slug=stock_slug)
             stock.name = stock_name
@@ -100,6 +101,18 @@ class StockInfo(APIView):
         except ObjectDoesNotExist:
             log.warn("Stock {} Is Not In Database So We Return Error ".format(stock_slug))
             return JsonResponse({"errorCode":1, "desc":"知识库不存在，无法更新"}, safe=False, status=200)
+
+        # 在更新对应的Pieces
+        pieces_slug = stock_pieces.split(",")[1::2]
+        pieces_index = stock_pieces.split(",")[0::2]
+        for index, slug in zip(pieces_index, pieces_slug):
+            try:
+                piece = Piece.objects.get(slug=slug)
+                piece.index = index
+                piece.save()
+
+            except ObjectDoesNotExist:
+                 log.warn("Piece {} Is Not In Database Amazing".format(slug))
 
 
         return JsonResponse({"errorCode":0, "desc":"更新成功"}, safe=False, status=200)
@@ -152,3 +165,15 @@ class PieceInfo(APIView):
         
         return JsonResponse({"errorCode":0, "desc": "新章节上传成功"}, safe=False, status=200)
 
+    def delete(self, request, *args, **kwargs):
+        piece_slug = request.GET.get("piece_slug", "")
+
+        try:
+            piece = Piece.objects.get(slug=piece_slug)
+            piece.delete()
+
+        except ObjectDoesNotExist:
+            log.warn("SomeOne Want To Attack Our Piece Api Use Stock {}".format(stock_slug))
+            return JsonResponse({"errorCode":random.random()}, safe=False, status=200)
+
+        return JsonResponse({"errorCode":0, "desc": "章节删除成功"}, safe=False, status=200)

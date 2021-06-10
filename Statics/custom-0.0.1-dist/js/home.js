@@ -236,6 +236,8 @@ $("#stock-create").click(function(){
             success : function(data){
                 if (data.errorCode == 0){
                     WindowsRemanderInfo(data.desc);
+                    cleanStockInHtml("#down-stock-window-my");
+                    getStocksByUserSlug(generateStocksInSelfPage);
                 } else {
                     WindowsRemanderError(data.desc);
                 }
@@ -260,6 +262,36 @@ $("#stock-edit").click(function(){
     $("#knowledge-desc-edit").attr("disabled", false);
     $("#knowledge-tag-edit").attr("disabled", false);
     $("#knowledge-cover-edit").attr("disabled", false);
+    $("#stock-browse-edit").removeClass("d-none");
+});
+
+// 用户在编辑状态下的生成预览事件
+$("#stock-browse-edit").click(function(){
+    var reader = new FileReader();
+    
+    if ($("#knowledge-cover-edit")[0].files.length > 0){
+        reader.readAsDataURL($("#knowledge-cover-edit")[0].files[0]);
+        reader.onload = function () {
+            $("#edit-stock-cover").css("background-image", "url('" + reader.result + "')");
+            $("#edit-stock-cover").css("background-size", "cover");
+            $("#edit-stock-title").html($("#knowledge-name-edit").val());
+            $("#edit-stock-desc").html($("#knowledge-desc-edit").val());
+        }
+    } else {
+        $("#edit-stock-cover").css("background-image", "url()");
+        $("#edit-stock-cover").css("background-size", "cover");
+        $("#edit-stock-title").html($("#knowledge-name-edit").val()); 
+        $("#edit-stock-desc").html($("#knowledge-desc-edit").val()); 
+    }
+    $("#show-stock-browse-edit").removeClass("d-none");
+
+});
+
+// 用户取消编辑知识库的事件
+$("#stock-cancel-edit").click(function(){
+    $("#stock-browse-edit").addClass("d-none");
+    $("#show-stock-browse-edit").addClass("d-none");
+    $("#knowledge-cover-edit").val("");
 });
 
 // 用户更新知识库的事件
@@ -273,6 +305,14 @@ $("#stock-update").click(function(){
         formdata.append('tag', $("#knowledge-tag-edit").val());
         formdata.append('describe', $("#knowledge-desc-edit").val());
         formdata.append('slug', $("#StockInfoModal").attr("stockSlug"));
+        
+        var piece_list = [];
+        ind = 0;
+        for (obj of $("#piece-list").children("tr")){
+            piece_list.push([$(obj).children("td").first().html(), $(obj).children("td").last().attr("id")]);
+        }
+        formdata.append('pieces', piece_list);
+        
 
         if ($("#knowledge-cover-edit")[0].files.length != 0){
             formdata.append('cover',$("#knowledge-cover-edit")[0].files[0]);
@@ -289,13 +329,17 @@ $("#stock-update").click(function(){
             success : function(data){
                 if (data.errorCode == 0){
                     WindowsRemanderInfo(data.desc);
+                    $("#stock-browse-edit").addClass("d-none");
+                    $("#knowledge-cover-edit").val("");
                     cleanStockInHtml("#down-stock-window-my");
                     getStocksByUserSlug(generateStocksInSelfPage);
+                    
                 } else {
                     WindowsRemanderError(data.desc);
                 }
             }
         });
+
 
     }
 });
@@ -321,14 +365,14 @@ $("#piece-upload").click(function(){
             success : function(data){
                 if (data.errorCode == 0){
                     WindowsRemanderInfo(data.desc);
+                    $("#piece-file").val("");
+                    getPiecesByStockSlugAndAppend($("#StockInfoModal").attr("stock-slug"));
                 } else {
                     WindowsRemanderError(data.desc);
                 }
             }
         });
-        // $("#show-picture").addClass("d-none");
-        // $("#knowledge-name").val("");
-        // $("#knowledge-cover").val("");
+        
     }
 });
 
@@ -566,8 +610,13 @@ function getPiecesByStockSlugAndAppend(stockSlug){
         data : "",
         async : true,
         success : function(data) {
+            console.log(data)
             for (var ind=0; ind<data.data.length; ++ind){
-                $("#piece-list").append('<tr><td>' + ind + '</td><td title="' + data.data[ind].name + '">' + data.data[ind].name + '<span class="position-top badge bg-success float-end mx-1" onclick="positionTop(this)">向上</span><span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span></td></tr>')
+                $("#piece-list").append('<tr><td>' + ind + '</td><td id="' + data.data[ind].slug + '" title="' + data.data[ind].name + '">' + data.data[ind].name + 
+                        '<span class="piece-edit-button position-top badge bg-success float-end mx-1" onclick="positionTop(this)">向上</span>' + 
+                        '<span class="piece-edit-button position-down badge bg-danger float-end mx-1" onclick="positionDown(this)">向下</span>' + 
+                        '<span class="piece-edit-button position-down badge bg-dark float-end" onclick="deletePiece(this)">删除</span>' + 
+                        '</td></tr>')
             }  
         }
     });
@@ -677,10 +726,9 @@ function updateStockModel(obj){
     $("#knowledge-name-edit").attr("disabled", true);
     $("#knowledge-desc-edit").val($("#" + obj.id).children("div").children("div").children("figure").children("figcaption").html());
     $("#knowledge-desc-edit").attr("disabled", true);
-    $("#knowledge-tag-edit").val(obj.tag);
+    $("#knowledge-tag-edit").val($(obj).attr("tag"));
     $("#knowledge-tag-edit").attr("disabled", true);
     $("#knowledge-cover-edit").attr("disabled", true);
-    $("#StockInfoModal").attr("stockSlug", obj.id);
 
     getPiecesByStockSlugAndAppend(obj.id);
 }
@@ -694,11 +742,19 @@ function positionTop(obj){
         return ;
     }
 
-    var cur_name = $(obj).parent().html();
-    var top_name = $(obj).parent().parent().prev().children().last().html();
+    var cur_html = $(obj).parent().html();
+    var cur_title = $(obj).parent().attr("title");
+    var cur_id = $(obj).parent().attr("id");
+    var top_html = $(obj).parent().parent().prev().children().last().html();
+    var top_title = $(obj).parent().parent().prev().children().last().attr("title");
+    var top_id = $(obj).parent().parent().prev().children().last().attr("id");
 
-    $(obj).parent().parent().prev().children().last().html(cur_name);
-    $(obj).parent().html(top_name);
+    $(obj).parent().parent().prev().children().last().html(cur_html);
+    $(obj).parent().parent().prev().children().last().attr("title", cur_title);
+    $(obj).parent().parent().prev().children().last().attr("id", cur_id);
+    $(obj).parent().attr("title", top_title);
+    $(obj).parent().attr("id", top_id);
+    $(obj).parent().html(top_html);
 }
 
 function positionDown(obj){
@@ -706,9 +762,37 @@ function positionDown(obj){
         return ;
     }
 
-    var cur_name = $(obj).parent().html();
-    var top_name = $(obj).parent().parent().next().children().last().html();
+    var cur_html = $(obj).parent().html();
+    var cur_title = $(obj).parent().attr("title");
+    var cur_id = $(obj).parent().attr("id");
+    var top_html = $(obj).parent().parent().next().children().last().html();
+    var top_title = $(obj).parent().parent().next().children().last().attr("title");
+    var top_id = $(obj).parent().parent().next().children().last().attr("id");
 
-    $(obj).parent().parent().next().children().last().html(cur_name);
-    $(obj).parent().html(top_name);
+    $(obj).parent().parent().next().children().last().html(cur_html);
+    $(obj).parent().parent().next().children().last().attr("title", cur_title);
+    $(obj).parent().parent().next().children().last().attr("id", cur_id);
+    $(obj).parent().attr("title", top_title);
+    $(obj).parent().attr("id", top_id);
+    $(obj).parent().html(top_html);
+}
+
+function deletePiece(obj){
+    var pieceSlug = $(obj).parent().attr("id");
+    var stockSlug = $("StockInfoModal").attr("stock-slug");
+    console.log(stockSlug);
+    $.ajax({
+        url : '/piece/?piece_slug=' + pieceSlug,
+        type : "delete",
+        data : "",
+        async : true,
+        success : function(data) {
+            if (data.errorCode == 0){
+                WindowsRemanderInfo(data.desc);
+                getPiecesByStockSlugAndAppend(stockSlug);
+            } else {
+                WindowsRemanderError("删除遇到错误哦，请刷新页面重试");
+            }
+        }
+    });
 }

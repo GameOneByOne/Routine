@@ -111,13 +111,13 @@
     <li>
         <a id="ranking" class="nav-link text-white div-cover" style="cursor:pointer">
         <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
-        每日排行
+        每日排行（开发中）
         </a>
     </li>
     <li>
         <a id="desc-site" class="nav-link text-white div-cover" style="cursor:pointer">
         <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
-        乘凉小憩
+        乘凉小憩（开发中）
         </a>
     </li>
     </ul>
@@ -286,7 +286,6 @@
         <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">创建一个新的知识库</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <div class="form-floating mb-3">
@@ -316,7 +315,7 @@
             <figcaption class="blockquote-footer">
                 <cite title="Source Title">你可以上传一张图片作为你知识库的封面，或者也可以使用系统默认的纯色封面（黑色）</cite>
             </figcaption>
-            <div id="show-stock-browse" class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg d-none"> 
+            <div id="show-stock-browse" class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-3 shadow-lg d-none"> 
                 <div id="example-stock-cover" class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover">
                     <figure class="pt-5 mt-5 mb-4 lh-1 fw-bold">
                         <blockquote class="blockquote"><h6 id="example-stock-title" class="display-6"></h6></blockquote>
@@ -353,12 +352,11 @@
 </div>
 
 {% comment %} Stock的详细信息Model {% endcomment %}
-<div class="modal fade" id="StockInfoModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="StockInfoModal" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="stock-title"></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body row">
         <div class="col-6">
@@ -389,6 +387,31 @@
             <figcaption class="blockquote-footer">
                 <cite title="Source Title">你可以上传一张图片作为你知识库的封面，或者也可以使用系统默认的纯色封面（黑色）</cite>
             </figcaption>
+            <div id="show-stock-browse-edit" class="card card-cover h-90 overflow-hidden text-white bg-dark rounded-3 shadow-lg d-none" > 
+                <div id="edit-stock-cover" class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 div-cover">
+                    <figure class="pt-5 mt-5 mb-4 lh-1 fw-bold">
+                        <blockquote class="blockquote"><h6 id="edit-stock-title" class="display-6"></h6></blockquote>
+                        <figcaption id="edit-stock-desc" class="blockquote-footer"></figcaption>
+                    </figure>
+                    <ul class="d-flex list-unstyled mt-auto">
+                    <li class="me-auto">
+                    <a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title=" obj.author_name "><svg id="user-avatar" class="rounded-circle me-2" width="32" height="32"> avatar_svg <svg></a>
+                    </li>
+                    <li class="d-flex align-items-center me-3">
+                    <a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="阅读数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#people-circle"/></svg></a>
+                    <small> 1423 </small>
+                    </li>
+                    <li class="d-flex align-items-center me-3">
+                    <a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="收藏数"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#heart"/></svg></a>
+                    <small> 768 </small>
+                    </li>
+                    <li class="d-flex align-items-center">
+                    <a class="d-inline-block text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="最近更新"><svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg></a>
+                    <small> 2022年6月17日 </small>
+                    </li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class=col-6 style="overflow-y:scroll; height:400px;">
         <table class="table">
@@ -401,11 +424,12 @@
         </div>
         </div>
         <div class="modal-footer">
-            <button id="stock-edit" type="button" class="btn btn-secondary">编辑</button>
-            <button id="stock-update" type="button" class="btn btn-primary" data-bs-dismiss="modal">保存</button>
-            <button id="stock-cancel-edit" type="button" class="btn btn-primary" data-bs-dismiss="modal">取消</button>
-            <button id="stock-save" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#PieceUploadModal">上传新章节</button>
-            <button id="stock-save" type="button" class="btn btn-primary" data-bs-dismiss="modal">阅读</button>
+            <button id="stock-browse-edit" type="button" class="btn btn-warning d-none">生成预览</button>
+            <button id="stock-edit" type="button" class="btn btn-warning">编辑</button>
+            <button id="stock-update" type="button" class="btn btn-success" data-bs-dismiss="modal">保存</button>
+            <button id="stock-cancel-edit" type="button" class="btn btn-dark" data-bs-dismiss="modal">取消</button>
+            <button id="stock-save" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#PieceUploadModal">上传新章节</button>
+            <button id="stock-save" type="button" class="btn btn-info" data-bs-dismiss="modal">阅读</button>
         </div>
         </div>
     </div>
