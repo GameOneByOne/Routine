@@ -304,7 +304,7 @@ $("#stock-update").click(function(){
         formdata.append('name', $("#knowledge-name-edit").val());
         formdata.append('tag', $("#knowledge-tag-edit").val());
         formdata.append('describe', $("#knowledge-desc-edit").val());
-        formdata.append('slug', $("#StockInfoModal").attr("stockSlug"));
+        formdata.append('slug', $("#StockInfoModal").attr("stock-slug"));
         
         var piece_list = [];
         ind = 0;
@@ -374,6 +374,11 @@ $("#piece-upload").click(function(){
         });
         
     }
+});
+
+// 用户阅读事件
+$("#stock-read").click(function(){
+    window.open("/stock/" + $("#StockInfoModal").attr("stock-slug"));
 });
 
 // 导航的点击事件
@@ -610,7 +615,6 @@ function getPiecesByStockSlugAndAppend(stockSlug){
         data : "",
         async : true,
         success : function(data) {
-            console.log(data)
             for (var ind=0; ind<data.data.length; ++ind){
                 $("#piece-list").append('<tr><td>' + ind + '</td><td id="' + data.data[ind].slug + '" title="' + data.data[ind].name + '">' + data.data[ind].name + 
                         '<span class="piece-edit-button position-top badge bg-success float-end mx-1" onclick="positionTop(this)">向上</span>' + 
@@ -779,8 +783,6 @@ function positionDown(obj){
 
 function deletePiece(obj){
     var pieceSlug = $(obj).parent().attr("id");
-    var stockSlug = $("StockInfoModal").attr("stock-slug");
-    console.log(stockSlug);
     $.ajax({
         url : '/piece/?piece_slug=' + pieceSlug,
         type : "delete",
@@ -789,7 +791,7 @@ function deletePiece(obj){
         success : function(data) {
             if (data.errorCode == 0){
                 WindowsRemanderInfo(data.desc);
-                getPiecesByStockSlugAndAppend(stockSlug);
+                getPiecesByStockSlugAndAppend($("#StockInfoModal").attr("stock-slug"));
             } else {
                 WindowsRemanderError("删除遇到错误哦，请刷新页面重试");
             }
