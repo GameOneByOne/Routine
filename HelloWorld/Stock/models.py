@@ -119,10 +119,10 @@ class PieceContentSerializer(serializers.Serializer):
                     title_name = temp_line.replace(is_title.group(), "")
 
                     min_title_level = title_level if min_title_level > title_level else min_title_level
-                    result.append([title_name.strip(), "title-{}".format(index), title_level])
+                    result.append([title_name.strip(), "{}-title-{}".format(obj.slug, index), title_level])
 
                     # 生成新的标题
-                    new_title = len(is_title.group()) * "#" + " " + "<p id='{}'>".format("title-{}".format(index)) + title_name + "</p>"
+                    new_title = len(is_title.group()) * "#" + " " + "<p id='{}-title-{}'>".format(obj.slug, index) + title_name + "</p>"
                     content += new_title
 
                 else:

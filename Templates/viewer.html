@@ -30,45 +30,25 @@
     
     {% for piece in pieces %}
         <li>
-            <a class="nav-link text-white bg-black" data-bs-toggle="collapse" href="#{{ piece.slug }}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+
+            <span id="" class="spinner-border spinner-border-sm" role="status"></span>
+
+            <span class="nav-link text-white bg-black d-inline-block" data-bs-toggle="collapse" href="#{{ piece.slug }}" role="button" aria-expanded="false">
             {{ piece.name }}
-            </a>
-            <div class="collapse multi-collapse" id="{{ piece.slug }}" path="{{ piece.path }}">
+            </span>
+            <div class="collapse" id="{{ piece.slug }}" path="{{ piece.path }}">
                 <div  class="card card-body bg-light"></div>
             </div>
+
         </li>
     {% endfor %}
 
     </ul>
+    <hr>
 </div>
 
-<div class="container" style="margin-left: 80px; width:100%">
-    <div id="layout">
-    <div id="editormd-view" class="markdown-body editormd-html-preview">
-    <textarea id="append-test" style="display:none;"> 
-# 123123
-### 1231241
-* 12312
-* 123123
-    asdfasdfsdvmxzkvms
-    dfasdfasd
+<div id="markdown-content" class="container" style="margin-left: 80px; width:100%"></div>
 
-    dfasdfasddf
-    asdfasdfsdvmxzkvmsf
-    asdfasdfsdvmxzkvmsf
-    asdfasdfsdvmxzkvmsfa
-    sequenceDiagramf
-### 123123
-```C++
-int a = 100;
-```
-
-
-</textarea>
-
-    </div>
-</div>
-</div>
 
 </main>
 
@@ -81,21 +61,6 @@ int a = 100;
 <script src="{% static 'markdown-1.5.0/js/editormd.js' %}"></script>
 <script src="{% static 'markdown-1.5.0/js/editormd.js' %}"></script>
 <script src="{% static 'custom-0.0.1-dist/js/viewer.js' %}"></script>
-<script type="text/javascript">
-            $(function() {
-                var testEditormdView, testEditormdView2;
-                    
-                testEditormdView2 = editormd.markdownToHTML("editormd-view", {
-                    htmlDecode      : "style,script,iframe",  
-                    emoji           : true,
-                    taskList        : true,
-                    tex             : true,  // 默认不解析
-                    flowChart       : true,  // 默认不解析
-                    sequenceDiagram : true,  // 默认不解析
-                });
-            });
-        
-</script>
 <body>
 </html>
 

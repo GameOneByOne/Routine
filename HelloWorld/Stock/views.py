@@ -24,7 +24,7 @@ class StockInfo(APIView):
             try:
                 user = User.objects.get(slug=request.GET.get("userSlug", ""))
             except ObjectDoesNotExist:
-                return JsonResponse({"errorCode": 1, "desc": "你还未登陆哦"}, safe=False, status=200)
+                return JsonResponse({"errorCode": 1, "desc": "你还未登陆哦！"}, safe=False, status=200)
                 
             return JsonResponse({"errorCode": 0, "data":StockSerializer(Stock.objects.filter(author=user), many=True).data}, safe=False, status=200)
 
@@ -36,7 +36,7 @@ class StockInfo(APIView):
         stock_tag = request.data["tag"].strip(" ").strip("\r").strip("\n").strip("\t")
         stock_cover = request.data["cover"]
         stock_desc = request.data["describe"]
-        stock_author_slug = request.COOKIES.get("slug")
+        stock_author_slug = request.COOKIES.get("slug", "")
         stock_author = None
         stock_upgrade_date = time.strftime("%Y-%m-%d", time.localtime())
         stock_slug = generate_slug("Stock", "{}".format(stock_name))
@@ -47,7 +47,7 @@ class StockInfo(APIView):
             stock_author = User.objects.get(slug=stock_author_slug)
         except ObjectDoesNotExist:
             log.warn("User {} Maybe Use Script To Operate Our Site ".format(stock_author_slug))
-            return JsonResponse({"errorCode":random.random()}, safe=False, status=200) 
+            return JsonResponse({"errorCode":random.random(), "desc": "你需要先登陆之后在创建自己的知识库！"}, safe=False, status=200) 
         
         # 之后检查新建的知识库是否与之前的重复
         try:

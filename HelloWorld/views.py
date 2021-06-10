@@ -43,7 +43,9 @@ def MdView(request, *args, **kwargs):
     pieces = PieceSerializer(Piece.objects.filter(belong_stock=stock).order_by("index"), many=True).data
     
     context["pieces"] = list()
+    ind = 1
     for piece in pieces:
         context["pieces"].append({"name": piece["name"].split(".")[0], "slug":piece["slug"], "path":piece["content"]})
+        ind += 1
         
     return render(request, 'viewer.html', context)
