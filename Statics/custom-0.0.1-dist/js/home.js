@@ -617,9 +617,10 @@ function getPiecesByStockSlugAndAppend(stockSlug){
         success : function(data) {
             for (var ind=0; ind<data.data.length; ++ind){
                 $("#piece-list").append('<tr><td>' + ind + '</td><td id="' + data.data[ind].slug + '" title="' + data.data[ind].name + '">' + data.data[ind].name + 
-                        '<span class="piece-edit-button position-top badge bg-success float-end mx-1" onclick="positionTop(this)">向上</span>' + 
-                        '<span class="piece-edit-button position-down badge bg-danger float-end mx-1" onclick="positionDown(this)">向下</span>' + 
-                        '<span class="piece-edit-button position-down badge bg-dark float-end" onclick="deletePiece(this)">删除</span>' + 
+                        '<span class="position-down badge bg-dark float-end mx-1" onclick="deletePiece(this)">删除</span>' + 
+                        '<span class="position-down badge bg-info float-end mx-1" onclick="editPiece(this)">编辑</span>' + 
+                        '<span class="position-top badge bg-success float-end mx-1" onclick="positionTop(this)">向上</span>' + 
+                        '<span class="position-down badge bg-danger float-end" onclick="positionDown(this)">向下</span>' + 
                         '</td></tr>')
             }  
         }
@@ -738,7 +739,7 @@ function updateStockModel(obj){
 }
 
 function browseStock(obj){
-    window.open("/stock/" + obj.id);
+    window.open("/stockread/" + obj.id);
 }
 
 function positionTop(obj){
@@ -779,6 +780,10 @@ function positionDown(obj){
     $(obj).parent().attr("title", top_title);
     $(obj).parent().attr("id", top_id);
     $(obj).parent().html(top_html);
+}
+
+function editPiece(obj){
+    window.open("/pieceedit/" + $(obj).parent().attr("id"));
 }
 
 function deletePiece(obj){

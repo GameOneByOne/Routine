@@ -1,5 +1,5 @@
 from rest_framework.views import APIView
-from HelloWorld.Stock.models import Stock, Piece, StockSerializer, PieceSerializer, PieceContentSerializer
+from HelloWorld.Stock.models import Stock, Piece, StockSerializer, PieceInfoSerializer, PieceContentForReadSerializer
 from HelloWorld.User.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse
@@ -128,12 +128,12 @@ class PieceInfo(APIView):
 
         if piece_slug != "":
             try:
-                return JsonResponse({"errorCode": 0, "data":PieceContentSerializer(Piece.objects.get(slug=piece_slug)).data}, safe=False, status=200)
+                return JsonResponse({"errorCode": 0, "data":PieceContentForReadSerializer(Piece.objects.get(slug=piece_slug)).data}, safe=False, status=200)
             except ObjectDoesNotExist:
                 return JsonResponse({"errorCode": 1}, safe=False, status=200)
 
         if stock_slug != "":
-            return JsonResponse({"errorCode": 0, "data":PieceSerializer(Piece.objects.filter(belong_stock=stock_slug).order_by('index'), many=True).data}, safe=False, status=200)
+            return JsonResponse({"errorCode": 0, "data":PieceInfoSerializer(Piece.objects.filter(belong_stock=stock_slug).order_by('index'), many=True).data}, safe=False, status=200)
     
         return JsonResponse({"errorCode": 1}, safe=False, status=200)
 
@@ -177,3 +177,40 @@ class PieceInfo(APIView):
             return JsonResponse({"errorCode":random.random()}, safe=False, status=200)
 
         return JsonResponse({"errorCode":0, "desc": "章节删除成功"}, safe=False, status=200)
+
+    def patch(self, request, *args, **kwargs):
+        slug = request.data.get("slug", "")
+        name = request.data.get("name", "")
+        content = request.data.get("content", "")
+        user_slug = request.COOKIES.get("slug", "")
+        user = None
+        piece = None
+
+        # 先看有没有登陆
+        try:
+            user = User.objects.get(slug=user_slug)
+        except ObjectDoesNotExist:
+            return JsonResponse({"errorCode":1, "desc": "不登陆不能随便更新哦"}, safe=False, status=200)
+
+        # 再看章节slug对不对
+        try:
+            piece = Piece.objects.get(slug=slug)
+        except ObjectDoesNotExist:
+            return JsonResponse({"errorCode":1, "desc": "章节定位错误，请联系管理员"}, safe=False, status=200)
+
+        # 取出stock的信息，比对用户是否是本人
+        if piece.belong_stock.author != user:
+            return JsonResponse({"errorCode":1, "desc": "这不是你的知识库哦，不能乱更新"}, safe=False, status=200)
+
+        # 进行更新
+        piece.name = name
+        piece.save()
+
+        if not os.path.exists("Statics/{}".format(piece.content)): 
+            return JsonResponse({"errorCode":1, "desc": "章节更新失败，请联系管理员"}, safe=False, status=200)
+            
+        # 读取文件，识别标题 [ 标题名称， 标题id，标题级别]
+        with open("Statics/{}".format(piece.content), "w", encoding="utf-8") as md:
+            md.write(content)
+
+        return JsonResponse({"errorCode":0, "desc": "章节更新成功"}, safe=False, status=200)

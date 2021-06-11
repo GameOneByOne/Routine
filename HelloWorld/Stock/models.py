@@ -44,6 +44,7 @@ class Piece(models.Model):
     class Meta:
         db_table = "Model_Piece"
 
+
 class StockSerializer(serializers.Serializer):
     slug = serializers.SlugField()
     name = serializers.CharField()
@@ -71,12 +72,14 @@ class StockSerializer(serializers.Serializer):
         return "" if obj.cover.name == "undefined" else "/static/" + obj.cover.name
 
 
-
-class PieceSerializer(serializers.Serializer):
+class PieceInfoSerializer(serializers.Serializer):
     slug = serializers.SlugField()
-    name = serializers.CharField()
+    name = serializers.SerializerMethodField()
     belong_stock = serializers.SerializerMethodField()
     content = serializers.SerializerMethodField()
+
+    def get_name(self, obj):
+        return obj.name.split(".md")[0]
 
     def get_belong_stock(self, obj):
         return obj.belong_stock.slug
@@ -84,16 +87,14 @@ class PieceSerializer(serializers.Serializer):
     def get_content(self, obj):
         return "/static/" + obj.content.name
 
-class PieceContentSerializer(serializers.Serializer):
+
+class PieceContentForReadSerializer(serializers.Serializer):
+    slug = serializers.SlugField()
+    name = serializers.CharField()
     content = serializers.SerializerMethodField()
 
     def get_content(self, obj):
         # 记录五个级别的标题顺序
-        tilte_one = 0
-        tilte_two = 0
-        tilte_three = 0
-        tilte_four = 0
-        tilte_five = 0
         result = list()
         min_title_level = 5
         content = ""
@@ -103,7 +104,6 @@ class PieceContentSerializer(serializers.Serializer):
             
         # 读取文件，识别标题 [ 标题名称， 标题id，标题级别]
         with open("Statics/{}".format(obj.content), "r", encoding="utf-8") as md:
-            temp_result = list()
             for line in md.readlines():
                 line = line.strip(" ")
                 
@@ -127,3 +127,23 @@ class PieceContentSerializer(serializers.Serializer):
 
 
         return {"slug":obj.slug, "rows": result, "content": content, "min_title_level": min_title_level}
+
+
+class PieceContentForEditSerializer(serializers.Serializer):
+    slug = serializers.SlugField()
+    name = serializers.SerializerMethodField()
+    content = serializers.SerializerMethodField()
+
+    def get_name(self, obj):
+        return obj.name.split(".md")[0]
+
+    def get_content(self, obj):
+        result = ""
+        if not os.path.exists("Statics/{}".format(obj.content)): return result
+
+        with open("Statics/{}".format(obj.content), "r", encoding="utf-8") as md:
+            result = md.read()
+
+        result += ("\n\r" * 10)
+        return result
+

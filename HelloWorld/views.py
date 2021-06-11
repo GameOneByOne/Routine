@@ -2,7 +2,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http.response import JsonResponse
 from django.shortcuts import render
 from HelloWorld.User.models import User
-from HelloWorld.Stock.models import Stock, Piece, PieceSerializer, PieceContentSerializer
+from HelloWorld.Stock.models import Stock, Piece, PieceInfoSerializer, PieceContentForEditSerializer
 from HelloWorld.settings import logger as log 
 
 def HomeView(request, *args, **kwargs):    
@@ -29,7 +29,7 @@ def HomeView(request, *args, **kwargs):
 
     return render(request, 'home.html', context)
 
-def MdView(request, *args, **kwargs):
+def MdReadView(request, *args, **kwargs):
     context = {}
     # 还是需要拿到Stock的Name作为显示的
     stock = None
@@ -40,7 +40,7 @@ def MdView(request, *args, **kwargs):
         return render(request, 'viewer.html', context)
 
     # 之后再先获取所有Piece的内容，之后在Html中的Js进行分批加载
-    pieces = PieceSerializer(Piece.objects.filter(belong_stock=stock).order_by("index"), many=True).data
+    pieces = PieceInfoSerializer(Piece.objects.filter(belong_stock=stock).order_by("index"), many=True).data
     
     context["pieces"] = list()
     ind = 1
@@ -49,3 +49,13 @@ def MdView(request, *args, **kwargs):
         ind += 1
         
     return render(request, 'viewer.html', context)
+
+def MdEditView(request, *args, **kwargs):
+    context = {}
+    try:
+        piece = Piece.objects.get(slug=kwargs.get("slug", ""))
+        context = PieceContentForEditSerializer(piece).data
+    except ObjectDoesNotExist:
+        return render(request, 'editer.html', context)
+
+    return render(request, 'editer.html', context)

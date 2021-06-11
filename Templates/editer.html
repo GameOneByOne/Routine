@@ -9,53 +9,52 @@
     <link rel="shortcut icon" href="{% static '/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'markdown-1.5.0/css/editormd.min.css' %}" />
     <link rel="stylesheet" href="{% static 'bootstrap-5.0.1/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'bootstrap-5.0.1/css/sidebars.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.0.1/css/navbar.css' %}">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="{% static 'bootstrap-5.0.1/js/bootstrap.bundle.js' %}"></script>
+
     
 </head>
 
 <body>
 
-<main>
-
-{% comment %} 左方内容导航 {% endcomment %}
-<div id="left-nav" class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-        <span class="fs-4">Knowledge Stock</span>
-    </a>
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-    <li class="nav-item">123</li>
-    <li>234</li>
-    <li>345</li>
-    <li>567</li>
+{% comment %} 上方方内容导航 {% endcomment %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
+    <div class="container-fluid justify-content-md-center">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon3">章节名称</span>
+        <input id="piece-name" type="text" class="form-control" id="basic-url" value={{ name }} aria-describedby="basic-addon3">
+        </div>
+        </li>
+        <li class="nav-item mx-3">
+        <button id="piece-save" piece-slug={{ slug }} type="button" class="btn btn-outline-info">保存</button>
+        </li>
     </ul>
-    <hr>
-</div>
+    </div>
+</nav>
 
-<div class="container" style="margin-left: 280px; width:100%">
+<div class="container" style="margin-left: 280px; width:150%">
     <div id="editor">
         <!-- Tips: Editor.md can auto append a `<textarea>` tag -->
-        <textarea style="display:none;">### Hello Editor.md !</textarea>
+        <textarea style="display:none;">{{ content }}</textarea>
     </div>
 </div>
 
-</main>
 
 
 
 <script src="{% static 'markdown-1.5.0/js/editormd.js' %}"></script>
 <script src="{% static 'markdown-1.5.0/lib/codemirror/codemirror.min.js' %}"></script>
+<script src="{% static 'custom-0.0.1-dist/js/editer.js' %}"></script>
 <script type="text/javascript">
 $(function() {
     var editor = editormd("editor", {
-        width           : "90%",
+        width           : "100%",
         autoHeight      : true,
         path            : "../static/markdown-1.5.0/lib/",
         htmlDecode      : "style,script,iframe", 
-        tex             : true,
         emoji           : true,
         taskList        : true,
         sequenceDiagram : true
