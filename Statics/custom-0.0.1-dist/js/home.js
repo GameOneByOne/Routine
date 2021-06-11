@@ -378,7 +378,7 @@ $("#piece-upload").click(function(){
 
 // 用户阅读事件
 $("#stock-read").click(function(){
-    window.open("/stock/" + $("#StockInfoModal").attr("stock-slug"));
+    window.open("/stockread/" + $("#StockInfoModal").attr("stock-slug"));
 });
 
 // 导航的点击事件
