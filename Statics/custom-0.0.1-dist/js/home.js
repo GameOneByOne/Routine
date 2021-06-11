@@ -738,6 +738,14 @@ function updateStockModel(obj){
 }
 
 function browseStock(obj){
+    $.ajax({
+        url : '/stock/',
+        type : "put",
+        data : {"type":"IncreaseSpectate", "slug":obj.id},
+        async : true,
+        success : function(data) {}
+    });
+
     window.open("/stockread/" + obj.id);
 }
 

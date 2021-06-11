@@ -117,6 +117,25 @@ class StockInfo(APIView):
 
         return JsonResponse({"errorCode":0, "desc":"更新成功"}, safe=False, status=200)
 
+    def put(self, request, *args, **kwargs):
+        update_type = request.data.get("type", "")
+        stock_slug = request.data.get("slug", "")
+        stock = None
+
+        try:
+            stock = Stock.objects.get(slug=stock_slug)
+        except ObjectDoesNotExist:
+            return JsonResponse({"errorCode":1, "desc":"知识库不存在"}, safe=False, status=200)
+
+        if update_type == "IncreaseSpectate":
+            stock.read_count += 1
+
+
+        elif update_type == "IncreaseMarked":
+            stock.marked_count += 1
+
+        stock.save()
+        return JsonResponse({"errorCode":0, "desc":"更新成功"}, safe=False, status=200)
 
 class PieceInfo(APIView):
     def dispatch(self, request, *args, **kwargs):
