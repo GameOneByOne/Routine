@@ -313,7 +313,6 @@ $("#stock-update").click(function(){
         }
         formdata.append('pieces', piece_list);
         
-
         if ($("#knowledge-cover-edit")[0].files.length != 0){
             formdata.append('cover',$("#knowledge-cover-edit")[0].files[0]);
         }

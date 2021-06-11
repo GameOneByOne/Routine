@@ -161,8 +161,11 @@ class PieceInfo(APIView):
         piece.belong_stock = stock
         piece.content = piece_data
         piece.index = pieces_num + 1
+        stock = piece.belong_stock
+        stock.upgrade_date = time.strftime("%Y-%m-%d", time.localtime())
         piece.save()
-        
+        stock.save()
+
         return JsonResponse({"errorCode":0, "desc": "新章节上传成功"}, safe=False, status=200)
 
     def delete(self, request, *args, **kwargs):
@@ -204,7 +207,12 @@ class PieceInfo(APIView):
 
         # 进行更新
         piece.name = name
+        stock = piece.belong_stock
+        stock.upgrade_date = time.strftime("%Y-%m-%d", time.localtime())
         piece.save()
+        stock.save()
+
+        
 
         if not os.path.exists("Statics/{}".format(piece.content)): 
             return JsonResponse({"errorCode":1, "desc": "章节更新失败，请联系管理员"}, safe=False, status=200)
